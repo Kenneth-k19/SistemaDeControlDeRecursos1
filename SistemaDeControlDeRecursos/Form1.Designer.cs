@@ -151,13 +151,14 @@
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.Color.White;
+            this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.Location = new System.Drawing.Point(0, 0);
             this.btnInventario.Margin = new System.Windows.Forms.Padding(0);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(227, 60);
             this.btnInventario.TabIndex = 3;
-            this.btnInventario.Text = "Inventario";
+            this.btnInventario.Text = "        Inventario";
             this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInventario.UseVisualStyleBackColor = true;
             this.btnInventario.Click += new System.EventHandler(this.button1_Click);
@@ -335,6 +336,8 @@
             this.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFacturacion.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFacturacion.ForeColor = System.Drawing.Color.White;
+            this.btnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturacion.Image")));
+            this.btnFacturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFacturacion.Location = new System.Drawing.Point(0, 0);
             this.btnFacturacion.Margin = new System.Windows.Forms.Padding(0);
             this.btnFacturacion.Name = "btnFacturacion";
@@ -426,12 +429,15 @@
             this.btnComprasModulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComprasModulo.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComprasModulo.ForeColor = System.Drawing.Color.White;
+            this.btnComprasModulo.Image = ((System.Drawing.Image)(resources.GetObject("btnComprasModulo.Image")));
+            this.btnComprasModulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComprasModulo.Location = new System.Drawing.Point(0, 0);
             this.btnComprasModulo.Margin = new System.Windows.Forms.Padding(0);
             this.btnComprasModulo.Name = "btnComprasModulo";
             this.btnComprasModulo.Size = new System.Drawing.Size(227, 60);
             this.btnComprasModulo.TabIndex = 14;
-            this.btnComprasModulo.Text = "Compras";
+            this.btnComprasModulo.Text = "        Compras";
+            this.btnComprasModulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnComprasModulo.UseVisualStyleBackColor = true;
             this.btnComprasModulo.Click += new System.EventHandler(this.btnComprasModulo_Click);
             // 
@@ -531,6 +537,8 @@
             this.btnAjustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAjustes.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjustes.ForeColor = System.Drawing.Color.White;
+            this.btnAjustes.Image = ((System.Drawing.Image)(resources.GetObject("btnAjustes.Image")));
+            this.btnAjustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAjustes.Location = new System.Drawing.Point(0, 0);
             this.btnAjustes.Margin = new System.Windows.Forms.Padding(0);
             this.btnAjustes.Name = "btnAjustes";
