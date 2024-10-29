@@ -361,3 +361,60 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+
+
+# Visual Studio y .NET
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.ide
+
+# Archivos de compilación
+bin/
+obj/
+
+# Archivos de configuración de depuración local
+launchSettings.json
+
+# Paquetes y dependencias
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+# Archivos de configuración de Rider (JetBrains)
+.idea/
+*.sln.iml
+
+# Archivos de cache de recursos
+_ReSharper*/ 
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+**/Telerik.References/**
+
+# Configuración de MSBuild
+msbuild.log
+
+# Archivos generados por Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Archivos de configuración para Mac
+.DS_Store
+
+# Configuración de Node.js (si se usa)
+node_modules/
+
+# Archivos de Python (si se usa en el proyecto)
+*.pyc
+__pycache__/
+
+# Configuración para sistemas de contenedores (Docker)
+docker-compose.override.yml
+.dockerignore
