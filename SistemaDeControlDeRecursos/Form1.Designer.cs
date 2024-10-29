@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Button btnMaximizar;
             System.Windows.Forms.Button btnMinimize;
             System.Windows.Forms.Button btnMaximize;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.pnlTopPanel = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.flpLeftPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.flpInventario = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCierrePeriodo = new System.Windows.Forms.Button();
             this.btnAjusteInventario = new System.Windows.Forms.Button();
             this.btnMovimientos = new System.Windows.Forms.Button();
+            this.btnFamilia = new System.Windows.Forms.Button();
+            this.btnConsumos = new System.Windows.Forms.Button();
             this.btnReporte1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnFacturacion = new System.Windows.Forms.Button();
@@ -58,16 +61,13 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAjustes = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnMiPerfil = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
             this.sideBarTransition = new System.Windows.Forms.Timer(this.components);
             this.facturacionTransition = new System.Windows.Forms.Timer(this.components);
             this.comprasTransition = new System.Windows.Forms.Timer(this.components);
             this.ajustesTransition = new System.Windows.Forms.Timer(this.components);
-            this.btnFamilia = new System.Windows.Forms.Button();
-            this.btnConsumos = new System.Windows.Forms.Button();
-            this.btnMiPerfil = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             btnMaximizar = new System.Windows.Forms.Button();
             btnMinimize = new System.Windows.Forms.Button();
             btnMaximize = new System.Windows.Forms.Button();
@@ -78,6 +78,54 @@
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnMaximizar
+            // 
+            btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            btnMaximizar.BackgroundImage = global::SistemaDeControlDeRecursos.Properties.Resources.expandir_ventana;
+            btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnMaximizar.FlatAppearance.BorderSize = 0;
+            btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnMaximizar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnMaximizar.Location = new System.Drawing.Point(879, 0);
+            btnMaximizar.Name = "btnMaximizar";
+            btnMaximizar.Size = new System.Drawing.Size(39, 39);
+            btnMaximizar.TabIndex = 5;
+            btnMaximizar.UseVisualStyleBackColor = true;
+            btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btnMinimize
+            // 
+            btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            btnMinimize.BackgroundImage = global::SistemaDeControlDeRecursos.Properties.Resources.minimizar1;
+            btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnMinimize.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnMinimize.Location = new System.Drawing.Point(841, 0);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new System.Drawing.Size(39, 39);
+            btnMinimize.TabIndex = 4;
+            btnMinimize.UseVisualStyleBackColor = true;
+            btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            btnMaximize.BackgroundImage = global::SistemaDeControlDeRecursos.Properties.Resources.cerrar_ventana1;
+            btnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnMaximize.FlatAppearance.BorderSize = 0;
+            btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnMaximize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            btnMaximize.Location = new System.Drawing.Point(917, 0);
+            btnMaximize.Name = "btnMaximize";
+            btnMaximize.Size = new System.Drawing.Size(39, 39);
+            btnMaximize.TabIndex = 3;
+            btnMaximize.UseVisualStyleBackColor = true;
+            btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnArticulos
             // 
@@ -97,7 +145,7 @@
             // 
             // btnInventario
             // 
-            this.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInventario.FlatAppearance.BorderSize = 0;
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -110,6 +158,7 @@
             this.btnInventario.Size = new System.Drawing.Size(227, 60);
             this.btnInventario.TabIndex = 3;
             this.btnInventario.Text = "Inventario";
+            this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInventario.UseVisualStyleBackColor = true;
             this.btnInventario.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -125,6 +174,20 @@
             this.pnlTopPanel.Name = "pnlTopPanel";
             this.pnlTopPanel.Size = new System.Drawing.Size(956, 50);
             this.pnlTopPanel.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(52, 50);
+            this.button4.TabIndex = 9;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // flpLeftPanel
             // 
@@ -204,6 +267,38 @@
             this.btnMovimientos.Text = "Movimientos";
             this.btnMovimientos.UseVisualStyleBackColor = true;
             this.btnMovimientos.Click += new System.EventHandler(this.btnMovimientos_Click);
+            // 
+            // btnFamilia
+            // 
+            this.btnFamilia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFamilia.FlatAppearance.BorderSize = 0;
+            this.btnFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFamilia.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFamilia.ForeColor = System.Drawing.Color.White;
+            this.btnFamilia.Location = new System.Drawing.Point(0, 300);
+            this.btnFamilia.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFamilia.Name = "btnFamilia";
+            this.btnFamilia.Size = new System.Drawing.Size(227, 60);
+            this.btnFamilia.TabIndex = 9;
+            this.btnFamilia.Text = "Familia";
+            this.btnFamilia.UseVisualStyleBackColor = true;
+            this.btnFamilia.Click += new System.EventHandler(this.btnFamilia_Click);
+            // 
+            // btnConsumos
+            // 
+            this.btnConsumos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsumos.FlatAppearance.BorderSize = 0;
+            this.btnConsumos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsumos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsumos.ForeColor = System.Drawing.Color.White;
+            this.btnConsumos.Location = new System.Drawing.Point(0, 360);
+            this.btnConsumos.Margin = new System.Windows.Forms.Padding(0);
+            this.btnConsumos.Name = "btnConsumos";
+            this.btnConsumos.Size = new System.Drawing.Size(227, 60);
+            this.btnConsumos.TabIndex = 10;
+            this.btnConsumos.Text = "Consumos por Platillo";
+            this.btnConsumos.UseVisualStyleBackColor = true;
+            this.btnConsumos.Click += new System.EventHandler(this.btnConsumos_Click);
             // 
             // btnReporte1
             // 
@@ -461,6 +556,22 @@
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
+            // btnMiPerfil
+            // 
+            this.btnMiPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMiPerfil.FlatAppearance.BorderSize = 0;
+            this.btnMiPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMiPerfil.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMiPerfil.ForeColor = System.Drawing.Color.White;
+            this.btnMiPerfil.Location = new System.Drawing.Point(0, 120);
+            this.btnMiPerfil.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMiPerfil.Name = "btnMiPerfil";
+            this.btnMiPerfil.Size = new System.Drawing.Size(227, 60);
+            this.btnMiPerfil.TabIndex = 15;
+            this.btnMiPerfil.Text = "Mi Perfil";
+            this.btnMiPerfil.UseVisualStyleBackColor = true;
+            this.btnMiPerfil.Click += new System.EventHandler(this.btnMiPerfil_Click);
+            // 
             // btnSalir
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -500,116 +611,6 @@
             // 
             this.ajustesTransition.Interval = 10;
             this.ajustesTransition.Tick += new System.EventHandler(this.ajustesTransition_Tick);
-            // 
-            // btnFamilia
-            // 
-            this.btnFamilia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFamilia.FlatAppearance.BorderSize = 0;
-            this.btnFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFamilia.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFamilia.ForeColor = System.Drawing.Color.White;
-            this.btnFamilia.Location = new System.Drawing.Point(0, 300);
-            this.btnFamilia.Margin = new System.Windows.Forms.Padding(0);
-            this.btnFamilia.Name = "btnFamilia";
-            this.btnFamilia.Size = new System.Drawing.Size(227, 60);
-            this.btnFamilia.TabIndex = 9;
-            this.btnFamilia.Text = "Familia";
-            this.btnFamilia.UseVisualStyleBackColor = true;
-            this.btnFamilia.Click += new System.EventHandler(this.btnFamilia_Click);
-            // 
-            // btnConsumos
-            // 
-            this.btnConsumos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsumos.FlatAppearance.BorderSize = 0;
-            this.btnConsumos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsumos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsumos.ForeColor = System.Drawing.Color.White;
-            this.btnConsumos.Location = new System.Drawing.Point(0, 360);
-            this.btnConsumos.Margin = new System.Windows.Forms.Padding(0);
-            this.btnConsumos.Name = "btnConsumos";
-            this.btnConsumos.Size = new System.Drawing.Size(227, 60);
-            this.btnConsumos.TabIndex = 10;
-            this.btnConsumos.Text = "Consumos por Platillo";
-            this.btnConsumos.UseVisualStyleBackColor = true;
-            this.btnConsumos.Click += new System.EventHandler(this.btnConsumos_Click);
-            // 
-            // btnMiPerfil
-            // 
-            this.btnMiPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMiPerfil.FlatAppearance.BorderSize = 0;
-            this.btnMiPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMiPerfil.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMiPerfil.ForeColor = System.Drawing.Color.White;
-            this.btnMiPerfil.Location = new System.Drawing.Point(0, 120);
-            this.btnMiPerfil.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMiPerfil.Name = "btnMiPerfil";
-            this.btnMiPerfil.Size = new System.Drawing.Size(227, 60);
-            this.btnMiPerfil.TabIndex = 15;
-            this.btnMiPerfil.Text = "Mi Perfil";
-            this.btnMiPerfil.UseVisualStyleBackColor = true;
-            this.btnMiPerfil.Click += new System.EventHandler(this.btnMiPerfil_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(52, 50);
-            this.button4.TabIndex = 9;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnMaximizar
-            // 
-            btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            btnMaximizar.BackgroundImage = global::SistemaDeControlDeRecursos.Properties.Resources.expandir_ventana;
-            btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnMaximizar.FlatAppearance.BorderSize = 0;
-            btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnMaximizar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            btnMaximizar.Location = new System.Drawing.Point(879, 0);
-            btnMaximizar.Name = "btnMaximizar";
-            btnMaximizar.Size = new System.Drawing.Size(39, 39);
-            btnMaximizar.TabIndex = 5;
-            btnMaximizar.UseVisualStyleBackColor = true;
-            btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // btnMinimize
-            // 
-            btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            btnMinimize.BackgroundImage = global::SistemaDeControlDeRecursos.Properties.Resources.minimizar1;
-            btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnMinimize.FlatAppearance.BorderSize = 0;
-            btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnMinimize.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            btnMinimize.Location = new System.Drawing.Point(841, 0);
-            btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new System.Drawing.Size(39, 39);
-            btnMinimize.TabIndex = 4;
-            btnMinimize.UseVisualStyleBackColor = true;
-            btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnMaximize
-            // 
-            btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            btnMaximize.BackgroundImage = global::SistemaDeControlDeRecursos.Properties.Resources.cerrar_ventana1;
-            btnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnMaximize.FlatAppearance.BorderSize = 0;
-            btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnMaximize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            btnMaximize.Location = new System.Drawing.Point(917, 0);
-            btnMaximize.Name = "btnMaximize";
-            btnMaximize.Size = new System.Drawing.Size(39, 39);
-            btnMaximize.TabIndex = 3;
-            btnMaximize.UseVisualStyleBackColor = true;
-            btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // Form1
             // 

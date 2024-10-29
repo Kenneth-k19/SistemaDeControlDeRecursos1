@@ -48,7 +48,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(316, 9);
+            this.label1.Location = new System.Drawing.Point(307, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 43);
             this.label1.TabIndex = 0;
@@ -61,7 +61,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 226);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(736, 309);
+            this.dataGridView1.Size = new System.Drawing.Size(719, 309);
             this.dataGridView1.TabIndex = 16;
             // 
             // btnInsertar
@@ -102,7 +102,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(592, 541);
+            this.btnEliminar.Location = new System.Drawing.Point(575, 541);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(156, 45);
             this.btnEliminar.TabIndex = 20;

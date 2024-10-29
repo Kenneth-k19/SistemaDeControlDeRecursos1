@@ -156,7 +156,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(358, 54);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Ajueste de Inventario";
+            this.label1.Text = "Ajuste de Inventario";
             // 
             // frmAjusteInventario
             // 
