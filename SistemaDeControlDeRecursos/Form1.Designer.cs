@@ -175,6 +175,10 @@
             this.pnlTopPanel.Name = "pnlTopPanel";
             this.pnlTopPanel.Size = new System.Drawing.Size(956, 50);
             this.pnlTopPanel.TabIndex = 1;
+            this.pnlTopPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTopPanel_Paint);
+            this.pnlTopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopPanel_MouseDown);
+            this.pnlTopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTopPanel_MouseMove);
+            this.pnlTopPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTopPanel_MouseUp);
             // 
             // button4
             // 

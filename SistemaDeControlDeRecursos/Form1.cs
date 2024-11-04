@@ -13,6 +13,8 @@ namespace SistemaDeControlDeRecursos
     public partial class Form1 : Form
     {
 
+        int m, mx, my; 
+
         frmInventario inventario;
         frmCompras compras;
         frmFactura factura;
@@ -482,9 +484,42 @@ namespace SistemaDeControlDeRecursos
             frm.ShowDialog();
         }
 
+        private void pnlTopPanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            m = 0;
+        }
+
+        private void pnlTopPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - mx, MousePosition.Y - my);
+            }
+        }
+
+        private void pnlTopPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)
         {
             //miPerfil = null;
         }
+
+        private void pnlTopPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            m = 1;
+            mx = e.X;
+            my = e.Y;
+
+            this.WindowState = FormWindowState.Normal;
+            checker = true;
+        }
+
+        //private void pnlTopPanel_MouseDown(object sender, MouseEventArgs e)
+        //{
+
+        //}
     }
 }
