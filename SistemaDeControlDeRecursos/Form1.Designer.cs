@@ -68,6 +68,7 @@
             this.facturacionTransition = new System.Windows.Forms.Timer(this.components);
             this.comprasTransition = new System.Windows.Forms.Timer(this.components);
             this.ajustesTransition = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             btnMaximizar = new System.Windows.Forms.Button();
             btnMinimize = new System.Windows.Forms.Button();
             btnMaximize = new System.Windows.Forms.Button();
@@ -197,6 +198,7 @@
             // flpLeftPanel
             // 
             this.flpLeftPanel.AutoScroll = true;
+            this.flpLeftPanel.Controls.Add(this.panel1);
             this.flpLeftPanel.Controls.Add(this.flpInventario);
             this.flpLeftPanel.Controls.Add(this.flowLayoutPanel1);
             this.flpLeftPanel.Controls.Add(this.flowLayoutPanel2);
@@ -218,7 +220,7 @@
             this.flpInventario.Controls.Add(this.btnFamilia);
             this.flpInventario.Controls.Add(this.btnConsumos);
             this.flpInventario.Controls.Add(this.btnReporte1);
-            this.flpInventario.Location = new System.Drawing.Point(0, 0);
+            this.flpInventario.Location = new System.Drawing.Point(0, 160);
             this.flpInventario.Margin = new System.Windows.Forms.Padding(0);
             this.flpInventario.Name = "flpInventario";
             this.flpInventario.Size = new System.Drawing.Size(227, 60);
@@ -327,7 +329,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnReporte5);
             this.flowLayoutPanel1.Controls.Add(this.btnReporte6);
             this.flowLayoutPanel1.Controls.Add(this.btnReporte7);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 60);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 220);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(227, 60);
@@ -420,7 +422,7 @@
             this.flowLayoutPanel2.Controls.Add(this.btnReporte8);
             this.flowLayoutPanel2.Controls.Add(this.btnReporte9);
             this.flowLayoutPanel2.Controls.Add(this.btnReporte10);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 120);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 280);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(227, 60);
@@ -528,7 +530,7 @@
             this.flowLayoutPanel3.Controls.Add(this.btnUsuarios);
             this.flowLayoutPanel3.Controls.Add(this.btnMiPerfil);
             this.flowLayoutPanel3.Controls.Add(this.btnSalir);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 180);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 340);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(227, 60);
@@ -624,6 +626,15 @@
             this.ajustesTransition.Interval = 10;
             this.ajustesTransition.Tick += new System.EventHandler(this.ajustesTransition_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(227, 154);
+            this.panel1.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -683,6 +694,7 @@
         private System.Windows.Forms.Button btnFamilia;
         private System.Windows.Forms.Button btnConsumos;
         private System.Windows.Forms.Button btnMiPerfil;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
