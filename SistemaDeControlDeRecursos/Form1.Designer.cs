@@ -38,6 +38,7 @@
             this.pnlTopPanel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.flpLeftPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.flpInventario = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCierrePeriodo = new System.Windows.Forms.Button();
             this.btnAjusteInventario = new System.Windows.Forms.Button();
@@ -68,7 +69,7 @@
             this.facturacionTransition = new System.Windows.Forms.Timer(this.components);
             this.comprasTransition = new System.Windows.Forms.Timer(this.components);
             this.ajustesTransition = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             btnMaximizar = new System.Windows.Forms.Button();
             btnMinimize = new System.Windows.Forms.Button();
             btnMaximize = new System.Windows.Forms.Button();
@@ -167,6 +168,7 @@
             // pnlTopPanel
             // 
             this.pnlTopPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlTopPanel.Controls.Add(this.label1);
             this.pnlTopPanel.Controls.Add(this.button4);
             this.pnlTopPanel.Controls.Add(btnMaximizar);
             this.pnlTopPanel.Controls.Add(btnMinimize);
@@ -188,7 +190,7 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Location = new System.Drawing.Point(-1, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(52, 50);
             this.button4.TabIndex = 9;
@@ -209,6 +211,15 @@
             this.flpLeftPanel.Size = new System.Drawing.Size(230, 466);
             this.flpLeftPanel.TabIndex = 8;
             this.flpLeftPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flpLeftPanel_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(227, 154);
+            this.panel1.TabIndex = 10;
             // 
             // flpInventario
             // 
@@ -626,14 +637,17 @@
             this.ajustesTransition.Interval = 10;
             this.ajustesTransition.Tick += new System.EventHandler(this.ajustesTransition_Tick);
             // 
-            // panel1
+            // label1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 154);
-            this.panel1.TabIndex = 10;
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(58, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 34);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Sistema de Control de Recursos";
             // 
             // Form1
             // 
@@ -649,6 +663,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlTopPanel.ResumeLayout(false);
+            this.pnlTopPanel.PerformLayout();
             this.flpLeftPanel.ResumeLayout(false);
             this.flpInventario.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -695,6 +710,7 @@
         private System.Windows.Forms.Button btnConsumos;
         private System.Windows.Forms.Button btnMiPerfil;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
