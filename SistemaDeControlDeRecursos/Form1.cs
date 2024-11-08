@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace SistemaDeControlDeRecursos
 {
     public partial class Form1 : Form
     {
+        private SqlConnection conexion;
+        private DataTable dtAccesos;
 
         int m, mx, my; 
 
@@ -41,6 +44,7 @@ namespace SistemaDeControlDeRecursos
         {
             frmLogin frmLogin = new frmLogin();
             frmLogin.ShowDialog();
+            
 
             //flpLeftPanel.BackColor = Color.FromArgb(23,24,29);
             flpLeftPanel.BackColor = Color.FromArgb(145, 19, 66);
@@ -59,6 +63,16 @@ namespace SistemaDeControlDeRecursos
 
             flpLeftPanel.Controls.SetChildIndex(panel1,0);
             panel1.BackColor = Color.FromArgb(145, 19, 66);
+
+            if (frmLogin.getConectado)
+            {
+                this.conexion = frmLogin.getConexion;
+                this.dtAccesos = frmLogin.getAccesos;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
