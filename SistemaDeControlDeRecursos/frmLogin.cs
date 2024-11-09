@@ -151,7 +151,7 @@ namespace SistemaDeControlDeRecursos
                 adpAutenticacion = new SqlDataAdapter("spAutenticarUsuario", conexion);
                 adpAutenticacion.SelectCommand.CommandType = CommandType.StoredProcedure;
                 adpAutenticacion.SelectCommand.Parameters.AddWithValue("@codigo", txtUsuario.Text);
-                adpAutenticacion.SelectCommand.Parameters.AddWithValue("contrasena", txtContrasena.Text);
+                adpAutenticacion.SelectCommand.Parameters.AddWithValue("@contrasena", txtContrasena.Text);
 
                 adpAutenticacion.Fill(dtAutenticacion);
 
