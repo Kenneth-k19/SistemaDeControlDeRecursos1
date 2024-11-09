@@ -7,17 +7,70 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SistemaDeControlDeRecursos
 {
     public partial class frmLogin : Form
     {
+        private SqlConnection conexion;
+        private bool conectado;
+        private SqlDataAdapter adpAutenticacion;
+        private DataTable dtAutenticacion;
+        private DataTable dtAccesos;
+        private int usuarioID;
+
 
         int m, mx, my;
+
+        public SqlConnection getConexion
+        {
+            get { return this.conexion; }
+        }
+
+        public bool getConectado
+        {
+            get { return this.conectado; }
+        }
+
+        public int getUsuarioID
+        {
+            get { return usuarioID; }
+        }
+
+        public DataTable getAccesos
+        {
+            get { return dtAccesos; }
+        }
 
         public frmLogin()
         {
             InitializeComponent();
+            conexion = new SqlConnection();
+            dtAutenticacion = new DataTable();
+            dtAccesos = new DataTable();
+        }
+
+        private bool validarBlancos()
+        {
+            errorProvider1.Clear();
+            bool hayError = false;
+
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text) || txtUsuario.Text == "Ingrese su usuario")
+            {
+                hayError = true;
+                errorProvider1.SetError(txtUsuario, "No pueden haber valores en blanco");
+                return hayError;
+            }
+            if (string.IsNullOrWhiteSpace(txtContrasena.Text) || txtContrasena.Text == "Ingrese su contraseña")
+            {
+                hayError = true;
+                errorProvider1.SetError(txtContrasena, "No pueden haber valores en blanco");
+                return hayError;
+            }
+
+
+            return hayError;
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -82,7 +135,49 @@ namespace SistemaDeControlDeRecursos
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                label2.Text = "";
+                if (this.validarBlancos())
+                {
+                    return;
+                }
+
+                String url = "Server=" + "3.128.144.165" + "; Database=" + "DB20172001423"
+                             + "; UID=" + "brandon.portan" + "; PWD=" + "BP20172001423" + ";";
+
+                conexion.ConnectionString = url;
+
+                adpAutenticacion = new SqlDataAdapter("spAutenticarUsuario", conexion);
+                adpAutenticacion.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adpAutenticacion.SelectCommand.Parameters.AddWithValue("@codigo", txtUsuario.Text);
+                adpAutenticacion.SelectCommand.Parameters.AddWithValue("@contrasena", txtContrasena.Text);
+
+                adpAutenticacion.Fill(dtAutenticacion);
+
+                if (dtAutenticacion.Rows.Count > 0)
+                {
+                    conectado = true;
+                    this.usuarioID = (int)dtAutenticacion.Rows[0][0];
+
+                    adpAutenticacion = new SqlDataAdapter("spObtenerAcceso", conexion);
+                    adpAutenticacion.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adpAutenticacion.SelectCommand.Parameters.AddWithValue("@usuarioid", this.usuarioID);
+
+                    adpAutenticacion.Fill(dtAccesos);
+                }
+                else
+                {
+                    label2.Text = "Usuario o contraseña incorrecta";
+                    return;
+                }
+
+                this.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

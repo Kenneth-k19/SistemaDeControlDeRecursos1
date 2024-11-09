@@ -27,7 +27,7 @@ namespace SistemaDeControlDeRecursos
         {
             btnEditar.BackColor = Color.FromArgb(145, 19, 66);
             btnInsertar.BackColor = Color.FromArgb(145, 19, 66);
-            btnEliminar.BackColor = Color.FromArgb(145, 19, 66);
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

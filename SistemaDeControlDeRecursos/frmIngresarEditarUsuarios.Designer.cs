@@ -32,16 +32,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUsuarioid = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtIdentidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtArea = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtContra = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +64,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(386, 65);
+            this.panel1.Size = new System.Drawing.Size(386, 59);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
@@ -93,21 +95,21 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "UsuarioID:";
             // 
-            // textBox1
+            // txtUsuarioid
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 90);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 24);
-            this.textBox1.TabIndex = 2;
+            this.txtUsuarioid.Location = new System.Drawing.Point(126, 90);
+            this.txtUsuarioid.Multiline = true;
+            this.txtUsuarioid.Name = "txtUsuarioid";
+            this.txtUsuarioid.Size = new System.Drawing.Size(247, 24);
+            this.txtUsuarioid.TabIndex = 2;
             // 
-            // textBox2
+            // txtCodigo
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 234);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(247, 24);
-            this.textBox2.TabIndex = 4;
+            this.txtCodigo.Location = new System.Drawing.Point(126, 234);
+            this.txtCodigo.Multiline = true;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(247, 24);
+            this.txtCodigo.TabIndex = 4;
             // 
             // label3
             // 
@@ -118,13 +120,13 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Codigo:";
             // 
-            // textBox3
+            // txtNombre
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 186);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 24);
-            this.textBox3.TabIndex = 6;
+            this.txtNombre.Location = new System.Drawing.Point(126, 186);
+            this.txtNombre.Multiline = true;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(247, 24);
+            this.txtNombre.TabIndex = 6;
             // 
             // label4
             // 
@@ -135,13 +137,13 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Nombre:";
             // 
-            // textBox4
+            // txtIdentidad
             // 
-            this.textBox4.Location = new System.Drawing.Point(126, 138);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(247, 24);
-            this.textBox4.TabIndex = 8;
+            this.txtIdentidad.Location = new System.Drawing.Point(126, 138);
+            this.txtIdentidad.Multiline = true;
+            this.txtIdentidad.Name = "txtIdentidad";
+            this.txtIdentidad.Size = new System.Drawing.Size(247, 24);
+            this.txtIdentidad.TabIndex = 8;
             // 
             // label5
             // 
@@ -152,18 +154,18 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Identidad:";
             // 
-            // textBox5
+            // txtArea
             // 
-            this.textBox5.Location = new System.Drawing.Point(126, 282);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(247, 24);
-            this.textBox5.TabIndex = 10;
+            this.txtArea.Location = new System.Drawing.Point(126, 322);
+            this.txtArea.Multiline = true;
+            this.txtArea.Name = "txtArea";
+            this.txtArea.Size = new System.Drawing.Size(247, 24);
+            this.txtArea.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 282);
+            this.label6.Location = new System.Drawing.Point(12, 322);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 24);
             this.label6.TabIndex = 9;
@@ -176,7 +178,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(16, 335);
+            this.btnGuardar.Location = new System.Drawing.Point(16, 383);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(357, 45);
             this.btnGuardar.TabIndex = 11;
@@ -184,22 +186,41 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtContra
+            // 
+            this.txtContra.Location = new System.Drawing.Point(126, 280);
+            this.txtContra.Multiline = true;
+            this.txtContra.Name = "txtContra";
+            this.txtContra.Size = new System.Drawing.Size(247, 24);
+            this.txtContra.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 280);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 24);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Contraseña:";
+            // 
             // frmIngresarEditarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(385, 419);
+            this.ClientSize = new System.Drawing.Size(385, 464);
+            this.Controls.Add(this.txtContra);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtArea);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtIdentidad);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUsuarioid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -218,16 +239,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUsuarioid;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtIdentidad;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtContra;
+        private System.Windows.Forms.Label label7;
     }
 }
