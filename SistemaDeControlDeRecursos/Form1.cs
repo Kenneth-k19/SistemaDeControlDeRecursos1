@@ -150,6 +150,8 @@ namespace SistemaDeControlDeRecursos
             if(sideBarExpand)
             {
                 flpLeftPanel.Width -= 10;
+                panel1.Height -= 5;
+                panel1.Width -= 10;
 
                 if(flpLeftPanel.Width <= 52)
                 {
@@ -163,6 +165,8 @@ namespace SistemaDeControlDeRecursos
             else
             {
                 flpLeftPanel.Width += 10;
+                panel1.Height += 5;
+                panel1.Width += 10;
 
                 if(flpLeftPanel.Width >= 230)
                 {

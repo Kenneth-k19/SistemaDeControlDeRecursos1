@@ -36,6 +36,7 @@
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.pnlTopPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.flpLeftPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,7 +70,6 @@
             this.facturacionTransition = new System.Windows.Forms.Timer(this.components);
             this.comprasTransition = new System.Windows.Forms.Timer(this.components);
             this.ajustesTransition = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             btnMaximizar = new System.Windows.Forms.Button();
             btnMinimize = new System.Windows.Forms.Button();
             btnMaximize = new System.Windows.Forms.Button();
@@ -183,6 +183,18 @@
             this.pnlTopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTopPanel_MouseMove);
             this.pnlTopPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTopPanel_MouseUp);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(58, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 34);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Sistema de Control de Recursos";
+            // 
             // button4
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
@@ -214,6 +226,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -636,18 +649,6 @@
             // 
             this.ajustesTransition.Interval = 10;
             this.ajustesTransition.Tick += new System.EventHandler(this.ajustesTransition_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Agency FB", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(58, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 34);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Sistema de Control de Recursos";
             // 
             // Form1
             // 
