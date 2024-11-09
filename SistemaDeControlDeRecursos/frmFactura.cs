@@ -22,7 +22,7 @@ namespace SistemaDeControlDeRecursos
             //this.ControlBox = false;
             btnEditar.BackColor = Color.FromArgb(145, 19, 66);
             btnInsertar.BackColor = Color.FromArgb(145, 19, 66);
-            btnEliminar.BackColor = Color.FromArgb(145, 19, 66);
+            
 
         }
 
