@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaDeControlDeRecursos.Reportes.forms;
 
 namespace SistemaDeControlDeRecursos
 {
@@ -110,6 +111,9 @@ namespace SistemaDeControlDeRecursos
         private void button1_Click(object sender, EventArgs e)
         {
             menuTransition.Start();
+            rpPlantilla rp = new rpPlantilla();
+            rp.ShowDialog();
+
         }
 
         private void flpLeftPanel_Paint(object sender, PaintEventArgs e)
