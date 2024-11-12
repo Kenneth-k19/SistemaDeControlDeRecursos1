@@ -146,6 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(245)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(800, 619);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnInsertar);

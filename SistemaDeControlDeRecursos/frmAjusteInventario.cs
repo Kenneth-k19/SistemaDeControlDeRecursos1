@@ -26,8 +26,8 @@ namespace SistemaDeControlDeRecursos
         private void frmAjusteInventario_Load(object sender, EventArgs e)
         {
             
-            btnEditar.BackColor = Color.FromArgb(145, 19, 66);
-            btnInsertar.BackColor = Color.FromArgb(145, 19, 66);
+            btnEditar.BackColor = Color.FromArgb(242, 124, 36);
+            btnInsertar.BackColor = Color.FromArgb(242, 124, 36);
             
         }
 
