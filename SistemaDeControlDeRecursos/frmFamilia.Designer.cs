@@ -64,6 +64,7 @@
             // btnInsertar
             // 
             this.btnInsertar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
             this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsertar.FlatAppearance.BorderSize = 0;
             this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -74,7 +75,7 @@
             this.btnInsertar.Size = new System.Drawing.Size(156, 45);
             this.btnInsertar.TabIndex = 2;
             this.btnInsertar.Text = "Insertar";
-            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -128,6 +129,7 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -138,7 +140,7 @@
             this.btnEditar.Size = new System.Drawing.Size(156, 45);
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // frmFamilia
             // 

@@ -345,6 +345,7 @@
             this.btnReporte1.TabIndex = 8;
             this.btnReporte1.Text = "Reporte 1";
             this.btnReporte1.UseVisualStyleBackColor = true;
+            this.btnReporte1.Click += new System.EventHandler(this.btnReporte1_Click);
             // 
             // flowLayoutPanel1
             // 

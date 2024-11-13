@@ -111,8 +111,7 @@ namespace SistemaDeControlDeRecursos
         private void button1_Click(object sender, EventArgs e)
         {
             menuTransition.Start();
-            rpPlantilla rp = new rpPlantilla();
-            rp.ShowDialog();
+            
 
         }
 
@@ -525,6 +524,12 @@ namespace SistemaDeControlDeRecursos
         private void pnlTopPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnReporte1_Click(object sender, EventArgs e)
+        {
+            rpPlantilla rp = new rpPlantilla();
+            rp.ShowDialog();
         }
 
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)

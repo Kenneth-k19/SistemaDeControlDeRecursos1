@@ -58,7 +58,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(252, 9);
+            this.label1.Location = new System.Drawing.Point(243, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 39);
             this.label1.TabIndex = 0;
@@ -190,7 +190,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 378);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(670, 269);
+            this.dataGridView1.Size = new System.Drawing.Size(653, 269);
             this.dataGridView1.TabIndex = 15;
             // 
             // groupBox1
@@ -202,7 +202,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 311);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(670, 61);
+            this.groupBox1.Size = new System.Drawing.Size(653, 61);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
@@ -226,6 +226,7 @@
             // 
             // btnInsertar
             // 
+            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
             this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsertar.FlatAppearance.BorderSize = 0;
             this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -236,10 +237,11 @@
             this.btnInsertar.Size = new System.Drawing.Size(156, 60);
             this.btnInsertar.TabIndex = 17;
             this.btnInsertar.Text = "Insertar";
-            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.UseVisualStyleBackColor = false;
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -250,7 +252,7 @@
             this.btnEditar.Size = new System.Drawing.Size(156, 60);
             this.btnEditar.TabIndex = 18;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // frmProveedores
             // 
