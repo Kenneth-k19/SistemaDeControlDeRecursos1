@@ -28,7 +28,6 @@ namespace SistemaDeControlDeRecursos
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
 
-            btnGuardar.BackColor = Color.FromArgb(145, 19, 66);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

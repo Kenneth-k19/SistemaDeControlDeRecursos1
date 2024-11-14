@@ -23,7 +23,6 @@ namespace SistemaDeControlDeRecursos
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
 
-            btnGuardar.BackColor = Color.FromArgb(145, 19, 66);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

@@ -29,8 +29,7 @@ namespace SistemaDeControlDeRecursos
 
         private void frmComprasDetalle_Load(object sender, EventArgs e)
         {
-            btnGuardar.BackColor = Color.FromArgb(145, 19, 66);
-
+            
             panel1.BackColor = Color.FromArgb(145, 19, 66);
         }
     }

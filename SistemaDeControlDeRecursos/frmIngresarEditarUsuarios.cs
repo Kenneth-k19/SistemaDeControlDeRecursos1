@@ -27,8 +27,6 @@ namespace SistemaDeControlDeRecursos
         private void frmIngresarEditarUsuarios_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
-
-            btnGuardar.BackColor = Color.FromArgb(145, 19, 66);
             
         }
 

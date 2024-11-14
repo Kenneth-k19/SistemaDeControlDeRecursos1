@@ -20,9 +20,6 @@ namespace SistemaDeControlDeRecursos
         private void frmInventario_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-
-            btnEditar.BackColor = Color.FromArgb(145, 19, 66);
-            btnInsertar.BackColor = Color.FromArgb(145, 19, 66);
             
         }
     }
