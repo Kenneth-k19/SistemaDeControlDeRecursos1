@@ -46,10 +46,10 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(262, 9);
+            this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(337, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 43);
+            this.label1.Size = new System.Drawing.Size(130, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "Compras";
             // 
@@ -60,7 +60,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 226);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(634, 309);
+            this.dataGridView1.Size = new System.Drawing.Size(617, 309);
             this.dataGridView1.TabIndex = 16;
             // 
             // btnInsertar

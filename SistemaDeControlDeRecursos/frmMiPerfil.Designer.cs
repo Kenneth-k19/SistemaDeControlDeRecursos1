@@ -70,11 +70,11 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(124, 10);
+            this.label1.Location = new System.Drawing.Point(144, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 40);
+            this.label1.Size = new System.Drawing.Size(130, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mi Perfil";
             // 

@@ -44,10 +44,10 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(324, 9);
+            this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(354, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 43);
+            this.label1.Size = new System.Drawing.Size(128, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuarios";
             // 

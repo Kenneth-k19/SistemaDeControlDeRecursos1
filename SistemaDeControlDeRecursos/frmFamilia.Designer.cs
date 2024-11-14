@@ -45,10 +45,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(327, 9);
+            this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(363, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 39);
+            this.label1.Size = new System.Drawing.Size(99, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Familia";
             // 

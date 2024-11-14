@@ -136,11 +136,11 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(242, 9);
+            this.label1.Location = new System.Drawing.Point(290, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(358, 54);
+            this.label1.Size = new System.Drawing.Size(256, 54);
             this.label1.TabIndex = 20;
             this.label1.Text = "Ajuste de Inventario";
             // 
