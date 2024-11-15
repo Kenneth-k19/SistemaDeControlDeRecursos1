@@ -67,7 +67,7 @@ namespace SistemaDeControlDeRecursos
 
             if (frmLogin.getConectado)
             {
-                this.conexion = frmLogin.getConexion;
+               // this.conexion = frmLogin.getConexion;
                 this.dtAccesos = frmLogin.getAccesos;
             }
             else

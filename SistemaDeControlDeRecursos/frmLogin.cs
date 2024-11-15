@@ -13,7 +13,7 @@ namespace SistemaDeControlDeRecursos
 {
     public partial class frmLogin : Form
     {
-        private SqlConnection conexion;
+       // private SqlConnection conexion;
         private bool conectado;
         private SqlDataAdapter adpAutenticacion;
         private DataTable dtAutenticacion;
@@ -23,10 +23,10 @@ namespace SistemaDeControlDeRecursos
 
         int m, mx, my;
 
-        public SqlConnection getConexion
+       /* public SqlConnection getConexion
         {
             get { return this.conexion; }
-        }
+        }*/
 
         public bool getConectado
         {
@@ -46,7 +46,7 @@ namespace SistemaDeControlDeRecursos
         public frmLogin()
         {
             InitializeComponent();
-            conexion = new SqlConnection();
+       //     conexion = new SqlConnection();
             dtAutenticacion = new DataTable();
             dtAccesos = new DataTable();
         }
@@ -135,7 +135,7 @@ namespace SistemaDeControlDeRecursos
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            try
+            try 
             {
                 label2.Text = "";
                 if (this.validarBlancos())
@@ -143,12 +143,15 @@ namespace SistemaDeControlDeRecursos
                     return;
                 }
 
-                String url = "Server=" + "3.128.144.165" + "; Database=" + "DB20172001423"
+                DBAccess NewConnection = new DBAccess();
+                NewConnection.getDBConnection();
+
+                /*String url = "Server=" + "3.128.144.165" + "; Database=" + "DB20172001423"
                              + "; UID=" + "brandon.portan" + "; PWD=" + "BP20172001423" + ";";
 
-                conexion.ConnectionString = url;
+                conexion.ConnectionString = url;*/
 
-                adpAutenticacion = new SqlDataAdapter("spAutenticarUsuario", conexion);
+                adpAutenticacion = new SqlDataAdapter("spAutenticarUsuario", DBAccess.conn);
                 adpAutenticacion.SelectCommand.CommandType = CommandType.StoredProcedure;
                 adpAutenticacion.SelectCommand.Parameters.AddWithValue("@codigo", txtUsuario.Text);
                 adpAutenticacion.SelectCommand.Parameters.AddWithValue("@contrasena", txtContrasena.Text);
@@ -160,7 +163,7 @@ namespace SistemaDeControlDeRecursos
                     conectado = true;
                     this.usuarioID = (int)dtAutenticacion.Rows[0][0];
 
-                    adpAutenticacion = new SqlDataAdapter("spObtenerAcceso", conexion);
+                    adpAutenticacion = new SqlDataAdapter("spObtenerAcceso", DBAccess.conn);
                     adpAutenticacion.SelectCommand.CommandType = CommandType.StoredProcedure;
                     adpAutenticacion.SelectCommand.Parameters.AddWithValue("@usuarioid", this.usuarioID);
 
