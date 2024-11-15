@@ -212,6 +212,7 @@
             // flpLeftPanel
             // 
             this.flpLeftPanel.AutoScroll = true;
+            this.flpLeftPanel.AutoScrollMargin = new System.Drawing.Size(100, 0);
             this.flpLeftPanel.Controls.Add(this.panel1);
             this.flpLeftPanel.Controls.Add(this.flpInventario);
             this.flpLeftPanel.Controls.Add(this.flowLayoutPanel1);
@@ -231,7 +232,7 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 154);
+            this.panel1.Size = new System.Drawing.Size(224, 154);
             this.panel1.TabIndex = 10;
             // 
             // flpInventario
