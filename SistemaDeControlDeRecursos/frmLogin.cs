@@ -42,7 +42,7 @@ namespace SistemaDeControlDeRecursos
         {
             get { return dtAccesos; }
         }
-
+        
         public frmLogin()
         {
             InitializeComponent();
@@ -143,31 +143,41 @@ namespace SistemaDeControlDeRecursos
                     return;
                 }
 
-                DBAccess NewConnection = new DBAccess();
-                NewConnection.getDBConnection();
+
 
                 /*String url = "Server=" + "3.128.144.165" + "; Database=" + "DB20172001423"
                              + "; UID=" + "brandon.portan" + "; PWD=" + "BP20172001423" + ";";
 
                 conexion.ConnectionString = url;*/
 
-                adpAutenticacion = new SqlDataAdapter("spAutenticarUsuario", DBAccess.conn);
-                adpAutenticacion.SelectCommand.CommandType = CommandType.StoredProcedure;
-                adpAutenticacion.SelectCommand.Parameters.AddWithValue("@codigo", txtUsuario.Text);
-                adpAutenticacion.SelectCommand.Parameters.AddWithValue("@contrasena", txtContrasena.Text);
 
-                adpAutenticacion.Fill(dtAutenticacion);
+                dtAutenticacion = DBAccess.getSelectCommandDT("spAutenticarUsuario",new Dictionary<string, (object valor, ParameterDirection? direccion)>
+                {
+                    {"@codigo", (txtUsuario.Text, null) },
+                    {"@contrasena", (txtContrasena.Text, null) }
+                } );
+                //adpAutenticacion = new SqlDataAdapter("spAutenticarUsuario", DBAccess.getDBConnection);
+                //adpAutenticacion.SelectCommand.CommandType = CommandType.StoredProcedure;
+                //adpAutenticacion.SelectCommand.Parameters.AddWithValue("@codigo", txtUsuario.Text);
+                //adpAutenticacion.SelectCommand.Parameters.AddWithValue("@contrasena", txtContrasena.Text);
+
+                //adpAutenticacion.Fill(dtAutenticacion);X
 
                 if (dtAutenticacion.Rows.Count > 0)
                 {
                     conectado = true;
                     this.usuarioID = (int)dtAutenticacion.Rows[0][0];
 
-                    adpAutenticacion = new SqlDataAdapter("spObtenerAcceso", DBAccess.conn);
-                    adpAutenticacion.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    adpAutenticacion.SelectCommand.Parameters.AddWithValue("@usuarioid", this.usuarioID);
+                    dtAccesos = DBAccess.getSelectCommandDT("spObtenerAcceso", new Dictionary<string, (object valor, ParameterDirection? direccion)>
+                    {
+                        {"@usuarioid", (this.usuarioID, null) }
+                    });
 
-                    adpAutenticacion.Fill(dtAccesos);
+                    //adpAutenticacion = new SqlDataAdapter("spObtenerAcceso", DBAccess.getDBConnection);
+                    //adpAutenticacion.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    //adpAutenticacion.SelectCommand.Parameters.AddWithValue("@usuarioid", this.usuarioID);
+
+                    //adpAutenticacion.Fill(dtAccesos);
                 }
                 else
                 {
