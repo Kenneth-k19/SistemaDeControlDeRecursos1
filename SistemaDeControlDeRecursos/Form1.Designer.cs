@@ -143,6 +143,7 @@
             this.btnArticulos.TabIndex = 4;
             this.btnArticulos.Text = "Artículos";
             this.btnArticulos.UseVisualStyleBackColor = true;
+            this.btnArticulos.Visible = false;
             this.btnArticulos.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnInventario
@@ -163,6 +164,7 @@
             this.btnInventario.Text = "        Inventario";
             this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Visible = false;
             this.btnInventario.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlTopPanel
@@ -237,6 +239,7 @@
             // 
             // flpInventario
             // 
+            this.flpInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(19)))), ((int)(((byte)(66)))));
             this.flpInventario.Controls.Add(this.btnInventario);
             this.flpInventario.Controls.Add(this.btnArticulos);
             this.flpInventario.Controls.Add(this.btnCierrePeriodo);
@@ -266,6 +269,7 @@
             this.btnCierrePeriodo.TabIndex = 5;
             this.btnCierrePeriodo.Text = "Cierre del Periodo";
             this.btnCierrePeriodo.UseVisualStyleBackColor = true;
+            this.btnCierrePeriodo.Visible = false;
             this.btnCierrePeriodo.Click += new System.EventHandler(this.btnCierrePeriodo_Click);
             // 
             // btnAjusteInventario
@@ -282,6 +286,7 @@
             this.btnAjusteInventario.TabIndex = 6;
             this.btnAjusteInventario.Text = "Ajuste de Inventario";
             this.btnAjusteInventario.UseVisualStyleBackColor = true;
+            this.btnAjusteInventario.Visible = false;
             this.btnAjusteInventario.Click += new System.EventHandler(this.btnAjusteInventario_Click);
             // 
             // btnMovimientos
@@ -298,6 +303,7 @@
             this.btnMovimientos.TabIndex = 7;
             this.btnMovimientos.Text = "Movimientos";
             this.btnMovimientos.UseVisualStyleBackColor = true;
+            this.btnMovimientos.Visible = false;
             this.btnMovimientos.Click += new System.EventHandler(this.btnMovimientos_Click);
             // 
             // btnFamilia
@@ -314,6 +320,7 @@
             this.btnFamilia.TabIndex = 9;
             this.btnFamilia.Text = "Familia";
             this.btnFamilia.UseVisualStyleBackColor = true;
+            this.btnFamilia.Visible = false;
             this.btnFamilia.Click += new System.EventHandler(this.btnFamilia_Click);
             // 
             // btnConsumos
@@ -330,6 +337,7 @@
             this.btnConsumos.TabIndex = 10;
             this.btnConsumos.Text = "Consumos por Platillo";
             this.btnConsumos.UseVisualStyleBackColor = true;
+            this.btnConsumos.Visible = false;
             this.btnConsumos.Click += new System.EventHandler(this.btnConsumos_Click);
             // 
             // btnReporte1
@@ -346,10 +354,12 @@
             this.btnReporte1.TabIndex = 8;
             this.btnReporte1.Text = "Reporte 1";
             this.btnReporte1.UseVisualStyleBackColor = true;
+            this.btnReporte1.Visible = false;
             this.btnReporte1.Click += new System.EventHandler(this.btnReporte1_Click);
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(19)))), ((int)(((byte)(66)))));
             this.flowLayoutPanel1.Controls.Add(this.btnFacturacion);
             this.flowLayoutPanel1.Controls.Add(this.btnFacturas);
             this.flowLayoutPanel1.Controls.Add(this.btnReporte5);
@@ -377,6 +387,7 @@
             this.btnFacturacion.TabIndex = 3;
             this.btnFacturacion.Text = "Facturacion";
             this.btnFacturacion.UseVisualStyleBackColor = true;
+            this.btnFacturacion.Visible = false;
             this.btnFacturacion.Click += new System.EventHandler(this.btnFacturacion_Click);
             // 
             // btnFacturas
@@ -393,6 +404,7 @@
             this.btnFacturas.TabIndex = 11;
             this.btnFacturas.Text = "Facturas";
             this.btnFacturas.UseVisualStyleBackColor = true;
+            this.btnFacturas.Visible = false;
             this.btnFacturas.Click += new System.EventHandler(this.btnFacturas_Click);
             // 
             // btnReporte5
@@ -409,6 +421,7 @@
             this.btnReporte5.TabIndex = 8;
             this.btnReporte5.Text = "Reporte 5";
             this.btnReporte5.UseVisualStyleBackColor = true;
+            this.btnReporte5.Visible = false;
             // 
             // btnReporte6
             // 
@@ -424,6 +437,7 @@
             this.btnReporte6.TabIndex = 12;
             this.btnReporte6.Text = "Reporte 6";
             this.btnReporte6.UseVisualStyleBackColor = true;
+            this.btnReporte6.Visible = false;
             // 
             // btnReporte7
             // 
@@ -439,9 +453,11 @@
             this.btnReporte7.TabIndex = 13;
             this.btnReporte7.Text = "Reporte 7";
             this.btnReporte7.UseVisualStyleBackColor = true;
+            this.btnReporte7.Visible = false;
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(19)))), ((int)(((byte)(66)))));
             this.flowLayoutPanel2.Controls.Add(this.btnComprasModulo);
             this.flowLayoutPanel2.Controls.Add(this.btnProveedores);
             this.flowLayoutPanel2.Controls.Add(this.btnCompras);
@@ -471,6 +487,7 @@
             this.btnComprasModulo.Text = "        Compras";
             this.btnComprasModulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnComprasModulo.UseVisualStyleBackColor = true;
+            this.btnComprasModulo.Visible = false;
             this.btnComprasModulo.Click += new System.EventHandler(this.btnComprasModulo_Click);
             // 
             // btnProveedores
@@ -487,6 +504,7 @@
             this.btnProveedores.TabIndex = 10;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Visible = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnCompras
@@ -503,6 +521,7 @@
             this.btnCompras.TabIndex = 5;
             this.btnCompras.Text = "Compras";
             this.btnCompras.UseVisualStyleBackColor = true;
+            this.btnCompras.Visible = false;
             this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnReporte8
@@ -519,6 +538,7 @@
             this.btnReporte8.TabIndex = 13;
             this.btnReporte8.Text = "Reporte 8";
             this.btnReporte8.UseVisualStyleBackColor = true;
+            this.btnReporte8.Visible = false;
             // 
             // btnReporte9
             // 
@@ -534,6 +554,7 @@
             this.btnReporte9.TabIndex = 12;
             this.btnReporte9.Text = "Reporte 9";
             this.btnReporte9.UseVisualStyleBackColor = true;
+            this.btnReporte9.Visible = false;
             // 
             // btnReporte10
             // 
@@ -549,9 +570,11 @@
             this.btnReporte10.TabIndex = 8;
             this.btnReporte10.Text = "Reporte 10";
             this.btnReporte10.UseVisualStyleBackColor = true;
+            this.btnReporte10.Visible = false;
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(19)))), ((int)(((byte)(66)))));
             this.flowLayoutPanel3.Controls.Add(this.btnAjustes);
             this.flowLayoutPanel3.Controls.Add(this.btnUsuarios);
             this.flowLayoutPanel3.Controls.Add(this.btnMiPerfil);
@@ -594,6 +617,7 @@
             this.btnUsuarios.TabIndex = 10;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Visible = false;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnMiPerfil
@@ -610,6 +634,7 @@
             this.btnMiPerfil.TabIndex = 15;
             this.btnMiPerfil.Text = "Mi Perfil";
             this.btnMiPerfil.UseVisualStyleBackColor = true;
+            this.btnMiPerfil.Visible = false;
             this.btnMiPerfil.Click += new System.EventHandler(this.btnMiPerfil_Click);
             // 
             // btnSalir

@@ -33,8 +33,9 @@ namespace SistemaDeControlDeRecursos
 
 
         bool checker = true;
+        private DataTable accesos;
 
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -53,8 +54,8 @@ namespace SistemaDeControlDeRecursos
             //pnlTopRec.BackColor = Color.FromArgb(145, 19, 66);
 
             flpInventario.BackColor = Color.FromArgb(175, 50, 90);
-            flowLayoutPanel1.BackColor = Color.FromArgb(175, 50, 90);
-            flowLayoutPanel2.BackColor = Color.FromArgb(175, 50, 90);
+            //flowLayoutPanel1.BackColor = Color.FromArgb(175, 50, 90);
+            //flowLayoutPanel2.BackColor = Color.FromArgb(175, 50, 90);
             flowLayoutPanel3.BackColor = Color.FromArgb(175, 50, 90);
 
             btnInventario.BackColor = Color.FromArgb(145, 19, 66);
@@ -65,6 +66,7 @@ namespace SistemaDeControlDeRecursos
             flpLeftPanel.Controls.SetChildIndex(panel1,0);
             panel1.BackColor = Color.FromArgb(145, 19, 66);
 
+            //pasamos los valores que contiene el datatable si la conexion tiene exito
             if (frmLogin.getConectado)
             {
                // this.conexion = frmLogin.getConexion;
@@ -74,6 +76,29 @@ namespace SistemaDeControlDeRecursos
             {
                 this.Close();
             }
+
+            //
+            foreach(DataRow row in dtAccesos.Rows)
+            {
+                string modulo = row["Boton Modulo"].ToString();
+                string opcion = row["Boton Formulario"].ToString();
+
+                Button botonModulo = this.Controls.Find($"{modulo.Replace(" ", "")}", true).FirstOrDefault() as Button;
+
+                if (botonModulo != null)
+                {
+                    botonModulo.Visible = true;
+                }
+
+                Button botonOpcion = this.Controls.Find($"{opcion.Replace(" ","")}", true).FirstOrDefault() as  Button;
+
+                if(botonOpcion != null)
+                {
+                    botonOpcion.Visible = true;
+                }
+            }
+
+            
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
@@ -111,8 +136,6 @@ namespace SistemaDeControlDeRecursos
         private void button1_Click(object sender, EventArgs e)
         {
             menuTransition.Start();
-            
-
         }
 
         private void flpLeftPanel_Paint(object sender, PaintEventArgs e)
