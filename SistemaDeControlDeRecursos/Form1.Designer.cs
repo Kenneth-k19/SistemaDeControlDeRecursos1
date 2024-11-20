@@ -162,6 +162,7 @@
             this.btnInventario.Size = new System.Drawing.Size(227, 60);
             this.btnInventario.TabIndex = 3;
             this.btnInventario.Text = "        Inventario";
+            this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInventario.UseVisualStyleBackColor = true;
             this.btnInventario.Visible = false;
@@ -385,7 +386,7 @@
             this.btnFacturacion.Name = "btnFacturacion";
             this.btnFacturacion.Size = new System.Drawing.Size(227, 60);
             this.btnFacturacion.TabIndex = 3;
-            this.btnFacturacion.Text = "Facturacion";
+            this.btnFacturacion.Text = "       Facturacion";
             this.btnFacturacion.UseVisualStyleBackColor = true;
             this.btnFacturacion.Visible = false;
             this.btnFacturacion.Click += new System.EventHandler(this.btnFacturacion_Click);
@@ -599,7 +600,7 @@
             this.btnAjustes.Name = "btnAjustes";
             this.btnAjustes.Size = new System.Drawing.Size(227, 60);
             this.btnAjustes.TabIndex = 14;
-            this.btnAjustes.Text = "Ajustes";
+            this.btnAjustes.Text = " Ajustes";
             this.btnAjustes.UseVisualStyleBackColor = true;
             this.btnAjustes.Click += new System.EventHandler(this.btnAjustes_Click);
             // 
