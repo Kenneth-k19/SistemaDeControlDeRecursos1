@@ -183,6 +183,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\forms\frmResumenVentasAnual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmResumenVentasAnual.Designer.cs">
+      <DependentUpon>frmResumenVentasAnual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\forms\rvPlantilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,7 @@
     <EmbeddedResource Include="Reportes\forms\rvPlantilla.resx">
       <DependentUpon>rvPlantilla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rdlc\rptResumenVentasAnual.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\PlantillaColores.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\Report1.rdlc" />
     <None Include="DB20172001423DataSet.xsc">
