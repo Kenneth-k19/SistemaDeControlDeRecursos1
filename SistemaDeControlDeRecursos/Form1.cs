@@ -551,8 +551,8 @@ namespace SistemaDeControlDeRecursos
 
         private void btnReporte1_Click(object sender, EventArgs e)
         {
-            rpPlantilla rp = new rpPlantilla();
-            rp.ShowDialog();
+            rvPlantilla rv = new rvPlantilla();
+            rv.ShowDialog();
         }
 
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)

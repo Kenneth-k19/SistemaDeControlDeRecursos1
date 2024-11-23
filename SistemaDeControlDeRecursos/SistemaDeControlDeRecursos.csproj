@@ -183,11 +183,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\forms\rpPlantilla.cs">
+    <Compile Include="Reportes\forms\rvPlantilla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\forms\rpPlantilla.Designer.cs">
-      <DependentUpon>rpPlantilla.cs</DependentUpon>
+    <Compile Include="Reportes\forms\rvPlantilla.Designer.cs">
+      <DependentUpon>rvPlantilla.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -254,9 +254,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\forms\rpPlantilla.resx">
-      <DependentUpon>rpPlantilla.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\forms\rvPlantilla.resx">
+      <DependentUpon>rvPlantilla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rdlc\PlantillaColores.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\Report1.rdlc" />
     <None Include="DB20172001423DataSet.xsc">
       <DependentUpon>DB20172001423DataSet.xsd</DependentUpon>
