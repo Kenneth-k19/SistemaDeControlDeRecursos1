@@ -14,7 +14,7 @@ namespace SistemaDeControlDeRecursos
 {
     public partial class Form1 : Form
     {
-        private SqlConnection conexion;
+        private SqlConnection conexion = DBAccess.getDBConnection;
         private DataTable dtAccesos;
 
         int m, mx, my; 
@@ -495,7 +495,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (usuarios == null)
             {
-                usuarios = new frmUsuarios();
+                usuarios = new frmUsuarios(conexion);
                 usuarios.FormClosed += Usuarios_FormClosed;
                 usuarios.MdiParent = this;
                 usuarios.Dock = DockStyle.Fill;

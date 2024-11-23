@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,18 @@ namespace SistemaDeControlDeRecursos
 {
     public partial class frmUsuarios : Form
     {
+        SqlConnection con2;
+
         public frmUsuarios()
         {
             InitializeComponent();
+        }
+
+        public frmUsuarios(SqlConnection con)
+        {
+            InitializeComponent();
+
+            con2 = con;
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -24,13 +34,17 @@ namespace SistemaDeControlDeRecursos
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            frmIngresarEditarUsuarios frm = new frmIngresarEditarUsuarios();
+            String nombreBoton = btnInsertar.Text;
+
+            frmIngresarEditarUsuarios frm = new frmIngresarEditarUsuarios(nombreBoton,con2);
             frm.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmIngresarEditarUsuarios frm = new frmIngresarEditarUsuarios();
+            String nombreBoton = btnEditar.Text;
+
+            frmIngresarEditarUsuarios frm = new frmIngresarEditarUsuarios(nombreBoton, con2);
             frm.ShowDialog();
         }
     }
