@@ -16,5 +16,12 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
         {
             InitializeComponent();
         }
+
+        private void frmResumenVentasAnual_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
+        }
     }
 }
