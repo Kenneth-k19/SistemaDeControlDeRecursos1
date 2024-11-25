@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,8 +12,6 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,23 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -67,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB20172001423DataSet.cs">
+      <DependentUpon>DB20172001423DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DB20172001423DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -183,42 +183,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\dataSets\dsDetalleVentasDiario.Designer.cs">
+    <Compile Include="Reportes\dataSets\dsComparativoVentasPorTipo.cs">
+      <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsComparativoVentasPorTipo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsDetalleVentasDiario.xsd</DependentUpon>
+      <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\dataSets\dsProcDaniel.cs">
-      <DependentUpon>dsProcDaniel.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\dataSets\dsProcDaniel.Designer.cs">
+    <Compile Include="Reportes\dataSets\dsRpActividadPorUsuario.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsProcDaniel.xsd</DependentUpon>
+      <DependentUpon>dsRpActividadPorUsuario.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\dataSets\dsResumenVentasAnual.cs">
-      <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\dataSets\dsResumenVentasAnual.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\dataSets\dsTotalVentasAnual.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsTotalVentasAnual.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\dataSets\dsTotalVentasDiarias.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsTotalVentasDiarias.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\forms\frmDetalleVentasDiario.cs">
+    <Compile Include="Reportes\forms\frmComparativoVentasPorTipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\forms\frmDetalleVentasDiario.Designer.cs">
-      <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
+    <Compile Include="Reportes\forms\frmComparativoVentasPorTipo.Designer.cs">
+      <DependentUpon>frmComparativoVentasPorTipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\forms\frmResumenVentasAnual.cs">
       <SubType>Form</SubType>
@@ -226,18 +208,13 @@
     <Compile Include="Reportes\forms\frmResumenVentasAnual.Designer.cs">
       <DependentUpon>frmResumenVentasAnual.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\forms\rpDaniel\frmMovimientosInvenatio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\forms\rpDaniel\frmMovimientosInvenatio.Designer.cs">
-      <DependentUpon>frmMovimientosInvenatio.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\forms\rvPlantilla.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\forms\rvPlantilla.Designer.cs">
       <DependentUpon>rvPlantilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,21 +279,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\forms\frmDetalleVentasDiario.resx">
-      <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\forms\frmComparativoVentasPorTipo.resx">
+      <DependentUpon>frmComparativoVentasPorTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\forms\frmResumenVentasAnual.resx">
       <DependentUpon>frmResumenVentasAnual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\forms\rpDaniel\frmMovimientosInvenatio.resx">
-      <DependentUpon>frmMovimientosInvenatio.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\forms\rvPlantilla.resx">
       <DependentUpon>rvPlantilla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rdlc\rpMovimientosInventario.rdlc" />
-    <EmbeddedResource Include="Reportes\rdlc\rpConsumoAnormalArticulos.rdlc" />
-    <EmbeddedResource Include="Reportes\rdlc\rptDetalleVentasDiario.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlc\rpComparativoVentasPorTipo.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rptResumenVentasAnual.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\PlantillaColores.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\Report1.rdlc" />
@@ -346,60 +318,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Reportes\dataSets\dsDetalleVentasDiario.xsc">
-      <DependentUpon>dsDetalleVentasDiario.xsd</DependentUpon>
+    <None Include="Reportes\dataSets\dsComparativoVentasPorTipo.xsc">
+      <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\dataSets\dsDetalleVentasDiario.xsd">
+    <None Include="Reportes\dataSets\dsComparativoVentasPorTipo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsDetalleVentasDiario.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsComparativoVentasPorTipo.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reportes\dataSets\dsDetalleVentasDiario.xss">
-      <DependentUpon>dsDetalleVentasDiario.xsd</DependentUpon>
+    <None Include="Reportes\dataSets\dsComparativoVentasPorTipo.xss">
+      <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\dataSets\dsProcDaniel.xsc">
-      <DependentUpon>dsProcDaniel.xsd</DependentUpon>
+    <None Include="Reportes\dataSets\dsRpActividadPorUsuario.xsc">
+      <DependentUpon>dsRpActividadPorUsuario.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\dataSets\dsProcDaniel.xsd">
+    <None Include="Reportes\dataSets\dsRpActividadPorUsuario.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsProcDaniel.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsRpActividadPorUsuario.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reportes\dataSets\dsProcDaniel.xss">
-      <DependentUpon>dsProcDaniel.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dataSets\dsResumenVentasAnual.xsc">
-      <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dataSets\dsResumenVentasAnual.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsResumenVentasAnual.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\dataSets\dsResumenVentasAnual.xss">
-      <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dataSets\dsTotalVentasAnual.xsc">
-      <DependentUpon>dsTotalVentasAnual.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dataSets\dsTotalVentasAnual.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsTotalVentasAnual.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\dataSets\dsTotalVentasAnual.xss">
-      <DependentUpon>dsTotalVentasAnual.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dataSets\dsTotalVentasDiarias.xsc">
-      <DependentUpon>dsTotalVentasDiarias.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\dataSets\dsTotalVentasDiarias.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsTotalVentasDiarias.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\dataSets\dsTotalVentasDiarias.xss">
-      <DependentUpon>dsTotalVentasDiarias.xsd</DependentUpon>
+    <None Include="Reportes\dataSets\dsRpActividadPorUsuario.xss">
+      <DependentUpon>dsRpActividadPorUsuario.xsd</DependentUpon>
     </None>
     <None Include="Resources\FravahLogo.png" />
   </ItemGroup>
@@ -427,12 +366,21 @@
   <ItemGroup>
     <None Include="Resources\expandir-ventana.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
-  </Target>
 </Project>
