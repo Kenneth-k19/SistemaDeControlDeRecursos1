@@ -237,10 +237,6 @@
     <Compile Include="Reportes\forms\frmDetalleVentasDiario.Designer.cs">
       <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\forms\frmMovimientosInvenatio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\forms\frmMovimientosInvenatio.Designer.cs" />
     <Compile Include="Reportes\forms\frmResumenVentasAnual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,7 +322,6 @@
     <EmbeddedResource Include="Reportes\forms\frmDetalleVentasDiario.resx">
       <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\forms\frmMovimientosInvenatio.resx" />
     <EmbeddedResource Include="Reportes\forms\frmResumenVentasAnual.resx">
       <DependentUpon>frmResumenVentasAnual.cs</DependentUpon>
     </EmbeddedResource>
