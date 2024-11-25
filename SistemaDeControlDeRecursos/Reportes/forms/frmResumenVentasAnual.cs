@@ -21,7 +21,7 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
         {
 
             this.reportViewer1.RefreshReport();
-            this.reportViewer2.RefreshReport();
+            //this.reportViewer2.RefreshReport();
         }
     }
 }
