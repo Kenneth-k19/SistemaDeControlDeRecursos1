@@ -554,7 +554,7 @@ namespace SistemaDeControlDeRecursos
 
         private void btnReporte1_Click(object sender, EventArgs e)
         {
-            rvPlantilla rv = new rvPlantilla();
+            frmMovimientosInventario rv = new Reportes.forms.frmMovimientosInventario();
             rv.ShowDialog();
         }
 
