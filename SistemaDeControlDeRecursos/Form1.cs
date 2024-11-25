@@ -567,6 +567,18 @@ namespace SistemaDeControlDeRecursos
             frm.ShowDialog();
         }
 
+        private void btnReporte8_Click(object sender, EventArgs e)
+        {
+            frmRpComprasPorPeriodo frm = new frmRpComprasPorPeriodo();
+            frm.ShowDialog();
+        }
+
+        private void btnReporte9_Click(object sender, EventArgs e)
+        {
+            frmRpPedidosADomicilio frm = new frmRpPedidosADomicilio();
+            frm.ShowDialog();
+        }
+
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)
         {
             //miPerfil = null;

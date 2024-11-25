@@ -21,7 +21,9 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 
         private void frmDetalleVentasDiario_Load(object sender, EventArgs e)
         {
-            
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.MinDate = new DateTime(DateTime.Now.Year, 1, 1);
+            dateTimePicker1.MaxDate = new DateTime(DateTime.Now.Year, 12, 31);
         }
 
         private void button1_Click(object sender, EventArgs e)

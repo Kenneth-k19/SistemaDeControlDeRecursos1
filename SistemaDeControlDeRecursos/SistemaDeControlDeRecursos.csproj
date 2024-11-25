@@ -183,10 +183,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\dataSets\dsComprasPorPeriodo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsComprasPorPeriodo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dataSets\dsDetalleVentasDiario.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDetalleVentasDiario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsPedidosADomicilio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPedidosADomicilio.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\dataSets\dsResumenVentasAnual.cs">
       <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
@@ -217,6 +227,18 @@
     </Compile>
     <Compile Include="Reportes\forms\frmResumenVentasAnual.Designer.cs">
       <DependentUpon>frmResumenVentasAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\forms\frmRpComprasPorPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmRpComprasPorPeriodo.Designer.cs">
+      <DependentUpon>frmRpComprasPorPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\forms\frmRpPedidosADomicilio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmRpPedidosADomicilio.Designer.cs">
+      <DependentUpon>frmRpPedidosADomicilio.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\forms\rvPlantilla.cs">
       <SubType>Form</SubType>
@@ -295,9 +317,17 @@
     <EmbeddedResource Include="Reportes\forms\frmResumenVentasAnual.resx">
       <DependentUpon>frmResumenVentasAnual.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\forms\frmRpComprasPorPeriodo.resx">
+      <DependentUpon>frmRpComprasPorPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\forms\frmRpPedidosADomicilio.resx">
+      <DependentUpon>frmRpPedidosADomicilio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\forms\rvPlantilla.resx">
       <DependentUpon>rvPlantilla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rdlc\rpComprasPorPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlc\rpPedidosADomicilio.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rptDetalleVentasDiario.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rptResumenVentasAnual.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\PlantillaColores.rdlc" />
@@ -328,6 +358,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reportes\dataSets\dsComprasPorPeriodo.xsc">
+      <DependentUpon>dsComprasPorPeriodo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsComprasPorPeriodo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsComprasPorPeriodo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsComprasPorPeriodo.xss">
+      <DependentUpon>dsComprasPorPeriodo.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\dataSets\dsDetalleVentasDiario.xsc">
       <DependentUpon>dsDetalleVentasDiario.xsd</DependentUpon>
     </None>
@@ -338,6 +379,17 @@
     </None>
     <None Include="Reportes\dataSets\dsDetalleVentasDiario.xss">
       <DependentUpon>dsDetalleVentasDiario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsPedidosADomicilio.xsc">
+      <DependentUpon>dsPedidosADomicilio.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsPedidosADomicilio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPedidosADomicilio.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsPedidosADomicilio.xss">
+      <DependentUpon>dsPedidosADomicilio.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dataSets\dsResumenVentasAnual.xsc">
       <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
