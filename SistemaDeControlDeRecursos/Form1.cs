@@ -567,6 +567,12 @@ namespace SistemaDeControlDeRecursos
             frm.ShowDialog();
         }
 
+        private void btnReporte7_Click(object sender, EventArgs e)
+        {
+            frmComparativoVentasPorTipo rp = new frmComparativoVentasPorTipo();
+            rp.ShowDialog();
+        }
+
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)
         {
             //miPerfil = null;
