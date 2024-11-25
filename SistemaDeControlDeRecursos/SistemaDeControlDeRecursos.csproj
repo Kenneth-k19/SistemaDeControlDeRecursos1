@@ -183,6 +183,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\dataSets\dsComparativoVentasPorTipo.cs">
+      <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsComparativoVentasPorTipo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsMovimientosDeInventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMovimientosDeInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsRpActividadPorUsuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRpActividadPorUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\forms\frmActividadPorUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmActividadPorUsuario.Designer.cs">
+      <DependentUpon>frmActividadPorUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\forms\frmComparativoVentasPorTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmComparativoVentasPorTipo.Designer.cs">
+      <DependentUpon>frmComparativoVentasPorTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dataSets\dsComprasPorPeriodo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,6 +251,12 @@
     </Compile>
     <Compile Include="Reportes\forms\frmDetalleVentasDiario.Designer.cs">
       <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\forms\frmMovimientosDeInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmMovimientosDeInventario.Designer.cs">
+      <DependentUpon>frmMovimientosDeInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\forms\frmResumenVentasAnual.cs">
       <SubType>Form</SubType>
@@ -311,8 +347,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\forms\frmActividadPorUsuario.resx">
+      <DependentUpon>frmActividadPorUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\forms\frmComparativoVentasPorTipo.resx">
+      <DependentUpon>frmComparativoVentasPorTipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\forms\frmDetalleVentasDiario.resx">
       <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\forms\frmMovimientosDeInventario.resx">
+      <DependentUpon>frmMovimientosDeInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\forms\frmResumenVentasAnual.resx">
       <DependentUpon>frmResumenVentasAnual.cs</DependentUpon>
@@ -326,6 +371,10 @@
     <EmbeddedResource Include="Reportes\forms\rvPlantilla.resx">
       <DependentUpon>rvPlantilla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rdlc\rpActivdadUsuario.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlc\rpComparativoVentasPorTipo.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlc\rpConsumoAnormalArticulos.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlc\rpMovimientosInventario.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rpComprasPorPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rpPedidosADomicilio.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rptDetalleVentasDiario.rdlc" />
@@ -355,6 +404,39 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reportes\dataSets\dsComparativoVentasPorTipo.xsc">
+      <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsComparativoVentasPorTipo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsComparativoVentasPorTipo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsComparativoVentasPorTipo.xss">
+      <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsMovimientosDeInventario.xsc">
+      <DependentUpon>dsMovimientosDeInventario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsMovimientosDeInventario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMovimientosDeInventario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsMovimientosDeInventario.xss">
+      <DependentUpon>dsMovimientosDeInventario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsRpActividadPorUsuario.xsc">
+      <DependentUpon>dsRpActividadPorUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsRpActividadPorUsuario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRpActividadPorUsuario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsRpActividadPorUsuario.xss">
+      <DependentUpon>dsRpActividadPorUsuario.xsd</DependentUpon>
+    </None>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
@@ -424,6 +506,17 @@
     <None Include="Reportes\dataSets\dsTotalVentasDiarias.xss">
       <DependentUpon>dsTotalVentasDiarias.xsd</DependentUpon>
     </None>
+    <None Include="Reportes\dataSets\dsReportesDaniel.xsc">
+      <DependentUpon>dsReportesDaniel.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsReportesDaniel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesDaniel1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\dataSets\dsReportesDaniel.xss">
+      <DependentUpon>dsReportesDaniel.xsd</DependentUpon>
+    </None>
     <None Include="Resources\FravahLogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -465,6 +558,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

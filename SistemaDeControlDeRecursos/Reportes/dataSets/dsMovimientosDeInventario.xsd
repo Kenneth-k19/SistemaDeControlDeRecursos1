@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DB20172001423DataSet" targetNamespace="http://tempuri.org/DB20172001423DataSet.xsd" xmlns:mstns="http://tempuri.org/DB20172001423DataSet.xsd" xmlns="http://tempuri.org/DB20172001423DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="dsMovimientosDeInventario" targetNamespace="http://tempuri.org/dsMovimientosDeInventario.xsd" xmlns:mstns="http://tempuri.org/dsMovimientosDeInventario.xsd" xmlns="http://tempuri.org/dsMovimientosDeInventario.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="rpMovimientosInventarioTableAdapter" GeneratorDataComponentClassName="rpMovimientosInventarioTableAdapter" Name="rpMovimientosInventario" UserDataComponentName="rpMovimientosInventarioTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB20172001423ConnectionString (Settings)" DbObjectName="DB20172001423.dbo.rpMovimientosInventario" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DB20172001423ConnectionString (Settings)" DbObjectName="DB20172001423.dbo.rpMovimientosInventario" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.rpMovimientosInventario</CommandText>
@@ -26,13 +26,13 @@
               <Mapping SourceColumn="Reporte" DataSetColumn="Reporte" />
               <Mapping SourceColumn="Desde" DataSetColumn="Desde" />
               <Mapping SourceColumn="Hasta" DataSetColumn="Hasta" />
-              <Mapping SourceColumn="Codigo Articulo" DataSetColumn="Codigo Articulo" />
+              <Mapping SourceColumn="CodigoArticulo" DataSetColumn="CodigoArticulo" />
               <Mapping SourceColumn="Articulo" DataSetColumn="Articulo" />
-              <Mapping SourceColumn="Fecha Mov" DataSetColumn="Fecha Mov" />
-              <Mapping SourceColumn="Tipo Mov" DataSetColumn="Tipo Mov" />
-              <Mapping SourceColumn="Unidades movidas" DataSetColumn="Unidades movidas" />
+              <Mapping SourceColumn="FechaMov" DataSetColumn="FechaMov" />
+              <Mapping SourceColumn="TipoMov" DataSetColumn="TipoMov" />
+              <Mapping SourceColumn="UnidadesMovidas" DataSetColumn="UnidadesMovidas" />
               <Mapping SourceColumn="Unidad" DataSetColumn="Unidad" />
-              <Mapping SourceColumn="Existencia Previa" DataSetColumn="Existencia Previa" />
+              <Mapping SourceColumn="ExistenciaPrevia" DataSetColumn="ExistenciaPrevia" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -41,7 +41,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DB20172001423DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="DB20172001423DataSet" msprop:Generator_DataSetName="DB20172001423DataSet">
+  <xs:element name="dsMovimientosDeInventario" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="dsMovimientosDeInventario" msprop:Generator_DataSetName="dsMovimientosDeInventario">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="rpMovimientosInventario" msprop:Generator_RowEvHandlerName="rpMovimientosInventarioRowChangeEventHandler" msprop:Generator_RowDeletedName="rpMovimientosInventarioRowDeleted" msprop:Generator_RowDeletingName="rpMovimientosInventarioRowDeleting" msprop:Generator_RowEvArgName="rpMovimientosInventarioRowChangeEvent" msprop:Generator_TablePropName="rpMovimientosInventario" msprop:Generator_RowChangedName="rpMovimientosInventarioRowChanged" msprop:Generator_RowChangingName="rpMovimientosInventarioRowChanging" msprop:Generator_TableClassName="rpMovimientosInventarioDataTable" msprop:Generator_RowClassName="rpMovimientosInventarioRow" msprop:Generator_TableVarName="tablerpMovimientosInventario" msprop:Generator_UserTableName="rpMovimientosInventario">
@@ -56,7 +56,7 @@
               </xs:element>
               <xs:element name="Desde" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Desde" msprop:Generator_ColumnPropNameInTable="DesdeColumn" msprop:Generator_ColumnVarNameInTable="columnDesde" msprop:Generator_UserColumnName="Desde" type="xs:dateTime" minOccurs="0" />
               <xs:element name="Hasta" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Hasta" msprop:Generator_ColumnPropNameInTable="HastaColumn" msprop:Generator_ColumnVarNameInTable="columnHasta" msprop:Generator_UserColumnName="Hasta" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Codigo_x0020_Articulo" msprop:Generator_ColumnPropNameInRow="Codigo_Articulo" msprop:Generator_ColumnPropNameInTable="Codigo_ArticuloColumn" msprop:Generator_ColumnVarNameInTable="columnCodigo_Articulo" msprop:Generator_UserColumnName="Codigo Articulo" type="xs:int" />
+              <xs:element name="CodigoArticulo" msprop:Generator_ColumnPropNameInRow="CodigoArticulo" msprop:Generator_ColumnPropNameInTable="CodigoArticuloColumn" msprop:Generator_ColumnVarNameInTable="columnCodigoArticulo" msprop:Generator_UserColumnName="CodigoArticulo" type="xs:int" />
               <xs:element name="Articulo" msprop:Generator_ColumnPropNameInRow="Articulo" msprop:Generator_ColumnPropNameInTable="ArticuloColumn" msprop:Generator_ColumnVarNameInTable="columnArticulo" msprop:Generator_UserColumnName="Articulo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -64,15 +64,15 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Fecha_x0020_Mov" msprop:Generator_ColumnPropNameInRow="Fecha_Mov" msprop:Generator_ColumnPropNameInTable="Fecha_MovColumn" msprop:Generator_ColumnVarNameInTable="columnFecha_Mov" msprop:Generator_UserColumnName="Fecha Mov" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Tipo_x0020_Mov" msprop:Generator_ColumnPropNameInRow="Tipo_Mov" msprop:Generator_ColumnPropNameInTable="Tipo_MovColumn" msprop:Generator_ColumnVarNameInTable="columnTipo_Mov" msprop:Generator_UserColumnName="Tipo Mov" minOccurs="0">
+              <xs:element name="FechaMov" msprop:Generator_ColumnPropNameInRow="FechaMov" msprop:Generator_ColumnPropNameInTable="FechaMovColumn" msprop:Generator_ColumnVarNameInTable="columnFechaMov" msprop:Generator_UserColumnName="FechaMov" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TipoMov" msprop:Generator_ColumnPropNameInRow="TipoMov" msprop:Generator_ColumnPropNameInTable="TipoMovColumn" msprop:Generator_ColumnVarNameInTable="columnTipoMov" msprop:Generator_UserColumnName="TipoMov" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Unidades_x0020_movidas" msprop:Generator_ColumnPropNameInRow="Unidades_movidas" msprop:Generator_ColumnPropNameInTable="Unidades_movidasColumn" msprop:Generator_ColumnVarNameInTable="columnUnidades_movidas" msprop:Generator_UserColumnName="Unidades movidas" type="xs:int" minOccurs="0" />
+              <xs:element name="UnidadesMovidas" msprop:Generator_ColumnPropNameInRow="UnidadesMovidas" msprop:Generator_ColumnPropNameInTable="UnidadesMovidasColumn" msprop:Generator_ColumnVarNameInTable="columnUnidadesMovidas" msprop:Generator_UserColumnName="UnidadesMovidas" type="xs:int" minOccurs="0" />
               <xs:element name="Unidad" msprop:Generator_ColumnPropNameInRow="Unidad" msprop:Generator_ColumnPropNameInTable="UnidadColumn" msprop:Generator_ColumnVarNameInTable="columnUnidad" msprop:Generator_UserColumnName="Unidad" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -80,7 +80,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Existencia_x0020_Previa" msprop:Generator_ColumnPropNameInRow="Existencia_Previa" msprop:Generator_ColumnPropNameInTable="Existencia_PreviaColumn" msprop:Generator_ColumnVarNameInTable="columnExistencia_Previa" msprop:Generator_UserColumnName="Existencia Previa" type="xs:int" minOccurs="0" />
+              <xs:element name="ExistenciaPrevia" msprop:Generator_ColumnPropNameInRow="ExistenciaPrevia" msprop:Generator_ColumnPropNameInTable="ExistenciaPreviaColumn" msprop:Generator_ColumnVarNameInTable="columnExistenciaPrevia" msprop:Generator_UserColumnName="ExistenciaPrevia" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

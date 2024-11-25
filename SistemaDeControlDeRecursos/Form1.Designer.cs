@@ -199,6 +199,7 @@
             this.label1.Location = new System.Drawing.Point(77, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(374, 41);
             this.label1.Size = new System.Drawing.Size(536, 39);
             this.label1.TabIndex = 10;
             this.label1.Text = "Sistema de Control de Recursos";
@@ -465,6 +466,7 @@
             this.btnReporte7.Text = "Comparativo de ventas por tipo";
             this.btnReporte7.UseVisualStyleBackColor = true;
             this.btnReporte7.Visible = false;
+            this.btnReporte7.Click += new System.EventHandler(this.btnReporte7_Click);
             // 
             // flowLayoutPanel2
             // 

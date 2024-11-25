@@ -493,7 +493,7 @@ namespace SistemaDeControlDeRecursos
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            if (usuarios == null)
+         /*   if (usuarios == null)
             {
                 usuarios = new frmUsuarios(conexion);
                 usuarios.FormClosed += Usuarios_FormClosed;
@@ -504,7 +504,10 @@ namespace SistemaDeControlDeRecursos
             else
             {
                 usuarios.Activate();
-            }
+            }*/
+
+            frmActividadPorUsuario frm = new frmActividadPorUsuario();
+            frm.ShowDialog();
         }
 
         private void Usuarios_FormClosed(object sender, FormClosedEventArgs e)
@@ -551,7 +554,7 @@ namespace SistemaDeControlDeRecursos
 
         private void btnReporte1_Click(object sender, EventArgs e)
         {
-            rvPlantilla rv = new rvPlantilla();
+            frmMovimientosDeInventario rv = new frmMovimientosDeInventario();
             rv.ShowDialog();
         }
 
@@ -565,6 +568,12 @@ namespace SistemaDeControlDeRecursos
         {
             frmDetalleVentasDiario frm = new frmDetalleVentasDiario();
             frm.ShowDialog();
+        }
+
+        private void btnReporte7_Click(object sender, EventArgs e)
+        {
+            frmComparativoVentasPorTipo rp = new frmComparativoVentasPorTipo();
+            rp.ShowDialog();
         }
 
         private void btnReporte8_Click(object sender, EventArgs e)

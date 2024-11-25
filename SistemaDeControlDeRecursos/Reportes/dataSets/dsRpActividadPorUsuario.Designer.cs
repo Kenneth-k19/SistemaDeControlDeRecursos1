@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SistemaDeControlDeRecursos {
+namespace SistemaDeControlDeRecursos.Reportes.dataSets {
     
     
     /// <summary>
@@ -20,19 +20,17 @@ namespace SistemaDeControlDeRecursos {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DB20172001423DataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsRpActividadPorUsuario")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DB20172001423DataSet : global::System.Data.DataSet {
+    public partial class dsRpActividadPorUsuario : global::System.Data.DataSet {
         
-        private rpPruebaConexionDataTable tablerpPruebaConexion;
-        
-        private DataTable1DataTable tableDataTable1;
+        private spRpActividadPorUsuarioDataTable tablespRpActividadPorUsuario;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DB20172001423DataSet() {
+        public dsRpActividadPorUsuario() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +41,7 @@ namespace SistemaDeControlDeRecursos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected DB20172001423DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsRpActividadPorUsuario(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -56,11 +54,8 @@ namespace SistemaDeControlDeRecursos {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["rpPruebaConexion"] != null)) {
-                    base.Tables.Add(new rpPruebaConexionDataTable(ds.Tables["rpPruebaConexion"]));
-                }
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["spRpActividadPorUsuario"] != null)) {
+                    base.Tables.Add(new spRpActividadPorUsuarioDataTable(ds.Tables["spRpActividadPorUsuario"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,19 +79,9 @@ namespace SistemaDeControlDeRecursos {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public rpPruebaConexionDataTable rpPruebaConexion {
+        public spRpActividadPorUsuarioDataTable spRpActividadPorUsuario {
             get {
-                return this.tablerpPruebaConexion;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable1DataTable DataTable1 {
-            get {
-                return this.tableDataTable1;
+                return this.tablespRpActividadPorUsuario;
             }
         }
         
@@ -142,7 +127,7 @@ namespace SistemaDeControlDeRecursos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DB20172001423DataSet cln = ((DB20172001423DataSet)(base.Clone()));
+            dsRpActividadPorUsuario cln = ((dsRpActividadPorUsuario)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -167,11 +152,8 @@ namespace SistemaDeControlDeRecursos {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["rpPruebaConexion"] != null)) {
-                    base.Tables.Add(new rpPruebaConexionDataTable(ds.Tables["rpPruebaConexion"]));
-                }
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["spRpActividadPorUsuario"] != null)) {
+                    base.Tables.Add(new spRpActividadPorUsuarioDataTable(ds.Tables["spRpActividadPorUsuario"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +188,10 @@ namespace SistemaDeControlDeRecursos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablerpPruebaConexion = ((rpPruebaConexionDataTable)(base.Tables["rpPruebaConexion"]));
+            this.tablespRpActividadPorUsuario = ((spRpActividadPorUsuarioDataTable)(base.Tables["spRpActividadPorUsuario"]));
             if ((initTable == true)) {
-                if ((this.tablerpPruebaConexion != null)) {
-                    this.tablerpPruebaConexion.InitVars();
-                }
-            }
-            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
-            if ((initTable == true)) {
-                if ((this.tableDataTable1 != null)) {
-                    this.tableDataTable1.InitVars();
+                if ((this.tablespRpActividadPorUsuario != null)) {
+                    this.tablespRpActividadPorUsuario.InitVars();
                 }
             }
         }
@@ -223,26 +199,18 @@ namespace SistemaDeControlDeRecursos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DB20172001423DataSet";
+            this.DataSetName = "dsRpActividadPorUsuario";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DB20172001423DataSet.xsd";
+            this.Namespace = "http://tempuri.org/dsRpActividadPorUsuario.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablerpPruebaConexion = new rpPruebaConexionDataTable();
-            base.Tables.Add(this.tablerpPruebaConexion);
-            this.tableDataTable1 = new DataTable1DataTable();
-            base.Tables.Add(this.tableDataTable1);
+            this.tablespRpActividadPorUsuario = new spRpActividadPorUsuarioDataTable();
+            base.Tables.Add(this.tablespRpActividadPorUsuario);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializerpPruebaConexion() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeDataTable1() {
+        private bool ShouldSerializespRpActividadPorUsuario() {
             return false;
         }
         
@@ -257,7 +225,7 @@ namespace SistemaDeControlDeRecursos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DB20172001423DataSet ds = new DB20172001423DataSet();
+            dsRpActividadPorUsuario ds = new dsRpActividadPorUsuario();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -302,38 +270,27 @@ namespace SistemaDeControlDeRecursos {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void rpPruebaConexionRowChangeEventHandler(object sender, rpPruebaConexionRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
+        public delegate void spRpActividadPorUsuarioRowChangeEventHandler(object sender, spRpActividadPorUsuarioRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class rpPruebaConexionDataTable : global::System.Data.TypedTableBase<rpPruebaConexionRow> {
+        public partial class spRpActividadPorUsuarioDataTable : global::System.Data.TypedTableBase<spRpActividadPorUsuarioRow> {
             
-            private global::System.Data.DataColumn columnUsuarioID;
+            private global::System.Data.DataColumn columnTipo;
             
             private global::System.Data.DataColumn columnCodigo;
             
-            private global::System.Data.DataColumn columnNombre;
+            private global::System.Data.DataColumn columnFecha;
             
-            private global::System.Data.DataColumn columnIdentidad;
-            
-            private global::System.Data.DataColumn columnAreaID;
-            
-            private global::System.Data.DataColumn columnAccesoID;
-            
-            private global::System.Data.DataColumn columnUsuarioID1;
-            
-            private global::System.Data.DataColumn columnModuloDetID;
+            private global::System.Data.DataColumn columnTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public rpPruebaConexionDataTable() {
-                this.TableName = "rpPruebaConexion";
+            public spRpActividadPorUsuarioDataTable() {
+                this.TableName = "spRpActividadPorUsuario";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -341,7 +298,7 @@ namespace SistemaDeControlDeRecursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal rpPruebaConexionDataTable(global::System.Data.DataTable table) {
+            internal spRpActividadPorUsuarioDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -358,16 +315,16 @@ namespace SistemaDeControlDeRecursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected rpPruebaConexionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected spRpActividadPorUsuarioDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn UsuarioIDColumn {
+            public global::System.Data.DataColumn TipoColumn {
                 get {
-                    return this.columnUsuarioID;
+                    return this.columnTipo;
                 }
             }
             
@@ -381,49 +338,17 @@ namespace SistemaDeControlDeRecursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NombreColumn {
+            public global::System.Data.DataColumn FechaColumn {
                 get {
-                    return this.columnNombre;
+                    return this.columnFecha;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IdentidadColumn {
+            public global::System.Data.DataColumn TotalColumn {
                 get {
-                    return this.columnIdentidad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AreaIDColumn {
-                get {
-                    return this.columnAreaID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AccesoIDColumn {
-                get {
-                    return this.columnAccesoID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn UsuarioID1Column {
-                get {
-                    return this.columnUsuarioID1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ModuloDetIDColumn {
-                get {
-                    return this.columnModuloDetID;
+                    return this.columnTotal;
                 }
             }
             
@@ -438,60 +363,48 @@ namespace SistemaDeControlDeRecursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public rpPruebaConexionRow this[int index] {
+            public spRpActividadPorUsuarioRow this[int index] {
                 get {
-                    return ((rpPruebaConexionRow)(this.Rows[index]));
+                    return ((spRpActividadPorUsuarioRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event rpPruebaConexionRowChangeEventHandler rpPruebaConexionRowChanging;
+            public event spRpActividadPorUsuarioRowChangeEventHandler spRpActividadPorUsuarioRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event rpPruebaConexionRowChangeEventHandler rpPruebaConexionRowChanged;
+            public event spRpActividadPorUsuarioRowChangeEventHandler spRpActividadPorUsuarioRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event rpPruebaConexionRowChangeEventHandler rpPruebaConexionRowDeleting;
+            public event spRpActividadPorUsuarioRowChangeEventHandler spRpActividadPorUsuarioRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event rpPruebaConexionRowChangeEventHandler rpPruebaConexionRowDeleted;
+            public event spRpActividadPorUsuarioRowChangeEventHandler spRpActividadPorUsuarioRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddrpPruebaConexionRow(rpPruebaConexionRow row) {
+            public void AddspRpActividadPorUsuarioRow(spRpActividadPorUsuarioRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public rpPruebaConexionRow AddrpPruebaConexionRow(int UsuarioID, string Codigo, string Nombre, string Identidad, int AreaID, int AccesoID, int UsuarioID1, int ModuloDetID) {
-                rpPruebaConexionRow rowrpPruebaConexionRow = ((rpPruebaConexionRow)(this.NewRow()));
+            public spRpActividadPorUsuarioRow AddspRpActividadPorUsuarioRow(string Tipo, string Codigo, System.DateTime Fecha, double Total) {
+                spRpActividadPorUsuarioRow rowspRpActividadPorUsuarioRow = ((spRpActividadPorUsuarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        UsuarioID,
+                        Tipo,
                         Codigo,
-                        Nombre,
-                        Identidad,
-                        AreaID,
-                        AccesoID,
-                        UsuarioID1,
-                        ModuloDetID};
-                rowrpPruebaConexionRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowrpPruebaConexionRow);
-                return rowrpPruebaConexionRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public rpPruebaConexionRow FindByUsuarioIDAccesoID(int UsuarioID, int AccesoID) {
-                return ((rpPruebaConexionRow)(this.Rows.Find(new object[] {
-                            UsuarioID,
-                            AccesoID})));
+                        Fecha,
+                        Total};
+                rowspRpActividadPorUsuarioRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowspRpActividadPorUsuarioRow);
+                return rowspRpActividadPorUsuarioRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                rpPruebaConexionDataTable cln = ((rpPruebaConexionDataTable)(base.Clone()));
+                spRpActividadPorUsuarioDataTable cln = ((spRpActividadPorUsuarioDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -499,75 +412,57 @@ namespace SistemaDeControlDeRecursos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new rpPruebaConexionDataTable();
+                return new spRpActividadPorUsuarioDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnUsuarioID = base.Columns["UsuarioID"];
+                this.columnTipo = base.Columns["Tipo"];
                 this.columnCodigo = base.Columns["Codigo"];
-                this.columnNombre = base.Columns["Nombre"];
-                this.columnIdentidad = base.Columns["Identidad"];
-                this.columnAreaID = base.Columns["AreaID"];
-                this.columnAccesoID = base.Columns["AccesoID"];
-                this.columnUsuarioID1 = base.Columns["UsuarioID1"];
-                this.columnModuloDetID = base.Columns["ModuloDetID"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columnTotal = base.Columns["Total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnUsuarioID = new global::System.Data.DataColumn("UsuarioID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUsuarioID);
+                this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipo);
                 this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigo);
-                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre);
-                this.columnIdentidad = new global::System.Data.DataColumn("Identidad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdentidad);
-                this.columnAreaID = new global::System.Data.DataColumn("AreaID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAreaID);
-                this.columnAccesoID = new global::System.Data.DataColumn("AccesoID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAccesoID);
-                this.columnUsuarioID1 = new global::System.Data.DataColumn("UsuarioID1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUsuarioID1);
-                this.columnModuloDetID = new global::System.Data.DataColumn("ModuloDetID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnModuloDetID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnUsuarioID,
-                                this.columnAccesoID}, true));
-                this.columnUsuarioID.AllowDBNull = false;
-                this.columnCodigo.MaxLength = 15;
-                this.columnNombre.MaxLength = 50;
-                this.columnIdentidad.MaxLength = 13;
-                this.columnAccesoID.AllowDBNull = false;
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
+                this.columnTipo.MaxLength = 10;
+                this.columnCodigo.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public rpPruebaConexionRow NewrpPruebaConexionRow() {
-                return ((rpPruebaConexionRow)(this.NewRow()));
+            public spRpActividadPorUsuarioRow NewspRpActividadPorUsuarioRow() {
+                return ((spRpActividadPorUsuarioRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new rpPruebaConexionRow(builder);
+                return new spRpActividadPorUsuarioRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(rpPruebaConexionRow);
+                return typeof(spRpActividadPorUsuarioRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.rpPruebaConexionRowChanged != null)) {
-                    this.rpPruebaConexionRowChanged(this, new rpPruebaConexionRowChangeEvent(((rpPruebaConexionRow)(e.Row)), e.Action));
+                if ((this.spRpActividadPorUsuarioRowChanged != null)) {
+                    this.spRpActividadPorUsuarioRowChanged(this, new spRpActividadPorUsuarioRowChangeEvent(((spRpActividadPorUsuarioRow)(e.Row)), e.Action));
                 }
             }
             
@@ -575,8 +470,8 @@ namespace SistemaDeControlDeRecursos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.rpPruebaConexionRowChanging != null)) {
-                    this.rpPruebaConexionRowChanging(this, new rpPruebaConexionRowChangeEvent(((rpPruebaConexionRow)(e.Row)), e.Action));
+                if ((this.spRpActividadPorUsuarioRowChanging != null)) {
+                    this.spRpActividadPorUsuarioRowChanging(this, new spRpActividadPorUsuarioRowChangeEvent(((spRpActividadPorUsuarioRow)(e.Row)), e.Action));
                 }
             }
             
@@ -584,8 +479,8 @@ namespace SistemaDeControlDeRecursos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.rpPruebaConexionRowDeleted != null)) {
-                    this.rpPruebaConexionRowDeleted(this, new rpPruebaConexionRowChangeEvent(((rpPruebaConexionRow)(e.Row)), e.Action));
+                if ((this.spRpActividadPorUsuarioRowDeleted != null)) {
+                    this.spRpActividadPorUsuarioRowDeleted(this, new spRpActividadPorUsuarioRowChangeEvent(((spRpActividadPorUsuarioRow)(e.Row)), e.Action));
                 }
             }
             
@@ -593,14 +488,14 @@ namespace SistemaDeControlDeRecursos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.rpPruebaConexionRowDeleting != null)) {
-                    this.rpPruebaConexionRowDeleting(this, new rpPruebaConexionRowChangeEvent(((rpPruebaConexionRow)(e.Row)), e.Action));
+                if ((this.spRpActividadPorUsuarioRowDeleting != null)) {
+                    this.spRpActividadPorUsuarioRowDeleting(this, new spRpActividadPorUsuarioRowChangeEvent(((spRpActividadPorUsuarioRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoverpPruebaConexionRow(rpPruebaConexionRow row) {
+            public void RemovespRpActividadPorUsuarioRow(spRpActividadPorUsuarioRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -609,7 +504,7 @@ namespace SistemaDeControlDeRecursos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DB20172001423DataSet ds = new DB20172001423DataSet();
+                dsRpActividadPorUsuario ds = new dsRpActividadPorUsuario();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -627,240 +522,7 @@ namespace SistemaDeControlDeRecursos {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "rpPruebaConexionDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1DataTable() {
-                this.TableName = "DataTable1";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DataTable1DataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row this[int index] {
-                get {
-                    return ((DataTable1Row)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddDataTable1Row(DataTable1Row row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row() {
-                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
-                rowDataTable1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable1Row);
-                return rowDataTable1Row;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable1DataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row NewDataTable1Row() {
-                return ((DataTable1Row)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable1Row(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(DataTable1Row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.DataTable1RowChanged != null)) {
-                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.DataTable1RowChanging != null)) {
-                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.DataTable1RowDeleted != null)) {
-                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.DataTable1RowDeleting != null)) {
-                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveDataTable1Row(DataTable1Row row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DB20172001423DataSet ds = new DB20172001423DataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable1DataTable";
+                attribute2.FixedValue = "spRpActividadPorUsuarioDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -904,25 +566,30 @@ namespace SistemaDeControlDeRecursos {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class rpPruebaConexionRow : global::System.Data.DataRow {
+        public partial class spRpActividadPorUsuarioRow : global::System.Data.DataRow {
             
-            private rpPruebaConexionDataTable tablerpPruebaConexion;
+            private spRpActividadPorUsuarioDataTable tablespRpActividadPorUsuario;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal rpPruebaConexionRow(global::System.Data.DataRowBuilder rb) : 
+            internal spRpActividadPorUsuarioRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablerpPruebaConexion = ((rpPruebaConexionDataTable)(this.Table));
+                this.tablespRpActividadPorUsuario = ((spRpActividadPorUsuarioDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int UsuarioID {
+            public string Tipo {
                 get {
-                    return ((int)(this[this.tablerpPruebaConexion.UsuarioIDColumn]));
+                    try {
+                        return ((string)(this[this.tablespRpActividadPorUsuario.TipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tipo\' in table \'spRpActividadPorUsuario\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablerpPruebaConexion.UsuarioIDColumn] = value;
+                    this[this.tablespRpActividadPorUsuario.TipoColumn] = value;
                 }
             }
             
@@ -931,193 +598,95 @@ namespace SistemaDeControlDeRecursos {
             public string Codigo {
                 get {
                     try {
-                        return ((string)(this[this.tablerpPruebaConexion.CodigoColumn]));
+                        return ((string)(this[this.tablespRpActividadPorUsuario.CodigoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Codigo\' in table \'rpPruebaConexion\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Codigo\' in table \'spRpActividadPorUsuario\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpPruebaConexion.CodigoColumn] = value;
+                    this[this.tablespRpActividadPorUsuario.CodigoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nombre {
+            public System.DateTime Fecha {
                 get {
                     try {
-                        return ((string)(this[this.tablerpPruebaConexion.NombreColumn]));
+                        return ((global::System.DateTime)(this[this.tablespRpActividadPorUsuario.FechaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Nombre\' in table \'rpPruebaConexion\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha\' in table \'spRpActividadPorUsuario\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpPruebaConexion.NombreColumn] = value;
+                    this[this.tablespRpActividadPorUsuario.FechaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Identidad {
+            public double Total {
                 get {
                     try {
-                        return ((string)(this[this.tablerpPruebaConexion.IdentidadColumn]));
+                        return ((double)(this[this.tablespRpActividadPorUsuario.TotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Identidad\' in table \'rpPruebaConexion\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'spRpActividadPorUsuario\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpPruebaConexion.IdentidadColumn] = value;
+                    this[this.tablespRpActividadPorUsuario.TotalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int AreaID {
-                get {
-                    try {
-                        return ((int)(this[this.tablerpPruebaConexion.AreaIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AreaID\' in table \'rpPruebaConexion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpPruebaConexion.AreaIDColumn] = value;
-                }
+            public bool IsTipoNull() {
+                return this.IsNull(this.tablespRpActividadPorUsuario.TipoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int AccesoID {
-                get {
-                    return ((int)(this[this.tablerpPruebaConexion.AccesoIDColumn]));
-                }
-                set {
-                    this[this.tablerpPruebaConexion.AccesoIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int UsuarioID1 {
-                get {
-                    try {
-                        return ((int)(this[this.tablerpPruebaConexion.UsuarioID1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UsuarioID1\' in table \'rpPruebaConexion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpPruebaConexion.UsuarioID1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ModuloDetID {
-                get {
-                    try {
-                        return ((int)(this[this.tablerpPruebaConexion.ModuloDetIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ModuloDetID\' in table \'rpPruebaConexion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpPruebaConexion.ModuloDetIDColumn] = value;
-                }
+            public void SetTipoNull() {
+                this[this.tablespRpActividadPorUsuario.TipoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCodigoNull() {
-                return this.IsNull(this.tablerpPruebaConexion.CodigoColumn);
+                return this.IsNull(this.tablespRpActividadPorUsuario.CodigoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCodigoNull() {
-                this[this.tablerpPruebaConexion.CodigoColumn] = global::System.Convert.DBNull;
+                this[this.tablespRpActividadPorUsuario.CodigoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombreNull() {
-                return this.IsNull(this.tablerpPruebaConexion.NombreColumn);
+            public bool IsFechaNull() {
+                return this.IsNull(this.tablespRpActividadPorUsuario.FechaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombreNull() {
-                this[this.tablerpPruebaConexion.NombreColumn] = global::System.Convert.DBNull;
+            public void SetFechaNull() {
+                this[this.tablespRpActividadPorUsuario.FechaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsIdentidadNull() {
-                return this.IsNull(this.tablerpPruebaConexion.IdentidadColumn);
+            public bool IsTotalNull() {
+                return this.IsNull(this.tablespRpActividadPorUsuario.TotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetIdentidadNull() {
-                this[this.tablerpPruebaConexion.IdentidadColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAreaIDNull() {
-                return this.IsNull(this.tablerpPruebaConexion.AreaIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAreaIDNull() {
-                this[this.tablerpPruebaConexion.AreaIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsUsuarioID1Null() {
-                return this.IsNull(this.tablerpPruebaConexion.UsuarioID1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetUsuarioID1Null() {
-                this[this.tablerpPruebaConexion.UsuarioID1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsModuloDetIDNull() {
-                return this.IsNull(this.tablerpPruebaConexion.ModuloDetIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetModuloDetIDNull() {
-                this[this.tablerpPruebaConexion.ModuloDetIDColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class DataTable1Row : global::System.Data.DataRow {
-            
-            private DataTable1DataTable tableDataTable1;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+            public void SetTotalNull() {
+                this[this.tablespRpActividadPorUsuario.TotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1125,56 +694,22 @@ namespace SistemaDeControlDeRecursos {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class rpPruebaConexionRowChangeEvent : global::System.EventArgs {
+        public class spRpActividadPorUsuarioRowChangeEvent : global::System.EventArgs {
             
-            private rpPruebaConexionRow eventRow;
+            private spRpActividadPorUsuarioRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public rpPruebaConexionRowChangeEvent(rpPruebaConexionRow row, global::System.Data.DataRowAction action) {
+            public spRpActividadPorUsuarioRowChangeEvent(spRpActividadPorUsuarioRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public rpPruebaConexionRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class DataTable1RowChangeEvent : global::System.EventArgs {
-            
-            private DataTable1Row eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row Row {
+            public spRpActividadPorUsuarioRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1190,7 +725,7 @@ namespace SistemaDeControlDeRecursos {
         }
     }
 }
-namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
+namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsRpActividadPorUsuarioTableAdapters {
     
     
     /// <summary>
@@ -1202,7 +737,7 @@ namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class rpPruebaConexionTableAdapter : global::System.ComponentModel.Component {
+    public partial class spRpActividadPorUsuarioTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1216,7 +751,7 @@ namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public rpPruebaConexionTableAdapter() {
+        public spRpActividadPorUsuarioTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1313,15 +848,11 @@ namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "rpPruebaConexion";
-            tableMapping.ColumnMappings.Add("UsuarioID", "UsuarioID");
+            tableMapping.DataSetTable = "spRpActividadPorUsuario";
+            tableMapping.ColumnMappings.Add("Tipo", "Tipo");
             tableMapping.ColumnMappings.Add("Codigo", "Codigo");
-            tableMapping.ColumnMappings.Add("Nombre", "Nombre");
-            tableMapping.ColumnMappings.Add("Identidad", "Identidad");
-            tableMapping.ColumnMappings.Add("AreaID", "AreaID");
-            tableMapping.ColumnMappings.Add("AccesoID", "AccesoID");
-            tableMapping.ColumnMappings.Add("UsuarioID1", "UsuarioID1");
-            tableMapping.ColumnMappings.Add("ModuloDetID", "ModuloDetID");
+            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("Total", "Total");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1338,17 +869,38 @@ namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.rpPruebaConexion";
+            this._commandCollection[0].CommandText = "dbo.spRpActividadPorUsuario";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaInicial", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaFinal", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuarioid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DB20172001423DataSet.rpPruebaConexionDataTable dataTable) {
+        public virtual int Fill(dsRpActividadPorUsuario.spRpActividadPorUsuarioDataTable dataTable, global::System.Nullable<global::System.DateTime> fechaInicial, global::System.Nullable<global::System.DateTime> fechaFinal, global::System.Nullable<int> usuarioid) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((fechaInicial.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaInicial.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((fechaFinal.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(fechaFinal.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((usuarioid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(usuarioid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1360,9 +912,27 @@ namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DB20172001423DataSet.rpPruebaConexionDataTable GetData() {
+        public virtual dsRpActividadPorUsuario.spRpActividadPorUsuarioDataTable GetData(global::System.Nullable<global::System.DateTime> fechaInicial, global::System.Nullable<global::System.DateTime> fechaFinal, global::System.Nullable<int> usuarioid) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DB20172001423DataSet.rpPruebaConexionDataTable dataTable = new DB20172001423DataSet.rpPruebaConexionDataTable();
+            if ((fechaInicial.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaInicial.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((fechaFinal.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(fechaFinal.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((usuarioid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(usuarioid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            dsRpActividadPorUsuario.spRpActividadPorUsuarioDataTable dataTable = new dsRpActividadPorUsuario.spRpActividadPorUsuarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1436,7 +1006,7 @@ namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(DB20172001423DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dsRpActividadPorUsuario dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1446,7 +1016,7 @@ namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(DB20172001423DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dsRpActividadPorUsuario dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1456,7 +1026,7 @@ namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(DB20172001423DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dsRpActividadPorUsuario dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1490,7 +1060,7 @@ namespace SistemaDeControlDeRecursos.DB20172001423DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(DB20172001423DataSet dataSet) {
+        public virtual int UpdateAll(dsRpActividadPorUsuario dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

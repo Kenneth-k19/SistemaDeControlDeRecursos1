@@ -1,6 +1,6 @@
 ﻿namespace SistemaDeControlDeRecursos.Reportes.forms
 {
-    partial class frmMovimientosInventario
+    partial class frmComparativoVentasPorTipo
     {
         /// <summary>
         /// Required designer variable.
@@ -40,13 +40,15 @@
             // 
             // reportViewerWnd1
             // 
+            this.reportViewerWnd1.AutoSize = true;
             this.reportViewerWnd1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewerWnd1.LocalReport.ReportEmbeddedResource = "SistemaDeControlDeRecursos.Reportes.rdlc.PlantillaColores.rdlc";
+            this.reportViewerWnd1.DocumentMapWidth = 1;
+            this.reportViewerWnd1.LocalReport.ReportEmbeddedResource = "SistemaDeControlDeRecursos.Reportes.rdlc.rpComparativoVentasPorTipo.rdlc";
             this.reportViewerWnd1.Location = new System.Drawing.Point(285, 0);
             this.reportViewerWnd1.Name = "reportViewerWnd1";
             this.reportViewerWnd1.ServerReport.BearerToken = null;
-            this.reportViewerWnd1.Size = new System.Drawing.Size(555, 610);
-            this.reportViewerWnd1.TabIndex = 0;
+            this.reportViewerWnd1.Size = new System.Drawing.Size(449, 651);
+            this.reportViewerWnd1.TabIndex = 2;
             this.reportViewerWnd1.Visible = false;
             // 
             // panel1
@@ -60,8 +62,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 610);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(285, 651);
+            this.panel1.TabIndex = 3;
             // 
             // label2
             // 
@@ -71,10 +73,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
             this.label2.Location = new System.Drawing.Point(32, 301);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 25);
+            this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Fin de Periodo";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Text = "Fecha Final";
             // 
             // label1
             // 
@@ -84,10 +85,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
             this.label1.Location = new System.Drawing.Point(32, 206);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 25);
+            this.label1.Size = new System.Drawing.Size(121, 25);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Inicio de Periodo";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Fecha Inicial";
             // 
             // generarReporte
             // 
@@ -103,6 +103,7 @@
             this.generarReporte.TabIndex = 2;
             this.generarReporte.Text = "Generar Reporte";
             this.generarReporte.UseVisualStyleBackColor = true;
+            this.generarReporte.Click += new System.EventHandler(this.generarReporte_Click);
             // 
             // fechaFinPicker
             // 
@@ -122,19 +123,20 @@
             this.fechaInicioPicker.Size = new System.Drawing.Size(143, 28);
             this.fechaInicioPicker.TabIndex = 0;
             // 
-            // rvPlantilla
+            // frmComparativoVentasPorTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 610);
+            this.ClientSize = new System.Drawing.Size(734, 651);
             this.Controls.Add(this.reportViewerWnd1);
             this.Controls.Add(this.panel1);
-            this.Name = "rvPlantilla";
-            this.Text = "Plantilla";
-            this.Load += new System.EventHandler(this.Plantilla_Load);
+            this.Name = "frmComparativoVentasPorTipo";
+            this.Text = "frmComparativoVentasPorTipocs";
+            this.Load += new System.EventHandler(this.frmComparativoVentasPorTipocs_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -142,10 +144,10 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerWnd1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button generarReporte;
         private System.Windows.Forms.DateTimePicker fechaFinPicker;
         private System.Windows.Forms.DateTimePicker fechaInicioPicker;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }

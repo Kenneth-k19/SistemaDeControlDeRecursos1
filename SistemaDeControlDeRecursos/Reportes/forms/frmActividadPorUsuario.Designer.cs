@@ -1,6 +1,6 @@
 ﻿namespace SistemaDeControlDeRecursos.Reportes.forms
 {
-    partial class frmMovimientosInventario
+    partial class frmActividadPorUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,8 @@
         {
             this.reportViewerWnd1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboUsuario = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.generarReporte = new System.Windows.Forms.Button();
@@ -41,17 +43,19 @@
             // reportViewerWnd1
             // 
             this.reportViewerWnd1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewerWnd1.LocalReport.ReportEmbeddedResource = "SistemaDeControlDeRecursos.Reportes.rdlc.PlantillaColores.rdlc";
+            this.reportViewerWnd1.LocalReport.ReportEmbeddedResource = "SistemaDeControlDeRecursos.Reportes.rdlc.rpActivdadUsuario.rdlc";
             this.reportViewerWnd1.Location = new System.Drawing.Point(285, 0);
             this.reportViewerWnd1.Name = "reportViewerWnd1";
             this.reportViewerWnd1.ServerReport.BearerToken = null;
-            this.reportViewerWnd1.Size = new System.Drawing.Size(555, 610);
-            this.reportViewerWnd1.TabIndex = 0;
+            this.reportViewerWnd1.Size = new System.Drawing.Size(524, 665);
+            this.reportViewerWnd1.TabIndex = 2;
             this.reportViewerWnd1.Visible = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(140)))), ((int)(((byte)(69)))));
+            this.panel1.Controls.Add(this.comboUsuario);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.generarReporte);
@@ -60,8 +64,28 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 610);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(285, 665);
+            this.panel1.TabIndex = 3;
+            // 
+            // comboUsuario
+            // 
+            this.comboUsuario.FormattingEnabled = true;
+            this.comboUsuario.Location = new System.Drawing.Point(32, 442);
+            this.comboUsuario.Name = "comboUsuario";
+            this.comboUsuario.Size = new System.Drawing.Size(220, 24);
+            this.comboUsuario.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
+            this.label3.Location = new System.Drawing.Point(32, 403);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Usuario";
             // 
             // label2
             // 
@@ -74,7 +98,6 @@
             this.label2.Size = new System.Drawing.Size(138, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fin de Periodo";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -84,10 +107,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
             this.label1.Location = new System.Drawing.Point(32, 206);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 25);
+            this.label1.Size = new System.Drawing.Size(144, 25);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Inicio de Periodo";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Fecha de Inicio";
             // 
             // generarReporte
             // 
@@ -103,6 +125,7 @@
             this.generarReporte.TabIndex = 2;
             this.generarReporte.Text = "Generar Reporte";
             this.generarReporte.UseVisualStyleBackColor = true;
+            this.generarReporte.Click += new System.EventHandler(this.generarReporte_Click);
             // 
             // fechaFinPicker
             // 
@@ -122,16 +145,16 @@
             this.fechaInicioPicker.Size = new System.Drawing.Size(143, 28);
             this.fechaInicioPicker.TabIndex = 0;
             // 
-            // rvPlantilla
+            // frmActividadPorUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 610);
+            this.ClientSize = new System.Drawing.Size(809, 665);
             this.Controls.Add(this.reportViewerWnd1);
             this.Controls.Add(this.panel1);
-            this.Name = "rvPlantilla";
-            this.Text = "Plantilla";
-            this.Load += new System.EventHandler(this.Plantilla_Load);
+            this.Name = "frmActividadPorUsuario";
+            this.Text = "frmActividadPorUsuario";
+            this.Load += new System.EventHandler(this.frmActividadPorUsuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -142,10 +165,12 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerWnd1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button generarReporte;
         private System.Windows.Forms.DateTimePicker fechaFinPicker;
         private System.Windows.Forms.DateTimePicker fechaInicioPicker;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboUsuario;
+        private System.Windows.Forms.Label label3;
     }
 }
