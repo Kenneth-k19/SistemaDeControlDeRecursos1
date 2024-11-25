@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsComparativoVentasPorTipo" targetNamespace="http://tempuri.org/dsComparativoVentasPorTipo.xsd" xmlns:mstns="http://tempuri.org/dsComparativoVentasPorTipo.xsd" xmlns="http://tempuri.org/dsComparativoVentasPorTipo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsComparativoVentasPorTipo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsComparativoVentasPorTipo" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsComparativoVentasPorTipo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="spRpComparativoDeVentasPorTipo" msprop:Generator_RowEvHandlerName="spRpComparativoDeVentasPorTipoRowChangeEventHandler" msprop:Generator_RowDeletedName="spRpComparativoDeVentasPorTipoRowDeleted" msprop:Generator_RowDeletingName="spRpComparativoDeVentasPorTipoRowDeleting" msprop:Generator_RowEvArgName="spRpComparativoDeVentasPorTipoRowChangeEvent" msprop:Generator_TablePropName="spRpComparativoDeVentasPorTipo" msprop:Generator_RowChangedName="spRpComparativoDeVentasPorTipoRowChanged" msprop:Generator_UserTableName="spRpComparativoDeVentasPorTipo" msprop:Generator_RowChangingName="spRpComparativoDeVentasPorTipoRowChanging" msprop:Generator_RowClassName="spRpComparativoDeVentasPorTipoRow" msprop:Generator_TableClassName="spRpComparativoDeVentasPorTipoDataTable" msprop:Generator_TableVarName="tablespRpComparativoDeVentasPorTipo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" type="xs:string" minOccurs="0" />
+              <xs:element name="Llevar" msprop:Generator_UserColumnName="Llevar" msprop:Generator_ColumnPropNameInTable="LlevarColumn" msprop:Generator_ColumnPropNameInRow="Llevar" msprop:Generator_ColumnVarNameInTable="columnLlevar" type="xs:string" minOccurs="0" />
+              <xs:element name="Domicilio" msprop:Generator_UserColumnName="Domicilio" msprop:Generator_ColumnPropNameInTable="DomicilioColumn" msprop:Generator_ColumnPropNameInRow="Domicilio" msprop:Generator_ColumnVarNameInTable="columnDomicilio" type="xs:string" minOccurs="0" />
+              <xs:element name="Restaurante" msprop:Generator_UserColumnName="Restaurante" msprop:Generator_ColumnPropNameInTable="RestauranteColumn" msprop:Generator_ColumnPropNameInRow="Restaurante" msprop:Generator_ColumnVarNameInTable="columnRestaurante" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
