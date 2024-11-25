@@ -183,6 +183,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\dataSets\dsDetalleVentasDiario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDetalleVentasDiario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsResumenVentasAnual.cs">
+      <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsResumenVentasAnual.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsTotalVentasAnual.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTotalVentasAnual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsTotalVentasDiarias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTotalVentasDiarias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\forms\frmDetalleVentasDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmDetalleVentasDiario.Designer.cs">
+      <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\forms\frmResumenVentasAnual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,12 +289,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\forms\frmDetalleVentasDiario.resx">
+      <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\forms\frmResumenVentasAnual.resx">
       <DependentUpon>frmResumenVentasAnual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\forms\rvPlantilla.resx">
       <DependentUpon>rvPlantilla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rdlc\rptDetalleVentasDiario.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rptResumenVentasAnual.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\PlantillaColores.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\Report1.rdlc" />
@@ -295,6 +328,50 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reportes\dataSets\dsDetalleVentasDiario.xsc">
+      <DependentUpon>dsDetalleVentasDiario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsDetalleVentasDiario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDetalleVentasDiario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsDetalleVentasDiario.xss">
+      <DependentUpon>dsDetalleVentasDiario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsResumenVentasAnual.xsc">
+      <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsResumenVentasAnual.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsResumenVentasAnual.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsResumenVentasAnual.xss">
+      <DependentUpon>dsResumenVentasAnual.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsTotalVentasAnual.xsc">
+      <DependentUpon>dsTotalVentasAnual.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsTotalVentasAnual.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTotalVentasAnual.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsTotalVentasAnual.xss">
+      <DependentUpon>dsTotalVentasAnual.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsTotalVentasDiarias.xsc">
+      <DependentUpon>dsTotalVentasDiarias.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsTotalVentasDiarias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTotalVentasDiarias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsTotalVentasDiarias.xss">
+      <DependentUpon>dsTotalVentasDiarias.xsd</DependentUpon>
+    </None>
     <None Include="Resources\FravahLogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -336,8 +413,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\dataSets\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

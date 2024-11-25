@@ -20,17 +20,17 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsResumenVentasAnual")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsTotalVentasDiarias")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsResumenVentasAnual : global::System.Data.DataSet {
+    public partial class dsTotalVentasDiarias : global::System.Data.DataSet {
         
-        private spReporteResumenDeVentasAnualDataTable tablespReporteResumenDeVentasAnual;
+        private spTotalVentasDiariasDataTable tablespTotalVentasDiarias;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public dsResumenVentasAnual() {
+        public dsTotalVentasDiarias() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected dsResumenVentasAnual(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsTotalVentasDiarias(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["spReporteResumenDeVentasAnual"] != null)) {
-                    base.Tables.Add(new spReporteResumenDeVentasAnualDataTable(ds.Tables["spReporteResumenDeVentasAnual"]));
+                if ((ds.Tables["spTotalVentasDiarias"] != null)) {
+                    base.Tables.Add(new spTotalVentasDiariasDataTable(ds.Tables["spTotalVentasDiarias"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public spReporteResumenDeVentasAnualDataTable spReporteResumenDeVentasAnual {
+        public spTotalVentasDiariasDataTable spTotalVentasDiarias {
             get {
-                return this.tablespReporteResumenDeVentasAnual;
+                return this.tablespTotalVentasDiarias;
             }
         }
         
@@ -127,7 +127,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsResumenVentasAnual cln = ((dsResumenVentasAnual)(base.Clone()));
+            dsTotalVentasDiarias cln = ((dsTotalVentasDiarias)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["spReporteResumenDeVentasAnual"] != null)) {
-                    base.Tables.Add(new spReporteResumenDeVentasAnualDataTable(ds.Tables["spReporteResumenDeVentasAnual"]));
+                if ((ds.Tables["spTotalVentasDiarias"] != null)) {
+                    base.Tables.Add(new spTotalVentasDiariasDataTable(ds.Tables["spTotalVentasDiarias"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablespReporteResumenDeVentasAnual = ((spReporteResumenDeVentasAnualDataTable)(base.Tables["spReporteResumenDeVentasAnual"]));
+            this.tablespTotalVentasDiarias = ((spTotalVentasDiariasDataTable)(base.Tables["spTotalVentasDiarias"]));
             if ((initTable == true)) {
-                if ((this.tablespReporteResumenDeVentasAnual != null)) {
-                    this.tablespReporteResumenDeVentasAnual.InitVars();
+                if ((this.tablespTotalVentasDiarias != null)) {
+                    this.tablespTotalVentasDiarias.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsResumenVentasAnual";
+            this.DataSetName = "dsTotalVentasDiarias";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsResumenVentasAnual.xsd";
+            this.Namespace = "http://tempuri.org/dsTotalVentasDiarias.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablespReporteResumenDeVentasAnual = new spReporteResumenDeVentasAnualDataTable();
-            base.Tables.Add(this.tablespReporteResumenDeVentasAnual);
+            this.tablespTotalVentasDiarias = new spTotalVentasDiariasDataTable();
+            base.Tables.Add(this.tablespTotalVentasDiarias);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializespReporteResumenDeVentasAnual() {
+        private bool ShouldSerializespTotalVentasDiarias() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsResumenVentasAnual ds = new dsResumenVentasAnual();
+            dsTotalVentasDiarias ds = new dsTotalVentasDiarias();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,21 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void spReporteResumenDeVentasAnualRowChangeEventHandler(object sender, spReporteResumenDeVentasAnualRowChangeEvent e);
+        public delegate void spTotalVentasDiariasRowChangeEventHandler(object sender, spTotalVentasDiariasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class spReporteResumenDeVentasAnualDataTable : global::System.Data.TypedTableBase<spReporteResumenDeVentasAnualRow> {
+        public partial class spTotalVentasDiariasDataTable : global::System.Data.TypedTableBase<spTotalVentasDiariasRow> {
             
-            private global::System.Data.DataColumn columnMes;
-            
-            private global::System.Data.DataColumn columnTotal;
-            
-            private global::System.Data.DataColumn columnPorcentajeDeContribucion;
+            private global::System.Data.DataColumn columnTotalVentasDiarias;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spReporteResumenDeVentasAnualDataTable() {
-                this.TableName = "spReporteResumenDeVentasAnual";
+            public spTotalVentasDiariasDataTable() {
+                this.TableName = "spTotalVentasDiarias";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +292,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal spReporteResumenDeVentasAnualDataTable(global::System.Data.DataTable table) {
+            internal spTotalVentasDiariasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,32 +309,16 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected spReporteResumenDeVentasAnualDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected spTotalVentasDiariasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MesColumn {
+            public global::System.Data.DataColumn TotalVentasDiariasColumn {
                 get {
-                    return this.columnMes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TotalColumn {
-                get {
-                    return this.columnTotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PorcentajeDeContribucionColumn {
-                get {
-                    return this.columnPorcentajeDeContribucion;
+                    return this.columnTotalVentasDiarias;
                 }
             }
             
@@ -353,47 +333,45 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spReporteResumenDeVentasAnualRow this[int index] {
+            public spTotalVentasDiariasRow this[int index] {
                 get {
-                    return ((spReporteResumenDeVentasAnualRow)(this.Rows[index]));
+                    return ((spTotalVentasDiariasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event spReporteResumenDeVentasAnualRowChangeEventHandler spReporteResumenDeVentasAnualRowChanging;
+            public event spTotalVentasDiariasRowChangeEventHandler spTotalVentasDiariasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event spReporteResumenDeVentasAnualRowChangeEventHandler spReporteResumenDeVentasAnualRowChanged;
+            public event spTotalVentasDiariasRowChangeEventHandler spTotalVentasDiariasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event spReporteResumenDeVentasAnualRowChangeEventHandler spReporteResumenDeVentasAnualRowDeleting;
+            public event spTotalVentasDiariasRowChangeEventHandler spTotalVentasDiariasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event spReporteResumenDeVentasAnualRowChangeEventHandler spReporteResumenDeVentasAnualRowDeleted;
+            public event spTotalVentasDiariasRowChangeEventHandler spTotalVentasDiariasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddspReporteResumenDeVentasAnualRow(spReporteResumenDeVentasAnualRow row) {
+            public void AddspTotalVentasDiariasRow(spTotalVentasDiariasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spReporteResumenDeVentasAnualRow AddspReporteResumenDeVentasAnualRow(string Mes, double Total, double PorcentajeDeContribucion) {
-                spReporteResumenDeVentasAnualRow rowspReporteResumenDeVentasAnualRow = ((spReporteResumenDeVentasAnualRow)(this.NewRow()));
+            public spTotalVentasDiariasRow AddspTotalVentasDiariasRow(double TotalVentasDiarias) {
+                spTotalVentasDiariasRow rowspTotalVentasDiariasRow = ((spTotalVentasDiariasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Mes,
-                        Total,
-                        PorcentajeDeContribucion};
-                rowspReporteResumenDeVentasAnualRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowspReporteResumenDeVentasAnualRow);
-                return rowspReporteResumenDeVentasAnualRow;
+                        TotalVentasDiarias};
+                rowspTotalVentasDiariasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowspTotalVentasDiariasRow);
+                return rowspTotalVentasDiariasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                spReporteResumenDeVentasAnualDataTable cln = ((spReporteResumenDeVentasAnualDataTable)(base.Clone()));
+                spTotalVentasDiariasDataTable cln = ((spTotalVentasDiariasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -401,56 +379,47 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new spReporteResumenDeVentasAnualDataTable();
+                return new spTotalVentasDiariasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnMes = base.Columns["Mes"];
-                this.columnTotal = base.Columns["Total"];
-                this.columnPorcentajeDeContribucion = base.Columns["PorcentajeDeContribucion"];
+                this.columnTotalVentasDiarias = base.Columns["TotalVentasDiarias"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMes);
-                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal);
-                this.columnPorcentajeDeContribucion = new global::System.Data.DataColumn("PorcentajeDeContribucion", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPorcentajeDeContribucion);
-                this.columnMes.ReadOnly = true;
-                this.columnMes.MaxLength = 4000;
-                this.columnTotal.ReadOnly = true;
-                this.columnPorcentajeDeContribucion.ReadOnly = true;
+                this.columnTotalVentasDiarias = new global::System.Data.DataColumn("TotalVentasDiarias", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalVentasDiarias);
+                this.columnTotalVentasDiarias.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spReporteResumenDeVentasAnualRow NewspReporteResumenDeVentasAnualRow() {
-                return ((spReporteResumenDeVentasAnualRow)(this.NewRow()));
+            public spTotalVentasDiariasRow NewspTotalVentasDiariasRow() {
+                return ((spTotalVentasDiariasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new spReporteResumenDeVentasAnualRow(builder);
+                return new spTotalVentasDiariasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(spReporteResumenDeVentasAnualRow);
+                return typeof(spTotalVentasDiariasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.spReporteResumenDeVentasAnualRowChanged != null)) {
-                    this.spReporteResumenDeVentasAnualRowChanged(this, new spReporteResumenDeVentasAnualRowChangeEvent(((spReporteResumenDeVentasAnualRow)(e.Row)), e.Action));
+                if ((this.spTotalVentasDiariasRowChanged != null)) {
+                    this.spTotalVentasDiariasRowChanged(this, new spTotalVentasDiariasRowChangeEvent(((spTotalVentasDiariasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -458,8 +427,8 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.spReporteResumenDeVentasAnualRowChanging != null)) {
-                    this.spReporteResumenDeVentasAnualRowChanging(this, new spReporteResumenDeVentasAnualRowChangeEvent(((spReporteResumenDeVentasAnualRow)(e.Row)), e.Action));
+                if ((this.spTotalVentasDiariasRowChanging != null)) {
+                    this.spTotalVentasDiariasRowChanging(this, new spTotalVentasDiariasRowChangeEvent(((spTotalVentasDiariasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -467,8 +436,8 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.spReporteResumenDeVentasAnualRowDeleted != null)) {
-                    this.spReporteResumenDeVentasAnualRowDeleted(this, new spReporteResumenDeVentasAnualRowChangeEvent(((spReporteResumenDeVentasAnualRow)(e.Row)), e.Action));
+                if ((this.spTotalVentasDiariasRowDeleted != null)) {
+                    this.spTotalVentasDiariasRowDeleted(this, new spTotalVentasDiariasRowChangeEvent(((spTotalVentasDiariasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -476,14 +445,14 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.spReporteResumenDeVentasAnualRowDeleting != null)) {
-                    this.spReporteResumenDeVentasAnualRowDeleting(this, new spReporteResumenDeVentasAnualRowChangeEvent(((spReporteResumenDeVentasAnualRow)(e.Row)), e.Action));
+                if ((this.spTotalVentasDiariasRowDeleting != null)) {
+                    this.spTotalVentasDiariasRowDeleting(this, new spTotalVentasDiariasRowChangeEvent(((spTotalVentasDiariasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovespReporteResumenDeVentasAnualRow(spReporteResumenDeVentasAnualRow row) {
+            public void RemovespTotalVentasDiariasRow(spTotalVentasDiariasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -492,7 +461,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsResumenVentasAnual ds = new dsResumenVentasAnual();
+                dsTotalVentasDiarias ds = new dsTotalVentasDiarias();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -510,7 +479,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "spReporteResumenDeVentasAnualDataTable";
+                attribute2.FixedValue = "spTotalVentasDiariasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -554,102 +523,44 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class spReporteResumenDeVentasAnualRow : global::System.Data.DataRow {
+        public partial class spTotalVentasDiariasRow : global::System.Data.DataRow {
             
-            private spReporteResumenDeVentasAnualDataTable tablespReporteResumenDeVentasAnual;
+            private spTotalVentasDiariasDataTable tablespTotalVentasDiarias;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal spReporteResumenDeVentasAnualRow(global::System.Data.DataRowBuilder rb) : 
+            internal spTotalVentasDiariasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablespReporteResumenDeVentasAnual = ((spReporteResumenDeVentasAnualDataTable)(this.Table));
+                this.tablespTotalVentasDiarias = ((spTotalVentasDiariasDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Mes {
+            public double TotalVentasDiarias {
                 get {
                     try {
-                        return ((string)(this[this.tablespReporteResumenDeVentasAnual.MesColumn]));
+                        return ((double)(this[this.tablespTotalVentasDiarias.TotalVentasDiariasColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Mes\' de la tabla \'spReporteResumenDeVentasAnual\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalVentasDiarias\' de la tabla \'spTotalVentasDiarias\' es" +
+                                " DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespReporteResumenDeVentasAnual.MesColumn] = value;
+                    this[this.tablespTotalVentasDiarias.TotalVentasDiariasColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double Total {
-                get {
-                    try {
-                        return ((double)(this[this.tablespReporteResumenDeVentasAnual.TotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Total\' de la tabla \'spReporteResumenDeVentasAnual\' es DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tablespReporteResumenDeVentasAnual.TotalColumn] = value;
-                }
+            public bool IsTotalVentasDiariasNull() {
+                return this.IsNull(this.tablespTotalVentasDiarias.TotalVentasDiariasColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double PorcentajeDeContribucion {
-                get {
-                    try {
-                        return ((double)(this[this.tablespReporteResumenDeVentasAnual.PorcentajeDeContribucionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PorcentajeDeContribucion\' de la tabla \'spReporteResumenDe" +
-                                "VentasAnual\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablespReporteResumenDeVentasAnual.PorcentajeDeContribucionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMesNull() {
-                return this.IsNull(this.tablespReporteResumenDeVentasAnual.MesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMesNull() {
-                this[this.tablespReporteResumenDeVentasAnual.MesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTotalNull() {
-                return this.IsNull(this.tablespReporteResumenDeVentasAnual.TotalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTotalNull() {
-                this[this.tablespReporteResumenDeVentasAnual.TotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPorcentajeDeContribucionNull() {
-                return this.IsNull(this.tablespReporteResumenDeVentasAnual.PorcentajeDeContribucionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPorcentajeDeContribucionNull() {
-                this[this.tablespReporteResumenDeVentasAnual.PorcentajeDeContribucionColumn] = global::System.Convert.DBNull;
+            public void SetTotalVentasDiariasNull() {
+                this[this.tablespTotalVentasDiarias.TotalVentasDiariasColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -657,22 +568,22 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class spReporteResumenDeVentasAnualRowChangeEvent : global::System.EventArgs {
+        public class spTotalVentasDiariasRowChangeEvent : global::System.EventArgs {
             
-            private spReporteResumenDeVentasAnualRow eventRow;
+            private spTotalVentasDiariasRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spReporteResumenDeVentasAnualRowChangeEvent(spReporteResumenDeVentasAnualRow row, global::System.Data.DataRowAction action) {
+            public spTotalVentasDiariasRowChangeEvent(spTotalVentasDiariasRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spReporteResumenDeVentasAnualRow Row {
+            public spTotalVentasDiariasRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -688,7 +599,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         }
     }
 }
-namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTableAdapters {
+namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsTotalVentasDiariasTableAdapters {
     
     
     /// <summary>
@@ -700,7 +611,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class spReporteResumenDeVentasAnualTableAdapter : global::System.ComponentModel.Component {
+    public partial class spTotalVentasDiariasTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -714,7 +625,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public spReporteResumenDeVentasAnualTableAdapter() {
+        public spTotalVentasDiariasTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -811,10 +722,8 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "spReporteResumenDeVentasAnual";
-            tableMapping.ColumnMappings.Add("Mes", "Mes");
-            tableMapping.ColumnMappings.Add("Total", "Total");
-            tableMapping.ColumnMappings.Add("PorcentajeDeContribucion", "PorcentajeDeContribucion");
+            tableMapping.DataSetTable = "spTotalVentasDiarias";
+            tableMapping.ColumnMappings.Add("TotalVentasDiarias", "TotalVentasDiarias");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -831,7 +740,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.spReporteResumenDeVentasAnual";
+            this._commandCollection[0].CommandText = "dbo.spTotalVentasDiarias";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -840,7 +749,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsResumenVentasAnual.spReporteResumenDeVentasAnualDataTable dataTable) {
+        public virtual int Fill(dsTotalVentasDiarias.spTotalVentasDiariasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -853,9 +762,9 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsResumenVentasAnual.spReporteResumenDeVentasAnualDataTable GetData() {
+        public virtual dsTotalVentasDiarias.spTotalVentasDiariasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsResumenVentasAnual.spReporteResumenDeVentasAnualDataTable dataTable = new dsResumenVentasAnual.spReporteResumenDeVentasAnualDataTable();
+            dsTotalVentasDiarias.spTotalVentasDiariasDataTable dataTable = new dsTotalVentasDiarias.spTotalVentasDiariasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -929,7 +838,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(dsResumenVentasAnual dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dsTotalVentasDiarias dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -939,7 +848,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(dsResumenVentasAnual dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dsTotalVentasDiarias dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -949,7 +858,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(dsResumenVentasAnual dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dsTotalVentasDiarias dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -983,7 +892,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsResumenVentasAnualTable
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(dsResumenVentasAnual dataSet) {
+        public virtual int UpdateAll(dsTotalVentasDiarias dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

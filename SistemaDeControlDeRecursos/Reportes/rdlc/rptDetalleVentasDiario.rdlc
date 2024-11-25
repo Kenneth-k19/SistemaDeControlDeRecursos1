@@ -6,18 +6,27 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.18111cm</Width>
+              <Width>3.41281cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.18111cm</Width>
+              <Width>3.41281cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.28265cm</Width>
+              <Width>3.41281cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.41281cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.41281cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.41281cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.78521cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -28,11 +37,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>MES</Value>
+                              <Value>Hora De Venta</Value>
                               <Style>
-                                <FontFamily>Arial Black</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
+                                <FontFamily>Poppins</FontFamily>
+                                <FontWeight>Medium</FontWeight>
                                 <Color>#7f0139</Color>
                               </Style>
                             </TextRun>
@@ -66,10 +74,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>TOTAL</Value>
+                              <Value>Producto</Value>
                               <Style>
-                                <FontFamily>Arial Black</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontFamily>Poppins</FontFamily>
                                 <FontWeight>Medium</FontWeight>
                                 <Color>#7f0139</Color>
                               </Style>
@@ -104,11 +111,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>PORCENTAJE CONTRIBUCION</Value>
+                              <Value>Cantidad</Value>
                               <Style>
-                                <FontFamily>Arial Black</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
+                                <FontFamily>Poppins</FontFamily>
+                                <FontWeight>Medium</FontWeight>
                                 <Color>#7f0139</Color>
                               </Style>
                             </TextRun>
@@ -133,6 +139,117 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Precio Unitario</Value>
+                              <Style>
+                                <FontFamily>Poppins</FontFamily>
+                                <FontWeight>Medium</FontWeight>
+                                <Color>#7f0139</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#e58c45</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total</Value>
+                              <Style>
+                                <FontFamily>Poppins</FontFamily>
+                                <FontWeight>Medium</FontWeight>
+                                <Color>#7f0139</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#e58c45</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Medio De Pago</Value>
+                              <Style>
+                                <FontFamily>Poppins</FontFamily>
+                                <FontWeight>Medium</FontWeight>
+                                <Color>#7f0139</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#e58c45</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -140,14 +257,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Mes">
+                    <Textbox Name="HoraDeVenta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Mes.Value</Value>
+                              <Value>=Fields!HoraDeVenta.Value</Value>
                               <Style>
                                 <FontFamily>Poppins</FontFamily>
                                 <Color>#7f0139</Color>
@@ -159,13 +276,121 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Mes</rd:DefaultName>
+                      <rd:DefaultName>HoraDeVenta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>#eeac75</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Producto">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Producto.Value</Value>
+                              <Style>
+                                <FontFamily>Poppins</FontFamily>
+                                <Color>#7f0139</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Producto</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#e2b7b0</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cantidad">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cantidad.Value</Value>
+                              <Style>
+                                <FontFamily>Poppins</FontFamily>
+                                <Color>#7f0139</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cantidad</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#e2b7b0</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="PrecioUnitario">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PrecioUnitario.Value</Value>
+                              <Style>
+                                <FontFamily>Poppins</FontFamily>
+                                <Color>#7f0139</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>PrecioUnitario</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#e2b7b0</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -212,14 +437,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="PorcentajeDeContribucion">
+                    <Textbox Name="MedioDePago">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!PorcentajeDeContribucion.Value</Value>
+                              <Value>=Fields!MedioDePago.Value</Value>
                               <Style>
                                 <FontFamily>Poppins</FontFamily>
                                 <Color>#7f0139</Color>
@@ -231,7 +456,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>PorcentajeDeContribucion</rd:DefaultName>
+                      <rd:DefaultName>MedioDePago</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -255,6 +480,9 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -267,11 +495,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>13.72928cm</Top>
-        <Left>1.54654cm</Left>
-        <Height>1.38521cm</Height>
-        <Width>17.64487cm</Width>
+        <DataSetName>DataSetDVD</DataSetName>
+        <Top>2.29928cm</Top>
+        <Left>0.37639cm</Left>
+        <Height>1.2cm</Height>
+        <Width>20.47686cm</Width>
         <Style>
           <Border>
             <Color>White</Color>
@@ -281,416 +509,6 @@
           <FontSize>12pt</FontSize>
         </Style>
       </Tablix>
-      <Chart Name="Chart4">
-        <ChartCategoryHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Group Name="Chart4_CategoryGroup">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!Mes.Value</GroupExpression>
-                </GroupExpressions>
-              </Group>
-              <Label>=Fields!Mes.Value</Label>
-            </ChartMember>
-          </ChartMembers>
-        </ChartCategoryHierarchy>
-        <ChartSeriesHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Label>Total</Label>
-            </ChartMember>
-          </ChartMembers>
-        </ChartSeriesHierarchy>
-        <ChartData>
-          <ChartSeriesCollection>
-            <ChartSeries Name="Total">
-              <ChartDataPoints>
-                <ChartDataPoint>
-                  <ChartDataPointValues>
-                    <X>=Fields!Mes.Value</X>
-                    <Y>=Fields!Total.Value</Y>
-                  </ChartDataPointValues>
-                  <ChartDataLabel>
-                    <Style>
-                      <FontFamily>Arial Narrow</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                      <Color>#7f0139</Color>
-                    </Style>
-                    <UseValueAsLabel>true</UseValueAsLabel>
-                    <Visible>true</Visible>
-                  </ChartDataLabel>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <DataElementOutput>Output</DataElementOutput>
-                </ChartDataPoint>
-              </ChartDataPoints>
-              <Style />
-              <ChartEmptyPoints>
-                <Style />
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-              </ChartEmptyPoints>
-              <ValueAxisName>Primary</ValueAxisName>
-              <CategoryAxisName>Primary</CategoryAxisName>
-              <ChartSmartLabel>
-                <CalloutLineColor>Black</CalloutLineColor>
-                <MinMovingDistance>0pt</MinMovingDistance>
-              </ChartSmartLabel>
-            </ChartSeries>
-          </ChartSeriesCollection>
-        </ChartData>
-        <ChartAreas>
-          <ChartArea Name="Default">
-            <ChartCategoryAxes>
-              <ChartAxis Name="Primary">
-                <Style>
-                  <Border>
-                    <Color>Gainsboro</Color>
-                    <Style>None</Style>
-                  </Border>
-                  <FontFamily>Poppins</FontFamily>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>#7f0139</Color>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption>Mes</Caption>
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>#ab6c7f</Color>
-                  </Style>
-                </ChartAxisTitle>
-                <Interval>1</Interval>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMajorTickMarks>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </ChartMajorTickMarks>
-                <ChartMinorTickMarks>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <Angle>72</Angle>
-                <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-              <ChartAxis Name="Secondary">
-                <Style>
-                  <Border>
-                    <Color>Gainsboro</Color>
-                    <Style>None</Style>
-                  </Border>
-                  <FontSize>8pt</FontSize>
-                  <Color>#5c5c5c</Color>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                    <Color>#5c5c5c</Color>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMajorTickMarks>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </ChartMajorTickMarks>
-                <ChartMinorTickMarks>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Location>Opposite</Location>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-            </ChartCategoryAxes>
-            <ChartValueAxes>
-              <ChartAxis Name="Primary">
-                <Style>
-                  <Border>
-                    <Color>Gainsboro</Color>
-                    <Style>None</Style>
-                  </Border>
-                  <FontFamily>Poppins</FontFamily>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>#7f0139</Color>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption>Total Ventas</Caption>
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>#ab6c7f</Color>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMajorTickMarks>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </ChartMajorTickMarks>
-                <ChartMinorTickMarks>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-              <ChartAxis Name="Secondary">
-                <Style>
-                  <Border>
-                    <Color>Gainsboro</Color>
-                    <Style>None</Style>
-                  </Border>
-                  <FontSize>8pt</FontSize>
-                  <Color>#5c5c5c</Color>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                    <Color>#5c5c5c</Color>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMajorTickMarks>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </ChartMajorTickMarks>
-                <ChartMinorTickMarks>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Location>Opposite</Location>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-            </ChartValueAxes>
-            <Style>
-              <BackgroundColor>#00ffffff</BackgroundColor>
-              <BackgroundGradientType>None</BackgroundGradientType>
-            </Style>
-          </ChartArea>
-        </ChartAreas>
-        <ChartLegends>
-          <ChartLegend Name="Default">
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontSize>11pt</FontSize>
-              <FontWeight>Medium</FontWeight>
-              <Color>#ab6c7f</Color>
-            </Style>
-            <Position>TopLeft</Position>
-            <ChartLegendTitle>
-              <Caption />
-              <Style>
-                <FontSize>8pt</FontSize>
-                <FontWeight>Bold</FontWeight>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </ChartLegendTitle>
-            <AutoFitTextDisabled>true</AutoFitTextDisabled>
-            <MinFontSize>10pt</MinFontSize>
-            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-          </ChartLegend>
-        </ChartLegends>
-        <ChartTitles>
-          <ChartTitle Name="Default">
-            <Caption>Total Ventas vs Mes</Caption>
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontFamily>Corbel</FontFamily>
-              <FontSize>16pt</FontSize>
-              <FontWeight>Bold</FontWeight>
-              <TextAlign>Left</TextAlign>
-              <VerticalAlign>Top</VerticalAlign>
-              <Color>#a6a6a6</Color>
-            </Style>
-            <Position>TopLeft</Position>
-          </ChartTitle>
-        </ChartTitles>
-        <Palette>Chocolate</Palette>
-        <ChartBorderSkin>
-          <Style>
-            <BackgroundColor>Gray</BackgroundColor>
-            <BackgroundGradientType>None</BackgroundGradientType>
-            <Color>White</Color>
-          </Style>
-        </ChartBorderSkin>
-        <ChartNoDataMessage Name="NoDataMessage">
-          <Caption>Sin datos disponibles</Caption>
-          <Style>
-            <BackgroundGradientType>None</BackgroundGradientType>
-            <FontWeight>Bold</FontWeight>
-            <TextAlign>General</TextAlign>
-            <VerticalAlign>Top</VerticalAlign>
-          </Style>
-        </ChartNoDataMessage>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>1.90666cm</Top>
-        <Height>11.43155cm</Height>
-        <Width>21cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>None</Style>
-          </Border>
-          <BackgroundGradientType>None</BackgroundGradientType>
-        </Style>
-      </Chart>
-      <Textbox Name="Textbox4">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Total Ventas Anual: L.</Value>
-                <Style>
-                  <FontFamily>Arial Black</FontFamily>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>#7f0139</Color>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>16.14242cm</Top>
-        <Left>1.54654cm</Left>
-        <Height>0.89104cm</Height>
-        <Width>5.4976cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox5">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -698,10 +516,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!TotalVentasAnual.Value, "DataSet2")</Value>
+                <Value>- Visualice el detalle de las ventas realizadas en el día.</Value>
                 <Style>
-                  <FontFamily>Arial Black</FontFamily>
-                  <FontSize>12pt</FontSize>
+                  <FontFamily>PT Sans</FontFamily>
+                  <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Color>#7f0139</Color>
                 </Style>
@@ -712,12 +530,12 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>16.14242cm</Top>
-        <Left>7.07941cm</Left>
-        <Height>0.89104cm</Height>
-        <Width>5.00575cm</Width>
-        <ZIndex>3</ZIndex>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.83277cm</Top>
+        <Left>0.58806cm</Left>
+        <Height>0.74817cm</Height>
+        <Width>18.14216cm</Width>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -736,10 +554,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- Visualice las ventas totales por mes en el año</Value>
+                <Value>Total Ventas en el día: L.</Value>
                 <Style>
-                  <FontFamily>PT Sans</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontFamily>Arial Black</FontFamily>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Color>#7f0139</Color>
                 </Style>
@@ -750,21 +568,59 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.70048cm</Top>
-        <Left>0.5842cm</Left>
-        <Height>0.74817cm</Height>
-        <Width>16.05651cm</Width>
-        <ZIndex>4</ZIndex>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>4.21802cm</Top>
+        <Left>0.37639cm</Left>
+        <Height>0.89104cm</Height>
+        <Width>6.05322cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
           <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>1pt</PaddingLeft>
-          <PaddingRight>1pt</PaddingRight>
-          <PaddingTop>1pt</PaddingTop>
-          <PaddingBottom>1pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!TotalVentasDiarias.Value, "DataSet2")</Value>
+                <Style>
+                  <FontFamily>Arial Black</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>#7f0139</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>4.21802cm</Top>
+        <Left>6.42961cm</Left>
+        <Height>0.89104cm</Height>
+        <Width>6.05322cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
     </ReportItems>
@@ -773,7 +629,7 @@
       <BackgroundColor>#f3f1eb</BackgroundColor>
     </Style>
   </Body>
-  <Width>21cm</Width>
+  <Width>21.0399cm</Width>
   <Page>
     <PageHeader>
       <Height>4.09503cm</Height>
@@ -808,7 +664,9 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -868,7 +726,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Resumen de Ventas de</Value>
+                  <Value>Detalle de Ventas Diario</Value>
                   <Style>
                     <FontFamily>PT Sans</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -886,17 +744,55 @@
           <Top>2.0447cm</Top>
           <Left>0.5842cm</Left>
           <Height>0.74817cm</Height>
-          <Width>6.00234cm</Width>
+          <Width>7.24133cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
             <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>1pt</PaddingLeft>
-            <PaddingRight>1pt</PaddingRight>
-            <PaddingTop>1pt</PaddingTop>
-            <PaddingBottom>1pt</PaddingBottom>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Fecha Emisión:</Value>
+                  <Style>
+                    <FontFamily>PT Sans</FontFamily>
+                    <FontSize>11pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Color>#fff2cd</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>2.96926cm</Top>
+          <Left>0.58806cm</Left>
+          <Height>0.6635cm</Height>
+          <Width>3.09531cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="FechaActual">
@@ -918,11 +814,11 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>3.01752cm</Top>
-          <Left>0.5842cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.77334cm</Width>
-          <ZIndex>4</ZIndex>
+          <Top>2.96926cm</Top>
+          <Left>3.71865cm</Left>
+          <Height>0.6635cm</Height>
+          <Width>7.87438cm</Width>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -934,42 +830,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="AnioActual">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Year(Globals!ExecutionTime)
-</Value>
-                  <Style>
-                    <FontFamily>PT Sans</FontFamily>
-                    <FontSize>14pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>#fff2cd</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <Top>2.0447cm</Top>
-          <Left>6.58654cm</Left>
-          <Height>0.74817cm</Height>
-          <Width>2.07667cm</Width>
-          <ZIndex>5</ZIndex>
-          <Style>
-            <Border />
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>1pt</PaddingLeft>
-            <PaddingRight>1pt</PaddingRight>
-            <PaddingTop>1pt</PaddingTop>
-            <PaddingBottom>1pt</PaddingBottom>
-          </Style>
-        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -979,7 +839,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.48867cm</Height>
+      <Height>1.42517cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1066,68 +926,80 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="dsResumenVentasAnual">
+    <DataSource Name="dsDetalleVentasDiario">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>1d81e40e-2af7-4351-9e1b-758178500936</rd:DataSourceID>
+      <rd:DataSourceID>a926743b-3f35-45fd-8206-1cc43ae7ce58</rd:DataSourceID>
     </DataSource>
-    <DataSource Name="dsTotalVentasAnual">
+    <DataSource Name="dsTotalVentasDiarias">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>ed6dc1f6-fd17-46f1-a6be-24984695c37a</rd:DataSourceID>
+      <rd:DataSourceID>29ae5352-fd21-472a-9465-74488483a155</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSetDVD">
       <Query>
-        <DataSourceName>dsResumenVentasAnual</DataSourceName>
+        <DataSourceName>dsDetalleVentasDiario</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Mes">
-          <DataField>Mes</DataField>
+        <Field Name="HoraDeVenta">
+          <DataField>HoraDeVenta</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Producto">
+          <DataField>Producto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cantidad">
+          <DataField>Cantidad</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PrecioUnitario">
+          <DataField>PrecioUnitario</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="Total">
           <DataField>Total</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="PorcentajeDeContribucion">
-          <DataField>PorcentajeDeContribucion</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+        <Field Name="MedioDePago">
+          <DataField>MedioDePago</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>dsResumenVentasAnual</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\kenne\OneDrive\Documentos\ClasesDelPeriodo\SistemasDeInformacion\SistemaDeControlDeRecursos\SistemaDeControlDeRecursos\Reportes\dataSets\dsResumenVentasAnual.xsd</rd:SchemaPath>
-        <rd:TableName>spReporteResumenDeVentasAnual</rd:TableName>
+        <rd:DataSetName>dsDetalleVentasDiario</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\kenne\OneDrive\Documentos\ClasesDelPeriodo\SistemasDeInformacion\SistemaDeControlDeRecursos\SistemaDeControlDeRecursos\Reportes\dataSets\dsDetalleVentasDiario.xsd</rd:SchemaPath>
+        <rd:TableName>spDetalleVentasDiario</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>spReporteResumenDeVentasAnualTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>spDetalleVentasDiarioTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
     <DataSet Name="DataSet2">
       <Query>
-        <DataSourceName>dsTotalVentasAnual</DataSourceName>
+        <DataSourceName>dsTotalVentasDiarias</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="TotalVentasAnual">
-          <DataField>TotalVentasAnual</DataField>
+        <Field Name="TotalVentasDiarias">
+          <DataField>TotalVentasDiarias</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>dsTotalVentasAnual</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\kenne\OneDrive\Documentos\ClasesDelPeriodo\SistemasDeInformacion\SistemaDeControlDeRecursos\SistemaDeControlDeRecursos\Reportes\dataSets\dsTotalVentasAnual.xsd</rd:SchemaPath>
-        <rd:TableName>spTotalVentasAnual</rd:TableName>
+        <rd:DataSetName>dsTotalVentasDiarias</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\kenne\OneDrive\Documentos\ClasesDelPeriodo\SistemasDeInformacion\SistemaDeControlDeRecursos\SistemaDeControlDeRecursos\Reportes\dataSets\dsTotalVentasDiarias.xsd</rd:SchemaPath>
+        <rd:TableName>spTotalVentasDiarias</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>spTotalVentasAnualTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>spTotalVentasDiariasTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

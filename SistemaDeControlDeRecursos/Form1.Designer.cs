@@ -420,9 +420,10 @@
             this.btnReporte5.Name = "btnReporte5";
             this.btnReporte5.Size = new System.Drawing.Size(227, 60);
             this.btnReporte5.TabIndex = 8;
-            this.btnReporte5.Text = "Reporte 5";
+            this.btnReporte5.Text = "Resumen Ventas Anual";
             this.btnReporte5.UseVisualStyleBackColor = true;
             this.btnReporte5.Visible = false;
+            this.btnReporte5.Click += new System.EventHandler(this.btnReporte5_Click);
             // 
             // btnReporte6
             // 
@@ -436,9 +437,10 @@
             this.btnReporte6.Name = "btnReporte6";
             this.btnReporte6.Size = new System.Drawing.Size(227, 60);
             this.btnReporte6.TabIndex = 12;
-            this.btnReporte6.Text = "Reporte 6";
+            this.btnReporte6.Text = "Detalle Ventas Diario";
             this.btnReporte6.UseVisualStyleBackColor = true;
             this.btnReporte6.Visible = false;
+            this.btnReporte6.Click += new System.EventHandler(this.btnReporte6_Click);
             // 
             // btnReporte7
             // 
