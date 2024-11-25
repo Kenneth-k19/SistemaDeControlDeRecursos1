@@ -231,6 +231,10 @@
     <Compile Include="Reportes\forms\frmDetalleVentasDiario.Designer.cs">
       <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\forms\frmMovimientosInvenatio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmMovimientosInvenatio.Designer.cs" />
     <Compile Include="Reportes\forms\frmResumenVentasAnual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +246,20 @@
     </Compile>
     <Compile Include="Reportes\forms\rvPlantilla.Designer.cs">
       <DependentUpon>rvPlantilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsProcDaniel.cs" />
+    <Compile Include="Reportes\dataSets\dsProcDaniel.Designer.cs" />
+    <Compile Include="Reportes\dataSets\dsProcDaniel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProcDaniel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsReportesDaniel.cs" />
+    <Compile Include="Reportes\dataSets\dsReportesDaniel.Designer.cs" />
+    <Compile Include="Reportes\dataSets\dsReportesDaniel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesDaniel.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -314,6 +332,7 @@
     <EmbeddedResource Include="Reportes\forms\frmDetalleVentasDiario.resx">
       <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\forms\frmMovimientosInvenatio.resx" />
     <EmbeddedResource Include="Reportes\forms\frmResumenVentasAnual.resx">
       <DependentUpon>frmResumenVentasAnual.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +340,8 @@
       <DependentUpon>rvPlantilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rdlc\rpComparativoVentasPorTipo.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlc\rpConsumoAnormalArticulos.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlc\rpMovimientosInventario.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rptDetalleVentasDiario.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rptResumenVentasAnual.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\PlantillaColores.rdlc" />
@@ -416,6 +437,28 @@
     </None>
     <None Include="Reportes\dataSets\dsTotalVentasDiarias.xss">
       <DependentUpon>dsTotalVentasDiarias.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsProcDaniel.xsc">
+      <DependentUpon>dsProcDaniel.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsProcDaniel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProcDaniel1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\dataSets\dsProcDaniel.xss">
+      <DependentUpon>dsProcDaniel.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsReportesDaniel.xsc">
+      <DependentUpon>dsReportesDaniel.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsReportesDaniel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesDaniel1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\dataSets\dsReportesDaniel.xss">
+      <DependentUpon>dsReportesDaniel.xsd</DependentUpon>
     </None>
     <None Include="Resources\FravahLogo.png" />
   </ItemGroup>
