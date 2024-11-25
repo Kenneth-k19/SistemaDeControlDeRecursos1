@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaDeControlDeRecursos.Reportes.forms
 {
-    public partial class rvPlantilla : Form
+    public partial class frmMovimientosInventario : Form
     {
-        public rvPlantilla()
+        public frmMovimientosInventario()
         {
             InitializeComponent();
             this.Load += Plantilla_Load;
