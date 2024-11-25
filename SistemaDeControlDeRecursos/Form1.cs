@@ -493,7 +493,7 @@ namespace SistemaDeControlDeRecursos
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            if (usuarios == null)
+         /*   if (usuarios == null)
             {
                 usuarios = new frmUsuarios(conexion);
                 usuarios.FormClosed += Usuarios_FormClosed;
@@ -504,7 +504,10 @@ namespace SistemaDeControlDeRecursos
             else
             {
                 usuarios.Activate();
-            }
+            }*/
+
+            frmActividadPorUsuario frm = new frmActividadPorUsuario();
+            frm.ShowDialog();
         }
 
         private void Usuarios_FormClosed(object sender, FormClosedEventArgs e)

@@ -279,13 +279,13 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class spRpActividadPorUsuarioDataTable : global::System.Data.TypedTableBase<spRpActividadPorUsuarioRow> {
             
-            private global::System.Data.DataColumn columnFecha_de_Actividad;
-            
             private global::System.Data.DataColumn columnTipo;
             
             private global::System.Data.DataColumn columnCodigo;
             
-            private global::System.Data.DataColumn columnValor_Total;
+            private global::System.Data.DataColumn columnFecha;
+            
+            private global::System.Data.DataColumn columnTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -322,14 +322,6 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Fecha_de_ActividadColumn {
-                get {
-                    return this.columnFecha_de_Actividad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn TipoColumn {
                 get {
                     return this.columnTipo;
@@ -346,9 +338,17 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Valor_TotalColumn {
+            public global::System.Data.DataColumn FechaColumn {
                 get {
-                    return this.columnValor_Total;
+                    return this.columnFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
                 }
             }
             
@@ -389,13 +389,13 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spRpActividadPorUsuarioRow AddspRpActividadPorUsuarioRow(string Fecha_de_Actividad, string Tipo, string Codigo, double Valor_Total) {
+            public spRpActividadPorUsuarioRow AddspRpActividadPorUsuarioRow(string Tipo, string Codigo, System.DateTime Fecha, double Total) {
                 spRpActividadPorUsuarioRow rowspRpActividadPorUsuarioRow = ((spRpActividadPorUsuarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Fecha_de_Actividad,
                         Tipo,
                         Codigo,
-                        Valor_Total};
+                        Fecha,
+                        Total};
                 rowspRpActividadPorUsuarioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowspRpActividadPorUsuarioRow);
                 return rowspRpActividadPorUsuarioRow;
@@ -418,25 +418,23 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnFecha_de_Actividad = base.Columns["Fecha de Actividad"];
                 this.columnTipo = base.Columns["Tipo"];
                 this.columnCodigo = base.Columns["Codigo"];
-                this.columnValor_Total = base.Columns["Valor Total"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columnTotal = base.Columns["Total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnFecha_de_Actividad = new global::System.Data.DataColumn("Fecha de Actividad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_de_Actividad);
                 this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipo);
                 this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigo);
-                this.columnValor_Total = new global::System.Data.DataColumn("Valor Total", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValor_Total);
-                this.columnFecha_de_Actividad.ReadOnly = true;
-                this.columnFecha_de_Actividad.MaxLength = 4000;
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
                 this.columnTipo.MaxLength = 10;
                 this.columnCodigo.MaxLength = 10;
             }
@@ -581,23 +579,6 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Fecha_de_Actividad {
-                get {
-                    try {
-                        return ((string)(this[this.tablespRpActividadPorUsuario.Fecha_de_ActividadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha de Actividad\' in table \'spRpActividadPorUsuario\' is D" +
-                                "BNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablespRpActividadPorUsuario.Fecha_de_ActividadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Tipo {
                 get {
                     try {
@@ -630,30 +611,34 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double Valor_Total {
+            public System.DateTime Fecha {
                 get {
                     try {
-                        return ((double)(this[this.tablespRpActividadPorUsuario.Valor_TotalColumn]));
+                        return ((global::System.DateTime)(this[this.tablespRpActividadPorUsuario.FechaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Valor Total\' in table \'spRpActividadPorUsuario\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha\' in table \'spRpActividadPorUsuario\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespRpActividadPorUsuario.Valor_TotalColumn] = value;
+                    this[this.tablespRpActividadPorUsuario.FechaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFecha_de_ActividadNull() {
-                return this.IsNull(this.tablespRpActividadPorUsuario.Fecha_de_ActividadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFecha_de_ActividadNull() {
-                this[this.tablespRpActividadPorUsuario.Fecha_de_ActividadColumn] = global::System.Convert.DBNull;
+            public double Total {
+                get {
+                    try {
+                        return ((double)(this[this.tablespRpActividadPorUsuario.TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'spRpActividadPorUsuario\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablespRpActividadPorUsuario.TotalColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -682,14 +667,26 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsValor_TotalNull() {
-                return this.IsNull(this.tablespRpActividadPorUsuario.Valor_TotalColumn);
+            public bool IsFechaNull() {
+                return this.IsNull(this.tablespRpActividadPorUsuario.FechaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetValor_TotalNull() {
-                this[this.tablespRpActividadPorUsuario.Valor_TotalColumn] = global::System.Convert.DBNull;
+            public void SetFechaNull() {
+                this[this.tablespRpActividadPorUsuario.FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalNull() {
+                return this.IsNull(this.tablespRpActividadPorUsuario.TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalNull() {
+                this[this.tablespRpActividadPorUsuario.TotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -852,10 +849,10 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsRpActividadPorUsuarioTa
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "spRpActividadPorUsuario";
-            tableMapping.ColumnMappings.Add("Fecha de Actividad", "Fecha de Actividad");
             tableMapping.ColumnMappings.Add("Tipo", "Tipo");
             tableMapping.ColumnMappings.Add("Codigo", "Codigo");
-            tableMapping.ColumnMappings.Add("Valor Total", "Valor Total");
+            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("Total", "Total");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -875,7 +872,7 @@ namespace SistemaDeControlDeRecursos.Reportes.dataSets.dsRpActividadPorUsuarioTa
             this._commandCollection[0].CommandText = "dbo.spRpActividadPorUsuario";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaInicial", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaInicial", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaFinal", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuarioid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
