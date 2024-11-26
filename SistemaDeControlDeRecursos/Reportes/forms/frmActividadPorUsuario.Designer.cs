@@ -152,6 +152,7 @@
             this.ClientSize = new System.Drawing.Size(809, 665);
             this.Controls.Add(this.reportViewerWnd1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmActividadPorUsuario";
             this.Text = "frmActividadPorUsuario";
             this.Load += new System.EventHandler(this.frmActividadPorUsuario_Load);

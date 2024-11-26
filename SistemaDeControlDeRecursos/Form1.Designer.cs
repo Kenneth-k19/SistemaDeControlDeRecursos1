@@ -63,6 +63,7 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAjustes = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnReporte11 = new System.Windows.Forms.Button();
             this.btnMiPerfil = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
@@ -199,7 +200,6 @@
             this.label1.Location = new System.Drawing.Point(77, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(374, 41);
             this.label1.Size = new System.Drawing.Size(536, 39);
             this.label1.TabIndex = 10;
             this.label1.Text = "Sistema de Control de Recursos";
@@ -592,6 +592,7 @@
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(19)))), ((int)(((byte)(66)))));
             this.flowLayoutPanel3.Controls.Add(this.btnAjustes);
             this.flowLayoutPanel3.Controls.Add(this.btnUsuarios);
+            this.flowLayoutPanel3.Controls.Add(this.btnReporte11);
             this.flowLayoutPanel3.Controls.Add(this.btnMiPerfil);
             this.flowLayoutPanel3.Controls.Add(this.btnSalir);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 420);
@@ -635,6 +636,23 @@
             this.btnUsuarios.Visible = false;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
+            // btnReporte11
+            // 
+            this.btnReporte11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporte11.FlatAppearance.BorderSize = 0;
+            this.btnReporte11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte11.ForeColor = System.Drawing.Color.White;
+            this.btnReporte11.Location = new System.Drawing.Point(0, 148);
+            this.btnReporte11.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReporte11.Name = "btnReporte11";
+            this.btnReporte11.Size = new System.Drawing.Size(303, 74);
+            this.btnReporte11.TabIndex = 16;
+            this.btnReporte11.Text = "Actividad por Usuario";
+            this.btnReporte11.UseVisualStyleBackColor = true;
+            this.btnReporte11.Visible = false;
+            this.btnReporte11.Click += new System.EventHandler(this.btnReporte11_Click);
+            // 
             // btnMiPerfil
             // 
             this.btnMiPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -642,7 +660,7 @@
             this.btnMiPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMiPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMiPerfil.ForeColor = System.Drawing.Color.White;
-            this.btnMiPerfil.Location = new System.Drawing.Point(0, 148);
+            this.btnMiPerfil.Location = new System.Drawing.Point(0, 222);
             this.btnMiPerfil.Margin = new System.Windows.Forms.Padding(0);
             this.btnMiPerfil.Name = "btnMiPerfil";
             this.btnMiPerfil.Size = new System.Drawing.Size(303, 74);
@@ -659,7 +677,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(0, 222);
+            this.btnSalir.Location = new System.Drawing.Point(0, 296);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(303, 74);
@@ -756,6 +774,7 @@
         private System.Windows.Forms.Button btnMiPerfil;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReporte11;
     }
 }
 

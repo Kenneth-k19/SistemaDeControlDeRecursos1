@@ -437,7 +437,6 @@
     <None Include="Reportes\dataSets\dsRpActividadPorUsuario.xss">
       <DependentUpon>dsRpActividadPorUsuario.xsd</DependentUpon>
     </None>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Reportes\dataSets\dsComprasPorPeriodo.xsc">

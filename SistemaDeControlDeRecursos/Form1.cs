@@ -30,6 +30,7 @@ namespace SistemaDeControlDeRecursos
         frmMovimientos movimientos;
         frmUsuarios usuarios;
         frmCierrePeriodo cierrePeriodo;
+        frmActividadPorUsuario actividadPorUsuario;
 
 
         bool checker = true;
@@ -493,7 +494,7 @@ namespace SistemaDeControlDeRecursos
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-         /*   if (usuarios == null)
+           if (usuarios == null)
             {
                 usuarios = new frmUsuarios(conexion);
                 usuarios.FormClosed += Usuarios_FormClosed;
@@ -504,10 +505,8 @@ namespace SistemaDeControlDeRecursos
             else
             {
                 usuarios.Activate();
-            }*/
+            }
 
-            frmActividadPorUsuario frm = new frmActividadPorUsuario();
-            frm.ShowDialog();
         }
 
         private void Usuarios_FormClosed(object sender, FormClosedEventArgs e)
@@ -586,6 +585,27 @@ namespace SistemaDeControlDeRecursos
         {
             frmRpPedidosADomicilio frm = new frmRpPedidosADomicilio();
             frm.ShowDialog();
+        }
+
+        private void btnReporte11_Click(object sender, EventArgs e)
+        {
+            if (actividadPorUsuario == null)
+            {
+                actividadPorUsuario = new frmActividadPorUsuario();
+                actividadPorUsuario.FormClosed += actividadPorUsuario_formClosed;
+                actividadPorUsuario.MdiParent = this;
+                actividadPorUsuario.Dock = DockStyle.Fill;
+                actividadPorUsuario.Show();
+            }
+            else
+            {
+                actividadPorUsuario.Activate();
+            }
+        }
+
+        private void actividadPorUsuario_formClosed(object sender, FormClosedEventArgs e)
+        {
+            actividadPorUsuario = null;
         }
 
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)
