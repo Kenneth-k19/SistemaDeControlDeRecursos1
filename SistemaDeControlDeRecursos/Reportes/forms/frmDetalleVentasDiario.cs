@@ -35,7 +35,7 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
                 var adapter = new spDetalleVentasDiarioTableAdapter();
 
                 var adpTotalVentas = new spTotalVentasDiariasTableAdapter();
-                var totalVentasDiarias = adpTotalVentas.GetData().FirstOrDefault()?.TotalVentasDiarias;
+                var totalVentasDiarias = adpTotalVentas.GetData(fecha).FirstOrDefault()?.TotalVentasDiarias;
 
                 DataTable dtTotalVentas = new DataTable();
                 dtTotalVentas.Columns.Add("TotalVentasDiarias",typeof(float));
