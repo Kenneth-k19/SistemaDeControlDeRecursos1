@@ -49,7 +49,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 609);
+            this.panel1.Size = new System.Drawing.Size(285, 682);
             this.panel1.TabIndex = 2;
             // 
             // label2
@@ -58,7 +58,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Font = new System.Drawing.Font("Noto Sans ExtraBold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
-            this.label2.Location = new System.Drawing.Point(32, 301);
+            this.label2.Location = new System.Drawing.Point(33, 342);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 30);
             this.label2.TabIndex = 5;
@@ -70,7 +70,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Noto Sans ExtraBold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
-            this.label1.Location = new System.Drawing.Point(32, 206);
+            this.label1.Location = new System.Drawing.Point(33, 247);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 30);
             this.label1.TabIndex = 4;
@@ -84,9 +84,9 @@
             this.generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generarReporte.Font = new System.Drawing.Font("Noto Sans SemiBold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generarReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
-            this.generarReporte.Location = new System.Drawing.Point(46, 555);
+            this.generarReporte.Location = new System.Drawing.Point(33, 627);
             this.generarReporte.Name = "generarReporte";
-            this.generarReporte.Size = new System.Drawing.Size(195, 43);
+            this.generarReporte.Size = new System.Drawing.Size(215, 43);
             this.generarReporte.TabIndex = 2;
             this.generarReporte.Text = "Generar Reporte";
             this.generarReporte.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             // 
             this.fechaFinPicker.Font = new System.Drawing.Font("Source Sans 3 Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaFinPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaFinPicker.Location = new System.Drawing.Point(32, 333);
+            this.fechaFinPicker.Location = new System.Drawing.Point(33, 374);
             this.fechaFinPicker.Name = "fechaFinPicker";
             this.fechaFinPicker.Size = new System.Drawing.Size(157, 34);
             this.fechaFinPicker.TabIndex = 1;
@@ -105,7 +105,7 @@
             // 
             this.fechaInicioPicker.Font = new System.Drawing.Font("Source Sans 3 Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaInicioPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaInicioPicker.Location = new System.Drawing.Point(32, 238);
+            this.fechaInicioPicker.Location = new System.Drawing.Point(33, 279);
             this.fechaInicioPicker.Name = "fechaInicioPicker";
             this.fechaInicioPicker.Size = new System.Drawing.Size(157, 34);
             this.fechaInicioPicker.TabIndex = 0;
@@ -117,7 +117,7 @@
             this.rvCompras.Location = new System.Drawing.Point(285, 0);
             this.rvCompras.Name = "rvCompras";
             this.rvCompras.ServerReport.BearerToken = null;
-            this.rvCompras.Size = new System.Drawing.Size(515, 609);
+            this.rvCompras.Size = new System.Drawing.Size(515, 682);
             this.rvCompras.TabIndex = 3;
             this.rvCompras.Visible = false;
             // 
@@ -125,9 +125,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 609);
+            this.ClientSize = new System.Drawing.Size(800, 682);
             this.Controls.Add(this.rvCompras);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRpComprasPorPeriodo";
             this.Text = "frmRpComprasPorPeriodo";
             this.Load += new System.EventHandler(this.frmRpComprasPorPeriodo_Load);

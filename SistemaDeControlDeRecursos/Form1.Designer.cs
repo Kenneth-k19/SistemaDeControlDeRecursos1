@@ -47,12 +47,14 @@
             this.btnFamilia = new System.Windows.Forms.Button();
             this.btnConsumos = new System.Windows.Forms.Button();
             this.btnReporte1 = new System.Windows.Forms.Button();
+            this.btnReporteConsumo = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnFacturacion = new System.Windows.Forms.Button();
             this.btnFacturas = new System.Windows.Forms.Button();
             this.btnReporte5 = new System.Windows.Forms.Button();
             this.btnReporte6 = new System.Windows.Forms.Button();
             this.btnReporte7 = new System.Windows.Forms.Button();
+            this.btnRpVentasAnual = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnComprasModulo = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
@@ -258,6 +260,7 @@
             this.flpInventario.Controls.Add(this.btnFamilia);
             this.flpInventario.Controls.Add(this.btnConsumos);
             this.flpInventario.Controls.Add(this.btnReporte1);
+            this.flpInventario.Controls.Add(this.btnReporteConsumo);
             this.flpInventario.Location = new System.Drawing.Point(0, 198);
             this.flpInventario.Margin = new System.Windows.Forms.Padding(0);
             this.flpInventario.Name = "flpInventario";
@@ -362,10 +365,27 @@
             this.btnReporte1.Name = "btnReporte1";
             this.btnReporte1.Size = new System.Drawing.Size(303, 74);
             this.btnReporte1.TabIndex = 8;
-            this.btnReporte1.Text = "Reporte 1";
+            this.btnReporte1.Text = "[Reporte] Movimientos de inventario";
             this.btnReporte1.UseVisualStyleBackColor = true;
             this.btnReporte1.Visible = false;
             this.btnReporte1.Click += new System.EventHandler(this.btnReporte1_Click);
+            // 
+            // btnReporteConsumo
+            // 
+            this.btnReporteConsumo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteConsumo.FlatAppearance.BorderSize = 0;
+            this.btnReporteConsumo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteConsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteConsumo.ForeColor = System.Drawing.Color.White;
+            this.btnReporteConsumo.Location = new System.Drawing.Point(0, 592);
+            this.btnReporteConsumo.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReporteConsumo.Name = "btnReporteConsumo";
+            this.btnReporteConsumo.Size = new System.Drawing.Size(303, 74);
+            this.btnReporteConsumo.TabIndex = 11;
+            this.btnReporteConsumo.Text = "[Reporte] Consumo inusual de articulo";
+            this.btnReporteConsumo.UseVisualStyleBackColor = true;
+            this.btnReporteConsumo.Visible = false;
+            this.btnReporteConsumo.Click += new System.EventHandler(this.btnReporteConsumo_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -375,6 +395,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnReporte5);
             this.flowLayoutPanel1.Controls.Add(this.btnReporte6);
             this.flowLayoutPanel1.Controls.Add(this.btnReporte7);
+            this.flowLayoutPanel1.Controls.Add(this.btnRpVentasAnual);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 272);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -429,7 +450,7 @@
             this.btnReporte5.Name = "btnReporte5";
             this.btnReporte5.Size = new System.Drawing.Size(303, 74);
             this.btnReporte5.TabIndex = 8;
-            this.btnReporte5.Text = "Resumen Ventas Anual";
+            this.btnReporte5.Text = "[Reporte] Detalle de ventas diario";
             this.btnReporte5.UseVisualStyleBackColor = true;
             this.btnReporte5.Visible = false;
             this.btnReporte5.Click += new System.EventHandler(this.btnReporte5_Click);
@@ -446,7 +467,7 @@
             this.btnReporte6.Name = "btnReporte6";
             this.btnReporte6.Size = new System.Drawing.Size(303, 74);
             this.btnReporte6.TabIndex = 12;
-            this.btnReporte6.Text = "Detalle Ventas Diario";
+            this.btnReporte6.Text = "[Reporte] Comparativo de ventas por tipo";
             this.btnReporte6.UseVisualStyleBackColor = true;
             this.btnReporte6.Visible = false;
             this.btnReporte6.Click += new System.EventHandler(this.btnReporte6_Click);
@@ -463,10 +484,27 @@
             this.btnReporte7.Name = "btnReporte7";
             this.btnReporte7.Size = new System.Drawing.Size(303, 74);
             this.btnReporte7.TabIndex = 13;
-            this.btnReporte7.Text = "Comparativo de ventas por tipo";
+            this.btnReporte7.Text = "[Reporte] Pedidos a domicilio ";
             this.btnReporte7.UseVisualStyleBackColor = true;
             this.btnReporte7.Visible = false;
             this.btnReporte7.Click += new System.EventHandler(this.btnReporte7_Click);
+            // 
+            // btnRpVentasAnual
+            // 
+            this.btnRpVentasAnual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRpVentasAnual.FlatAppearance.BorderSize = 0;
+            this.btnRpVentasAnual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRpVentasAnual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRpVentasAnual.ForeColor = System.Drawing.Color.White;
+            this.btnRpVentasAnual.Location = new System.Drawing.Point(0, 370);
+            this.btnRpVentasAnual.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRpVentasAnual.Name = "btnRpVentasAnual";
+            this.btnRpVentasAnual.Size = new System.Drawing.Size(303, 74);
+            this.btnRpVentasAnual.TabIndex = 13;
+            this.btnRpVentasAnual.Text = "[Reporte] Resumen de ventas anual";
+            this.btnRpVentasAnual.UseVisualStyleBackColor = true;
+            this.btnRpVentasAnual.Visible = false;
+            this.btnRpVentasAnual.Click += new System.EventHandler(this.btnRpVentasAnual_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -549,7 +587,7 @@
             this.btnReporte8.Name = "btnReporte8";
             this.btnReporte8.Size = new System.Drawing.Size(303, 74);
             this.btnReporte8.TabIndex = 13;
-            this.btnReporte8.Text = "Compras por Periodo";
+            this.btnReporte8.Text = "[Reporte] Compras por periodo";
             this.btnReporte8.UseVisualStyleBackColor = true;
             this.btnReporte8.Visible = false;
             this.btnReporte8.Click += new System.EventHandler(this.btnReporte8_Click);
@@ -566,7 +604,7 @@
             this.btnReporte9.Name = "btnReporte9";
             this.btnReporte9.Size = new System.Drawing.Size(303, 74);
             this.btnReporte9.TabIndex = 12;
-            this.btnReporte9.Text = "Pedidos a domicilio";
+            this.btnReporte9.Text = "(Boton disponible)";
             this.btnReporte9.UseVisualStyleBackColor = true;
             this.btnReporte9.Visible = false;
             this.btnReporte9.Click += new System.EventHandler(this.btnReporte9_Click);
@@ -583,7 +621,7 @@
             this.btnReporte10.Name = "btnReporte10";
             this.btnReporte10.Size = new System.Drawing.Size(303, 74);
             this.btnReporte10.TabIndex = 8;
-            this.btnReporte10.Text = "Consumo anormal de articulos";
+            this.btnReporte10.Text = "(Boton disponible)";
             this.btnReporte10.UseVisualStyleBackColor = true;
             this.btnReporte10.Visible = false;
             // 
@@ -648,7 +686,7 @@
             this.btnReporte11.Name = "btnReporte11";
             this.btnReporte11.Size = new System.Drawing.Size(303, 74);
             this.btnReporte11.TabIndex = 16;
-            this.btnReporte11.Text = "Actividad por Usuario";
+            this.btnReporte11.Text = "[Reporte] Actividad por usuario";
             this.btnReporte11.UseVisualStyleBackColor = true;
             this.btnReporte11.Visible = false;
             this.btnReporte11.Click += new System.EventHandler(this.btnReporte11_Click);
@@ -775,6 +813,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReporte11;
+        private System.Windows.Forms.Button btnReporteConsumo;
+        private System.Windows.Forms.Button btnRpVentasAnual;
     }
 }
 

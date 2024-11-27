@@ -21,9 +21,15 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 
         private void frmDetalleVentasDiario_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.MinDate = new DateTime(DateTime.Now.Year, 1, 1);
-            dateTimePicker1.MaxDate = new DateTime(DateTime.Now.Year, 12, 31);
+            dateTimePicker1.Format = DateTimePickerFormat.Long;
+            DateTime fechaActual = DateTime.Now;
+
+            DateTime fechaMinima = new DateTime(fechaActual.Year - 2, 1, 1); //la fecha mínima sera dos años antes del año actual
+            DateTime fechaMaxima = new DateTime(fechaActual.Year, 12, 31);
+
+            dateTimePicker1.MinDate = fechaMinima;
+            dateTimePicker1.MaxDate = fechaMaxima;
+
         }
 
         private void button1_Click(object sender, EventArgs e)

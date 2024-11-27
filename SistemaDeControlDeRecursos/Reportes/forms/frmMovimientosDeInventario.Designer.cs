@@ -67,11 +67,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Noto Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
             this.label2.Location = new System.Drawing.Point(32, 301);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 25);
+            this.label2.Size = new System.Drawing.Size(157, 30);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fin de Periodo";
             // 
@@ -79,11 +79,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Noto Sans ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
             this.label1.Location = new System.Drawing.Point(32, 206);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 25);
+            this.label1.Size = new System.Drawing.Size(184, 30);
             this.label1.TabIndex = 4;
             this.label1.Text = "Inicio de Periodo";
             // 
@@ -93,11 +93,11 @@
             this.generarReporte.FlatAppearance.BorderSize = 2;
             this.generarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(108)))), ((int)(((byte)(127)))));
             this.generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.generarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generarReporte.Font = new System.Drawing.Font("Noto Sans SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generarReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
-            this.generarReporte.Location = new System.Drawing.Point(46, 555);
+            this.generarReporte.Location = new System.Drawing.Point(37, 613);
             this.generarReporte.Name = "generarReporte";
-            this.generarReporte.Size = new System.Drawing.Size(195, 43);
+            this.generarReporte.Size = new System.Drawing.Size(216, 43);
             this.generarReporte.TabIndex = 2;
             this.generarReporte.Text = "Generar Reporte";
             this.generarReporte.UseVisualStyleBackColor = true;
@@ -105,20 +105,20 @@
             // 
             // fechaFinPicker
             // 
-            this.fechaFinPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaFinPicker.Font = new System.Drawing.Font("Source Sans 3 Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaFinPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaFinPicker.Location = new System.Drawing.Point(32, 333);
             this.fechaFinPicker.Name = "fechaFinPicker";
-            this.fechaFinPicker.Size = new System.Drawing.Size(143, 28);
+            this.fechaFinPicker.Size = new System.Drawing.Size(143, 34);
             this.fechaFinPicker.TabIndex = 1;
             // 
             // fechaInicioPicker
             // 
-            this.fechaInicioPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaInicioPicker.Font = new System.Drawing.Font("Source Sans 3 Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaInicioPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaInicioPicker.Location = new System.Drawing.Point(32, 238);
             this.fechaInicioPicker.Name = "fechaInicioPicker";
-            this.fechaInicioPicker.Size = new System.Drawing.Size(143, 28);
+            this.fechaInicioPicker.Size = new System.Drawing.Size(143, 34);
             this.fechaInicioPicker.TabIndex = 0;
             // 
             // frmMovimientosDeInventario
@@ -128,6 +128,7 @@
             this.ClientSize = new System.Drawing.Size(895, 668);
             this.Controls.Add(this.reportViewerWnd1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMovimientosDeInventario";
             this.Text = "frmMovimientosDeInventario";
             this.Load += new System.EventHandler(this.frmMovimientosDeInventario_Load);

@@ -22,6 +22,15 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 
         private void frmResumenVentasAnual_Load(object sender, EventArgs e)
         {
+            anioPicker.Format = DateTimePickerFormat.Custom;
+            anioPicker.CustomFormat = "yyyy";
+
+            int anioActual = DateTime.Now.Year;
+            anioPicker.MinDate = new DateTime(anioActual - 2, 1, 1);
+            anioPicker.MaxDate = new DateTime(anioActual, 12, 31);
+
+            anioPicker.Value = DateTime.Now;
+            anioPicker.ShowUpDown = true;
 
 
             var adapter = new spReporteResumenDeVentasAnualTableAdapter();
@@ -45,6 +54,7 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 
             reportViewer1.RefreshReport();
 
+            this.reportViewer1.RefreshReport();
         }
     }
 }

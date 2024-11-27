@@ -23,14 +23,26 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 
         private void frmMovimientosDeInventario_Load(object sender, EventArgs e)
         {
+            //Control de fechas para datetimepicker para seleccion de fecha inicial
             fechaInicioPicker.Format = DateTimePickerFormat.Short;
-            fechaInicioPicker.MinDate = new DateTime(DateTime.Now.Year, 1, 1);
-            fechaInicioPicker.MaxDate = new DateTime(DateTime.Now.Year, 12, 31);
+            DateTime fechaActualPicker1 = DateTime.Now;
+
+            DateTime fechaMinimaPicker1 = new DateTime(fechaActualPicker1.Year - 2, 1, 1); //la fecha mínima sera dos años antes del año actual
+            DateTime fechaMaximaPicker1 = new DateTime(fechaActualPicker1.Year, 12, 31);
+
+            fechaInicioPicker.MinDate = fechaMinimaPicker1;
+            fechaInicioPicker.MaxDate = fechaMaximaPicker1;
             fechaInicioPicker.Value = fechaInicioPicker.MinDate;
 
+            //Control de fechas para datetimepicker para seleccion de fecha final
             fechaFinPicker.Format = DateTimePickerFormat.Short;
-            fechaFinPicker.MinDate = new DateTime(DateTime.Now.Year, 1, 1);
-            fechaFinPicker.MaxDate = new DateTime(DateTime.Now.Year, 12, 31);
+            DateTime fechaActualPicker2 = DateTime.Now;
+
+            DateTime fechaMinimaPicker2 = new DateTime(fechaActualPicker2.Year - 2, 1, 1);
+            DateTime fechaMaximaPicker2 = new DateTime(fechaActualPicker2.Year, 12, 31);
+
+            fechaFinPicker.MinDate = fechaMinimaPicker2;
+            fechaFinPicker.MaxDate = fechaMaximaPicker2;
             fechaFinPicker.Value = fechaFinPicker.MaxDate;
             this.reportViewerWnd1.RefreshReport();
         }

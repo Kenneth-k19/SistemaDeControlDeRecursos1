@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaDeControlDeRecursos.Reportes.dataSets;
 using SistemaDeControlDeRecursos.Reportes.forms;
 
 namespace SistemaDeControlDeRecursos
@@ -31,7 +32,12 @@ namespace SistemaDeControlDeRecursos
         frmUsuarios usuarios;
         frmCierrePeriodo cierrePeriodo;
         frmActividadPorUsuario actividadPorUsuario;
-
+        frmMovimientosDeInventario movimientosDeInventario;
+        frmDetalleVentasDiario detalleVentasDiario;
+        frmComparativoVentasPorTipo comparativoVentasPorTipo;
+        frmRpPedidosADomicilio pedidosADomicilio;
+        frmRpComprasPorPeriodo comprasPorPeriodo;
+        frmResumenVentasAnual resumenVentasAnual;
 
         bool checker = true;
         private DataTable accesos;
@@ -553,38 +559,112 @@ namespace SistemaDeControlDeRecursos
 
         private void btnReporte1_Click(object sender, EventArgs e)
         {
-            frmMovimientosDeInventario rv = new frmMovimientosDeInventario();
-            rv.ShowDialog();
+            if (movimientosDeInventario == null)
+            {
+                movimientosDeInventario = new frmMovimientosDeInventario();
+                movimientosDeInventario.FormClosed += movimientosDeInventario_formClosed;
+                movimientosDeInventario.MdiParent = this;
+                movimientosDeInventario.Dock = DockStyle.Fill;
+                movimientosDeInventario.Show();
+            }
+            else
+            {
+                movimientosDeInventario.Activate();
+            };
+        }
+
+        private void movimientosDeInventario_formClosed(object sender, FormClosedEventArgs e)
+        {
+            movimientosDeInventario = null;
         }
 
         private void btnReporte5_Click(object sender, EventArgs e)
         {
-            frmResumenVentasAnual frm = new frmResumenVentasAnual();
-            frm.ShowDialog();
+            if (detalleVentasDiario == null)
+            {
+                detalleVentasDiario = new frmDetalleVentasDiario();
+                detalleVentasDiario.FormClosed += detalleVentasDiario_formClosed;
+                detalleVentasDiario.MdiParent = this;
+                detalleVentasDiario.Dock = DockStyle.Fill;
+                detalleVentasDiario.Show();
+            }
+            else
+            {
+                detalleVentasDiario.Activate();
+            };
+        }
+
+        private void detalleVentasDiario_formClosed(object sender, FormClosedEventArgs e)
+        {
+            detalleVentasDiario = null;
         }
 
         private void btnReporte6_Click(object sender, EventArgs e)
         {
-            frmDetalleVentasDiario frm = new frmDetalleVentasDiario();
-            frm.ShowDialog();
+            if (comparativoVentasPorTipo == null)
+            {
+                comparativoVentasPorTipo = new frmComparativoVentasPorTipo();
+                comparativoVentasPorTipo.FormClosed += comparativoVentasPorTipo_formClosed;
+                comparativoVentasPorTipo.MdiParent = this;
+                comparativoVentasPorTipo.Dock = DockStyle.Fill;
+                comparativoVentasPorTipo.Show();
+            }
+            else
+            {
+                comparativoVentasPorTipo.Activate();
+            };
+        }
+
+        private void comparativoVentasPorTipo_formClosed(object sender, FormClosedEventArgs e)
+        {
+            comparativoVentasPorTipo = null;
         }
 
         private void btnReporte7_Click(object sender, EventArgs e)
         {
-            frmComparativoVentasPorTipo rp = new frmComparativoVentasPorTipo();
-            rp.ShowDialog();
+            if (pedidosADomicilio == null)
+            {
+                pedidosADomicilio = new frmRpPedidosADomicilio();
+                pedidosADomicilio.FormClosed += pedidosADomicilio_formClosed;
+                pedidosADomicilio.MdiParent = this;
+                pedidosADomicilio.Dock = DockStyle.Fill;
+                pedidosADomicilio.Show();
+            }
+            else
+            {
+                pedidosADomicilio.Activate();
+            };
+        }
+
+        private void pedidosADomicilio_formClosed(object sender, FormClosedEventArgs e)
+        {
+            pedidosADomicilio = null;
         }
 
         private void btnReporte8_Click(object sender, EventArgs e)
         {
-            frmRpComprasPorPeriodo frm = new frmRpComprasPorPeriodo();
-            frm.ShowDialog();
+            if (comprasPorPeriodo == null)
+            {
+                comprasPorPeriodo = new frmRpComprasPorPeriodo();
+                comprasPorPeriodo.FormClosed += comprasPorPeriodo_formClosed;
+                comprasPorPeriodo.MdiParent = this;
+                comprasPorPeriodo.Dock = DockStyle.Fill;
+                comprasPorPeriodo.Show();
+            }
+            else
+            {
+                comprasPorPeriodo.Activate();
+            };
+        }
+
+        private void comprasPorPeriodo_formClosed(object sender, FormClosedEventArgs e)
+        {
+            comprasPorPeriodo = null;
         }
 
         private void btnReporte9_Click(object sender, EventArgs e)
         {
-            frmRpPedidosADomicilio frm = new frmRpPedidosADomicilio();
-            frm.ShowDialog();
+            
         }
 
         private void btnReporte11_Click(object sender, EventArgs e)
@@ -606,6 +686,36 @@ namespace SistemaDeControlDeRecursos
         private void actividadPorUsuario_formClosed(object sender, FormClosedEventArgs e)
         {
             actividadPorUsuario = null;
+        }
+
+        private void btnReporteConsumo_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnReporteResumenVentas_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void resumenVentasAnual_formClosed(object sender, FormClosedEventArgs e)
+        {
+            resumenVentasAnual = null;
+        }
+
+        private void btnRpVentasAnual_Click(object sender, EventArgs e)
+        {
+                if (resumenVentasAnual == null)
+            {
+                resumenVentasAnual = new frmResumenVentasAnual();
+                resumenVentasAnual.FormClosed += resumenVentasAnual_formClosed;
+                resumenVentasAnual.MdiParent = this;
+                resumenVentasAnual.Dock = DockStyle.Fill;
+                resumenVentasAnual.Show();
+            }
+            else
+            {
+                resumenVentasAnual.Activate();
+            }
         }
 
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)
