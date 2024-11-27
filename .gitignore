@@ -418,3 +418,17 @@ __pycache__/
 # Configuración para sistemas de contenedores (Docker)
 docker-compose.override.yml
 .dockerignore
+
+# Archivos temporales y datos de ReportViewer
+*.rdl.data
+*.rdlc.data
+_ReportHistory.xml
+*.rptproj.user
+*.rptproj.bak
+
+# Otros archivos temporales del reporteador
+*.cache
+*.log
+
+*.xss          # Archivos de configuración de visualización del DataSet
+.designer.   # Archivos de código autogenerados
