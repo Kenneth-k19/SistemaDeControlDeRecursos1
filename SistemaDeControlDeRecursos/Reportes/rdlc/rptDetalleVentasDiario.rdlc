@@ -6,22 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.41281cm</Width>
+              <Width>3.03121cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.41281cm</Width>
+              <Width>3.03121cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.41281cm</Width>
+              <Width>1.95448cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.41281cm</Width>
+              <Width>3.03121cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.41281cm</Width>
+              <Width>3.03121cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.41281cm</Width>
+              <Width>3.03121cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -495,11 +495,13 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>DataSetDVD</DataSetName>
         <Top>2.29928cm</Top>
-        <Left>0.37639cm</Left>
+        <Left>1.43472cm</Left>
         <Height>1.2cm</Height>
-        <Width>20.47686cm</Width>
+        <Width>17.11053cm</Width>
         <Style>
           <Border>
             <Color>White</Color>
@@ -624,7 +626,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>29.7cm</Height>
+    <Height>5.94042cm</Height>
     <Style>
       <BackgroundColor>#f3f1eb</BackgroundColor>
     </Style>
@@ -814,9 +816,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>3.11778cm</Top>
-          <Left>17.55987cm</Left>
+          <Left>17.2847cm</Left>
           <Height>0.70583cm</Height>
-          <Width>2.85466cm</Width>
+          <Width>3.19333cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -915,10 +917,10 @@
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>0cm</LeftMargin>
-    <RightMargin>0cm</RightMargin>
-    <TopMargin>0cm</TopMargin>
-    <BottomMargin>0cm</BottomMargin>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

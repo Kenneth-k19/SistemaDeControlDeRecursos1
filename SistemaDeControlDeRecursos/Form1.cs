@@ -310,7 +310,7 @@ namespace SistemaDeControlDeRecursos
             {
                 flowLayoutPanel1.Height += 10;
 
-                if (flowLayoutPanel1.Height >= 309)
+                if (flowLayoutPanel1.Height >= 360)
                 {
                     facturacionTransition.Stop();
                     facturacionExpand = true;
