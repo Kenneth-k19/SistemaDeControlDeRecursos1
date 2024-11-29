@@ -264,7 +264,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (factura == null)
             {
-                factura = new frmFactura();
+                factura = new frmFactura(conexion);
                 factura.FormClosed += Factura_FormClosed;
                 factura.MdiParent = this;
                 factura.Dock = DockStyle.Fill;
