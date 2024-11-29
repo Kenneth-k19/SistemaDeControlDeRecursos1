@@ -28,7 +28,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>MES</Value>
+                              <Value>Mes</Value>
                               <Style>
                                 <FontFamily>Arial Black</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -66,7 +66,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>TOTAL</Value>
+                              <Value>Total</Value>
                               <Style>
                                 <FontFamily>Arial Black</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -104,7 +104,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>PORCENTAJE CONTRIBUCION</Value>
+                              <Value>Porcentaje de contribucion</Value>
                               <Style>
                                 <FontFamily>Arial Black</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -155,7 +155,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -186,12 +186,13 @@
                               <Value>=Fields!Total.Value</Value>
                               <Style>
                                 <FontFamily>Poppins</FontFamily>
+                                <Format>'L'0.00;('L'0.00)</Format>
                                 <Color>#7f0139</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -206,6 +207,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-HN</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -222,6 +224,7 @@
                               <Value>=Fields!PorcentajeDeContribucion.Value</Value>
                               <Style>
                                 <FontFamily>Poppins</FontFamily>
+                                <Format>0.00%</Format>
                                 <Color>#7f0139</Color>
                               </Style>
                             </TextRun>
@@ -244,6 +247,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>

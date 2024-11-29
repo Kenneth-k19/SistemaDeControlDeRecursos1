@@ -82,7 +82,7 @@
                   <Width>4.58883cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.35537cm</Width>
+                  <Width>2.86934cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.97487cm</Width>
@@ -96,7 +96,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.07625cm</Height>
+                  <Height>1.43608cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -181,7 +181,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fecha Mov</Value>
+                                  <Value>Fecha del movimiento</Value>
                                   <Style>
                                     <FontFamily>Poppins</FontFamily>
                                     <FontWeight>Medium</FontWeight>
@@ -218,7 +218,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Tipo Mov</Value>
+                                  <Value>Tipo de movimiento</Value>
                                   <Style>
                                     <FontFamily>Poppins</FontFamily>
                                     <FontWeight>Medium</FontWeight>
@@ -378,7 +378,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -450,7 +450,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -522,7 +522,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -568,8 +568,8 @@
             <DataSetName>dsMovimientosInventario</DataSetName>
             <Top>1.8675cm</Top>
             <Left>1.60927cm</Left>
-            <Height>1.67625cm</Height>
-            <Width>17.17957cm</Width>
+            <Height>2.03608cm</Height>
+            <Width>17.69354cm</Width>
             <Style>
               <Border>
                 <Color>White</Color>

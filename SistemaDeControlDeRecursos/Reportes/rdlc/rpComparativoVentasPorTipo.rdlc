@@ -52,16 +52,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.13306cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.47883cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.18024cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -238,7 +238,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -255,6 +255,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -389,9 +390,9 @@
             </TablixRowHierarchy>
             <DataSetName>dsComparativoDeVentasPorTipo</DataSetName>
             <Top>12.45928cm</Top>
-            <Left>5.32553cm</Left>
+            <Left>4.41731cm</Left>
             <Height>1.2cm</Height>
-            <Width>10cm</Width>
+            <Width>11.29213cm</Width>
             <Style>
               <Border>
                 <Color>White</Color>
