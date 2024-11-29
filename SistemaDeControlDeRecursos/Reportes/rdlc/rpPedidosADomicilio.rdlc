@@ -398,7 +398,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -465,12 +465,13 @@
                                   <Value>=Fields!Total.Value</Value>
                                   <Style>
                                     <FontFamily>Poppins</FontFamily>
+                                    <Format>'L'0.00;('L'0.00)</Format>
                                     <Color>#7f0139</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -485,6 +486,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>es-HN</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -501,12 +503,13 @@
                                   <Value>=Fields!Comision.Value</Value>
                                   <Style>
                                     <FontFamily>Poppins</FontFamily>
+                                    <Format>'L'0.00;('L'0.00)</Format>
                                     <Color>#7f0139</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -521,6 +524,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>es-HN</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -552,8 +556,8 @@
             <DataSetName>rdlcDataSetPedidosDom</DataSetName>
             <Top>2.2357cm</Top>
             <Left>1.08856cm</Left>
-            <Height>2.61817cm</Height>
-            <Width>18.52495cm</Width>
+            <Height>2.61816cm</Height>
+            <Width>18.52494cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -949,10 +953,10 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>0cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
