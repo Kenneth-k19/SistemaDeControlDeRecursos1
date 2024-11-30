@@ -722,6 +722,12 @@ namespace SistemaDeControlDeRecursos
             }
         }
 
+        private void btnReporte10_Click(object sender, EventArgs e)
+        {
+            frmRpConsumoAnormalArticulos frm = new frmRpConsumoAnormalArticulos();
+            frm.ShowDialog();
+        }
+
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)
         {
             //miPerfil = null;

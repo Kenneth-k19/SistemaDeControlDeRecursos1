@@ -613,9 +613,10 @@
             this.btnReporte10.Name = "btnReporte10";
             this.btnReporte10.Size = new System.Drawing.Size(227, 60);
             this.btnReporte10.TabIndex = 8;
-            this.btnReporte10.Text = "(Boton disponible)";
+            this.btnReporte10.Text = "[Reporte] Diferencias de Consumo de Artículos";
             this.btnReporte10.UseVisualStyleBackColor = true;
             this.btnReporte10.Visible = false;
+            this.btnReporte10.Click += new System.EventHandler(this.btnReporte10_Click);
             // 
             // flowLayoutPanel3
             // 

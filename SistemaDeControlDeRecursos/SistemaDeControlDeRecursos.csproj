@@ -194,6 +194,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\dataSets\dsConsumoAnormalArt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsConsumoAnormalArt.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dataSets\dsMovimientosDeInventario.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -272,6 +277,12 @@
     </Compile>
     <Compile Include="Reportes\forms\frmRpComprasPorPeriodo.Designer.cs">
       <DependentUpon>frmRpComprasPorPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\forms\frmRpConsumoAnormalArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmRpConsumoAnormalArticulos.Designer.cs">
+      <DependentUpon>frmRpConsumoAnormalArticulos.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\forms\frmRpPedidosADomicilio.cs">
       <SubType>Form</SubType>
@@ -367,6 +378,9 @@
     <EmbeddedResource Include="Reportes\forms\frmRpComprasPorPeriodo.resx">
       <DependentUpon>frmRpComprasPorPeriodo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\forms\frmRpConsumoAnormalArticulos.resx">
+      <DependentUpon>frmRpConsumoAnormalArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\forms\frmRpPedidosADomicilio.resx">
       <DependentUpon>frmRpPedidosADomicilio.cs</DependentUpon>
     </EmbeddedResource>
@@ -416,6 +430,17 @@
     </None>
     <None Include="Reportes\dataSets\dsComparativoVentasPorTipo.xss">
       <DependentUpon>dsComparativoVentasPorTipo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsConsumoAnormalArt.xsc">
+      <DependentUpon>dsConsumoAnormalArt.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsConsumoAnormalArt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsConsumoAnormalArt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsConsumoAnormalArt.xss">
+      <DependentUpon>dsConsumoAnormalArt.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dataSets\dsMovimientosDeInventario.xsc">
       <DependentUpon>dsMovimientosDeInventario.xsd</DependentUpon>
