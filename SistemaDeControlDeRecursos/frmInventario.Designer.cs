@@ -41,8 +41,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -62,7 +60,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(315, 9);
+            this.label1.Location = new System.Drawing.Point(306, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 44);
             this.label1.TabIndex = 0;
@@ -171,23 +169,6 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Unidad:";
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(452, 217);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(122, 26);
-            this.textBox8.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(270, 217);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(176, 26);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Fecha de Grabación:";
-            // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(122, 282);
@@ -228,7 +209,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 429);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(755, 354);
+            this.dataGridView1.Size = new System.Drawing.Size(738, 354);
             this.dataGridView1.TabIndex = 21;
             // 
             // btnInsertar
@@ -306,8 +287,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -348,8 +327,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox1;

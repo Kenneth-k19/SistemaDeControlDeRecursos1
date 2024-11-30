@@ -464,7 +464,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (familia == null)
             {
-                familia = new frmFamilia();
+                familia = new frmFamilia(conexion);
                 familia.FormClosed += Familia_FormClosed;
                 familia.MdiParent = this;
                 familia.Dock = DockStyle.Fill;
