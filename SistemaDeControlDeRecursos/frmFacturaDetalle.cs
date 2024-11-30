@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,69 @@ namespace SistemaDeControlDeRecursos
 {
     public partial class frmFacturaDetalle : Form
     {
+        SqlConnection Con;
+        SqlDataAdapter adpFacturaDet;
+        DataTable dtFacturaDet;
+
+        int ID;
+
         public frmFacturaDetalle()
         {
             InitializeComponent();
         }
 
+        public frmFacturaDetalle(SqlConnection con)
+        {
+            InitializeComponent();
+
+            Con = con;
+        }
+
+        public frmFacturaDetalle(int id, SqlConnection con)
+        {
+            InitializeComponent();
+
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(220, 142, 168);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            try
+            {
+                adpFacturaDet = new SqlDataAdapter();
+                dtFacturaDet = new DataTable();
+
+                adpFacturaDet.SelectCommand = new SqlCommand("spSelectFacturaDet", con);
+                adpFacturaDet.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adpFacturaDet.SelectCommand.Parameters.Add(new SqlParameter("@id", SqlDbType.Int)
+                {
+                    Value = id
+                });
+
+                adpFacturaDet.Fill(dtFacturaDet);
+                dataGridView1.DataSource = dtFacturaDet;
+
+
+
+
+                ID = id;
+                Con = con;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
         private void frmFacturaDetalle_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
+
+            txtFacturaID.Text = ID.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

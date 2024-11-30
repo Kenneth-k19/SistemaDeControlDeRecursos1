@@ -53,7 +53,7 @@ namespace SistemaDeControlDeRecursos
         {
             frmLogin frmLogin = new frmLogin();
             frmLogin.ShowDialog();
-            
+
 
             //flpLeftPanel.BackColor = Color.FromArgb(23,24,29);
             flpLeftPanel.BackColor = Color.FromArgb(145, 19, 66);
@@ -70,13 +70,13 @@ namespace SistemaDeControlDeRecursos
             btnComprasModulo.BackColor = Color.FromArgb(145, 19, 66);
             btnAjustes.BackColor = Color.FromArgb(145, 19, 66);
 
-            flpLeftPanel.Controls.SetChildIndex(panel1,0);
+            flpLeftPanel.Controls.SetChildIndex(panel1, 0);
             panel1.BackColor = Color.FromArgb(145, 19, 66);
 
             //pasamos los valores que contiene el datatable si la conexion tiene exito
             if (frmLogin.getConectado)
             {
-               // this.conexion = frmLogin.getConexion;
+                // this.conexion = frmLogin.getConexion;
                 this.dtAccesos = frmLogin.getAccesos;
             }
             else
@@ -85,6 +85,10 @@ namespace SistemaDeControlDeRecursos
             }
 
             //
+
+            if(dtAccesos == null)
+                return;
+
             foreach(DataRow row in dtAccesos.Rows)
             {
                 string modulo = row["Boton Modulo"].ToString();

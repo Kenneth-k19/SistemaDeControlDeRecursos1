@@ -70,13 +70,22 @@ namespace SistemaDeControlDeRecursos
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            frmFacturaDetalle frm = new frmFacturaDetalle();
+            /* pasamos los valores necesarios al constructor del form e instanciamos y llamamos al form */
+            frmFacturaDetalle frm = new frmFacturaDetalle(con2);
             frm.ShowDialog();
         }
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
-            frmFacturaDetalle frm = new frmFacturaDetalle();
+            /* obtenemos los valores necesarios para enviar al constructor del form e instanciamos y llamamos al form */
+            int id=0;
+            var a = dataGridView1.CurrentRow.Cells["FacturaID"].Value;
+            if(dataGridView1.CurrentRow != null)
+            {
+                id = (int) (dataGridView1.CurrentRow.Cells["FacturaID"].Value);
+            }
+
+            frmFacturaDetalle frm = new frmFacturaDetalle(id,con2);
             frm.ShowDialog();
         }
 
