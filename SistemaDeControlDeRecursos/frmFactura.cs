@@ -15,9 +15,10 @@ namespace SistemaDeControlDeRecursos
     {
         string NombreBoton;
 
-        SqlConnection con2;
-        SqlDataAdapter adpFacturas;
-        DataTable dtFacturas;
+        private SqlConnection con2;
+        private SqlDataAdapter adpFacturas;
+        private DataTable dtFacturas;
+        private BindingSource bsFacturas;
 
         public frmFactura()
         {
@@ -45,10 +46,12 @@ namespace SistemaDeControlDeRecursos
             {
                 adpFacturas = new SqlDataAdapter();
                 dtFacturas = new DataTable();
+                bsFacturas = new BindingSource();
 
                 adpFacturas.SelectCommand = new SqlCommand("spSelectFactura", con2);
                 adpFacturas.SelectCommand.CommandType = CommandType.StoredProcedure;
                 adpFacturas.Fill(dtFacturas);
+                bsFacturas.DataSource = dtFacturas;
                 dataGridView1.DataSource = dtFacturas;
             }
             catch (Exception ex)
@@ -93,5 +96,49 @@ namespace SistemaDeControlDeRecursos
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txtCodigo.Text.Trim();
+
+            bsFacturas.Filter = $"Codigo like '%{filtro}%'";
+        }
+
+        private void txtTipo_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txtTipo.Text.Trim();
+
+            bsFacturas.Filter = $"Tipo like '%{filtro}%'";
+        }
+
+        private void txtFecha1_TextChanged(object sender, EventArgs e)
+        {
+
+            // Verifica que el texto no esté vacío
+            if (string.IsNullOrEmpty(txtFecha1.Text.Trim()))
+            {
+                bsFacturas.Filter = string.Empty;  // Si no hay texto, no filtra
+            }
+            else
+            {
+                // Convertir la columna Fecha a una cadena en formato 'yyyy-MM-dd' y luego aplicar LIKE
+                bsFacturas.Filter = $"CONVERT(Fecha, 'System.String') LIKE '%{txtFecha1.Text.Trim()}%'";
+            }
+        }
+
+        private void txtFecha1_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+
+
+
+        //DateTime fechaSeleccionada;
+
+        //bsFacturas.Filter = $"Fecha = #{fechaSeleccionada:dd/MM/yyyy}#";
+
     }
 }

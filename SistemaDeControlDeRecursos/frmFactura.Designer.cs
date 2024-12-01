@@ -33,12 +33,12 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.txtFecha1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +48,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(350, 9);
+            this.label1.Location = new System.Drawing.Point(323, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 44);
             this.label1.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 188);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(749, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(698, 291);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -102,69 +102,77 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.txtFecha1);
+            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtTipo);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 82);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(749, 100);
+            this.groupBox1.Size = new System.Drawing.Size(698, 100);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 24);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 23);
-            this.textBox1.TabIndex = 12;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(398, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 18;
+            this.txtCodigo.Location = new System.Drawing.Point(125, 24);
+            this.txtCodigo.Multiline = true;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(136, 23);
+            this.txtCodigo.TabIndex = 12;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
+            this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(24, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 23);
+            this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 11;
             this.label3.Text = "Codigo:";
             // 
             // label4
             // 
+            this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(297, 24);
+            this.label4.Location = new System.Drawing.Point(283, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 23);
+            this.label4.Size = new System.Drawing.Size(148, 20);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Fecha:";
+            this.label4.Text = "Fecha (dd/MM/yyyy):";
             // 
             // label5
             // 
+            this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 64);
+            this.label5.Location = new System.Drawing.Point(43, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 23);
+            this.label5.Size = new System.Drawing.Size(42, 20);
             this.label5.TabIndex = 14;
             this.label5.Text = "Tipo:";
             // 
-            // textBox3
+            // txtTipo
             // 
-            this.textBox3.Location = new System.Drawing.Point(125, 64);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(136, 23);
-            this.textBox3.TabIndex = 15;
+            this.txtTipo.Location = new System.Drawing.Point(125, 64);
+            this.txtTipo.Multiline = true;
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(136, 23);
+            this.txtTipo.TabIndex = 15;
+            this.txtTipo.TextChanged += new System.EventHandler(this.txtTipo_TextChanged);
+            // 
+            // txtFecha1
+            // 
+            this.txtFecha1.Location = new System.Drawing.Point(442, 24);
+            this.txtFecha1.Multiline = true;
+            this.txtFecha1.Name = "txtFecha1";
+            this.txtFecha1.Size = new System.Drawing.Size(136, 23);
+            this.txtFecha1.TabIndex = 16;
+            this.txtFecha1.TextChanged += new System.EventHandler(this.txtFecha1_TextChanged);
+            this.txtFecha1.Leave += new System.EventHandler(this.txtFecha1_Leave);
             // 
             // frmFactura
             // 
@@ -199,11 +207,11 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.TextBox txtFecha1;
     }
 }
