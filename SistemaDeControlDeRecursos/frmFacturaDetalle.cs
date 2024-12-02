@@ -52,7 +52,7 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            txtCodigo.Enabled = false;
+            
             txtFacturaID.Enabled=false;
 
             try
@@ -86,9 +86,15 @@ namespace SistemaDeControlDeRecursos
 
         private void frmFacturaDetalle_Load(object sender, EventArgs e)
         {
+           
+
             panel1.BackColor = Color.FromArgb(145, 19, 66);
 
             txtFacturaID.Text = ID.ToString();
+
+            
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)

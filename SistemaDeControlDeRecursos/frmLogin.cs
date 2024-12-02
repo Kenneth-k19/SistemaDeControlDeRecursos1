@@ -33,6 +33,8 @@ namespace SistemaDeControlDeRecursos
             get { return this.conectado; }
         }
 
+        public static int userID { get; set; }
+
         public int getUsuarioID
         {
             get { return usuarioID; }
@@ -177,6 +179,7 @@ namespace SistemaDeControlDeRecursos
                 {
                     conectado = true;
                     this.usuarioID = (int)dtAutenticacion.Rows[0][0];
+                    frmLogin.userID = this.usuarioID;
 
                     /* se obtienen los accesos con los que cuenta el usuario que se esta conectando. */
 
