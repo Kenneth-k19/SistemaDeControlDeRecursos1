@@ -84,6 +84,15 @@ namespace SistemaDeControlDeRecursos
             adpFacturas.InsertCommand.Parameters.Add("@estado", SqlDbType.VarChar, 1, "Estado");
             adpFacturas.InsertCommand.Parameters.Add("@descuento", SqlDbType.Float, 4, "Descuento");
 
+            adpFacturas.UpdateCommand = new SqlCommand("spModificarFactura", con);
+            adpFacturas.UpdateCommand.CommandType = CommandType.StoredProcedure;
+            adpFacturas.UpdateCommand.Parameters.Add("@codigo",SqlDbType.VarChar,20,"Codigo");
+            adpFacturas.UpdateCommand.Parameters.Add("@fecha", SqlDbType.DateTime, 8, "Fecha");
+            adpFacturas.UpdateCommand.Parameters.Add("@tipo", SqlDbType.VarChar, 1, "Tipo");
+            adpFacturas.UpdateCommand.Parameters.Add("@consumo", SqlDbType.VarChar, 1, "Consumo");
+            adpFacturas.UpdateCommand.Parameters.Add("@estado", SqlDbType.VarChar, 1, "Estado");
+            adpFacturas.UpdateCommand.Parameters.Add("@descuento", SqlDbType.Float, 4, "Descuento");
+
 
             con2 = con;
         }
@@ -213,6 +222,8 @@ namespace SistemaDeControlDeRecursos
                 btnNuevo.Text = "Insertar";
 
                 habilitarCamposFactura();
+                btnEditar.Enabled = false; //este es el boton de agregar detalle
+                btnModificar.Enabled = false; //este el boton para modificar en el form actual
             }
             else if(btnNuevo.Text == "Insertar")
             {
@@ -239,6 +250,8 @@ namespace SistemaDeControlDeRecursos
 
                     inhabilitarCamposFactura();
                     btnNuevo.Text = "Nuevo";
+                    btnEditar.Enabled = true; //este es el boton de agregar detalle
+                    btnModificar.Enabled = true; //este el boton para modificar en el form actual
 
                     MessageBox.Show("Los datos se insertaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -248,6 +261,82 @@ namespace SistemaDeControlDeRecursos
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if(btnModificar.Text == "Editar")
+            {
+                habilitarCamposFactura();
+                btnModificar.Text = "Guardar";
+
+                btnNuevo.Enabled = false;
+                btnEditar.Enabled = false;
+
+                if(dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+
+                    string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
+                    DateTime fecha = Convert.ToDateTime(filaSeleccionada.Cells["Fecha"].Value.ToString());
+                    string tipo = filaSeleccionada.Cells["Tipo"].Value.ToString();
+                    string consumo = filaSeleccionada.Cells["Consumo"].Value.ToString();
+                    string estado = filaSeleccionada.Cells["Estado"].Value.ToString();
+                    string descuento = filaSeleccionada.Cells["Descuento"].Value.ToString();
+
+                    textBox2.Text = codigo;
+                    dateTimePicker1.Value = fecha;
+                    cmbTipo.SelectedValue = tipo;
+                    cmbConsumo.SelectedValue = consumo;
+                    cmbEstado.SelectedValue = estado;
+                    textBox1.Text = descuento;
+                }
+            }
+            else if(btnModificar.Text == "Guardar")
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    dtFacturas.PrimaryKey = new DataColumn[] { dtFacturas.Columns["Codigo"] };
+
+                    DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+
+                    DataRow filaDatos = dtFacturas.Rows.Find(filaSeleccionada.Cells["Codigo"].Value);
+
+                    if(filaDatos != null)
+                    {
+                        //filaDatos["Codigo"] = txtCodigo.Text;
+                        filaDatos["Fecha"] = dateTimePicker1.Value;
+                        filaDatos["Tipo"] = cmbTipo.SelectedValue;
+                        filaDatos["Consumo"] = cmbConsumo.SelectedValue;
+                        filaDatos["Estado"] = cmbEstado.SelectedValue;
+                        filaDatos["Descuento"] = textBox1.Text;
+
+                        try
+                        {
+                            adpFacturas.Update(dtFacturas);
+                            dtFacturas.Clear();
+                            adpFacturas.Fill(dtFacturas);
+                            dataGridView1.Refresh();
+                            MessageBox.Show("Los datos se actualizaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            btnModificar.Text = "Editar";
+                            btnNuevo.Enabled = true;
+                            btnEditar.Enabled = true;
+                            textBox2.Clear();
+                            textBox1.Text = "0.00";
+                            inhabilitarCamposFactura();
+                        }
+                        catch (Exception ex)
+                        {
+
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else 
+                { 
+                }
             }
         }
 
