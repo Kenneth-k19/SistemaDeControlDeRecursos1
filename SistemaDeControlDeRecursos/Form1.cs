@@ -226,7 +226,7 @@ namespace SistemaDeControlDeRecursos
         {
             if(inventario == null)
             {
-                inventario = new frmInventario();
+                inventario = new frmInventario(conexion);
                 inventario.FormClosed += Inventario_FormClosed;
                 inventario.MdiParent = this;
                 inventario.Dock = DockStyle.Fill;
@@ -726,6 +726,11 @@ namespace SistemaDeControlDeRecursos
         {
             frmRpConsumoAnormalArticulos frm = new frmRpConsumoAnormalArticulos();
             frm.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)

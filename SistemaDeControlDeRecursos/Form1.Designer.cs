@@ -200,6 +200,7 @@
             this.label1.Size = new System.Drawing.Size(434, 31);
             this.label1.TabIndex = 10;
             this.label1.Text = "Sistema de Control de Recursos";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button4
             // 
