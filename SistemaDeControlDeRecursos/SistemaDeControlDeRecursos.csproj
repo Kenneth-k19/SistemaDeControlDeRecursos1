@@ -94,6 +94,12 @@
     <Compile Include="frmAjusteInventarioDetalle.Designer.cs">
       <DependentUpon>frmAjusteInventarioDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArticuloFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticuloFactura.Designer.cs">
+      <DependentUpon>frmArticuloFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCierrePeriodo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAjusteInventarioDetalle.resx">
       <DependentUpon>frmAjusteInventarioDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArticuloFactura.resx">
+      <DependentUpon>frmArticuloFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCierrePeriodo.resx">
       <DependentUpon>frmCierrePeriodo.cs</DependentUpon>
