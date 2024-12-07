@@ -289,7 +289,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (compras == null)
             {
-                compras = new frmCompras();
+                compras = new frmCompras(conexion);
                 compras.FormClosed += Compras_FormClosed;
                 compras.MdiParent = this;
                 compras.Dock = DockStyle.Fill;
