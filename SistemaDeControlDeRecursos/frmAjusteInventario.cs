@@ -13,12 +13,14 @@ namespace SistemaDeControlDeRecursos
 {
     public partial class frmAjusteInventario : Form
     {
+        SqlConnection conn;
         SqlDataAdapter adpAjuste;
         DataTable tabAjuste;
-        public frmAjusteInventario()
+        public frmAjusteInventario( SqlConnection connect)
         {
             InitializeComponent();
             tabAjuste = new DataTable();
+            conn = connect;
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)

@@ -422,7 +422,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (ajusteInventario == null)
             {
-                ajusteInventario = new frmAjusteInventario();
+                ajusteInventario = new frmAjusteInventario(conexion);
                 ajusteInventario.FormClosed += AjusteInventario_FormClosed;
                 ajusteInventario.MdiParent = this;
                 ajusteInventario.Dock = DockStyle.Fill;
