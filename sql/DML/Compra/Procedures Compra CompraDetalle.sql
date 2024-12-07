@@ -20,31 +20,34 @@ AS
 		return @pk
 	END
 
-CREATE Function dbo.fCalcularCodigoCompra() returns varchar(20)
+alter Function dbo.fCalcularCodigoCompra() returns varchar(20)
 AS
 	BEGIN
 		declare @compraid int, @codigo varchar(20)
 
-		select @compraID = dbo.fCalcularCodigoCompra()
+		select @compraID = dbo.fCalcularPkCompra()
 
 		select @codigo = 'COM' + RIGHT('0000' + CAST(@compraid AS VARCHAR), 4)
 
 		return @codigo
 	END
 
-alter procedure spCompraInsert @compraid int output, @codigo varchar(20) output, @proveedorID int, @fecha datetime, @tipo varchar(1), @documento varchar(20), @estado int, @usuarioID int
+	select * from Compra
+
+alter procedure spCompraInsert @proveedorID int, @fecha datetime, @tipo varchar(1), @documento varchar(20), @estado varchar(1), @usuarioID int
 AS
 	BEGIN
+		declare @compraID int, @codigo varchar(20)
 		select @compraID = dbo.fCalcularPkCompra();
 		select @codigo = dbo.fCalcularCodigoCompra();
 
 		insert into Compra (CompraID, Codigo, ProveedorID, Fecha, Tipo, Documento, Estado, UsuarioID)
 		values
-			(@compraID, @codigo, @proveedorID, @fecha, @tipo, @documento, @estado, @usuarioID)
+			(@compraID, @codigo, @proveedorID, GETDATE(), @tipo, @documento, @estado, @usuarioID)
 
 	END
 
-alter PROCEdUrE spCompraUpdate @codigo varchar(20), @proveedorID int, @tipo varchar(1), @documento varchar(1), @estado int, @usuarioID int
+alter PROCEdUrE spCompraUpdate @codigo varchar(20), @proveedorID int, @tipo varchar(1), @documento varchar(20), @estado varchar(1), @usuarioID int
 AS
 	BEGIN
 		update Compra
@@ -102,3 +105,6 @@ AS
 	END
 
 
+
+	ALTER TABLE Compra ALTER COLUMN Estado VARCHAR(1);
+	ALTER TABLE Compra ALTER COLUMN Codigo VARCHAR(7);
