@@ -15,7 +15,7 @@ as
 	from #Ajuste a
 	inner join #Periodo p on p.PeriodoID = a.PeriodoID
 	inner join #Usuario u on u.UsuarioID = a.UsuarioID
-	inner join #Valores v on v.Codigo = P.Estado or v.Codigo = a.Tipo or v.Codigo = a.Estado
+	inner join #Valores v on v.Codigo = P.Estado or v.Codigo = a.Estado
 
 
 go
