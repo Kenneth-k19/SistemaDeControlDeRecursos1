@@ -82,11 +82,14 @@ namespace SistemaDeControlDeRecursos
                 adpFacturaDet.InsertCommand.Parameters.Add("@descuento", SqlDbType.Float, 4, "Descuento");
 
 
-
+                adpFacturaDet.DeleteCommand = new SqlCommand("spEliminarFacturaDet", con);
+                adpFacturaDet.DeleteCommand.CommandType = CommandType.StoredProcedure;
+                adpFacturaDet.DeleteCommand.Parameters.Add("@facturadetid",SqlDbType.Int,4,"FacturaDetID");
 
 
                 dataGridView1.Columns["FacturaID"].Visible = false;
                 dataGridView1.Columns["ArticuloID"].Visible = false;
+                dataGridView1.Columns["FacturaDetID"].Visible = false;
 
                 ID = id;
                 CODIGO = codigo;
@@ -211,6 +214,38 @@ namespace SistemaDeControlDeRecursos
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count == 1)
+            {
+                try
+                {
+                    int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["FacturaDetID"].Value);
+
+                    DataRow[] fila = dtFacturaDet.Select("FacturaDetID = " + id);
+
+                    if(fila.Length == 1)
+                    {
+                        fila[0].Delete();
+                    }
+
+                    adpFacturaDet.Update(dtFacturaDet);
+                    dtFacturaDet.Clear();
+                    adpFacturaDet.Fill(dtFacturaDet);
+                    dataGridView1.Refresh();
+                    MessageBox.Show("El registro se eliminó correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Por favor, selecciona una fila para eliminar.");
+                }
+                
+                
             }
         }
     }

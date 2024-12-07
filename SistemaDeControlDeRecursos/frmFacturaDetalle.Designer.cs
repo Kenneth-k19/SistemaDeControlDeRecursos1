@@ -52,7 +52,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.chkGuardado = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,7 +62,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(305, 11);
+            this.label1.Location = new System.Drawing.Point(313, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 39);
             this.label1.TabIndex = 1;
@@ -73,7 +72,6 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.chkGuardado);
             this.groupBox2.Controls.Add(this.btnSeleccionarArticulo);
             this.groupBox2.Controls.Add(this.txtArtiNombre);
             this.groupBox2.Controls.Add(this.label13);
@@ -303,7 +301,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 68);
+            this.panel1.Size = new System.Drawing.Size(817, 68);
             this.panel1.TabIndex = 45;
             // 
             // button1
@@ -315,7 +313,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(768, 0);
+            this.button1.Location = new System.Drawing.Point(785, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 31);
             this.button1.TabIndex = 12;
@@ -336,16 +334,7 @@
             this.btnEliminar.TabIndex = 46;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // chkGuardado
-            // 
-            this.chkGuardado.AutoSize = true;
-            this.chkGuardado.Location = new System.Drawing.Point(574, 141);
-            this.chkGuardado.Name = "chkGuardado";
-            this.chkGuardado.Size = new System.Drawing.Size(93, 22);
-            this.chkGuardado.TabIndex = 47;
-            this.chkGuardado.Text = "Guardado";
-            this.chkGuardado.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmFacturaDetalle
             // 
@@ -354,7 +343,7 @@
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(0, 850);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(245)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(817, 432);
+            this.ClientSize = new System.Drawing.Size(834, 432);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNuevo);
@@ -399,7 +388,6 @@
         private System.Windows.Forms.Button btnSeleccionarArticulo;
         private System.Windows.Forms.TextBox txtArtiNombre;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox chkGuardado;
         private System.Windows.Forms.Button btnEliminar;
     }
 }
