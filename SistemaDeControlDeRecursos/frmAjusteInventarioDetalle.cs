@@ -31,8 +31,8 @@ namespace SistemaDeControlDeRecursos
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
 
-            adpAjuste = new SqlDataAdapter("spAjusteSelect " + AjusteID, con);
-            adpAjuste.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adpAjuste = new SqlDataAdapter("exec spAjusteSelect @ajusteID" + AjusteID, con);
+            adpAjuste.SelectCommand.CommandType = CommandType.Text;
             tabAjuste = new DataTable();
             adpAjuste.Fill(tabAjuste);
 
