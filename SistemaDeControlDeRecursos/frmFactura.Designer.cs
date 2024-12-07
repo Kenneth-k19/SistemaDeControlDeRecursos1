@@ -39,6 +39,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtTipo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCambio = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtMontoPagado = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtsubtotal = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
@@ -57,14 +65,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.txtsubtotal = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtMontoPagado = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtCambio = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -75,7 +75,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(280, 9);
+            this.label1.Location = new System.Drawing.Point(271, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 44);
             this.label1.TabIndex = 0;
@@ -89,7 +89,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 623);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(703, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(686, 291);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -102,7 +102,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(571, 439);
+            this.btnEditar.Location = new System.Drawing.Point(554, 439);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(144, 45);
             this.btnEditar.TabIndex = 44;
@@ -123,7 +123,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 511);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(703, 100);
+            this.groupBox1.Size = new System.Drawing.Size(686, 100);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
@@ -215,10 +215,90 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 70);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(703, 363);
+            this.groupBox2.Size = new System.Drawing.Size(686, 363);
             this.groupBox2.TabIndex = 47;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Factura";
+            // 
+            // txtCambio
+            // 
+            this.txtCambio.Enabled = false;
+            this.txtCambio.Location = new System.Drawing.Point(125, 316);
+            this.txtCambio.Multiline = true;
+            this.txtCambio.Name = "txtCambio";
+            this.txtCambio.Size = new System.Drawing.Size(136, 23);
+            this.txtCambio.TabIndex = 34;
+            this.txtCambio.Text = "0.00";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(48, 316);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 21);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Cambio:";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(125, 238);
+            this.txtTotal.Multiline = true;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(136, 23);
+            this.txtTotal.TabIndex = 32;
+            this.txtTotal.Text = "0.00";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(70, 238);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 21);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "Total:";
+            // 
+            // txtMontoPagado
+            // 
+            this.txtMontoPagado.Enabled = false;
+            this.txtMontoPagado.Location = new System.Drawing.Point(125, 278);
+            this.txtMontoPagado.Multiline = true;
+            this.txtMontoPagado.Name = "txtMontoPagado";
+            this.txtMontoPagado.Size = new System.Drawing.Size(136, 23);
+            this.txtMontoPagado.TabIndex = 30;
+            this.txtMontoPagado.Text = "0.00";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 279);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(114, 21);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Monto Pagado:";
+            // 
+            // txtsubtotal
+            // 
+            this.txtsubtotal.Enabled = false;
+            this.txtsubtotal.Location = new System.Drawing.Point(125, 157);
+            this.txtsubtotal.Multiline = true;
+            this.txtsubtotal.Name = "txtsubtotal";
+            this.txtsubtotal.Size = new System.Drawing.Size(136, 23);
+            this.txtsubtotal.TabIndex = 28;
+            this.txtsubtotal.Text = "0.00";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(44, 157);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(71, 21);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Subtotal:";
             // 
             // textBox1
             // 
@@ -401,86 +481,6 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // txtsubtotal
-            // 
-            this.txtsubtotal.Enabled = false;
-            this.txtsubtotal.Location = new System.Drawing.Point(125, 157);
-            this.txtsubtotal.Multiline = true;
-            this.txtsubtotal.Name = "txtsubtotal";
-            this.txtsubtotal.Size = new System.Drawing.Size(136, 23);
-            this.txtsubtotal.TabIndex = 28;
-            this.txtsubtotal.Text = "0.00";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(44, 157);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 21);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Subtotal:";
-            // 
-            // txtMontoPagado
-            // 
-            this.txtMontoPagado.Enabled = false;
-            this.txtMontoPagado.Location = new System.Drawing.Point(125, 278);
-            this.txtMontoPagado.Multiline = true;
-            this.txtMontoPagado.Name = "txtMontoPagado";
-            this.txtMontoPagado.Size = new System.Drawing.Size(136, 23);
-            this.txtMontoPagado.TabIndex = 30;
-            this.txtMontoPagado.Text = "0.00";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 279);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 21);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Monto Pagado:";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(125, 238);
-            this.txtTotal.Multiline = true;
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(136, 23);
-            this.txtTotal.TabIndex = 32;
-            this.txtTotal.Text = "0.00";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(70, 238);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 21);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "Total:";
-            // 
-            // txtCambio
-            // 
-            this.txtCambio.Enabled = false;
-            this.txtCambio.Location = new System.Drawing.Point(125, 316);
-            this.txtCambio.Multiline = true;
-            this.txtCambio.Name = "txtCambio";
-            this.txtCambio.Size = new System.Drawing.Size(136, 23);
-            this.txtCambio.TabIndex = 34;
-            this.txtCambio.Text = "0.00";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(48, 316);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 21);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "Cambio:";
             // 
             // frmFactura
             // 

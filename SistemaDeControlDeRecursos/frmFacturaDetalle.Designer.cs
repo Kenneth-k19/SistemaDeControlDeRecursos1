@@ -48,9 +48,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.chkGuardado = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,6 +73,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.chkGuardado);
             this.groupBox2.Controls.Add(this.btnSeleccionarArticulo);
             this.groupBox2.Controls.Add(this.txtArtiNombre);
             this.groupBox2.Controls.Add(this.label13);
@@ -89,9 +92,9 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 89);
+            this.groupBox2.Location = new System.Drawing.Point(12, 83);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(788, 223);
+            this.groupBox2.Size = new System.Drawing.Size(754, 223);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Factura Detalle";
@@ -108,13 +111,15 @@
             this.btnSeleccionarArticulo.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionarArticulo.Location = new System.Drawing.Point(679, 30);
             this.btnSeleccionarArticulo.Name = "btnSeleccionarArticulo";
-            this.btnSeleccionarArticulo.Size = new System.Drawing.Size(82, 24);
+            this.btnSeleccionarArticulo.Size = new System.Drawing.Size(97, 24);
             this.btnSeleccionarArticulo.TabIndex = 46;
-            this.btnSeleccionarArticulo.Text = "Elegir";
+            this.btnSeleccionarArticulo.Text = "Elegir Articulo";
             this.btnSeleccionarArticulo.UseVisualStyleBackColor = false;
+            this.btnSeleccionarArticulo.Click += new System.EventHandler(this.btnSeleccionarArticulo_Click);
             // 
             // txtArtiNombre
             // 
+            this.txtArtiNombre.Enabled = false;
             this.txtArtiNombre.Location = new System.Drawing.Point(531, 30);
             this.txtArtiNombre.Multiline = true;
             this.txtArtiNombre.Name = "txtArtiNombre";
@@ -142,6 +147,7 @@
             // 
             // txtArticuloId
             // 
+            this.txtArticuloId.Enabled = false;
             this.txtArticuloId.Location = new System.Drawing.Point(369, 30);
             this.txtArticuloId.Multiline = true;
             this.txtArticuloId.Name = "txtArticuloId";
@@ -152,11 +158,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 31);
+            this.label7.Location = new System.Drawing.Point(39, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 21);
+            this.label7.Size = new System.Drawing.Size(63, 21);
             this.label7.TabIndex = 28;
-            this.label7.Text = "FacturaID:";
+            this.label7.Text = "Codigo:";
             // 
             // txtFacturaID
             // 
@@ -183,6 +189,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(136, 23);
             this.txtCantidad.TabIndex = 37;
+            this.txtCantidad.Text = "0";
             this.txtCantidad.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label11
@@ -198,6 +205,7 @@
             // 
             // txtReferencia
             // 
+            this.txtReferencia.Enabled = false;
             this.txtReferencia.Location = new System.Drawing.Point(117, 139);
             this.txtReferencia.Multiline = true;
             this.txtReferencia.Name = "txtReferencia";
@@ -224,11 +232,13 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.Enabled = false;
             this.txtPrecio.Location = new System.Drawing.Point(369, 87);
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(136, 23);
             this.txtPrecio.TabIndex = 31;
+            this.txtPrecio.Text = "0.00";
             // 
             // label12
             // 
@@ -265,26 +275,26 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 329);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 389);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(788, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(754, 332);
             this.dataGridView1.TabIndex = 40;
             // 
-            // btnGuardar
+            // btnNuevo
             // 
-            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(287, 667);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(137, 45);
-            this.btnGuardar.TabIndex = 44;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(12, 338);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(137, 45);
+            this.btnNuevo.TabIndex = 44;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // panel1
             // 
@@ -312,6 +322,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(155, 338);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(137, 45);
+            this.btnEliminar.TabIndex = 46;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // chkGuardado
+            // 
+            this.chkGuardado.AutoSize = true;
+            this.chkGuardado.Location = new System.Drawing.Point(574, 141);
+            this.chkGuardado.Name = "chkGuardado";
+            this.chkGuardado.Size = new System.Drawing.Size(93, 22);
+            this.chkGuardado.TabIndex = 47;
+            this.chkGuardado.Text = "Guardado";
+            this.chkGuardado.UseVisualStyleBackColor = true;
+            // 
             // frmFacturaDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,9 +354,10 @@
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(0, 850);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(245)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(817, 623);
+            this.ClientSize = new System.Drawing.Size(817, 432);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -355,7 +391,7 @@
         private System.Windows.Forms.TextBox txtFacturaID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtDescuento;
@@ -363,5 +399,7 @@
         private System.Windows.Forms.Button btnSeleccionarArticulo;
         private System.Windows.Forms.TextBox txtArtiNombre;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox chkGuardado;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

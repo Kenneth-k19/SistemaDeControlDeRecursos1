@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,10 @@ namespace SistemaDeControlDeRecursos
         DataTable dtFacturaDet;
 
         int ID;
+        string CODIGO;
+        int articuloID;
+        string articuloNombre;
+        float precioArticulo;
 
         public frmFacturaDetalle()
         {
@@ -28,20 +33,10 @@ namespace SistemaDeControlDeRecursos
         {
             InitializeComponent();
 
-            txtFacturaID.Enabled = false;
-            txtArticuloId.Enabled = false;
-            txtArtiNombre.Enabled = false;
-            txtCantidad.Enabled = false;
-            txtPrecio.Enabled = false;
-            txtDescuento.Enabled = false;
-            txtReferencia.Enabled = false;
-            txtObservacion.Enabled = false;
-            btnSeleccionarArticulo.Enabled = false;
-
             Con = con;
         }
 
-        public frmFacturaDetalle(int id, SqlConnection con)
+        public frmFacturaDetalle(string codigo, int id, SqlConnection con)
         {
             InitializeComponent();
 
@@ -62,9 +57,13 @@ namespace SistemaDeControlDeRecursos
 
                 adpFacturaDet.SelectCommand = new SqlCommand("spSelectFacturaDet", con);
                 adpFacturaDet.SelectCommand.CommandType = CommandType.StoredProcedure;
-                adpFacturaDet.SelectCommand.Parameters.Add(new SqlParameter("@id", SqlDbType.Int)
+                adpFacturaDet.SelectCommand.Parameters.Add(new SqlParameter("@id",SqlDbType.Int)
                 {
                     Value = id
+                });
+                adpFacturaDet.SelectCommand.Parameters.Add(new SqlParameter("@codigo", SqlDbType.VarChar,20)
+                {
+                    Value = codigo
                 });
 
                 adpFacturaDet.Fill(dtFacturaDet);
@@ -73,8 +72,28 @@ namespace SistemaDeControlDeRecursos
 
 
 
+                adpFacturaDet.InsertCommand = new SqlCommand("spInsertFacturaDet", con);
+                adpFacturaDet.InsertCommand.CommandType = CommandType.StoredProcedure;
+                adpFacturaDet.InsertCommand.Parameters.Add("@facturaid", SqlDbType.Int, 4, "FacturaID");
+                adpFacturaDet.InsertCommand.Parameters.Add("@articuloid", SqlDbType.Int, 4, "ArticuloID");
+                adpFacturaDet.InsertCommand.Parameters.Add("@cantidad", SqlDbType.Int, 4, "Cantidad");
+                adpFacturaDet.InsertCommand.Parameters.Add("@precio", SqlDbType.Float, 4, "Precio");
+                adpFacturaDet.InsertCommand.Parameters.Add("@observacion", SqlDbType.VarChar, 75, "Observacion");
+                adpFacturaDet.InsertCommand.Parameters.Add("@descuento", SqlDbType.Float, 4, "Descuento");
+
+
+
+
+
+                dataGridView1.Columns["FacturaID"].Visible = false;
+                dataGridView1.Columns["ArticuloID"].Visible = false;
+
                 ID = id;
+                CODIGO = codigo;
                 Con = con;
+                articuloID = 0;
+                articuloNombre = "";
+                precioArticulo = 0;
             }
             catch (Exception ex)
             {
@@ -90,9 +109,17 @@ namespace SistemaDeControlDeRecursos
 
             panel1.BackColor = Color.FromArgb(145, 19, 66);
 
-            txtFacturaID.Text = ID.ToString();
+            txtFacturaID.Text = CODIGO;
 
-            
+            txtFacturaID.Enabled = false;
+            txtArticuloId.Enabled = false;
+            txtArtiNombre.Enabled = false;
+            txtCantidad.Enabled = false;
+            txtPrecio.Enabled = false;
+            txtDescuento.Enabled = false;
+            txtReferencia.Enabled = false;
+            txtObservacion.Enabled = false;
+            btnSeleccionarArticulo.Enabled = false;
 
 
         }
@@ -125,6 +152,66 @@ namespace SistemaDeControlDeRecursos
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSeleccionarArticulo_Click(object sender, EventArgs e)
+        {
+            frmArticuloFactura frm = new frmArticuloFactura(Con);
+            frm.ShowDialog();
+
+            txtArticuloId.Text = frmArticuloFactura.articuloid.ToString();
+            txtArtiNombre.Text = frmArticuloFactura.nombreArticulo;
+            txtPrecio.Text = frmArticuloFactura.precioArticulo.ToString();
+
+            
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            if(btnNuevo.Text == "Nuevo")
+            {
+                txtCantidad.Enabled = true;
+                txtDescuento.Enabled = true;
+                txtObservacion.Enabled = true;
+                btnSeleccionarArticulo.Enabled = true;
+
+                btnNuevo.Text = "Insertar";
+            }
+            else if(btnNuevo.Text == "Insertar")
+            {
+                DataRow nuevafila = dtFacturaDet.NewRow();
+
+                float descuento = float.Parse(txtDescuento.Text);
+
+                nuevafila["FacturaID"] = ID;
+                nuevafila["ArticuloID"] = int.Parse(txtArticuloId.Text);
+                nuevafila["Cantidad"] = int.Parse(txtCantidad.Text);
+                nuevafila["Precio"] = float.Parse( txtPrecio.Text);
+                nuevafila["Observacion"] = txtObservacion.Text;
+                nuevafila["Descuento"] = Math.Round( float.Parse(txtDescuento.Text),2);
+
+                dtFacturaDet.Rows.Add(nuevafila);
+
+                try
+                {
+                    adpFacturaDet.Update(dtFacturaDet);
+                    dtFacturaDet.Clear();
+                    adpFacturaDet.Fill(dtFacturaDet);
+                    dataGridView1.Refresh();
+
+                    txtCantidad.Enabled = false;
+                    txtDescuento.Enabled = false;
+                    txtObservacion.Enabled = false;
+                    btnNuevo.Text = "Nuevo";
+                    btnSeleccionarArticulo.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
     }
 }

@@ -63,7 +63,6 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ReadOnly = true;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(220, 142, 168);
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -94,6 +93,12 @@ namespace SistemaDeControlDeRecursos
             adpFacturas.UpdateCommand.Parameters.Add("@descuento", SqlDbType.Float, 4, "Descuento");
 
 
+
+
+
+
+            
+            
             con2 = con;
         }
 
@@ -144,6 +149,9 @@ namespace SistemaDeControlDeRecursos
                 cmbEstado.DataSource = dtFacturaEstado;
                 cmbEstado.DisplayMember = "Valor";
                 cmbEstado.ValueMember = "Codigo";
+
+                dataGridView1.Columns["FacturaID"].Visible = false;
+                dataGridView1.Columns["UsuarioID"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -165,14 +173,17 @@ namespace SistemaDeControlDeRecursos
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
             /* obtenemos los valores necesarios para enviar al constructor del form e instanciamos y llamamos al form */
+            string codigo="";
             int id=0;
+
             var a = dataGridView1.CurrentRow.Cells["FacturaID"].Value;
             if(dataGridView1.CurrentRow != null)
             {
-                id = (int) (dataGridView1.CurrentRow.Cells["FacturaID"].Value);
+                codigo = dataGridView1.CurrentRow.Cells["Codigo"].Value.ToString();
+                id = (int) dataGridView1.CurrentRow.Cells["FacturaID"].Value;
             }
 
-            frmFacturaDetalle frm = new frmFacturaDetalle(id,con2);
+            frmFacturaDetalle frm = new frmFacturaDetalle(codigo,id,con2);
             frm.ShowDialog();
         }
 
