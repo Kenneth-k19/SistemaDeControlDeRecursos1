@@ -43,17 +43,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAgregarDetalle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtFecha1 = new System.Windows.Forms.TextBox();
             this.txtCodigoFiltro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtpFechaFiltro = new System.Windows.Forms.DateTimePicker();
+            this.cmbTipoFiltro = new System.Windows.Forms.ComboBox();
+            this.btnRestaurarFiltro = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -74,6 +75,7 @@
             this.btnModificar.TabIndex = 56;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnNuevo
             // 
@@ -90,6 +92,7 @@
             this.btnNuevo.TabIndex = 55;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox2
             // 
@@ -112,7 +115,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(906, 302);
+            this.groupBox2.Size = new System.Drawing.Size(885, 302);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Compra";
@@ -181,7 +184,9 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dtpFecha.Enabled = false;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(600, 46);
             this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFecha.Name = "dtpFecha";
@@ -242,29 +247,29 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Tipo:";
             // 
-            // btnEditar
+            // btnAgregarDetalle
             // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(779, 429);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(192, 55);
-            this.btnEditar.TabIndex = 53;
-            this.btnEditar.Text = "Agregar Detalle";
-            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnAgregarDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
+            this.btnAgregarDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarDetalle.FlatAppearance.BorderSize = 0;
+            this.btnAgregarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarDetalle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarDetalle.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarDetalle.Location = new System.Drawing.Point(758, 429);
+            this.btnAgregarDetalle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarDetalle.Name = "btnAgregarDetalle";
+            this.btnAgregarDetalle.Size = new System.Drawing.Size(192, 55);
+            this.btnAgregarDetalle.TabIndex = 53;
+            this.btnAgregarDetalle.Text = "Agregar Detalle";
+            this.btnAgregarDetalle.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(408, 15);
+            this.label1.Location = new System.Drawing.Point(398, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 57);
@@ -284,30 +289,22 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.txtFecha1);
+            this.groupBox1.Controls.Add(this.btnRestaurarFiltro);
+            this.groupBox1.Controls.Add(this.cmbTipoFiltro);
+            this.groupBox1.Controls.Add(this.dtpFechaFiltro);
             this.groupBox1.Controls.Add(this.txtCodigoFiltro);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtTipo);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(65, 519);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(906, 144);
+            this.groupBox1.Size = new System.Drawing.Size(885, 144);
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
-            // 
-            // txtFecha1
-            // 
-            this.txtFecha1.Location = new System.Drawing.Point(600, 42);
-            this.txtFecha1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFecha1.Multiline = true;
-            this.txtFecha1.Name = "txtFecha1";
-            this.txtFecha1.Size = new System.Drawing.Size(180, 27);
-            this.txtFecha1.TabIndex = 16;
             // 
             // txtCodigoFiltro
             // 
@@ -351,15 +348,6 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Tipo:";
             // 
-            // txtTipo
-            // 
-            this.txtTipo.Location = new System.Drawing.Point(178, 91);
-            this.txtTipo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTipo.Multiline = true;
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(180, 27);
-            this.txtTipo.TabIndex = 15;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -369,8 +357,43 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(906, 358);
+            this.dataGridView1.Size = new System.Drawing.Size(885, 358);
             this.dataGridView1.TabIndex = 60;
+            // 
+            // dtpFechaFiltro
+            // 
+            this.dtpFechaFiltro.Enabled = false;
+            this.dtpFechaFiltro.Location = new System.Drawing.Point(600, 42);
+            this.dtpFechaFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaFiltro.Name = "dtpFechaFiltro";
+            this.dtpFechaFiltro.Size = new System.Drawing.Size(265, 32);
+            this.dtpFechaFiltro.TabIndex = 35;
+            // 
+            // cmbTipoFiltro
+            // 
+            this.cmbTipoFiltro.Enabled = false;
+            this.cmbTipoFiltro.FormattingEnabled = true;
+            this.cmbTipoFiltro.Location = new System.Drawing.Point(178, 88);
+            this.cmbTipoFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTipoFiltro.Name = "cmbTipoFiltro";
+            this.cmbTipoFiltro.Size = new System.Drawing.Size(180, 33);
+            this.cmbTipoFiltro.TabIndex = 35;
+            // 
+            // btnRestaurarFiltro
+            // 
+            this.btnRestaurarFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
+            this.btnRestaurarFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurarFiltro.FlatAppearance.BorderSize = 0;
+            this.btnRestaurarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurarFiltro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurarFiltro.ForeColor = System.Drawing.Color.White;
+            this.btnRestaurarFiltro.Location = new System.Drawing.Point(600, 91);
+            this.btnRestaurarFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRestaurarFiltro.Name = "btnRestaurarFiltro";
+            this.btnRestaurarFiltro.Size = new System.Drawing.Size(265, 40);
+            this.btnRestaurarFiltro.TabIndex = 61;
+            this.btnRestaurarFiltro.Text = "Restaurar";
+            this.btnRestaurarFiltro.UseVisualStyleBackColor = false;
             // 
             // frmCompras
             // 
@@ -386,7 +409,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnAgregarDetalle);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -418,18 +441,19 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnAgregarDetalle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtFecha1;
         private System.Windows.Forms.TextBox txtCodigoFiltro;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cmbTipoFiltro;
+        private System.Windows.Forms.DateTimePicker dtpFechaFiltro;
+        private System.Windows.Forms.Button btnRestaurarFiltro;
     }
 }
