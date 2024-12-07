@@ -2,10 +2,11 @@ use db20172001423
 go
 drop procedure spArticuloSelect
 go
-create procedure spArticuloSelect @ArticuloID int=0
+create procedure spArticuloSelect @ArticuloID int=0,@Cod varchar(10) = ''
 as
 	select *, case Tipo when 'C' then 'Consumo' when 'V' then 'Venta' end as nomTipo
 		into #Articulo from Articulo where articuloID = @ArticuloID or @ArticuloID = 0
+		and (Codigo = @Cod or @Cod = '')
 	select * into #Unidad from Unidad where UnidadID in (select UnidadID from #Articulo)
 	select * into #Fam from Familia where FamiliaID in (select FamiliaID from #Articulo)
 
@@ -18,4 +19,4 @@ as
 	
 go
 
-exec spArticuloSelect 
+exec spArticuloSelect 0,'001' 

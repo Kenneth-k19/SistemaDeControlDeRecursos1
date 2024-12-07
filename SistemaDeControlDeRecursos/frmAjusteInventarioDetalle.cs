@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,10 @@ namespace SistemaDeControlDeRecursos
 {
     public partial class frmAjusteInventarioDetalle : Form
     {
-        public frmAjusteInventarioDetalle()
+        SqlDataAdapter adpAjuste,adpArticulo,adpTipoAjuste,adpAjusteDet;
+        DataTable tabAjuste,tabArticulo,tabTipoAjuste,tabAjusteDet;
+
+        public frmAjusteInventarioDetalle(int AjusteID)
         {
             InitializeComponent();
         }
@@ -22,6 +26,10 @@ namespace SistemaDeControlDeRecursos
         private void frmAjusteInventarioDetalle_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
+
+            //lenar combos de articulo y tipoAjuste
+
+            //gridView?
 
         }
 
@@ -36,6 +44,16 @@ namespace SistemaDeControlDeRecursos
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

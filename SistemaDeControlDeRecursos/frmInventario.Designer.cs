@@ -49,6 +49,8 @@
             this.cmbUnidad = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbFamilia = new System.Windows.Forms.ComboBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(297, 9);
+            this.label1.Location = new System.Drawing.Point(245, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 44);
             this.label1.TabIndex = 0;
@@ -66,16 +68,16 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(340, 77);
+            this.txtNombre.Location = new System.Drawing.Point(135, 128);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(397, 26);
+            this.txtNombre.Size = new System.Drawing.Size(419, 26);
             this.txtNombre.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(254, 77);
+            this.label3.Location = new System.Drawing.Point(25, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 26);
             this.label3.TabIndex = 3;
@@ -84,7 +86,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 134);
+            this.label4.Location = new System.Drawing.Point(25, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 26);
             this.label4.TabIndex = 5;
@@ -93,18 +95,18 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(488, 134);
+            this.label5.Location = new System.Drawing.Point(497, 176);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 26);
+            this.label5.Size = new System.Drawing.Size(64, 26);
             this.label5.TabIndex = 7;
             this.label5.Text = "Familia:";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(107, 77);
+            this.txtCodigo.Location = new System.Drawing.Point(135, 77);
             this.txtCodigo.Multiline = true;
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(122, 26);
+            this.txtCodigo.Size = new System.Drawing.Size(102, 26);
             this.txtCodigo.TabIndex = 10;
             // 
             // label6
@@ -119,7 +121,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(254, 134);
+            this.label8.Location = new System.Drawing.Point(284, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 26);
             this.label8.TabIndex = 13;
@@ -127,16 +129,16 @@
             // 
             // txtObservacion
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(133, 196);
+            this.txtObservacion.Location = new System.Drawing.Point(135, 224);
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(419, 26);
+            this.txtObservacion.Size = new System.Drawing.Size(490, 26);
             this.txtObservacion.TabIndex = 18;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(23, 196);
+            this.label10.Location = new System.Drawing.Point(25, 224);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(104, 26);
             this.label10.TabIndex = 17;
@@ -146,10 +148,11 @@
             // 
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(107, 136);
+            this.cmbTipo.Location = new System.Drawing.Point(135, 176);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(122, 21);
+            this.cmbTipo.Size = new System.Drawing.Size(128, 21);
             this.cmbTipo.TabIndex = 19;
+            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -158,7 +161,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 340);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(721, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(670, 422);
             this.dataGridView1.TabIndex = 21;
             // 
             // btnInsertar
@@ -175,6 +178,7 @@
             this.btnInsertar.TabIndex = 22;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = false;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnEditar
             // 
@@ -190,6 +194,7 @@
             this.btnEditar.TabIndex = 23;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // groupBox1
             // 
@@ -198,7 +203,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 275);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(721, 59);
+            this.groupBox1.Size = new System.Drawing.Size(719, 59);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
@@ -210,6 +215,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(268, 26);
             this.txtBuscar.TabIndex = 27;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label11
             // 
@@ -224,7 +230,7 @@
             // 
             this.chkbInventario.AutoSize = true;
             this.chkbInventario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkbInventario.Location = new System.Drawing.Point(704, 199);
+            this.chkbInventario.Location = new System.Drawing.Point(714, 223);
             this.chkbInventario.Name = "chkbInventario";
             this.chkbInventario.Size = new System.Drawing.Size(31, 24);
             this.chkbInventario.TabIndex = 26;
@@ -235,15 +241,16 @@
             // 
             this.cmbUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnidad.FormattingEnabled = true;
-            this.cmbUnidad.Location = new System.Drawing.Point(340, 136);
+            this.cmbUnidad.Location = new System.Drawing.Point(353, 176);
             this.cmbUnidad.Name = "cmbUnidad";
             this.cmbUnidad.Size = new System.Drawing.Size(121, 21);
             this.cmbUnidad.TabIndex = 27;
+            this.cmbUnidad.SelectedIndexChanged += new System.EventHandler(this.cmbUnidad_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(594, 197);
+            this.label2.Location = new System.Drawing.Point(631, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 26);
             this.label2.TabIndex = 13;
@@ -253,10 +260,29 @@
             // 
             this.cmbFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFamilia.FormattingEnabled = true;
-            this.cmbFamilia.Location = new System.Drawing.Point(567, 136);
+            this.cmbFamilia.Location = new System.Drawing.Point(567, 176);
             this.cmbFamilia.Name = "cmbFamilia";
             this.cmbFamilia.Size = new System.Drawing.Size(170, 21);
             this.cmbFamilia.TabIndex = 27;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(635, 128);
+            this.txtPrecio.Multiline = true;
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(102, 26);
+            this.txtPrecio.TabIndex = 29;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(563, 128);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 26);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Precio:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // frmInventario
             // 
@@ -265,7 +291,9 @@
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(0, 875);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(245)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(800, 620);
+            this.ClientSize = new System.Drawing.Size(834, 865);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbFamilia);
             this.Controls.Add(this.cmbUnidad);
             this.Controls.Add(this.chkbInventario);
@@ -320,5 +348,7 @@
         private System.Windows.Forms.ComboBox cmbUnidad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbFamilia;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label label7;
     }
 }

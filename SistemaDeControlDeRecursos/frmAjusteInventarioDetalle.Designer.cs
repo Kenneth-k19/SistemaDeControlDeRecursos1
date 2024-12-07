@@ -32,9 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -45,14 +43,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbArticulo = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,6 +64,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(783, 59);
             this.panel1.TabIndex = 13;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 
@@ -100,9 +97,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.textBox3);
@@ -113,35 +108,19 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(725, 135);
+            this.groupBox1.Size = new System.Drawing.Size(708, 135);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ajuste de Inventario";
             // 
-            // comboBox1
+            // cmbTipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(592, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 28);
-            this.comboBox1.TabIndex = 13;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(510, 77);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 25);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Tipo:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(592, 31);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(126, 25);
-            this.textBox6.TabIndex = 10;
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(353, 81);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(349, 28);
+            this.cmbTipo.TabIndex = 13;
             // 
             // label7
             // 
@@ -165,7 +144,7 @@
             this.textBox3.Location = new System.Drawing.Point(122, 77);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(357, 25);
+            this.textBox3.Size = new System.Drawing.Size(571, 25);
             this.textBox3.TabIndex = 6;
             // 
             // label8
@@ -207,25 +186,24 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.cmbArticulo);
             this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.cmbTipo);
+            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 251);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(725, 135);
+            this.groupBox2.Size = new System.Drawing.Size(708, 135);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ajuste de Inventario Detalle";
+            this.groupBox2.Text = "Detalles";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(592, 36);
+            this.textBox8.Location = new System.Drawing.Point(122, 84);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(126, 25);
@@ -234,63 +212,11 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(514, 36);
+            this.label10.Location = new System.Drawing.Point(36, 84);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 25);
             this.label10.TabIndex = 9;
             this.label10.Text = "Cantidad:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(122, 77);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(126, 25);
-            this.textBox4.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(-3, 77);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Precio:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(362, 38);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(126, 25);
-            this.textBox5.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(267, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 25);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "ArticuloID:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(122, 38);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 25);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-3, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Codigo:";
             // 
             // dataGridView1
             // 
@@ -299,7 +225,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 415);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(725, 371);
+            this.dataGridView1.Size = new System.Drawing.Size(708, 371);
             this.dataGridView1.TabIndex = 16;
             // 
             // btnGuardar
@@ -311,13 +237,48 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(303, 792);
+            this.btnGuardar.Location = new System.Drawing.Point(294, 792);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(156, 45);
             this.btnGuardar.TabIndex = 17;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(271, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 25);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Tipo:";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(36, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 25);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Articulo";
+            // 
+            // cmbArticulo
+            // 
+            this.cmbArticulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbArticulo.FormattingEnabled = true;
+            this.cmbArticulo.Location = new System.Drawing.Point(122, 38);
+            this.cmbArticulo.Name = "cmbArticulo";
+            this.cmbArticulo.Size = new System.Drawing.Size(580, 28);
+            this.cmbArticulo.TabIndex = 15;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(573, 29);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(120, 27);
+            this.dateTimePicker1.TabIndex = 12;
             // 
             // frmAjusteInventarioDetalle
             // 
@@ -361,19 +322,15 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbArticulo;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -47,7 +47,7 @@ namespace SistemaDeControlDeRecursos
             //validar que txtnombre no esté vacío
             if (txtNombre.Text == "")
             {
-                MessageBox.Show("Por favor, ingrese el nombre de la familia");
+                MessageBox.Show("Por favor, ingrese el nombre de la familia","Datos necesarios");
                 txtNombre.Focus();
             }
 
