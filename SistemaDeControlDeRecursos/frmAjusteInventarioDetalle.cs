@@ -31,7 +31,7 @@ namespace SistemaDeControlDeRecursos
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
 
-            adpAjuste = new SqlDataAdapter("exec spAjusteSelect @ajusteID" + AjusteID, con);
+            adpAjuste = new SqlDataAdapter("exec spAjusteSelect " + AjusteID, con);
             adpAjuste.SelectCommand.CommandType = CommandType.Text;
             tabAjuste = new DataTable();
             adpAjuste.Fill(tabAjuste);
@@ -53,21 +53,26 @@ namespace SistemaDeControlDeRecursos
             cmbTipo.ValueMember = "TipoAjusteID";
             cmbTipo.DisplayMember = "Nombre";
 
-            adpAjusteDet = new SqlDataAdapter("spAjusteDetSelect " + AjusteID, con);
-            adpAjusteDet.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adpAjusteDet = new SqlDataAdapter(" exec spAjusteDetSelect " + AjusteID, con);
             tabAjusteDet = new DataTable();
             adpAjusteDet.Fill(tabAjusteDet);
 
             if(AjusteID > 0)
             {
                 //cargar la información a modificar
-                txtCodigo.Text = tabAjuste.Rows[0]["Codigo"].ToString();
+                txtCodigo.Text = tabAjuste.Rows[0]["Codigo Ajuste"].ToString();
                 txtUsuario.Text = tabAjuste.Rows[0]["Usuario"].ToString();
                 dtpFecha.Value = Convert.ToDateTime(tabAjuste.Rows[0]["Fecha"]);
                 txtObservacion.Text = tabAjuste.Rows[0]["Observacion"].ToString();
 
             }
+            else
+            {
+                //nuevo ajuste
+                //automáticamente llenar el txtUsuario con el nombre del usuario que ejecuta el sistema
+                txtUsuario.Text = frmLogin.userID.ToString();
 
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
