@@ -43,7 +43,6 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ReadOnly = true;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(220, 142, 168);
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -129,6 +128,7 @@ namespace SistemaDeControlDeRecursos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ((frmFactura)this.Owner).llenarGrid();
             this.Dispose();
         }
 
@@ -202,6 +202,8 @@ namespace SistemaDeControlDeRecursos
                     adpFacturaDet.Fill(dtFacturaDet);
                     dataGridView1.Refresh();
 
+                    MessageBox.Show("El registro se insertó correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     txtCantidad.Enabled = false;
                     txtDescuento.Enabled = false;
                     txtObservacion.Enabled = false;
@@ -219,6 +221,15 @@ namespace SistemaDeControlDeRecursos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+
+            if (MessageBox.Show("¿Está seguro de que desea eliminar este registro?",
+                                     "Confirmar eliminación",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Warning) == DialogResult.No)
+            {
+                return;
+            }
+
             if(dataGridView1.SelectedRows.Count == 1)
             {
                 try
