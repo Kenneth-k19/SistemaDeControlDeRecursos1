@@ -25,7 +25,10 @@ namespace SistemaDeControlDeRecursos
             AjusteID = ID;
         }
 
-        
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void frmAjusteInventarioDetalle_Load(object sender, EventArgs e)
         {
@@ -70,9 +73,18 @@ namespace SistemaDeControlDeRecursos
             {
                 //nuevo ajuste
                 //automáticamente llenar el txtUsuario con el nombre del usuario que ejecuta el sistema
-                txtUsuario.Text = frmLogin.userID.ToString();
-
+                int userID = frmLogin.userID;
+                SqlDataAdapter adpUsuario = new SqlDataAdapter("Select Nombre from usuario where usuarioID = " + userID , con);
+                DataTable tabUsuario = new DataTable();
+                adpUsuario.Fill(tabUsuario);
+                txtUsuario.Text = tabUsuario.Rows[0]["Nombre"].ToString();
             }
+
+            //datagridView permite borrar filas pero no agregarlas
+            gridAjusteDet.ReadOnly = false;
+            gridAjusteDet.AllowUserToAddRows = false;
+            gridAjusteDet.AllowUserToDeleteRows = true;
+            gridAjusteDet.DataSource = tabAjusteDet;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
