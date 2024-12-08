@@ -142,12 +142,6 @@
     <Compile Include="frmFacturaDetalle.Designer.cs">
       <DependentUpon>frmFacturaDetalle.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFacturar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFacturar.Designer.cs">
-      <DependentUpon>frmFacturar.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmFamilia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +204,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsConsumoAnormalArt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dataSets\dsFacturarFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFacturarFactura.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\dataSets\dsMovimientosDeInventario.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -341,9 +340,6 @@
     <EmbeddedResource Include="frmFacturaDetalle.resx">
       <DependentUpon>frmFacturaDetalle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFacturar.resx">
-      <DependentUpon>frmFacturar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmFamilia.resx">
       <DependentUpon>frmFamilia.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,6 +456,17 @@
     </None>
     <None Include="Reportes\dataSets\dsConsumoAnormalArt.xss">
       <DependentUpon>dsConsumoAnormalArt.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsFacturarFactura.xsc">
+      <DependentUpon>dsFacturarFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsFacturarFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFacturarFactura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsFacturarFactura.xss">
+      <DependentUpon>dsFacturarFactura.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dataSets\dsMovimientosDeInventario.xsc">
       <DependentUpon>dsMovimientosDeInventario.xsd</DependentUpon>

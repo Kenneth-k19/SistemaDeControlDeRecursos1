@@ -60,5 +60,10 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 
             this.reportViewer1.RefreshReport();
         }
+
+        private void anioPicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
