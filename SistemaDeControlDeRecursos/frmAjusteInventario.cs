@@ -42,7 +42,8 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.ReadOnly = true; dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.DataSource = tabAjuste;
             dataGridView1.Columns[3].Visible = false;
-
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToAddRows = false;
             
         }
 
@@ -61,6 +62,26 @@ namespace SistemaDeControlDeRecursos
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox1.Text.Length == 0)
+                {
+                    //usar defaultView de dataTable para filtrar
+                    tabAjuste.DefaultView.RowFilter = "";
+                }
+                else
+                {
+                    tabAjuste.DefaultView.RowFilter = "Usuario LIKE '%" + textBox1.Text + "%'";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

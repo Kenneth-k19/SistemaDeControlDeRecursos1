@@ -27,19 +27,28 @@ namespace SistemaDeControlDeRecursos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            // Agregar un nuevo detalle al DataTable
+            DataRow newRow = tabAjusteDet.NewRow();
+            newRow["ArticuloID"] = cmbArticulo.SelectedValue;
+            newRow["Articulo"] = cmbArticulo.Text;
+            newRow["Cantidad"] = txtCantidad.Text;
+            newRow["TipoAjusteID"] = cmbTipo.SelectedValue;
+            newRow["TipoAjuste"] = cmbTipo.Text;
+            tabAjusteDet.Rows.Add(newRow);
         }
 
         private void frmAjusteInventarioDetalle_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
 
+            // Cargar información del ajuste principal
             adpAjuste = new SqlDataAdapter("exec spAjusteSelect " + AjusteID, con);
             adpAjuste.SelectCommand.CommandType = CommandType.Text;
             tabAjuste = new DataTable();
             adpAjuste.Fill(tabAjuste);
 
-            adpArticulo = new SqlDataAdapter("Select ArticuloID, Nombre from Articulo where tipo = 'C'", con);
+            // Llenar el combo de artículos
+            adpArticulo = new SqlDataAdapter("SELECT ArticuloID, Nombre FROM Articulo WHERE Tipo = 'C'", con);
             adpArticulo.SelectCommand.CommandType = CommandType.Text;
             tabArticulo = new DataTable();
             adpArticulo.Fill(tabArticulo);
@@ -47,8 +56,8 @@ namespace SistemaDeControlDeRecursos
             cmbArticulo.ValueMember = "ArticuloID";
             cmbArticulo.DisplayMember = "Nombre";
 
-
-            adpTipoAjuste = new SqlDataAdapter("Select TipoAjusteID, Nombre from TipoAjuste", con);
+            // Llenar el combo de tipos de ajuste
+            adpTipoAjuste = new SqlDataAdapter("SELECT TipoAjusteID, Nombre FROM TipoAjuste", con);
             adpTipoAjuste.SelectCommand.CommandType = CommandType.Text;
             tabTipoAjuste = new DataTable();
             adpTipoAjuste.Fill(tabTipoAjuste);
@@ -56,40 +65,107 @@ namespace SistemaDeControlDeRecursos
             cmbTipo.ValueMember = "TipoAjusteID";
             cmbTipo.DisplayMember = "Nombre";
 
-            adpAjusteDet = new SqlDataAdapter(" exec spAjusteDetSelect " + AjusteID, con);
+            // Cargar el detalle del ajuste
+            adpAjusteDet = new SqlDataAdapter("EXEC spAjusteDetSelect " + AjusteID, con);
             tabAjusteDet = new DataTable();
             adpAjusteDet.Fill(tabAjusteDet);
 
-            if(AjusteID > 0)
+            if (AjusteID > 0)
             {
-                //cargar la información a modificar
+                // Modo edición: cargar información del ajuste en los controles
                 txtCodigo.Text = tabAjuste.Rows[0]["Codigo Ajuste"].ToString();
                 txtUsuario.Text = tabAjuste.Rows[0]["Usuario"].ToString();
                 dtpFecha.Value = Convert.ToDateTime(tabAjuste.Rows[0]["Fecha"]);
                 txtObservacion.Text = tabAjuste.Rows[0]["Observacion"].ToString();
-
             }
             else
             {
-                //nuevo ajuste
-                //automáticamente llenar el txtUsuario con el nombre del usuario que ejecuta el sistema
+                // Modo inserción: nuevo ajuste
+                txtCodigo.Text = "Nuevo";
                 int userID = frmLogin.userID;
-                SqlDataAdapter adpUsuario = new SqlDataAdapter("Select Nombre from usuario where usuarioID = " + userID , con);
+                SqlDataAdapter adpUsuario = new SqlDataAdapter("SELECT Nombre FROM Usuario WHERE UsuarioID = " + userID, con);
                 DataTable tabUsuario = new DataTable();
                 adpUsuario.Fill(tabUsuario);
                 txtUsuario.Text = tabUsuario.Rows[0]["Nombre"].ToString();
             }
 
-            //datagridView permite borrar filas pero no agregarlas
+            // Configuración del DataGridView
+            gridAjusteDet.DataSource = tabAjusteDet;
             gridAjusteDet.ReadOnly = false;
             gridAjusteDet.AllowUserToAddRows = false;
             gridAjusteDet.AllowUserToDeleteRows = true;
-            gridAjusteDet.DataSource = tabAjusteDet;
+            gridAjusteDet.Columns["AjusteDetID"].Visible = false;
+            gridAjusteDet.Columns["AjusteID"].Visible = false;
+            gridAjusteDet.Columns["ArticuloID"].Visible = false;
+            gridAjusteDet.Columns["Articulo"].Width = 200;
+
+            // Permitir solo la edición de la columna Cantidad
+            foreach (DataGridViewColumn column in gridAjusteDet.Columns)
+            {
+                if (column.Name != "Cantidad")
+                    column.ReadOnly = true;
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            SqlCommandBuilder cbAjusteDet = new SqlCommandBuilder(adpAjusteDet);
 
+            if (AjusteID == -1)
+            {
+                // Modo inserción: Insertar ajuste
+                SqlCommand cmdInsert = new SqlCommand("EXEC spAjusteInsert @AjusteID OUTPUT, @Fecha, @PeriodoID OUTPUT, @UsuarioID, @Observacion, @Estado", con);
+                cmdInsert.Parameters.AddWithValue("@Fecha", dtpFecha.Value);
+                cmdInsert.Parameters.AddWithValue("@UsuarioID", frmLogin.userID);
+                cmdInsert.Parameters.AddWithValue("@Observacion", txtObservacion.Text);
+                cmdInsert.Parameters.AddWithValue("@Estado", "A");
+                SqlParameter ajusteIDParam = new SqlParameter("@AjusteID", SqlDbType.Int) { Direction = ParameterDirection.Output };
+                SqlParameter periodoIDParam = new SqlParameter("@PeriodoID", SqlDbType.Int) { Direction = ParameterDirection.Output };
+                cmdInsert.Parameters.Add(ajusteIDParam);
+                cmdInsert.Parameters.Add(periodoIDParam);
+
+                con.Open();
+                cmdInsert.ExecuteNonQuery();
+                con.Close();
+
+                AjusteID = (int)ajusteIDParam.Value;
+            }
+            else
+            {
+                // Modo edición: Actualizar ajuste
+                SqlCommand cmdUpdate = new SqlCommand("EXEC spAjusteUpdate @AjusteID, @Fecha, @PeriodoID OUTPUT, @UsuarioID, @Observacion, @Estado", con);
+                cmdUpdate.Parameters.AddWithValue("@AjusteID", AjusteID);
+                cmdUpdate.Parameters.AddWithValue("@Fecha", dtpFecha.Value);
+                cmdUpdate.Parameters.AddWithValue("@UsuarioID", frmLogin.userID);
+                cmdUpdate.Parameters.AddWithValue("@Observacion", txtObservacion.Text);
+                cmdUpdate.Parameters.AddWithValue("@Estado", "A");
+                SqlParameter periodoIDParam = new SqlParameter("@PeriodoID", SqlDbType.Int) { Direction = ParameterDirection.Output };
+                cmdUpdate.Parameters.Add(periodoIDParam);
+
+                con.Open();
+                cmdUpdate.ExecuteNonQuery();
+                con.Close();
+            }
+
+            // Guardar los detalles
+            foreach (DataRow row in tabAjusteDet.Rows)
+            {
+                if (row.RowState == DataRowState.Added)
+                {
+                    SqlCommand cmdInsertDet = new SqlCommand("EXEC spAjusteDetInsert  NULL, @AjusteID, @ArticuloID, @Cantidad, @TipoAjusteID", con);
+                    cmdInsertDet.Parameters.AddWithValue("@AjusteID", AjusteID);
+                    cmdInsertDet.Parameters.AddWithValue("@ArticuloID", row["ArticuloID"]);
+                    cmdInsertDet.Parameters.AddWithValue("@Cantidad", row["Cantidad"]);
+                    cmdInsertDet.Parameters.AddWithValue("@TipoAjusteID", row["TipoAjusteID"]);
+
+                    con.Open();
+                    cmdInsertDet.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+
+            MessageBox.Show("¡Ajuste guardado exitosamente!");
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
