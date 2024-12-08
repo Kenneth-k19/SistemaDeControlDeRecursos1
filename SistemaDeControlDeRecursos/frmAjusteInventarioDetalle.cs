@@ -27,6 +27,25 @@ namespace SistemaDeControlDeRecursos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            //validar que se haya seleccionado un articulo
+            if (cmbArticulo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un artículo","Error, es necesario especificar un articulo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
+            //validar que se haya seleccionado un tipo de ajuste
+            if (cmbTipo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de ajuste","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
+            //validar que se haya ingresado una cantidad y que sea mayor a 0
+            if (txtCantidad.Text == "" || txtCantidad.Text == "0")
+            {
+                MessageBox.Show("Debe ingresar una cantidad y debe ser mayor a 0", "Error en la cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Agregar un nuevo detalle al DataTable
             DataRow newRow = tabAjusteDet.NewRow();
             newRow["ArticuloID"] = cmbArticulo.SelectedValue;
@@ -35,12 +54,26 @@ namespace SistemaDeControlDeRecursos
             newRow["TipoAjusteID"] = cmbTipo.SelectedValue;
             newRow["TipoAjuste"] = cmbTipo.Text;
             tabAjusteDet.Rows.Add(newRow);
+
+            //limpiar esos 3 controles
+            cmbArticulo.SelectedIndex = -1;
+            cmbTipo.SelectedIndex = -1;
+            txtCantidad.Text = "";
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //tomar la fila seleccionada usando DefaultView
+            int index = gridAjusteDet.CurrentRow.Index;
+
+            //borrar esa fila
+            tabAjusteDet.DefaultView.Table.Rows[index].Delete();
         }
 
         private void frmAjusteInventarioDetalle_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
-
+           
             // Cargar información del ajuste principal
             adpAjuste = new SqlDataAdapter("exec spAjusteSelect " + AjusteID, con);
             adpAjuste.SelectCommand.CommandType = CommandType.Text;
@@ -98,6 +131,8 @@ namespace SistemaDeControlDeRecursos
             gridAjusteDet.Columns["AjusteID"].Visible = false;
             gridAjusteDet.Columns["ArticuloID"].Visible = false;
             gridAjusteDet.Columns["Articulo"].Width = 200;
+            gridAjusteDet.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridAjusteDet.Columns["TipoAjuste"].Width = 150;
 
             // Permitir solo la edición de la columna Cantidad
             foreach (DataGridViewColumn column in gridAjusteDet.Columns)
@@ -105,10 +140,29 @@ namespace SistemaDeControlDeRecursos
                 if (column.Name != "Cantidad")
                     column.ReadOnly = true;
             }
+
+            cmbArticulo.SelectedIndex = -1;
+            cmbTipo.SelectedIndex = -1;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            //validar
+            if (tabAjusteDet.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe agregar al menos un artículo al ajuste", "Información Faltante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //preguntar si se quiere continuar sin ingresar observación
+            if (txtObservacion.Text == "")
+            {
+                if (MessageBox.Show("¿Desea continuar sin registrar observación?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    txtObservacion.Focus();
+                    return;
+                }
+            }
             SqlCommandBuilder cbAjusteDet = new SqlCommandBuilder(adpAjusteDet);
 
             if (AjusteID == -1)
