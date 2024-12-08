@@ -36,8 +36,9 @@ namespace SistemaDeControlDeRecursos
             cmbConsumo.Enabled = false;
             cmbEstado.Enabled = false;
             cmbTipo.Enabled = false;
-            textBox1.Enabled = false;
+            
             dateTimePicker1.Enabled = false;
+            
         }
 
         public void habilitarCamposFactura()
@@ -45,8 +46,30 @@ namespace SistemaDeControlDeRecursos
             cmbTipo.Enabled = true;
             cmbConsumo.Enabled = true;
             cmbEstado.Enabled = true;
-            textBox1.Enabled = true;
+           
             dateTimePicker1.Enabled = true;
+            
+        }
+
+        public void llenarGrid()
+        {
+            //adpFacturas.SelectCommand = new SqlCommand("spSelectFactura", con2);
+            //adpFacturas.SelectCommand.CommandType = CommandType.StoredProcedure;
+            //adpFacturas.Fill(dtFacturas);
+            //bsFacturas.DataSource = dtFacturas;
+            //dataGridView1.DataSource = dtFacturas;
+
+            try
+            {
+                dtFacturas.Clear();
+                adpFacturas.Fill(dtFacturas);
+                dataGridView1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error al cargar los datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         public frmFactura()
@@ -184,6 +207,12 @@ namespace SistemaDeControlDeRecursos
             }
 
             frmFacturaDetalle frm = new frmFacturaDetalle(codigo,id,con2);
+
+            //frm.FormClosed += (s, args) =>
+            //{
+            //    llenarGrid();
+            //};
+            frm.Owner = this;
             frm.ShowDialog();
         }
 
@@ -280,11 +309,12 @@ namespace SistemaDeControlDeRecursos
             if(btnModificar.Text == "Editar")
             {
                 habilitarCamposFactura();
+                
                 btnModificar.Text = "Guardar";
 
                 btnNuevo.Enabled = false;
                 btnEditar.Enabled = false;
-
+                btnFacturar.Enabled = false;
                 if(dataGridView1.SelectedRows.Count > 0)
                 {
                     DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
@@ -295,6 +325,7 @@ namespace SistemaDeControlDeRecursos
                     string consumo = filaSeleccionada.Cells["Consumo"].Value.ToString();
                     string estado = filaSeleccionada.Cells["Estado"].Value.ToString();
                     string descuento = filaSeleccionada.Cells["Descuento"].Value.ToString();
+                    string subtotal = filaSeleccionada.Cells["Subtotal"].Value.ToString();
 
                     textBox2.Text = codigo;
                     dateTimePicker1.Value = fecha;
@@ -302,6 +333,7 @@ namespace SistemaDeControlDeRecursos
                     cmbConsumo.SelectedValue = consumo;
                     cmbEstado.SelectedValue = estado;
                     textBox1.Text = descuento;
+                    txtsubtotal.Text = subtotal;
                 }
             }
             else if(btnModificar.Text == "Guardar")
@@ -334,9 +366,11 @@ namespace SistemaDeControlDeRecursos
                             btnModificar.Text = "Editar";
                             btnNuevo.Enabled = true;
                             btnEditar.Enabled = true;
+                            btnFacturar.Enabled = true;
                             textBox2.Clear();
                             textBox1.Text = "0.00";
                             inhabilitarCamposFactura();
+                            
                         }
                         catch (Exception ex)
                         {
@@ -348,6 +382,96 @@ namespace SistemaDeControlDeRecursos
                 else 
                 { 
                 }
+            }
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            float subtotal = string.IsNullOrWhiteSpace(txtsubtotal.Text) ? 0 : float.Parse(txtsubtotal.Text);
+            float descuento = string.IsNullOrWhiteSpace(textBox1.Text) ? 0 : float.Parse(textBox1.Text);
+
+            float total = (float) Math.Round(subtotal - (subtotal * (descuento / 100)),2);
+
+            if (total < 0)
+            {
+                MessageBox.Show("El total no puede ser negativo", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                txtTotal.Text = total.ToString();
+            }
+        }
+
+        private void txtMontoPagado_TextChanged(object sender, EventArgs e)
+        {
+            float total = string.IsNullOrWhiteSpace(txtTotal.Text) ? 0 : float.Parse(txtTotal.Text);
+            float montoPagado = string.IsNullOrWhiteSpace(txtMontoPagado.Text) ? 0 : float.Parse(txtMontoPagado.Text);
+
+            float cambio = (float) Math.Round(montoPagado - total);
+
+            txtCambio.Text = cambio.ToString();
+
+            if (cambio < 0)
+            {
+                cambio = 0;
+            }
+
+        }
+
+        private void txtFacturar_Click(object sender, EventArgs e)
+        {
+            if(btnFacturar.Text == "Facturar")
+            {
+                btnFacturar.Text = "Imprimir";
+                textBox1.Enabled = true;
+                txtMontoPagado.Enabled = true;
+                btnEditar.Enabled = false;
+                btnNuevo.Enabled = false;
+                btnModificar.Enabled = false;
+            }
+            else if(btnFacturar.Text == "Imprimir")
+            {
+                textBox1.Enabled = false;
+                txtMontoPagado.Enabled = false;
+                btnEditar.Enabled = true;
+                btnNuevo.Enabled = true;
+                btnModificar.Enabled = true;
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            inhabilitarCamposFactura();
+            if(btnNuevo.Text == "Insertar")
+            {
+                btnNuevo.Text = "Nuevo";
+                inhabilitarCamposFactura();
+                btnModificar.Enabled= true;
+                btnEditar.Enabled= true;
+                btnFacturar.Enabled= true;
+            }
+            else if(btnModificar.Text =="Guardar")
+            {
+                btnModificar.Text = "Editar";
+                inhabilitarCamposFactura();
+                btnEditar.Enabled = true;
+                btnFacturar.Enabled = true;
+                btnNuevo.Enabled= true;
+                textBox2.Clear();
+                txtsubtotal.Text = "0.00";
+                cmbConsumo.SelectedIndex = 0;
+                cmbEstado.SelectedIndex = 0;
+                cmbTipo.SelectedIndex = 0;
+            }
+            else if(btnFacturar.Text == "Imprimir")
+            {
+                btnFacturar.Text = "Facturar";
+                inhabilitarCamposFactura();
+                textBox1.Enabled = false;
+                txtMontoPagado.Enabled = false;
+                btnEditar.Enabled = true;
+                btnModificar.Enabled = true;
+                btnNuevo.Enabled= true;
             }
         }
 
