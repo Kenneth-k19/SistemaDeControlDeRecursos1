@@ -50,6 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.gridAjusteDet = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -190,13 +191,14 @@
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(353, 81);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(349, 28);
+            this.cmbTipo.Size = new System.Drawing.Size(250, 28);
             this.cmbTipo.TabIndex = 13;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.btnAgregar);
             this.groupBox2.Controls.Add(this.cmbArticulo);
             this.groupBox2.Controls.Add(this.label2);
@@ -222,7 +224,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(541, 128);
+            this.btnAgregar.Location = new System.Drawing.Point(447, 130);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(156, 45);
             this.btnAgregar.TabIndex = 18;
@@ -236,7 +238,7 @@
             this.cmbArticulo.FormattingEnabled = true;
             this.cmbArticulo.Location = new System.Drawing.Point(122, 38);
             this.cmbArticulo.Name = "cmbArticulo";
-            this.cmbArticulo.Size = new System.Drawing.Size(580, 28);
+            this.cmbArticulo.Size = new System.Drawing.Size(481, 28);
             this.cmbArticulo.TabIndex = 15;
             // 
             // label2
@@ -281,7 +283,7 @@
             this.gridAjusteDet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAjusteDet.Location = new System.Drawing.Point(12, 454);
             this.gridAjusteDet.Name = "gridAjusteDet";
-            this.gridAjusteDet.Size = new System.Drawing.Size(702, 172);
+            this.gridAjusteDet.Size = new System.Drawing.Size(589, 172);
             this.gridAjusteDet.TabIndex = 16;
             // 
             // btnGuardar
@@ -300,6 +302,23 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(285, 130);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(156, 45);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmAjusteInventarioDetalle
             // 
@@ -354,5 +373,6 @@
         private System.Windows.Forms.ComboBox cmbArticulo;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
