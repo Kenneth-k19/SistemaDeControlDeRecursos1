@@ -401,7 +401,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (cierrePeriodo == null)
             {
-                cierrePeriodo = new frmCierrePeriodo();
+                cierrePeriodo = new frmCierrePeriodo(conexion);
                 cierrePeriodo.FormClosed += CierrePeriodo_FormClosed;
                 cierrePeriodo.MdiParent = this;
                 cierrePeriodo.Dock = DockStyle.Fill;
