@@ -77,7 +77,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(262, 9);
+            this.label1.Location = new System.Drawing.Point(335, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 44);
             this.label1.TabIndex = 0;
@@ -528,7 +528,7 @@
             this.AutoScrollMinSize = new System.Drawing.Size(0, 550);
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(245)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(824, 544);
+            this.ClientSize = new System.Drawing.Size(841, 544);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnFacturar);
             this.Controls.Add(this.btnModificar);
