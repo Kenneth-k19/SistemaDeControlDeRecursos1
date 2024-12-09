@@ -316,6 +316,7 @@ namespace SistemaDeControlDeRecursos
             if(btnModificar.Text == "Editar")
             {
                 habilitarCamposFactura();
+                textBox1.Enabled = true;
                 
                 btnModificar.Text = "Guardar";
 
@@ -377,7 +378,7 @@ namespace SistemaDeControlDeRecursos
                             textBox2.Clear();
                             textBox1.Text = "0.00";
                             inhabilitarCamposFactura();
-                            
+                            textBox1.Enabled = false;
                         }
                         catch (Exception ex)
                         {
@@ -414,7 +415,7 @@ namespace SistemaDeControlDeRecursos
             float total = string.IsNullOrWhiteSpace(txtTotal.Text) ? 0 : float.Parse(txtTotal.Text);
             float montoPagado = string.IsNullOrWhiteSpace(txtMontoPagado.Text) ? 0 : float.Parse(txtMontoPagado.Text);
 
-            float cambio = (float) Math.Round(montoPagado - total);
+            float cambio = (float) Math.Round((montoPagado - total),2);
 
             txtCambio.Text = cambio.ToString();
 
@@ -430,7 +431,7 @@ namespace SistemaDeControlDeRecursos
             if(btnFacturar.Text == "Facturar")
             {
                 btnFacturar.Text = "Imprimir";
-                textBox1.Enabled = true;
+                
                 txtMontoPagado.Enabled = true;
                 btnEditar.Enabled = false;
                 btnNuevo.Enabled = false;
@@ -461,7 +462,19 @@ namespace SistemaDeControlDeRecursos
             }
             else if(btnFacturar.Text == "Imprimir")
             {
-                textBox1.Enabled = false;
+
+                if(textBox1.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un valor en Descuento, ya sea cero o mayor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (txtMontoPagado.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un valor en el Monto Pagado, ya sea cero o mayor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                
                 txtMontoPagado.Enabled = false;
                 btnEditar.Enabled = true;
                 btnNuevo.Enabled = true;
@@ -475,6 +488,18 @@ namespace SistemaDeControlDeRecursos
 
                 frmFacturarFactura frm = new frmFacturarFactura(Facturaid,subtotal,descuento,total,montopagado,cambio);
                 frm.ShowDialog();
+
+                if(btnFacturar.Text == "Imprimir")
+                {
+                    btnFacturar.Text = "Facturar";
+
+                    textBox2.Clear();
+                    txtsubtotal.Text = "0.00";
+                    textBox1.Text = "0.00";
+                    txtTotal.Text = "0.00";
+                    txtMontoPagado.Text = "0.00";
+                    txtCambio.Text = "0.00";
+                }
             }
         }
 
@@ -519,6 +544,36 @@ namespace SistemaDeControlDeRecursos
                 txtMontoPagado.Text = "0.00";
                 txtCambio.Text = "0.00";
                 textBox1.Text = "0.00";
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir números, el punto, y la tecla de retroceso
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquear la entrada
+            }
+
+            // Permitir solo un punto (.)
+            if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true; // Bloquear si ya hay un punto
+            }
+        }
+
+        private void txtMontoPagado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir números, el punto, y la tecla de retroceso
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquear la entrada
+            }
+
+            // Permitir solo un punto (.)
+            if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true; // Bloquear si ya hay un punto
             }
         }
 

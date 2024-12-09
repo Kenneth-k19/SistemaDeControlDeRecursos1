@@ -272,6 +272,7 @@
             this.txtMontoPagado.TabIndex = 30;
             this.txtMontoPagado.Text = "0.00";
             this.txtMontoPagado.TextChanged += new System.EventHandler(this.txtMontoPagado_TextChanged);
+            this.txtMontoPagado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoPagado_KeyPress);
             // 
             // label11
             // 
@@ -313,6 +314,7 @@
             this.textBox1.TabIndex = 26;
             this.textBox1.Text = "0.00";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label17
             // 
