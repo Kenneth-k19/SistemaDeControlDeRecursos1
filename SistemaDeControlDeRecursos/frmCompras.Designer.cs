@@ -47,14 +47,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRestaurarFiltro = new System.Windows.Forms.Button();
+            this.cmbTipoFiltro = new System.Windows.Forms.ComboBox();
+            this.dtpFechaFiltro = new System.Windows.Forms.DateTimePicker();
             this.txtCodigoFiltro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dtpFechaFiltro = new System.Windows.Forms.DateTimePicker();
-            this.cmbTipoFiltro = new System.Windows.Forms.ComboBox();
-            this.btnRestaurarFiltro = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -115,7 +115,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(885, 302);
+            this.groupBox2.Size = new System.Drawing.Size(843, 302);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Compra";
@@ -256,20 +256,21 @@
             this.btnAgregarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarDetalle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarDetalle.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarDetalle.Location = new System.Drawing.Point(758, 429);
+            this.btnAgregarDetalle.Location = new System.Drawing.Point(716, 429);
             this.btnAgregarDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarDetalle.Name = "btnAgregarDetalle";
             this.btnAgregarDetalle.Size = new System.Drawing.Size(192, 55);
             this.btnAgregarDetalle.TabIndex = 53;
             this.btnAgregarDetalle.Text = "Agregar Detalle";
             this.btnAgregarDetalle.UseVisualStyleBackColor = false;
+            this.btnAgregarDetalle.Click += new System.EventHandler(this.btnAgregarDetalle_Click);
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(398, 15);
+            this.label1.Location = new System.Drawing.Point(378, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 57);
@@ -301,10 +302,45 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(885, 144);
+            this.groupBox1.Size = new System.Drawing.Size(843, 144);
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
+            // 
+            // btnRestaurarFiltro
+            // 
+            this.btnRestaurarFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
+            this.btnRestaurarFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurarFiltro.FlatAppearance.BorderSize = 0;
+            this.btnRestaurarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurarFiltro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurarFiltro.ForeColor = System.Drawing.Color.White;
+            this.btnRestaurarFiltro.Location = new System.Drawing.Point(600, 91);
+            this.btnRestaurarFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRestaurarFiltro.Name = "btnRestaurarFiltro";
+            this.btnRestaurarFiltro.Size = new System.Drawing.Size(265, 40);
+            this.btnRestaurarFiltro.TabIndex = 61;
+            this.btnRestaurarFiltro.Text = "Restaurar";
+            this.btnRestaurarFiltro.UseVisualStyleBackColor = false;
+            // 
+            // cmbTipoFiltro
+            // 
+            this.cmbTipoFiltro.Enabled = false;
+            this.cmbTipoFiltro.FormattingEnabled = true;
+            this.cmbTipoFiltro.Location = new System.Drawing.Point(178, 88);
+            this.cmbTipoFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTipoFiltro.Name = "cmbTipoFiltro";
+            this.cmbTipoFiltro.Size = new System.Drawing.Size(180, 33);
+            this.cmbTipoFiltro.TabIndex = 35;
+            // 
+            // dtpFechaFiltro
+            // 
+            this.dtpFechaFiltro.Enabled = false;
+            this.dtpFechaFiltro.Location = new System.Drawing.Point(600, 42);
+            this.dtpFechaFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaFiltro.Name = "dtpFechaFiltro";
+            this.dtpFechaFiltro.Size = new System.Drawing.Size(265, 32);
+            this.dtpFechaFiltro.TabIndex = 35;
             // 
             // txtCodigoFiltro
             // 
@@ -357,43 +393,8 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(885, 358);
+            this.dataGridView1.Size = new System.Drawing.Size(843, 358);
             this.dataGridView1.TabIndex = 60;
-            // 
-            // dtpFechaFiltro
-            // 
-            this.dtpFechaFiltro.Enabled = false;
-            this.dtpFechaFiltro.Location = new System.Drawing.Point(600, 42);
-            this.dtpFechaFiltro.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpFechaFiltro.Name = "dtpFechaFiltro";
-            this.dtpFechaFiltro.Size = new System.Drawing.Size(265, 32);
-            this.dtpFechaFiltro.TabIndex = 35;
-            // 
-            // cmbTipoFiltro
-            // 
-            this.cmbTipoFiltro.Enabled = false;
-            this.cmbTipoFiltro.FormattingEnabled = true;
-            this.cmbTipoFiltro.Location = new System.Drawing.Point(178, 88);
-            this.cmbTipoFiltro.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbTipoFiltro.Name = "cmbTipoFiltro";
-            this.cmbTipoFiltro.Size = new System.Drawing.Size(180, 33);
-            this.cmbTipoFiltro.TabIndex = 35;
-            // 
-            // btnRestaurarFiltro
-            // 
-            this.btnRestaurarFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(124)))), ((int)(((byte)(36)))));
-            this.btnRestaurarFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurarFiltro.FlatAppearance.BorderSize = 0;
-            this.btnRestaurarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurarFiltro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurarFiltro.ForeColor = System.Drawing.Color.White;
-            this.btnRestaurarFiltro.Location = new System.Drawing.Point(600, 91);
-            this.btnRestaurarFiltro.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRestaurarFiltro.Name = "btnRestaurarFiltro";
-            this.btnRestaurarFiltro.Size = new System.Drawing.Size(265, 40);
-            this.btnRestaurarFiltro.TabIndex = 61;
-            this.btnRestaurarFiltro.Text = "Restaurar";
-            this.btnRestaurarFiltro.UseVisualStyleBackColor = false;
             // 
             // frmCompras
             // 
