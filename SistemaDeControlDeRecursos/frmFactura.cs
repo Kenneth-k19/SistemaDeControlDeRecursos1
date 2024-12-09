@@ -17,6 +17,8 @@ namespace SistemaDeControlDeRecursos
         string NombreBoton;
         int usuarioID;
 
+
+
         private SqlConnection con2;
         private SqlDataAdapter adpFacturas;
         private DataTable dtFacturas;
@@ -465,7 +467,13 @@ namespace SistemaDeControlDeRecursos
                 btnNuevo.Enabled = true;
                 btnModificar.Enabled = true;
 
-                frmFacturarFactura frm = new frmFacturarFactura(Facturaid);
+                float subtotal = float.Parse(txtsubtotal.Text);
+                float descuento = float.Parse(textBox1.Text);
+                float total = float.Parse(txtTotal.Text);
+                float montopagado = float.Parse(txtMontoPagado.Text);
+                float cambio = float.Parse(txtCambio.Text);
+
+                frmFacturarFactura frm = new frmFacturarFactura(Facturaid,subtotal,descuento,total,montopagado,cambio);
                 frm.ShowDialog();
             }
         }
