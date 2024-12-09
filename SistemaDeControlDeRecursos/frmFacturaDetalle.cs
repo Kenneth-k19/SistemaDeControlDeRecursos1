@@ -302,5 +302,23 @@ namespace SistemaDeControlDeRecursos
                 e.Handled = true; // Bloquear si ya hay un punto
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            txtCantidad.Enabled = false;
+            txtDescuento.Enabled = false;
+            txtObservacion.Enabled = false;
+
+            if(btnNuevo.Text == "Insertar")
+            {
+                txtCantidad.Text = "0.00";
+                txtDescuento.Text = "0.00";
+                txtObservacion.Text = "0.00";
+                txtArticuloId.Text = "";
+                txtArtiNombre.Text = "";
+                txtPrecio.Text = "0.00";
+                btnNuevo.Text = "Nuevo";
+            }
+        }
     }
 }
