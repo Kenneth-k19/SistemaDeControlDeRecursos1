@@ -40,10 +40,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 69);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(484, 206);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(532, 206);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -53,7 +56,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(508, 59);
+            this.panel1.Size = new System.Drawing.Size(579, 47);
             this.panel1.TabIndex = 14;
             // 
             // button1
@@ -65,7 +68,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(442, 0);
+            this.button1.Location = new System.Drawing.Point(513, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 31);
             this.button1.TabIndex = 13;
@@ -76,9 +79,9 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(116, 5);
+            this.label1.Location = new System.Drawing.Point(151, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 54);
+            this.label1.Size = new System.Drawing.Size(297, 42);
             this.label1.TabIndex = 1;
             this.label1.Text = "Periodos de inventario";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,7 +95,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(178, 281);
+            this.btnAgregar.Location = new System.Drawing.Point(24, 281);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(156, 45);
             this.btnAgregar.TabIndex = 19;
@@ -109,7 +112,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(340, 281);
+            this.btnCerrar.Location = new System.Drawing.Point(186, 281);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(156, 45);
             this.btnCerrar.TabIndex = 20;
@@ -121,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 338);
+            this.ClientSize = new System.Drawing.Size(579, 338);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.panel1);
