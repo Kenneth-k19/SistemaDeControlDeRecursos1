@@ -26,6 +26,7 @@ namespace SistemaDeControlDeRecursos
 
         SqlDataAdapter adpArticuloFac;
         DataTable dtArticuloFac;
+        BindingSource bsArticuloFac;
 
         public frmArticuloFactura()
         {
@@ -44,11 +45,13 @@ namespace SistemaDeControlDeRecursos
 
             adpArticuloFac = new SqlDataAdapter();
             dtArticuloFac = new DataTable();
+            bsArticuloFac = new BindingSource();
 
             adpArticuloFac.SelectCommand = new SqlCommand("spArticuloFactura", con);
             adpArticuloFac.SelectCommand.CommandType = CommandType.StoredProcedure;
 
             adpArticuloFac.Fill(dtArticuloFac);
+            bsArticuloFac.DataSource = dtArticuloFac;
             dataGridView1.DataSource = dtArticuloFac;
         }
 
@@ -88,6 +91,13 @@ namespace SistemaDeControlDeRecursos
 
                 this.Dispose();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = textBox1.Text.Trim();
+
+            bsArticuloFac.Filter = $"Nombre like '%{filtro}%'";
         }
 
         private void frmArticuloFactura_Load(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaDeControlDeRecursos.Reportes.forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace SistemaDeControlDeRecursos
     {
         string NombreBoton;
         int usuarioID;
+
+
 
         private SqlConnection con2;
         private SqlDataAdapter adpFacturas;
@@ -72,6 +75,8 @@ namespace SistemaDeControlDeRecursos
 
         }
 
+        public static int Facturaid { get; set; }
+
         public frmFactura()
         {
             InitializeComponent();
@@ -100,8 +105,8 @@ namespace SistemaDeControlDeRecursos
             adpFacturas.InsertCommand.Parameters.Add("@codigo", SqlDbType.VarChar,20,"Codigo");
             adpFacturas.InsertCommand.Parameters["@codigo"].Direction = ParameterDirection.Output;
             adpFacturas.InsertCommand.Parameters.Add("@fecha", SqlDbType.DateTime,8,"Fecha");
-            adpFacturas.InsertCommand.Parameters.Add("@tipo", SqlDbType.VarChar,1,"Tipo");
-            adpFacturas.InsertCommand.Parameters.Add("@consumo", SqlDbType.VarChar, 1, "Consumo");
+            adpFacturas.InsertCommand.Parameters.Add("@tipo", SqlDbType.VarChar,1,"TipoID");
+            adpFacturas.InsertCommand.Parameters.Add("@consumo", SqlDbType.VarChar, 1, "ConsumoID");
             adpFacturas.InsertCommand.Parameters.Add("@usuarioid", SqlDbType.Int, 4, "UsuarioID");
             adpFacturas.InsertCommand.Parameters.Add("@estado", SqlDbType.VarChar, 1, "Estado");
             adpFacturas.InsertCommand.Parameters.Add("@descuento", SqlDbType.Float, 4, "Descuento");
@@ -110,8 +115,8 @@ namespace SistemaDeControlDeRecursos
             adpFacturas.UpdateCommand.CommandType = CommandType.StoredProcedure;
             adpFacturas.UpdateCommand.Parameters.Add("@codigo",SqlDbType.VarChar,20,"Codigo");
             adpFacturas.UpdateCommand.Parameters.Add("@fecha", SqlDbType.DateTime, 8, "Fecha");
-            adpFacturas.UpdateCommand.Parameters.Add("@tipo", SqlDbType.VarChar, 1, "Tipo");
-            adpFacturas.UpdateCommand.Parameters.Add("@consumo", SqlDbType.VarChar, 1, "Consumo");
+            adpFacturas.UpdateCommand.Parameters.Add("@tipo", SqlDbType.VarChar, 1, "TipoID");
+            adpFacturas.UpdateCommand.Parameters.Add("@consumo", SqlDbType.VarChar, 1, "ConsumoID");
             adpFacturas.UpdateCommand.Parameters.Add("@estado", SqlDbType.VarChar, 1, "Estado");
             adpFacturas.UpdateCommand.Parameters.Add("@descuento", SqlDbType.Float, 4, "Descuento");
 
@@ -175,6 +180,8 @@ namespace SistemaDeControlDeRecursos
 
                 dataGridView1.Columns["FacturaID"].Visible = false;
                 dataGridView1.Columns["UsuarioID"].Visible = false;
+                dataGridView1.Columns["TipoID"].Visible = false;
+                dataGridView1.Columns["ConsumoID"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -273,8 +280,8 @@ namespace SistemaDeControlDeRecursos
 
                 nuevaFila["Codigo"] = 0;
                 nuevaFila["Fecha"] = dateTimePicker1.Value;
-                nuevaFila["Tipo"] = cmbTipo.SelectedValue;
-                nuevaFila["Consumo"] = cmbConsumo.SelectedValue;
+                nuevaFila["TipoID"] = cmbTipo.SelectedValue;
+                nuevaFila["ConsumoID"] = cmbConsumo.SelectedValue;
                 nuevaFila["UsuarioID"] = usuarioID;
                 nuevaFila["Estado"] = cmbEstado.SelectedValue;
                 nuevaFila["Descuento"] = Math.Round(descuento,2);
@@ -321,8 +328,8 @@ namespace SistemaDeControlDeRecursos
 
                     string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
                     DateTime fecha = Convert.ToDateTime(filaSeleccionada.Cells["Fecha"].Value.ToString());
-                    string tipo = filaSeleccionada.Cells["Tipo"].Value.ToString();
-                    string consumo = filaSeleccionada.Cells["Consumo"].Value.ToString();
+                    string tipo = filaSeleccionada.Cells["TipoID"].Value.ToString();
+                    string consumo = filaSeleccionada.Cells["ConsumoID"].Value.ToString();
                     string estado = filaSeleccionada.Cells["Estado"].Value.ToString();
                     string descuento = filaSeleccionada.Cells["Descuento"].Value.ToString();
                     string subtotal = filaSeleccionada.Cells["Subtotal"].Value.ToString();
@@ -350,8 +357,8 @@ namespace SistemaDeControlDeRecursos
                     {
                         //filaDatos["Codigo"] = txtCodigo.Text;
                         filaDatos["Fecha"] = dateTimePicker1.Value;
-                        filaDatos["Tipo"] = cmbTipo.SelectedValue;
-                        filaDatos["Consumo"] = cmbConsumo.SelectedValue;
+                        filaDatos["TipoID"] = cmbTipo.SelectedValue;
+                        filaDatos["ConsumoID"] = cmbConsumo.SelectedValue;
                         filaDatos["Estado"] = cmbEstado.SelectedValue;
                         filaDatos["Descuento"] = textBox1.Text;
 
@@ -428,6 +435,29 @@ namespace SistemaDeControlDeRecursos
                 btnEditar.Enabled = false;
                 btnNuevo.Enabled = false;
                 btnModificar.Enabled = false;
+
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+
+                    Facturaid = Convert.ToInt32(filaSeleccionada.Cells["FacturaID"].Value.ToString());
+
+                    string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
+                    DateTime fecha = Convert.ToDateTime(filaSeleccionada.Cells["Fecha"].Value.ToString());
+                    string tipo = filaSeleccionada.Cells["TipoID"].Value.ToString();
+                    string consumo = filaSeleccionada.Cells["ConsumoID"].Value.ToString();
+                    string estado = filaSeleccionada.Cells["Estado"].Value.ToString();
+                    string descuento = filaSeleccionada.Cells["Descuento"].Value.ToString();
+                    string subtotal = filaSeleccionada.Cells["Subtotal"].Value.ToString();
+
+                    textBox2.Text = codigo;
+                    dateTimePicker1.Value = fecha;
+                    cmbTipo.SelectedValue = tipo;
+                    cmbConsumo.SelectedValue = consumo;
+                    cmbEstado.SelectedValue = estado;
+                    textBox1.Text = descuento;
+                    txtsubtotal.Text = subtotal;
+                }
             }
             else if(btnFacturar.Text == "Imprimir")
             {
@@ -436,6 +466,15 @@ namespace SistemaDeControlDeRecursos
                 btnEditar.Enabled = true;
                 btnNuevo.Enabled = true;
                 btnModificar.Enabled = true;
+
+                float subtotal = float.Parse(txtsubtotal.Text);
+                float descuento = float.Parse(textBox1.Text);
+                float total = float.Parse(txtTotal.Text);
+                float montopagado = float.Parse(txtMontoPagado.Text);
+                float cambio = float.Parse(txtCambio.Text);
+
+                frmFacturarFactura frm = new frmFacturarFactura(Facturaid,subtotal,descuento,total,montopagado,cambio);
+                frm.ShowDialog();
             }
         }
 
@@ -472,6 +511,14 @@ namespace SistemaDeControlDeRecursos
                 btnEditar.Enabled = true;
                 btnModificar.Enabled = true;
                 btnNuevo.Enabled= true;
+                textBox2.Clear();
+                txtsubtotal.Text = "0.00";
+                cmbConsumo.SelectedIndex = 0;
+                cmbEstado.SelectedIndex = 0;
+                cmbTipo.SelectedIndex = 0;
+                txtMontoPagado.Text = "0.00";
+                txtCambio.Text = "0.00";
+                textBox1.Text = "0.00";
             }
         }
 
