@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaDeControlDeRecursos.Reportes.forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -71,6 +72,8 @@ namespace SistemaDeControlDeRecursos
             }
 
         }
+
+        public static int Facturaid { get; set; }
 
         public frmFactura()
         {
@@ -435,6 +438,8 @@ namespace SistemaDeControlDeRecursos
                 {
                     DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
 
+                    Facturaid = Convert.ToInt32(filaSeleccionada.Cells["FacturaID"].Value.ToString());
+
                     string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
                     DateTime fecha = Convert.ToDateTime(filaSeleccionada.Cells["Fecha"].Value.ToString());
                     string tipo = filaSeleccionada.Cells["TipoID"].Value.ToString();
@@ -459,6 +464,9 @@ namespace SistemaDeControlDeRecursos
                 btnEditar.Enabled = true;
                 btnNuevo.Enabled = true;
                 btnModificar.Enabled = true;
+
+                frmFacturarFactura frm = new frmFacturarFactura(Facturaid);
+                frm.ShowDialog();
             }
         }
 
