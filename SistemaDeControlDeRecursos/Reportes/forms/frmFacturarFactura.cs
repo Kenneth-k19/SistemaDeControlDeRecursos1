@@ -14,6 +14,8 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 {
     public partial class frmFacturarFactura : Form
     {
+        int m, mx, my;
+
         int FACUTRAID;
         float SUBTOTAL;
         float DESCUENTO;
@@ -69,9 +71,34 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
             
         }
 
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            m = 1;
+            mx = e.X;
+            my = e.Y;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - mx, MousePosition.Y - my);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            m = 0;
+        }
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

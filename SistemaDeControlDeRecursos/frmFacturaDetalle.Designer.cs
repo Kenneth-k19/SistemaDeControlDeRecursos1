@@ -92,7 +92,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 83);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(703, 223);
+            this.groupBox2.Size = new System.Drawing.Size(686, 223);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Factura Detalle";
@@ -142,6 +142,7 @@
             this.txtDescuento.Size = new System.Drawing.Size(136, 23);
             this.txtDescuento.TabIndex = 36;
             this.txtDescuento.Text = "0.00";
+            this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
             // 
             // txtArticuloId
             // 
@@ -189,6 +190,7 @@
             this.txtCantidad.TabIndex = 37;
             this.txtCantidad.Text = "0";
             this.txtCantidad.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label11
             // 
@@ -275,7 +277,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 389);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(703, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(686, 332);
             this.dataGridView1.TabIndex = 40;
             // 
             // btnNuevo
