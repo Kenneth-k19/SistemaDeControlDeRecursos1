@@ -81,9 +81,15 @@ namespace SistemaDeControlDeRecursos
             {
                 DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
 
+                float precio = 0;
                 int id = int.Parse(filaSeleccionada.Cells["ArticuloID"].Value.ToString());
                 string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                float precio = float.Parse(filaSeleccionada.Cells["Precio"].Value.ToString());
+
+                if(!string.IsNullOrWhiteSpace(filaSeleccionada.Cells["Precio"].Value.ToString().Trim()))
+                {
+                    precio = float.Parse(filaSeleccionada.Cells["Precio"].Value.ToString());
+                }
+                
 
                 articuloid = id;
                 nombreArticulo = nombre;
