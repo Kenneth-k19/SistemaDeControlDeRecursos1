@@ -261,5 +261,25 @@ namespace SistemaDeControlDeRecursos
 
             }
         }
+
+        private void btnAgregarDetalle_Click(object sender, EventArgs e)
+        {
+            string codigo;
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            { 
+                int indice = dataGridView1.SelectedRows[0].Index;
+
+                codigo = dtCompras.DefaultView[indice]["Codigo"].ToString();
+
+                frmComprasDetalle frm = new frmComprasDetalle(codigo, this.con);
+                frm.Owner = this;
+                frm.ShowDialog();
+
+                dtCompras.Clear();
+                adpCompras.Fill(dtCompras);
+                dataGridView1.Refresh();
+            }
+        }
     }
 }
