@@ -30,6 +30,11 @@ namespace SistemaDeControlDeRecursos
             panel1.BackColor = Color.FromArgb(145, 19, 66);
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Dispose();
