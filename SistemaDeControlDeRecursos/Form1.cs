@@ -226,7 +226,7 @@ namespace SistemaDeControlDeRecursos
         {
             if(inventario == null)
             {
-                inventario = new frmInventario();
+                inventario = new frmInventario(conexion);
                 inventario.FormClosed += Inventario_FormClosed;
                 inventario.MdiParent = this;
                 inventario.Dock = DockStyle.Fill;
@@ -289,7 +289,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (compras == null)
             {
-                compras = new frmCompras();
+                compras = new frmCompras(conexion);
                 compras.FormClosed += Compras_FormClosed;
                 compras.MdiParent = this;
                 compras.Dock = DockStyle.Fill;
@@ -401,7 +401,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (cierrePeriodo == null)
             {
-                cierrePeriodo = new frmCierrePeriodo();
+                cierrePeriodo = new frmCierrePeriodo(conexion);
                 cierrePeriodo.FormClosed += CierrePeriodo_FormClosed;
                 cierrePeriodo.MdiParent = this;
                 cierrePeriodo.Dock = DockStyle.Fill;
@@ -422,7 +422,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (ajusteInventario == null)
             {
-                ajusteInventario = new frmAjusteInventario();
+                ajusteInventario = new frmAjusteInventario(conexion);
                 ajusteInventario.FormClosed += AjusteInventario_FormClosed;
                 ajusteInventario.MdiParent = this;
                 ajusteInventario.Dock = DockStyle.Fill;
@@ -726,6 +726,11 @@ namespace SistemaDeControlDeRecursos
         {
             frmRpConsumoAnormalArticulos frm = new frmRpConsumoAnormalArticulos();
             frm.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)

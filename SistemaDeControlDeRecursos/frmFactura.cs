@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaDeControlDeRecursos.Reportes.forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace SistemaDeControlDeRecursos
     {
         string NombreBoton;
         int usuarioID;
+
+
 
         private SqlConnection con2;
         private SqlDataAdapter adpFacturas;
@@ -36,8 +39,9 @@ namespace SistemaDeControlDeRecursos
             cmbConsumo.Enabled = false;
             cmbEstado.Enabled = false;
             cmbTipo.Enabled = false;
-            textBox1.Enabled = false;
+            
             dateTimePicker1.Enabled = false;
+            
         }
 
         public void habilitarCamposFactura()
@@ -45,9 +49,33 @@ namespace SistemaDeControlDeRecursos
             cmbTipo.Enabled = true;
             cmbConsumo.Enabled = true;
             cmbEstado.Enabled = true;
-            textBox1.Enabled = true;
+           
             dateTimePicker1.Enabled = true;
+            
         }
+
+        public void llenarGrid()
+        {
+            //adpFacturas.SelectCommand = new SqlCommand("spSelectFactura", con2);
+            //adpFacturas.SelectCommand.CommandType = CommandType.StoredProcedure;
+            //adpFacturas.Fill(dtFacturas);
+            //bsFacturas.DataSource = dtFacturas;
+            //dataGridView1.DataSource = dtFacturas;
+
+            try
+            {
+                dtFacturas.Clear();
+                adpFacturas.Fill(dtFacturas);
+                dataGridView1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error al cargar los datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        public static int Facturaid { get; set; }
 
         public frmFactura()
         {
@@ -63,7 +91,6 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ReadOnly = true;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(220, 142, 168);
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -78,8 +105,8 @@ namespace SistemaDeControlDeRecursos
             adpFacturas.InsertCommand.Parameters.Add("@codigo", SqlDbType.VarChar,20,"Codigo");
             adpFacturas.InsertCommand.Parameters["@codigo"].Direction = ParameterDirection.Output;
             adpFacturas.InsertCommand.Parameters.Add("@fecha", SqlDbType.DateTime,8,"Fecha");
-            adpFacturas.InsertCommand.Parameters.Add("@tipo", SqlDbType.VarChar,1,"Tipo");
-            adpFacturas.InsertCommand.Parameters.Add("@consumo", SqlDbType.VarChar, 1, "Consumo");
+            adpFacturas.InsertCommand.Parameters.Add("@tipo", SqlDbType.VarChar,1,"TipoID");
+            adpFacturas.InsertCommand.Parameters.Add("@consumo", SqlDbType.VarChar, 1, "ConsumoID");
             adpFacturas.InsertCommand.Parameters.Add("@usuarioid", SqlDbType.Int, 4, "UsuarioID");
             adpFacturas.InsertCommand.Parameters.Add("@estado", SqlDbType.VarChar, 1, "Estado");
             adpFacturas.InsertCommand.Parameters.Add("@descuento", SqlDbType.Float, 4, "Descuento");
@@ -88,12 +115,18 @@ namespace SistemaDeControlDeRecursos
             adpFacturas.UpdateCommand.CommandType = CommandType.StoredProcedure;
             adpFacturas.UpdateCommand.Parameters.Add("@codigo",SqlDbType.VarChar,20,"Codigo");
             adpFacturas.UpdateCommand.Parameters.Add("@fecha", SqlDbType.DateTime, 8, "Fecha");
-            adpFacturas.UpdateCommand.Parameters.Add("@tipo", SqlDbType.VarChar, 1, "Tipo");
-            adpFacturas.UpdateCommand.Parameters.Add("@consumo", SqlDbType.VarChar, 1, "Consumo");
+            adpFacturas.UpdateCommand.Parameters.Add("@tipo", SqlDbType.VarChar, 1, "TipoID");
+            adpFacturas.UpdateCommand.Parameters.Add("@consumo", SqlDbType.VarChar, 1, "ConsumoID");
             adpFacturas.UpdateCommand.Parameters.Add("@estado", SqlDbType.VarChar, 1, "Estado");
             adpFacturas.UpdateCommand.Parameters.Add("@descuento", SqlDbType.Float, 4, "Descuento");
 
 
+
+
+
+
+            
+            
             con2 = con;
         }
 
@@ -144,6 +177,11 @@ namespace SistemaDeControlDeRecursos
                 cmbEstado.DataSource = dtFacturaEstado;
                 cmbEstado.DisplayMember = "Valor";
                 cmbEstado.ValueMember = "Codigo";
+
+                dataGridView1.Columns["FacturaID"].Visible = false;
+                dataGridView1.Columns["UsuarioID"].Visible = false;
+                dataGridView1.Columns["TipoID"].Visible = false;
+                dataGridView1.Columns["ConsumoID"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -165,14 +203,23 @@ namespace SistemaDeControlDeRecursos
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
             /* obtenemos los valores necesarios para enviar al constructor del form e instanciamos y llamamos al form */
+            string codigo="";
             int id=0;
+
             var a = dataGridView1.CurrentRow.Cells["FacturaID"].Value;
             if(dataGridView1.CurrentRow != null)
             {
-                id = (int) (dataGridView1.CurrentRow.Cells["FacturaID"].Value);
+                codigo = dataGridView1.CurrentRow.Cells["Codigo"].Value.ToString();
+                id = (int) dataGridView1.CurrentRow.Cells["FacturaID"].Value;
             }
 
-            frmFacturaDetalle frm = new frmFacturaDetalle(id,con2);
+            frmFacturaDetalle frm = new frmFacturaDetalle(codigo,id,con2);
+
+            //frm.FormClosed += (s, args) =>
+            //{
+            //    llenarGrid();
+            //};
+            frm.Owner = this;
             frm.ShowDialog();
         }
 
@@ -233,8 +280,8 @@ namespace SistemaDeControlDeRecursos
 
                 nuevaFila["Codigo"] = 0;
                 nuevaFila["Fecha"] = dateTimePicker1.Value;
-                nuevaFila["Tipo"] = cmbTipo.SelectedValue;
-                nuevaFila["Consumo"] = cmbConsumo.SelectedValue;
+                nuevaFila["TipoID"] = cmbTipo.SelectedValue;
+                nuevaFila["ConsumoID"] = cmbConsumo.SelectedValue;
                 nuevaFila["UsuarioID"] = usuarioID;
                 nuevaFila["Estado"] = cmbEstado.SelectedValue;
                 nuevaFila["Descuento"] = Math.Round(descuento,2);
@@ -269,21 +316,24 @@ namespace SistemaDeControlDeRecursos
             if(btnModificar.Text == "Editar")
             {
                 habilitarCamposFactura();
+                textBox1.Enabled = true;
+                
                 btnModificar.Text = "Guardar";
 
                 btnNuevo.Enabled = false;
                 btnEditar.Enabled = false;
-
+                btnFacturar.Enabled = false;
                 if(dataGridView1.SelectedRows.Count > 0)
                 {
                     DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
 
                     string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
                     DateTime fecha = Convert.ToDateTime(filaSeleccionada.Cells["Fecha"].Value.ToString());
-                    string tipo = filaSeleccionada.Cells["Tipo"].Value.ToString();
-                    string consumo = filaSeleccionada.Cells["Consumo"].Value.ToString();
+                    string tipo = filaSeleccionada.Cells["TipoID"].Value.ToString();
+                    string consumo = filaSeleccionada.Cells["ConsumoID"].Value.ToString();
                     string estado = filaSeleccionada.Cells["Estado"].Value.ToString();
                     string descuento = filaSeleccionada.Cells["Descuento"].Value.ToString();
+                    string subtotal = filaSeleccionada.Cells["Subtotal"].Value.ToString();
 
                     textBox2.Text = codigo;
                     dateTimePicker1.Value = fecha;
@@ -291,6 +341,7 @@ namespace SistemaDeControlDeRecursos
                     cmbConsumo.SelectedValue = consumo;
                     cmbEstado.SelectedValue = estado;
                     textBox1.Text = descuento;
+                    txtsubtotal.Text = subtotal;
                 }
             }
             else if(btnModificar.Text == "Guardar")
@@ -307,8 +358,8 @@ namespace SistemaDeControlDeRecursos
                     {
                         //filaDatos["Codigo"] = txtCodigo.Text;
                         filaDatos["Fecha"] = dateTimePicker1.Value;
-                        filaDatos["Tipo"] = cmbTipo.SelectedValue;
-                        filaDatos["Consumo"] = cmbConsumo.SelectedValue;
+                        filaDatos["TipoID"] = cmbTipo.SelectedValue;
+                        filaDatos["ConsumoID"] = cmbConsumo.SelectedValue;
                         filaDatos["Estado"] = cmbEstado.SelectedValue;
                         filaDatos["Descuento"] = textBox1.Text;
 
@@ -323,9 +374,11 @@ namespace SistemaDeControlDeRecursos
                             btnModificar.Text = "Editar";
                             btnNuevo.Enabled = true;
                             btnEditar.Enabled = true;
+                            btnFacturar.Enabled = true;
                             textBox2.Clear();
                             textBox1.Text = "0.00";
                             inhabilitarCamposFactura();
+                            textBox1.Enabled = false;
                         }
                         catch (Exception ex)
                         {
@@ -337,6 +390,190 @@ namespace SistemaDeControlDeRecursos
                 else 
                 { 
                 }
+            }
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            float subtotal = string.IsNullOrWhiteSpace(txtsubtotal.Text) ? 0 : float.Parse(txtsubtotal.Text);
+            float descuento = string.IsNullOrWhiteSpace(textBox1.Text) ? 0 : float.Parse(textBox1.Text);
+
+            float total = (float) Math.Round(subtotal - (subtotal * (descuento / 100)),2);
+
+            if (total < 0)
+            {
+                MessageBox.Show("El total no puede ser negativo", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                txtTotal.Text = total.ToString();
+            }
+        }
+
+        private void txtMontoPagado_TextChanged(object sender, EventArgs e)
+        {
+            float total = string.IsNullOrWhiteSpace(txtTotal.Text) ? 0 : float.Parse(txtTotal.Text);
+            float montoPagado = string.IsNullOrWhiteSpace(txtMontoPagado.Text) ? 0 : float.Parse(txtMontoPagado.Text);
+
+            float cambio = (float) Math.Round((montoPagado - total),2);
+
+            txtCambio.Text = cambio.ToString();
+
+            if (cambio < 0)
+            {
+                cambio = 0;
+            }
+
+        }
+
+        private void txtFacturar_Click(object sender, EventArgs e)
+        {
+            if(btnFacturar.Text == "Facturar")
+            {
+                btnFacturar.Text = "Imprimir";
+                
+                txtMontoPagado.Enabled = true;
+                btnEditar.Enabled = false;
+                btnNuevo.Enabled = false;
+                btnModificar.Enabled = false;
+
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+
+                    Facturaid = Convert.ToInt32(filaSeleccionada.Cells["FacturaID"].Value.ToString());
+
+                    string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
+                    DateTime fecha = Convert.ToDateTime(filaSeleccionada.Cells["Fecha"].Value.ToString());
+                    string tipo = filaSeleccionada.Cells["TipoID"].Value.ToString();
+                    string consumo = filaSeleccionada.Cells["ConsumoID"].Value.ToString();
+                    string estado = filaSeleccionada.Cells["Estado"].Value.ToString();
+                    string descuento = filaSeleccionada.Cells["Descuento"].Value.ToString();
+                    string subtotal = filaSeleccionada.Cells["Subtotal"].Value.ToString();
+
+                    textBox2.Text = codigo;
+                    dateTimePicker1.Value = fecha;
+                    cmbTipo.SelectedValue = tipo;
+                    cmbConsumo.SelectedValue = consumo;
+                    cmbEstado.SelectedValue = estado;
+                    textBox1.Text = descuento;
+                    txtsubtotal.Text = subtotal;
+                }
+            }
+            else if(btnFacturar.Text == "Imprimir")
+            {
+
+                if(textBox1.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un valor en Descuento, ya sea cero o mayor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (txtMontoPagado.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un valor en el Monto Pagado, ya sea cero o mayor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                
+                txtMontoPagado.Enabled = false;
+                btnEditar.Enabled = true;
+                btnNuevo.Enabled = true;
+                btnModificar.Enabled = true;
+
+                float subtotal = float.Parse(txtsubtotal.Text);
+                float descuento = float.Parse(textBox1.Text);
+                float total = float.Parse(txtTotal.Text);
+                float montopagado = float.Parse(txtMontoPagado.Text);
+                float cambio = float.Parse(txtCambio.Text);
+
+                frmFacturarFactura frm = new frmFacturarFactura(Facturaid,subtotal,descuento,total,montopagado,cambio);
+                frm.ShowDialog();
+
+                if(btnFacturar.Text == "Imprimir")
+                {
+                    btnFacturar.Text = "Facturar";
+
+                    textBox2.Clear();
+                    txtsubtotal.Text = "0.00";
+                    textBox1.Text = "0.00";
+                    txtTotal.Text = "0.00";
+                    txtMontoPagado.Text = "0.00";
+                    txtCambio.Text = "0.00";
+                }
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            inhabilitarCamposFactura();
+            if(btnNuevo.Text == "Insertar")
+            {
+                btnNuevo.Text = "Nuevo";
+                inhabilitarCamposFactura();
+                btnModificar.Enabled= true;
+                btnEditar.Enabled= true;
+                btnFacturar.Enabled= true;
+            }
+            else if(btnModificar.Text =="Guardar")
+            {
+                btnModificar.Text = "Editar";
+                inhabilitarCamposFactura();
+                btnEditar.Enabled = true;
+                btnFacturar.Enabled = true;
+                btnNuevo.Enabled= true;
+                textBox2.Clear();
+                txtsubtotal.Text = "0.00";
+                cmbConsumo.SelectedIndex = 0;
+                cmbEstado.SelectedIndex = 0;
+                cmbTipo.SelectedIndex = 0;
+            }
+            else if(btnFacturar.Text == "Imprimir")
+            {
+                btnFacturar.Text = "Facturar";
+                inhabilitarCamposFactura();
+                textBox1.Enabled = false;
+                txtMontoPagado.Enabled = false;
+                btnEditar.Enabled = true;
+                btnModificar.Enabled = true;
+                btnNuevo.Enabled= true;
+                textBox2.Clear();
+                txtsubtotal.Text = "0.00";
+                cmbConsumo.SelectedIndex = 0;
+                cmbEstado.SelectedIndex = 0;
+                cmbTipo.SelectedIndex = 0;
+                txtMontoPagado.Text = "0.00";
+                txtCambio.Text = "0.00";
+                textBox1.Text = "0.00";
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir números, el punto, y la tecla de retroceso
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquear la entrada
+            }
+
+            // Permitir solo un punto (.)
+            if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true; // Bloquear si ya hay un punto
+            }
+        }
+
+        private void txtMontoPagado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir números, el punto, y la tecla de retroceso
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquear la entrada
+            }
+
+            // Permitir solo un punto (.)
+            if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true; // Bloquear si ya hay un punto
             }
         }
 

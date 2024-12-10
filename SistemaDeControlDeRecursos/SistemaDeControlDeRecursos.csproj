@@ -94,6 +94,12 @@
     <Compile Include="frmAjusteInventarioDetalle.Designer.cs">
       <DependentUpon>frmAjusteInventarioDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArticuloFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticuloFactura.Designer.cs">
+      <DependentUpon>frmArticuloFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCierrePeriodo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsConsumoAnormalArt.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\dataSets\dsFacturarFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFacturarFactura.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dataSets\dsMovimientosDeInventario.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -266,6 +277,12 @@
     <Compile Include="Reportes\forms\frmDetalleVentasDiario.Designer.cs">
       <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\forms\frmFacturarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\forms\frmFacturarFactura.Designer.cs">
+      <DependentUpon>frmFacturarFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\forms\frmMovimientosDeInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAjusteInventarioDetalle.resx">
       <DependentUpon>frmAjusteInventarioDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArticuloFactura.resx">
+      <DependentUpon>frmArticuloFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCierrePeriodo.resx">
       <DependentUpon>frmCierrePeriodo.cs</DependentUpon>
@@ -378,6 +398,9 @@
     <EmbeddedResource Include="Reportes\forms\frmDetalleVentasDiario.resx">
       <DependentUpon>frmDetalleVentasDiario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\forms\frmFacturarFactura.resx">
+      <DependentUpon>frmFacturarFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\forms\frmMovimientosDeInventario.resx">
       <DependentUpon>frmMovimientosDeInventario.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +426,7 @@
     <EmbeddedResource Include="Reportes\rdlc\rpComprasPorPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rpPedidosADomicilio.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rptDetalleVentasDiario.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlc\rptFacturar.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\rptResumenVentasAnual.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\PlantillaColores.rdlc" />
     <EmbeddedResource Include="Reportes\rdlc\Report1.rdlc" />
@@ -450,6 +474,17 @@
     </None>
     <None Include="Reportes\dataSets\dsConsumoAnormalArt.xss">
       <DependentUpon>dsConsumoAnormalArt.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsFacturarFactura.xsc">
+      <DependentUpon>dsFacturarFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dataSets\dsFacturarFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFacturarFactura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dataSets\dsFacturarFactura.xss">
+      <DependentUpon>dsFacturarFactura.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dataSets\dsMovimientosDeInventario.xsc">
       <DependentUpon>dsMovimientosDeInventario.xsd</DependentUpon>

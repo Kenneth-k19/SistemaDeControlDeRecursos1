@@ -60,9 +60,23 @@ namespace SistemaDeControlDeRecursos
 
 
 
-
-
             return dt;
+        }
+
+        public static DataTable getDataTable(string sp, Dictionary<string, object> parametros)
+        {
+            SqlConnection connection = conn;
+            SqlDataAdapter adapter = new SqlDataAdapter(sp, connection);
+            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            foreach (var param in parametros)
+            {
+                adapter.SelectCommand.Parameters.AddWithValue("@" + param.Key, param.Value);
+            }
+
+            DataTable tabResult = new DataTable();
+            adapter.Fill(tabResult);
+
+            return tabResult;
         }
     }
 }

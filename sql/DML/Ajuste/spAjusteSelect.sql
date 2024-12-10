@@ -11,11 +11,11 @@ as
 	
 
 	select AjusteID [Codigo Ajuste], CONVERT(varchar,Fecha,7) Fecha, CONCAT(dbo.getMes(Inicio),' - ',YEAR(Inicio)) Periodo
-		,u.Nombre Usuario, Observacion
+		,u.UsuarioID,u.Nombre Usuario, Observacion
 	from #Ajuste a
 	inner join #Periodo p on p.PeriodoID = a.PeriodoID
 	inner join #Usuario u on u.UsuarioID = a.UsuarioID
-	inner join #Valores v on v.Codigo = P.Estado or v.Codigo = a.Tipo or v.Codigo = a.Estado
+	inner join #Valores v on v.Codigo = P.Estado or v.Codigo = a.Estado
 
 
 go

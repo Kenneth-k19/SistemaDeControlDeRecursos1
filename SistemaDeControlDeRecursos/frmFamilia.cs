@@ -47,7 +47,7 @@ namespace SistemaDeControlDeRecursos
             //validar que txtnombre no esté vacío
             if (txtNombre.Text == "")
             {
-                MessageBox.Show("Por favor, ingrese el nombre de la familia");
+                MessageBox.Show("Por favor, ingrese el nombre de la familia","Datos necesarios");
                 txtNombre.Focus();
             }
 
@@ -76,6 +76,7 @@ namespace SistemaDeControlDeRecursos
                         btnEditar.Visible = true;
                         modoEdicion = false;
                         btnInsertar.Text = "Insertar";
+                        dataGridView1.Enabled = true;
                     }
                     else
                     {
@@ -138,6 +139,7 @@ namespace SistemaDeControlDeRecursos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            dataGridView1.Enabled = false;
             btnEditar.Visible = false;
             modoEdicion = true;
             btnInsertar.Text = "Salvar";
