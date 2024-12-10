@@ -27,6 +27,7 @@ namespace SistemaDeControlDeRecursos
         {
             frmConsumosDetalle frm = new frmConsumosDetalle(conn,-1);
             frm.ShowDialog();
+            refrescarGrid();
         }
 
         private void frmConsumos_Load(object sender, EventArgs e)
@@ -47,6 +48,9 @@ namespace SistemaDeControlDeRecursos
             dgvConsumo.Columns["Articulo"].Width = 200;
             dgvConsumo.Columns["Articulo"].HeaderText = "Plato";
             dgvConsumo.Columns["Observacion"].Width = 200;
+            dgvConsumo.AllowUserToAddRows = false;
+            dgvConsumo.AllowUserToDeleteRows = false;
+            dgvConsumo.ReadOnly = true;
 
         }
 
@@ -56,7 +60,8 @@ namespace SistemaDeControlDeRecursos
             //obtener el ajusteID de la filaSeleccionada
             int id = Convert.ToInt32(dgvConsumo.CurrentRow.Cells[0].Value.ToString());
             frmConsumosDetalle frm = new frmConsumosDetalle(conn, id);
-            frm.ShowDialog();            
+            frm.ShowDialog();
+            refrescarGrid();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -77,6 +82,15 @@ namespace SistemaDeControlDeRecursos
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void refrescarGrid()
+        {
+            adpConsumo = new SqlDataAdapter("spConsumoSelect", conn);
+            adpConsumo.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adpConsumo.SelectCommand.Parameters.AddWithValue("@ConsumoID", 0);
+            tabConsumo = new DataTable();
+            adpConsumo.Fill(tabConsumo);
+            dgvConsumo.DataSource = tabConsumo;
         }
     }
 }

@@ -15,4 +15,3 @@ as
 go
 exec spConsumoSelect 0
 
-select *from Articulo where tipo = 'V'

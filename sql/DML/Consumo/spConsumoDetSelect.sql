@@ -8,7 +8,7 @@ as
 	select *into #Articulo from Articulo where articuloID in (select ArticuloID from #ConsumoDet)
 	select *into #Familia from Familia where FamiliaID in (select FamiliaID from #Articulo)
 
-	select c.ConsumoDetID,c.ConsumoID,c.ArticuloID,a.Codigo, a.Nombre Articulo, f.Nombre Familia
+	select c.ConsumoDetID,c.ConsumoID,c.ArticuloID,a.Codigo, a.Nombre Articulo,c.Cantidad, f.Nombre Familia
 	from #ConsumoDet c
 	inner join #Articulo a on a.ArticuloID = c.ArticuloID
 	inner join #Familia f on f.FamiliaID = a.FamiliaID
