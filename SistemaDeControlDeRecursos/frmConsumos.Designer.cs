@@ -30,11 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvConsumo = new System.Windows.Forms.DataGridView();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumo)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(290, 9);
+            this.label1.Location = new System.Drawing.Point(221, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(275, 54);
             this.label1.TabIndex = 0;
@@ -58,10 +58,28 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 116);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 72);
+            this.groupBox1.Size = new System.Drawing.Size(690, 72);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Platillo:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(90, 33);
+            this.txtBuscar.Multiline = true;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(259, 25);
+            this.txtBuscar.TabIndex = 3;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dgvConsumo
             // 
@@ -70,7 +88,7 @@
             this.dgvConsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsumo.Location = new System.Drawing.Point(12, 194);
             this.dgvConsumo.Name = "dgvConsumo";
-            this.dgvConsumo.Size = new System.Drawing.Size(776, 337);
+            this.dgvConsumo.Size = new System.Drawing.Size(690, 337);
             this.dgvConsumo.TabIndex = 2;
             // 
             // btnInsertar
@@ -105,31 +123,13 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(126, 33);
-            this.txtBuscar.Multiline = true;
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(214, 25);
-            this.txtBuscar.TabIndex = 3;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Observación:";
-            // 
             // frmConsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(245)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(800, 619);
+            this.ClientSize = new System.Drawing.Size(714, 619);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.dgvConsumo);

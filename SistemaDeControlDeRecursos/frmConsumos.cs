@@ -32,14 +32,21 @@ namespace SistemaDeControlDeRecursos
         private void frmConsumos_Load(object sender, EventArgs e)
         {
             dgvConsumo.ReadOnly = true;
-            dgvConsumo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            
+            dgvConsumo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;            
+
             adpConsumo = new SqlDataAdapter("spConsumoSelect",conn);
             adpConsumo.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adpConsumo.SelectCommand.Parameters.AddWithValue("@ConsumoID", 0);
             tabConsumo = new DataTable();
             adpConsumo.Fill(tabConsumo);
             dgvConsumo.DataSource = tabConsumo;
 
+
+            dgvConsumo.Columns["ConsumoID"].Visible = false;
+            dgvConsumo.Columns["ArticuloID"].Visible = false;
+            dgvConsumo.Columns["Articulo"].Width = 200;
+            dgvConsumo.Columns["Articulo"].HeaderText = "Plato";
+            dgvConsumo.Columns["Observacion"].Width = 200;
 
         }
 
