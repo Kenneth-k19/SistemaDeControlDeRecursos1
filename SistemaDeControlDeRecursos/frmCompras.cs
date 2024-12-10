@@ -91,6 +91,42 @@ namespace SistemaDeControlDeRecursos
             }
         }
 
+        private bool validarBlancos()
+        {
+
+            if (txtDocumento.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un documento de compra");
+                return false;
+            }
+            else
+            {
+                if (txtDocumento.Text.Length > 20)
+                {
+                    MessageBox.Show("El documento de compra debe tener menos de 20 caracteres");
+                    return false;
+                }
+            }
+
+            if(cmbEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un estado");
+                return false;
+            }
+
+            if (cmbTipo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un tipo");
+                return false;
+            }
+
+            if (cmbProveedor.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un proveedor");
+                return false;
+            }
+            return true;
+        }
         private void inhabilitarCamposCompras()
         {
             txtCodigo.Enabled = false;
@@ -142,6 +178,7 @@ namespace SistemaDeControlDeRecursos
                 dataGridView1.DataSource = dtCompras;
                 bsCompras.DataSource = dtCompras;
 
+                dtpFecha.Value = DateTime.Now.Date;
             }catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar la ventana de Compras. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -169,10 +206,15 @@ namespace SistemaDeControlDeRecursos
                     habilitarCamposCompras();
                     btnAgregarDetalle.Enabled = false;
                     btnModificar.Enabled = false;
+
+                    btnVolver.Visible = true;
                 }
                 else if (btnNuevo.Text == "Insertar")
                 {
-
+                    if (!validarBlancos())
+                    {
+                        return;
+                    }
                     DataRow nuevaFila = dtInsert.NewRow();
 
                     nuevaFila["ProveedorID"] = cmbProveedor.SelectedValue;
@@ -193,6 +235,7 @@ namespace SistemaDeControlDeRecursos
                     btnNuevo.Text = "Nuevo";
                     btnAgregarDetalle.Enabled = true;
                     btnModificar.Enabled = true;
+                    btnVolver.Visible = false;
 
                     MessageBox.Show("Los datos se insertaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -219,6 +262,7 @@ namespace SistemaDeControlDeRecursos
 
                 btnNuevo.Enabled = false;
                 btnAgregarDetalle.Enabled = false;
+                btnVolver.Visible = true;
 
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
@@ -238,6 +282,10 @@ namespace SistemaDeControlDeRecursos
             }
             else if (btnModificar.Text == "Guardar")
             {
+                if (!validarBlancos())
+                {
+                    return;
+                }
                 DataRow filaModificada = dtInsert.Rows[0];
 
                 filaModificada["Codigo"] = txtCodigo.Text;
@@ -256,6 +304,7 @@ namespace SistemaDeControlDeRecursos
                 btnModificar.Text = "Editar";
                 btnAgregarDetalle.Enabled = true;
                 btnNuevo.Enabled = true;
+                btnVolver.Visible = false;
 
                 MessageBox.Show("Los datos se modificaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -279,6 +328,39 @@ namespace SistemaDeControlDeRecursos
                 dtCompras.Clear();
                 adpCompras.Fill(dtCompras);
                 dataGridView1.Refresh();
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            if(btnNuevo.Text == "Insertar")
+            {
+                inhabilitarCamposCompras();
+                btnNuevo.Text = "Nuevo";
+                btnAgregarDetalle.Enabled = true;
+                btnModificar.Enabled = true;
+
+                txtCodigo.Text = "";
+                dtpFecha.Value = DateTime.Now;
+                cmbProveedor.SelectedIndex = -1;
+                txtDocumento.Text = "";
+                cmbEstado.SelectedIndex = -1;
+                cmbTipo.SelectedIndex = -1;
+            }
+
+            if (btnModificar.Text == "Guardar")
+            {
+                inhabilitarCamposCompras();
+                btnModificar.Text = "Editar";
+                btnAgregarDetalle.Enabled = true;
+                btnNuevo.Enabled = true;
+
+                txtCodigo.Text = "";
+                dtpFecha.Value = DateTime.Now;
+                cmbProveedor.SelectedIndex = -1;
+                txtDocumento.Text = "";
+                cmbEstado.SelectedIndex = -1;
+                cmbTipo.SelectedIndex = -1;
             }
         }
     }

@@ -193,6 +193,21 @@ namespace SistemaDeControlDeRecursos
                     MessageBox.Show("Debe ingresar un valor en Descuento, ya sea cero o mayor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                else if(Convert.ToInt32(txtDescuento.Text) < 0 || Convert.ToInt32(txtDescuento.Text) > 100)
+                {
+                    MessageBox.Show("El descuento no debe ser negativo ni mayor a 100.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if(txtArticuloId.Text == "" || txtArtiNombre.Text == "")
+                {
+                    MessageBox.Show("Elija un articulo.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if(Convert.ToInt32(txtCantidad.Text) < 0 || Convert.ToInt32(txtCantidad.Text) > 20)
+                {
+                    MessageBox.Show("Ha sobrepasado la cantidad limite de articulo por cada registro nuevo (20).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 
 
                 DataRow nuevafila = dtFacturaDet.NewRow();
@@ -222,6 +237,9 @@ namespace SistemaDeControlDeRecursos
                     txtObservacion.Enabled = false;
                     btnNuevo.Text = "Nuevo";
                     btnSeleccionarArticulo.Enabled = false;
+                    txtArticuloId.Clear();
+                    txtArtiNombre.Clear();
+                    txtPrecio.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -271,12 +289,17 @@ namespace SistemaDeControlDeRecursos
                 
                 
             }
+            else
+            {
+                MessageBox.Show("Seleccione solo una fila, por favor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Permitir números, el punto, y la tecla de retroceso
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            // Permitir solo números y teclas de control como retroceso
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Bloquear la entrada
             }
@@ -312,7 +335,7 @@ namespace SistemaDeControlDeRecursos
             if(btnNuevo.Text == "Insertar")
             {
                 txtCantidad.Text = "0.00";
-                txtDescuento.Text = "0.00";
+                txtDescuento.Text = "0";
                 txtObservacion.Text = "0.00";
                 txtArticuloId.Text = "";
                 txtArtiNombre.Text = "";
