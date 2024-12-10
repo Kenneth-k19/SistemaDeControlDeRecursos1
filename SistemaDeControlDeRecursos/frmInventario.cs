@@ -96,7 +96,7 @@ namespace SistemaDeControlDeRecursos
                 }
                 else
                 {
-                    tabArticulo.DefaultView.RowFilter = "Nombre LIKE '%" + txtBuscar.Text + "%'";
+                    tabArticulo.DefaultView.RowFilter = "Articulo LIKE '%" + txtBuscar.Text + "%'";
                 }
             }
             catch (Exception ex)

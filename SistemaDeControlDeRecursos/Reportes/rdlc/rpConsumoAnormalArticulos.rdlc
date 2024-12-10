@@ -433,7 +433,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>29.7cm</Height>
+    <Height>5.27896cm</Height>
     <Style>
       <BackgroundColor>#f3f1eb</BackgroundColor>
     </Style>
@@ -820,7 +820,7 @@
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
+    <PageWidth>25cm</PageWidth>
     <LeftMargin>0cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
     <TopMargin>0cm</TopMargin>

@@ -485,7 +485,7 @@ namespace SistemaDeControlDeRecursos
         {
             if (consumos == null)
             {
-                consumos = new frmConsumos();
+                consumos = new frmConsumos(conexion);
                 consumos.FormClosed += Consumos_FormClosed;
                 consumos.MdiParent = this;
                 consumos.Dock = DockStyle.Fill;
