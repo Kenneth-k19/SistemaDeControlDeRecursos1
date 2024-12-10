@@ -91,6 +91,42 @@ namespace SistemaDeControlDeRecursos
             }
         }
 
+        private bool validarBlancos()
+        {
+
+            if (txtDocumento.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un documento de compra");
+                return false;
+            }
+            else
+            {
+                if (txtDocumento.Text.Length > 20)
+                {
+                    MessageBox.Show("El documento de compra debe tener menos de 20 caracteres");
+                    return false;
+                }
+            }
+
+            if(cmbEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un estado");
+                return false;
+            }
+
+            if (cmbTipo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un tipo");
+                return false;
+            }
+
+            if (cmbProveedor.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un proveedor");
+                return false;
+            }
+            return true;
+        }
         private void inhabilitarCamposCompras()
         {
             txtCodigo.Enabled = false;
@@ -175,7 +211,10 @@ namespace SistemaDeControlDeRecursos
                 }
                 else if (btnNuevo.Text == "Insertar")
                 {
-
+                    if (!validarBlancos())
+                    {
+                        return;
+                    }
                     DataRow nuevaFila = dtInsert.NewRow();
 
                     nuevaFila["ProveedorID"] = cmbProveedor.SelectedValue;
@@ -196,6 +235,7 @@ namespace SistemaDeControlDeRecursos
                     btnNuevo.Text = "Nuevo";
                     btnAgregarDetalle.Enabled = true;
                     btnModificar.Enabled = true;
+                    btnVolver.Visible = false;
 
                     MessageBox.Show("Los datos se insertaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -242,6 +282,10 @@ namespace SistemaDeControlDeRecursos
             }
             else if (btnModificar.Text == "Guardar")
             {
+                if (!validarBlancos())
+                {
+                    return;
+                }
                 DataRow filaModificada = dtInsert.Rows[0];
 
                 filaModificada["Codigo"] = txtCodigo.Text;
@@ -260,6 +304,7 @@ namespace SistemaDeControlDeRecursos
                 btnModificar.Text = "Editar";
                 btnAgregarDetalle.Enabled = true;
                 btnNuevo.Enabled = true;
+                btnVolver.Visible = false;
 
                 MessageBox.Show("Los datos se modificaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

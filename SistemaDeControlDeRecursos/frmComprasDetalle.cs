@@ -88,6 +88,137 @@ namespace SistemaDeControlDeRecursos
             txtImpuesto.Enabled = false;
         }
 
+        private bool validarBLancos()
+        {
+            if(txtArticuloId.Text.Trim() == "")
+            {
+                MessageBox.Show("El campo Articulo es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if(txtCantidad.Text.Trim() == "")
+            {
+                MessageBox.Show("El campo Cantidad es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if(txtPrecio.Text.Trim() == "")
+            {
+                MessageBox.Show("El campo Precio es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if(txtDescuento.Text.Trim() == "")
+            {
+                MessageBox.Show("El campo Descuento es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if(txtImpuesto.Text.Trim() == "")
+            {
+                MessageBox.Show("El campo Impuesto es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool validarNumeros()
+        {
+
+            /*
+             * using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        string input = "123.45";  // Ejemplo de cadena que contiene un número flotante
+        float result;
+
+        bool isValid = float.TryParse(input, out result);
+
+        if (isValid)
+        {
+            Console.WriteLine($"El valor '{input}' es un número flotante válido: {result}");
+        }
+        else
+        {
+            Console.WriteLine($"El valor '{input}' no es un número flotante válido.");
+        }
+    }
+}
+
+             * */
+            if(!float.TryParse(txtPrecio.Text, out float result))
+            {
+                MessageBox.Show("El campo Precio debe ser un número decimal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+
+            }
+            else
+            {
+                float valor = float.Parse(txtPrecio.Text);
+
+                if(valor <= 0)
+                {
+                    MessageBox.Show("El campo Precio debe ser mayor a cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+
+                }
+            }
+
+            if(!float.TryParse(txtDescuento.Text, out float result2))
+            {
+                MessageBox.Show("El campo Descuento debe ser un número decimal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                float valor = float.Parse(txtDescuento.Text);
+
+                if (valor < 0)
+                {
+                    MessageBox.Show("El campo Descuento debe ser mayor o igual a cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+
+            if(!float.TryParse(txtImpuesto.Text, out float result3))
+            {
+                MessageBox.Show("El campo Impuesto debe ser un número decimal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                float valor = float.Parse(txtImpuesto.Text);
+
+                if (valor < 0)
+                {
+                    MessageBox.Show("El campo Impuesto debe ser mayor o igual a cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            
+
+            if(!int.TryParse(txtCantidad.Text, out int result4))
+            {
+                MessageBox.Show("El campo Cantidad debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                int valor = int.Parse(txtCantidad.Text);
+
+                if (valor <= 0)
+                {
+                    MessageBox.Show("El campo Cantidad debe ser mayor a cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+
+            return true;
+        }
         private void frmComprasDetalle_Load(object sender, EventArgs e)
         {
             
@@ -134,6 +265,15 @@ namespace SistemaDeControlDeRecursos
                 }
                 else
                 {
+                    if(!validarBLancos())
+                    {
+                        return;
+                    }
+
+                    if(!validarNumeros())
+                    {
+                        return;
+                    }
 
                     adpCompraDetalle.InsertCommand.Parameters["@articuloID"].Value = txtArticuloId.Text;
                     adpCompraDetalle.InsertCommand.Parameters["@cantidad"].Value = txtCantidad.Text;
@@ -156,6 +296,7 @@ namespace SistemaDeControlDeRecursos
 
                     btnEliminar.Enabled = true;
                     btnSeleccionarArticulo.Enabled = false;
+                    btnVolver.Visible = false;
 
                     MessageBox.Show("Los datos se insertaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
