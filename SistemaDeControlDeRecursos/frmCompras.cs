@@ -142,6 +142,7 @@ namespace SistemaDeControlDeRecursos
                 dataGridView1.DataSource = dtCompras;
                 bsCompras.DataSource = dtCompras;
 
+                dtpFecha.Value = DateTime.Now.Date;
             }catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar la ventana de Compras. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -169,6 +170,8 @@ namespace SistemaDeControlDeRecursos
                     habilitarCamposCompras();
                     btnAgregarDetalle.Enabled = false;
                     btnModificar.Enabled = false;
+
+                    btnVolver.Visible = true;
                 }
                 else if (btnNuevo.Text == "Insertar")
                 {
@@ -219,6 +222,7 @@ namespace SistemaDeControlDeRecursos
 
                 btnNuevo.Enabled = false;
                 btnAgregarDetalle.Enabled = false;
+                btnVolver.Visible = true;
 
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
@@ -279,6 +283,39 @@ namespace SistemaDeControlDeRecursos
                 dtCompras.Clear();
                 adpCompras.Fill(dtCompras);
                 dataGridView1.Refresh();
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            if(btnNuevo.Text == "Insertar")
+            {
+                inhabilitarCamposCompras();
+                btnNuevo.Text = "Nuevo";
+                btnAgregarDetalle.Enabled = true;
+                btnModificar.Enabled = true;
+
+                txtCodigo.Text = "";
+                dtpFecha.Value = DateTime.Now;
+                cmbProveedor.SelectedIndex = -1;
+                txtDocumento.Text = "";
+                cmbEstado.SelectedIndex = -1;
+                cmbTipo.SelectedIndex = -1;
+            }
+
+            if (btnModificar.Text == "Guardar")
+            {
+                inhabilitarCamposCompras();
+                btnModificar.Text = "Editar";
+                btnAgregarDetalle.Enabled = true;
+                btnNuevo.Enabled = true;
+
+                txtCodigo.Text = "";
+                dtpFecha.Value = DateTime.Now;
+                cmbProveedor.SelectedIndex = -1;
+                txtDocumento.Text = "";
+                cmbEstado.SelectedIndex = -1;
+                cmbTipo.SelectedIndex = -1;
             }
         }
     }
