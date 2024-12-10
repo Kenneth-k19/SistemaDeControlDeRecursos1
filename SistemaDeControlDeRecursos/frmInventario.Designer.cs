@@ -60,7 +60,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(236, 9);
+            this.label1.Location = new System.Drawing.Point(209, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 44);
             this.label1.TabIndex = 0;
@@ -161,7 +161,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 340);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(653, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(602, 422);
             this.dataGridView1.TabIndex = 21;
             // 
             // btnInsertar
@@ -291,7 +291,7 @@
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(0, 875);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(245)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(834, 865);
+            this.ClientSize = new System.Drawing.Size(834, 788);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbFamilia);
