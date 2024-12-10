@@ -166,6 +166,7 @@
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>#eeac75</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -203,6 +204,7 @@
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>#e2b7b0</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -224,13 +226,13 @@
                               <Value>=Fields!PorcentajeDeContribucion.Value</Value>
                               <Style>
                                 <FontFamily>Poppins</FontFamily>
-                                <Format>0.00%</Format>
+                                <Format>0%</Format>
                                 <Color>#7f0139</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -241,13 +243,13 @@
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>#e2b7b0</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -872,7 +874,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Resumen de Ventas de</Value>
+                  <Value>Resumen de Ventas Intermensual</Value>
                   <Style>
                     <FontFamily>PT Sans</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -890,7 +892,7 @@
           <Top>2.0447cm</Top>
           <Left>0.5842cm</Left>
           <Height>0.74817cm</Height>
-          <Width>6.00234cm</Width>
+          <Width>8.50706cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -961,7 +963,7 @@
             </Paragraph>
           </Paragraphs>
           <Top>2.0447cm</Top>
-          <Left>6.58654cm</Left>
+          <Left>9.12654cm</Left>
           <Height>0.74817cm</Height>
           <Width>2.07667cm</Width>
           <ZIndex>5</ZIndex>
