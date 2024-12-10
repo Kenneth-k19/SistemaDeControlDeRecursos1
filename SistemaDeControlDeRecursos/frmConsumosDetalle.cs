@@ -74,14 +74,32 @@ namespace SistemaDeControlDeRecursos
 
                 ConsumoID = (int)cmdConsumo.Parameters[0].Value;
 
+                // **Manejo de filas eliminadas**: 
+                foreach (DataRow row in tabConsumoDet.Rows)
+                {
+                    // Verifica si la fila está marcada como eliminada
+                    if (row.RowState == DataRowState.Deleted)
+                    {
+                        // Obtener el ConsumoDetID de la fila eliminada
+                        int consumoDetID = (int)row["ConsumoDetID", DataRowVersion.Original];
+
+                        // Ejecutar el procedimiento almacenado o consulta para eliminar
+                        SqlCommand cmdDelete = new SqlCommand("spConsumoDetDelete", connection);
+                        cmdDelete.CommandType = CommandType.StoredProcedure;
+                        cmdDelete.Parameters.AddWithValue("@ConsumoDetID", consumoDetID);
+                        cmdDelete.ExecuteNonQuery();
+                    }
+                }
+
                 // Guardar los detalles del consumo en la tabla ConsumoDet
                 foreach (DataRow row in tabConsumoDet.Rows)
                 {
-                    // Ignorar filas eliminadas
-                    if (row.RowState == DataRowState.Deleted)
+                    // Ignorar filas eliminadas y filas sin cambios
+                    if (row.RowState == DataRowState.Deleted || row.RowState == DataRowState.Unchanged)
                     {
                         continue;
                     }
+
                     SqlCommand cmdConsumoDet = new SqlCommand("spConsumoDetInsert", connection);
                     cmdConsumoDet.CommandType = CommandType.StoredProcedure;
                     cmdConsumoDet.Parameters.AddWithValue("@ConsumoDetID", 0);
@@ -163,7 +181,7 @@ namespace SistemaDeControlDeRecursos
             dgvConsumoDet.Columns[2].Visible = false;
             dgvConsumoDet.Columns["Articulo"].Width = 200;
 
-            adpArticuloConsumo = new SqlDataAdapter("Select *from Articulo where Tipo = 'C' ", connection);
+            adpArticuloConsumo = new SqlDataAdapter("select a.ArticuloID,a.Codigo,a.Nombre Articulo,f.Nombre Familia from (select *from Articulo where Tipo = 'C') a inner join Familia f on f.FamiliaID = a.FamiliaID ", connection);
             adpArticuloConsumo.SelectCommand.CommandType = CommandType.Text;
             tabArticuloConsumo = new DataTable();
             adpArticuloConsumo.Fill(tabArticuloConsumo);
@@ -179,7 +197,7 @@ namespace SistemaDeControlDeRecursos
             cmbPlatillo.DataSource = tabArticuloVenta;
             cmbIngrediente.DataSource = tabArticuloConsumo;
             cmbPlatillo.ValueMember = "ArticuloID"; cmbPlatillo.DisplayMember = "Nombre";
-            cmbIngrediente.ValueMember = "ArticuloID"; cmbIngrediente.DisplayMember = "Nombre";
+            cmbIngrediente.ValueMember = "ArticuloID"; cmbIngrediente.DisplayMember = "Articulo";
 
             // Si es un nuevo registro
             if (ConsumoID == -1)
@@ -236,16 +254,17 @@ namespace SistemaDeControlDeRecursos
                 }
 
                 // Extrae la información del artículo
-                string nombre = articuloInfo[0]["Nombre"].ToString();
+                string cod = articuloInfo[0]["Codigo"].ToString();
+                string nombre = articuloInfo[0]["Articulo"].ToString();
                 string familia = articuloInfo[0]["Familia"].ToString();
 
                 // Crea una nueva fila en tabConsumoDet y rellénala
                 DataRow newRow = tabConsumoDet.NewRow();
                 newRow["ArticuloID"] = articuloID; // Código del artículo
-                newRow["Nombre"] = nombre;        // Nombre del artículo
+                newRow["Articulo"] = nombre;        // Nombre del artículo
                 newRow["Familia"] = familia;      // Familia del artículo
                 newRow["Cantidad"] = cantidad;    // Cantidad especificada por el usuario
-
+                newRow["Codigo"] = cod;          // Código del ingrediente
                 // Agrega la nueva fila al DataTable
                 tabConsumoDet.Rows.Add(newRow);
 
