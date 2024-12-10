@@ -16,7 +16,7 @@ namespace SistemaDeControlDeRecursos
     {
         string NombreBoton;
         int usuarioID;
-
+        string validarFacIDEnMod;
 
 
         private SqlConnection con2;
@@ -39,19 +39,13 @@ namespace SistemaDeControlDeRecursos
             cmbConsumo.Enabled = false;
             cmbEstado.Enabled = false;
             cmbTipo.Enabled = false;
-            
-            dateTimePicker1.Enabled = false;
-            
         }
 
         public void habilitarCamposFactura()
         {
             cmbTipo.Enabled = true;
             cmbConsumo.Enabled = true;
-            cmbEstado.Enabled = true;
-           
-            dateTimePicker1.Enabled = true;
-            
+            cmbEstado.Enabled = true;  
         }
 
         public void llenarGrid()
@@ -313,21 +307,25 @@ namespace SistemaDeControlDeRecursos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+
+
             if(btnModificar.Text == "Editar")
             {
-                habilitarCamposFactura();
-                textBox1.Enabled = true;
-                
-                btnModificar.Text = "Guardar";
-
-                btnNuevo.Enabled = false;
-                btnEditar.Enabled = false;
-                btnFacturar.Enabled = false;
-                if(dataGridView1.SelectedRows.Count > 0)
+                if(dataGridView1.SelectedRows.Count == 1)
                 {
+                    habilitarCamposFactura();
+                    textBox1.Enabled = true;
+
+                    btnModificar.Text = "Guardar";
+
+                    btnNuevo.Enabled = false;
+                    btnEditar.Enabled = false;
+                    btnFacturar.Enabled = false;
+
                     DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
 
                     string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
+                    validarFacIDEnMod = codigo;
                     DateTime fecha = Convert.ToDateTime(filaSeleccionada.Cells["Fecha"].Value.ToString());
                     string tipo = filaSeleccionada.Cells["TipoID"].Value.ToString();
                     string consumo = filaSeleccionada.Cells["ConsumoID"].Value.ToString();
@@ -343,14 +341,31 @@ namespace SistemaDeControlDeRecursos
                     textBox1.Text = descuento;
                     txtsubtotal.Text = subtotal;
                 }
+                else
+                {
+                    MessageBox.Show("Seleccione solo una fila, por favor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
             else if(btnModificar.Text == "Guardar")
             {
-                if (dataGridView1.SelectedRows.Count > 0)
+                if (dataGridView1.SelectedRows.Count == 1)
                 {
+                    if (Convert.ToInt32(textBox1.Text) < 0 || Convert.ToInt32(textBox1.Text) > 100)
+                    {
+                        MessageBox.Show("El descuento no debe ser negativo ni mayor a 100.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     dtFacturas.PrimaryKey = new DataColumn[] { dtFacturas.Columns["Codigo"] };
 
                     DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+
+                    if(filaSeleccionada.Cells["Codigo"].Value.ToString() != validarFacIDEnMod)
+                    {
+                        MessageBox.Show("La fila seleccionada al principio ha cambiado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
                     DataRow filaDatos = dtFacturas.Rows.Find(filaSeleccionada.Cells["Codigo"].Value);
 
@@ -388,7 +403,9 @@ namespace SistemaDeControlDeRecursos
                     }
                 }
                 else 
-                { 
+                {
+                    MessageBox.Show("Seleccione solo una fila, por favor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
             }
         }
@@ -526,6 +543,8 @@ namespace SistemaDeControlDeRecursos
                 cmbConsumo.SelectedIndex = 0;
                 cmbEstado.SelectedIndex = 0;
                 cmbTipo.SelectedIndex = 0;
+                textBox1.Enabled = false;
+                textBox1.Text = "0";
             }
             else if(btnFacturar.Text == "Imprimir")
             {
@@ -543,7 +562,7 @@ namespace SistemaDeControlDeRecursos
                 cmbTipo.SelectedIndex = 0;
                 txtMontoPagado.Text = "0.00";
                 txtCambio.Text = "0.00";
-                textBox1.Text = "0.00";
+                textBox1.Text = "0";
             }
         }
 
