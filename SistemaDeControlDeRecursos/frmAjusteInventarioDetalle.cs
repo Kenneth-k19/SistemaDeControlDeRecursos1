@@ -147,6 +147,11 @@ namespace SistemaDeControlDeRecursos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (!PeriodoAbierto(dtpFecha.Value))
+            {
+                MessageBox.Show("La fecha del ajuste no corresponde a un período abierto.", "Período Cerrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             //validar
             if (tabAjusteDet.Rows.Count == 0)
             {
@@ -218,9 +223,54 @@ namespace SistemaDeControlDeRecursos
                 }
             }
 
-            MessageBox.Show("¡Ajuste guardado exitosamente!");
+            MessageBox.Show("¡Ajuste guardado exitosamente!","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
             this.Close();
         }
+        private bool PeriodoAbierto(DateTime fechaMovimiento)
+        {
+            try
+            {
+                // Consulta para verificar si la fecha pertenece a un período abierto
+                string query = @"
+                  SELECT COUNT(*)
+                    FROM Periodo
+                    WHERE @FechaMovimiento BETWEEN Inicio AND Final
+                  AND Estado = 'A'";
+
+                // Crear el comando con la conexión existente
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@FechaMovimiento", fechaMovimiento);
+
+                // Abrir la conexión si está cerrada
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                // Ejecutar la consulta y obtener el resultado
+                int count = (int)cmd.ExecuteScalar();
+
+                // Cerrar la conexión
+                con.Close();
+
+                // Si el resultado es mayor a 0, la fecha pertenece a un período abierto
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                MessageBox.Show($"Error al validar el período: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // Cerrar la conexión en caso de error
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+
+                return false; // En caso de error, devuelve false
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

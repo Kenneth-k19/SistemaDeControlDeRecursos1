@@ -31,6 +31,7 @@ namespace SistemaDeControlDeRecursos
             tabAjuste.Clear();
 
             adpAjuste.Fill(tabAjuste);
+            dataGridView1.DataSource = tabAjuste;
         }
 
         private void frmAjusteInventario_Load(object sender, EventArgs e)
