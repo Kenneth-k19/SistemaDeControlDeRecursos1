@@ -25,7 +25,7 @@ namespace SistemaDeControlDeRecursos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmConsumosDetalle frm = new frmConsumosDetalle();
+            frmConsumosDetalle frm = new frmConsumosDetalle(conn,-1);
             frm.ShowDialog();
         }
 
@@ -45,13 +45,31 @@ namespace SistemaDeControlDeRecursos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmConsumosDetalle frm = new frmConsumosDetalle();
-            frm.ShowDialog();
+
+            //obtener el ajusteID de la filaSeleccionada
+            int id = Convert.ToInt32(dgvConsumo.CurrentRow.Cells[0].Value.ToString());
+            frmConsumosDetalle frm = new frmConsumosDetalle(conn, id);
+            frm.ShowDialog();            
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (txtBuscar.Text.Length == 0)
+                {
+                    //usar defaultView de dataTable para filtrar
+                    tabConsumo.DefaultView.RowFilter = "";
+                }
+                else
+                {
+                    tabConsumo.DefaultView.RowFilter = "Observacion LIKE '%" + txtBuscar.Text + "%'";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
