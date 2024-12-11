@@ -166,9 +166,9 @@ namespace SistemaDeControlDeRecursos
                 cmbTipo.DisplayMember = "Valor";
                 cmbTipo.DataSource = dsCombos.Tables[1];
 
-                cmbTipoFiltro.ValueMember = "Codigo";
-                cmbTipoFiltro.DisplayMember = "Valor";
-                cmbTipoFiltro.DataSource = dsCombos.Tables[1];
+                //cmbTipoFiltro.ValueMember = "Codigo";
+                //cmbTipoFiltro.DisplayMember = "Valor";
+                //cmbTipoFiltro.DataSource = dsCombos.Tables[1];
 
                 cmbEstado.ValueMember = "Codigo";
                 cmbEstado.DisplayMember = "Valor";
@@ -178,7 +178,7 @@ namespace SistemaDeControlDeRecursos
                 dataGridView1.DataSource = dtCompras;
                 bsCompras.DataSource = dtCompras;
 
-                dtpFecha.Value = DateTime.Now.Date;
+                dtpFecha.Value = DateTime.Now;
             }catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar la ventana de Compras. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -363,5 +363,85 @@ namespace SistemaDeControlDeRecursos
                 cmbTipo.SelectedIndex = -1;
             }
         }
+
+        private void txtCodigoFiltro_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(txtCodigoFiltro.Text != "")
+                {
+                    dtCompras.DefaultView.RowFilter = "Proveedor like '" + txtCodigoFiltro.Text + "%'";
+                }
+                else
+                {
+                    dtCompras.DefaultView.RowFilter = "";
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar los datos. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //private void dtpFechaFiltro_ValueChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (dtpFechaFiltro.Checked)
+        //        {
+        //            if (dtpFechaFiltro.Value != null)
+        //            {
+        //                dtCompras.DefaultView.RowFilter = "Fecha = '" + dtpFechaFiltro.Value.ToString("yyyy-MM-dd") + "'";
+        //            }
+        //            else
+        //            {
+        //                dtCompras.DefaultView.RowFilter = "";
+        //            }
+        //        }
+        //        else
+        //        {
+        //            dtCompras.DefaultView.RowFilter = "";
+        //        }
+                
+        //    }catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error al filtrar los datos. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
+        //private void cmbTipoFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (checkTipoFiltro.Checked)
+        //        {
+        //            if (cmbTipoFiltro.SelectedIndex != -1)
+        //            {
+        //                dtCompras.DefaultView.RowFilter = "'Tipo de Compra' = '" + cmbTipoFiltro.Text + "'";
+        //            }
+        //            else
+        //            {
+        //                dtCompras.DefaultView.RowFilter = "";
+        //            }
+        //        }
+           
+        //    }catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error al filtrar los datos. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
+        //private void checkTipoFiltro_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (checkTipoFiltro.Checked)
+        //    {
+        //        cmbTipoFiltro.Enabled = true;
+        //        cmbTipo.SelectedIndex = -1;
+        //    }
+        //    else
+        //    {
+        //        cmbTipoFiltro.Enabled = false;
+        //        cmbTipo.SelectedIndex = -1;
+        //    }
+        //}
     }
 }

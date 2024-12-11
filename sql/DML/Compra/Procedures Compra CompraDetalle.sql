@@ -139,8 +139,9 @@ AS
 	delete from Existencia
 	where CompraDetID = @compradetid
 
+	select getdate()
 
-
+	select * from Articulo
 	
 
 	ALTER TABLE Compra ALTER COLUMN Estado VARCHAR(1);
