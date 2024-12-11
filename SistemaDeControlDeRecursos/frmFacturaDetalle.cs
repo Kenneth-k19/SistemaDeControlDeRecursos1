@@ -120,7 +120,7 @@ namespace SistemaDeControlDeRecursos
             txtCantidad.Enabled = false;
             txtPrecio.Enabled = false;
             txtDescuento.Enabled = false;
-            txtReferencia.Enabled = false;
+            
             txtObservacion.Enabled = false;
             btnSeleccionarArticulo.Enabled = false;
 
@@ -166,7 +166,7 @@ namespace SistemaDeControlDeRecursos
             txtArticuloId.Text = frmArticuloFactura.articuloid.ToString();
             txtArtiNombre.Text = frmArticuloFactura.nombreArticulo;
             txtPrecio.Text = frmArticuloFactura.precioArticulo.ToString();
-
+            txtExistencia.Text = frmArticuloFactura.existencia.ToString();
             
         }
 
@@ -180,12 +180,20 @@ namespace SistemaDeControlDeRecursos
                 btnSeleccionarArticulo.Enabled = true;
 
                 btnNuevo.Text = "Insertar";
+                btnEliminar.Enabled = false;
             }
             else if(btnNuevo.Text == "Insertar")
             {
+                
+
                 if(txtCantidad.Text == "")
                 {
-                    MessageBox.Show("Debe ingresar un valor en Cantidad, ya sea cero o mayor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe ingresar un valor en Cantidad, debe ser mayor a cero", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if(txtCantidad.Text == "0")
+                {
+                    MessageBox.Show("La cantidad debe ser mayor a cero.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if (txtDescuento.Text == "")
@@ -193,19 +201,30 @@ namespace SistemaDeControlDeRecursos
                     MessageBox.Show("Debe ingresar un valor en Descuento, ya sea cero o mayor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                else if(Convert.ToInt32(txtDescuento.Text) < 0 || Convert.ToInt32(txtDescuento.Text) > 100)
+                else if (Convert.ToInt32(txtDescuento.Text) < 0 || Convert.ToInt32(txtDescuento.Text) > 100)
                 {
                     MessageBox.Show("El descuento no debe ser negativo ni mayor a 100.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                else if(txtArticuloId.Text == "" || txtArtiNombre.Text == "")
+                else if (txtArticuloId.Text == "" || txtArtiNombre.Text == "")
                 {
                     MessageBox.Show("Elija un articulo.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                else if(Convert.ToInt32(txtCantidad.Text) < 0 || Convert.ToInt32(txtCantidad.Text) > 20)
+                else if (Convert.ToInt32(txtCantidad.Text) < 0 || Convert.ToInt32(txtCantidad.Text) > 20)
                 {
                     MessageBox.Show("Ha sobrepasado la cantidad limite de articulo por cada registro nuevo (20).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                int cantidad = int.Parse(txtCantidad.Text);
+                int existencia = int.Parse(txtExistencia.Text);
+                int validarExistencia = existencia - cantidad;
+
+                if (validarExistencia < 0)
+                {
+                    MessageBox.Show("No hay suficiente existencia del ariticulo seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 
@@ -236,10 +255,15 @@ namespace SistemaDeControlDeRecursos
                     txtDescuento.Enabled = false;
                     txtObservacion.Enabled = false;
                     btnNuevo.Text = "Nuevo";
+                    btnEliminar.Enabled = true;
                     btnSeleccionarArticulo.Enabled = false;
                     txtArticuloId.Clear();
                     txtArtiNombre.Clear();
                     txtPrecio.Clear();
+                    txtObservacion.Clear();
+                    txtCantidad.Text = "0";
+                    txtExistencia.Text = "0";
+                    txtDescuento.Text = "0";
                 }
                 catch (Exception ex)
                 {
@@ -313,17 +337,13 @@ namespace SistemaDeControlDeRecursos
 
         private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Permitir números, el punto, y la tecla de retroceso
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            // Permitir números, y la tecla de retroceso
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Bloquear la entrada
             }
 
-            // Permitir solo un punto (.)
-            if (e.KeyChar == '.' && ((System.Windows.Forms.TextBox)sender).Text.Contains("."))
-            {
-                e.Handled = true; // Bloquear si ya hay un punto
-            }
+            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -334,13 +354,35 @@ namespace SistemaDeControlDeRecursos
 
             if(btnNuevo.Text == "Insertar")
             {
-                txtCantidad.Text = "0.00";
+                txtCantidad.Text = "0";
                 txtDescuento.Text = "0";
                 txtObservacion.Text = "0.00";
                 txtArticuloId.Text = "";
                 txtArtiNombre.Text = "";
                 txtPrecio.Text = "0.00";
                 btnNuevo.Text = "Nuevo";
+                txtExistencia.Text = "0";
+                btnEliminar.Enabled = true;
+            }
+        }
+
+        private void txtExistencia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtExistencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números y teclas de control como retroceso
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear la entrada
+            }
+
+            // Permitir solo un punto (.)
+            if (e.KeyChar == '.' && ((System.Windows.Forms.TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true; // Bloquear si ya hay un punto
             }
         }
     }

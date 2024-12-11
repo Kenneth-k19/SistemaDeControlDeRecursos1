@@ -69,6 +69,26 @@ namespace SistemaDeControlDeRecursos
 
         }
 
+        public void calcularDescuento()
+        {
+            
+                //para que se calcule el cambio lo pongo aqui y en el textchanged de textbox1
+                float dsubtotal = string.IsNullOrWhiteSpace(txtsubtotal.Text) ? 0 : float.Parse(txtsubtotal.Text);
+                float ddescuento = string.IsNullOrWhiteSpace(textBox1.Text) ? 0 : float.Parse(textBox1.Text);
+
+                float totalSegunDescuento = (float)Math.Round(dsubtotal - (dsubtotal * (ddescuento / 100)), 2);
+
+                if (totalSegunDescuento < 0)
+                {
+                    MessageBox.Show("El total no puede ser negativo", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    txtTotal.Text = totalSegunDescuento.ToString();
+                }
+            
+        }
+
         public static int Facturaid { get; set; }
 
         public frmFactura()
@@ -313,6 +333,12 @@ namespace SistemaDeControlDeRecursos
             {
                 if(dataGridView1.SelectedRows.Count == 1)
                 {
+                    if(cmbEstado.Text == "Facturada")
+                    {
+                        MessageBox.Show("La factura ya ha sido facturada, ya no puede editarla.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     habilitarCamposFactura();
                     textBox1.Enabled = true;
 
@@ -351,9 +377,15 @@ namespace SistemaDeControlDeRecursos
             {
                 if (dataGridView1.SelectedRows.Count == 1)
                 {
+                    if(textBox1.Text == "")
+                    {
+                        MessageBox.Show("Debe ingresar un valor en el descuento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     if (Convert.ToInt32(textBox1.Text) < 0 || Convert.ToInt32(textBox1.Text) > 100)
                     {
-                        MessageBox.Show("El descuento no debe ser negativo ni mayor a 100.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("El porcentaje de descuento no debe ser mayor a 100.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
@@ -391,7 +423,10 @@ namespace SistemaDeControlDeRecursos
                             btnEditar.Enabled = true;
                             btnFacturar.Enabled = true;
                             textBox2.Clear();
-                            textBox1.Text = "0.00";
+                            textBox1.Text = "0";
+                            txtsubtotal.Text = "0.00";
+                            txtTotal.Text = "0.00";
+                            txtCambio.Text = "0.00";
                             inhabilitarCamposFactura();
                             textBox1.Enabled = false;
                         }
@@ -419,7 +454,7 @@ namespace SistemaDeControlDeRecursos
 
             if (total < 0)
             {
-                MessageBox.Show("El total no puede ser negativo", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El porcentaje de descuento no debe ser mayor a 100.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -429,6 +464,13 @@ namespace SistemaDeControlDeRecursos
 
         private void txtMontoPagado_TextChanged(object sender, EventArgs e)
         {
+            
+            if(txtMontoPagado.Text == "." && txtMontoPagado.Text.Length <= 1)
+            {
+                MessageBox.Show("Formato numerico incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             float total = string.IsNullOrWhiteSpace(txtTotal.Text) ? 0 : float.Parse(txtTotal.Text);
             float montoPagado = string.IsNullOrWhiteSpace(txtMontoPagado.Text) ? 0 : float.Parse(txtMontoPagado.Text);
 
@@ -441,12 +483,16 @@ namespace SistemaDeControlDeRecursos
                 cambio = 0;
             }
 
+            
+
         }
 
         private void txtFacturar_Click(object sender, EventArgs e)
         {
             if(btnFacturar.Text == "Facturar")
             {
+                
+
                 btnFacturar.Text = "Imprimir";
                 
                 txtMontoPagado.Enabled = true;
@@ -475,6 +521,8 @@ namespace SistemaDeControlDeRecursos
                     cmbEstado.SelectedValue = estado;
                     textBox1.Text = descuento;
                     txtsubtotal.Text = subtotal;
+
+                    calcularDescuento();
                 }
             }
             else if(btnFacturar.Text == "Imprimir")
@@ -487,7 +535,17 @@ namespace SistemaDeControlDeRecursos
                 }
                 else if (txtMontoPagado.Text == "")
                 {
-                    MessageBox.Show("Debe ingresar un valor en el Monto Pagado, ya sea cero o mayor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe ingresar un valor en el Monto Pagado, mayor o igual al Total a pagar.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if(float.Parse(txtCambio.Text) < 0)
+                {
+                    MessageBox.Show("El cambio es negativo, el monto ingresado debe ser mayor o igual que el total a pagar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if(float.Parse(txtMontoPagado.Text) < float.Parse(txtTotal.Text))
+                {
+                    MessageBox.Show("El monto pagado debe ser mayor o igual al Total a pagar.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -512,7 +570,7 @@ namespace SistemaDeControlDeRecursos
 
                     textBox2.Clear();
                     txtsubtotal.Text = "0.00";
-                    textBox1.Text = "0.00";
+                    textBox1.Text = "0";
                     txtTotal.Text = "0.00";
                     txtMontoPagado.Text = "0.00";
                     txtCambio.Text = "0.00";
@@ -563,22 +621,19 @@ namespace SistemaDeControlDeRecursos
                 txtMontoPagado.Text = "0.00";
                 txtCambio.Text = "0.00";
                 textBox1.Text = "0";
+                txtTotal.Text = "0.00";
             }
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Permitir números, el punto, y la tecla de retroceso
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            // Permitir números y la tecla de retroceso
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Bloquear la entrada
             }
 
-            // Permitir solo un punto (.)
-            if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains("."))
-            {
-                e.Handled = true; // Bloquear si ya hay un punto
-            }
+            
         }
 
         private void txtMontoPagado_KeyPress(object sender, KeyPressEventArgs e)

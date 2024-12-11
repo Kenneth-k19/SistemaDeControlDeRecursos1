@@ -23,6 +23,8 @@ namespace SistemaDeControlDeRecursos
 
         public static float precioArticulo { get; set; }
 
+        public static int existencia { get; set; }
+
 
         SqlDataAdapter adpArticuloFac;
         DataTable dtArticuloFac;
@@ -53,6 +55,12 @@ namespace SistemaDeControlDeRecursos
             adpArticuloFac.Fill(dtArticuloFac);
             bsArticuloFac.DataSource = dtArticuloFac;
             dataGridView1.DataSource = dtArticuloFac;
+
+            articuloid = 0;
+            nombreArticulo = "";
+            precioArticulo = 0;
+            existencia = 0;
+
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -89,11 +97,14 @@ namespace SistemaDeControlDeRecursos
                 {
                     precio = float.Parse(filaSeleccionada.Cells["Precio"].Value.ToString());
                 }
+
+                int EXISTENCIA = int.Parse(filaSeleccionada.Cells["Existencia"].Value.ToString());
                 
 
                 articuloid = id;
                 nombreArticulo = nombre;
                 precioArticulo = precio;
+                existencia = EXISTENCIA;
 
                 this.Dispose();
             }
