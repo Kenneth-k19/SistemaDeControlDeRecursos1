@@ -38,6 +38,7 @@ namespace SistemaDeControlDeRecursos
         frmRpPedidosADomicilio pedidosADomicilio;
         frmRpComprasPorPeriodo comprasPorPeriodo;
         frmResumenVentasAnual resumenVentasAnual;
+        frmExistencia existencia;
 
         bool checker = true;
         private DataTable accesos;
@@ -731,6 +732,41 @@ namespace SistemaDeControlDeRecursos
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExistencia_Click(object sender, EventArgs e)
+        {
+            //if (familia == null)
+            //{
+            //    familia = new frmFamilia(conexion);
+            //    familia.FormClosed += Familia_FormClosed;
+            //    familia.MdiParent = this;
+            //    familia.Dock = DockStyle.Fill;
+            //    familia.Show();
+            //}
+            //else
+            //{
+            //    familia.Activate();
+            //}
+
+            if (existencia == null)
+            {
+                existencia = new frmExistencia(conexion);
+                existencia.FormClosed += Existencia_FormClosed;
+                existencia.MdiParent = this;
+                existencia.Dock = DockStyle.Fill;
+                existencia.Show();
+            }
+            else
+            {
+                existencia.Activate();
+            }
+
+        }
+
+        private void Existencia_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            existencia = null;
         }
 
         private void MiPerfil_FormClosed(object sender, FormClosedEventArgs e)

@@ -40,6 +40,7 @@
             this.flpLeftPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flpInventario = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnInventario = new System.Windows.Forms.Button();
             this.btnCierrePeriodo = new System.Windows.Forms.Button();
             this.btnAjusteInventario = new System.Windows.Forms.Button();
             this.btnMovimientos = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             this.facturacionTransition = new System.Windows.Forms.Timer(this.components);
             this.comprasTransition = new System.Windows.Forms.Timer(this.components);
             this.ajustesTransition = new System.Windows.Forms.Timer(this.components);
-            this.btnInventario = new System.Windows.Forms.Button();
+            this.btnExistencia = new System.Windows.Forms.Button();
             btnMaximizar = new System.Windows.Forms.Button();
             btnMinimize = new System.Windows.Forms.Button();
             btnMaximize = new System.Windows.Forms.Button();
@@ -94,7 +95,7 @@
             btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnMaximizar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btnMaximizar.Location = new System.Drawing.Point(1172, 0);
-            btnMaximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnMaximizar.Margin = new System.Windows.Forms.Padding(4);
             btnMaximizar.Name = "btnMaximizar";
             btnMaximizar.Size = new System.Drawing.Size(52, 48);
             btnMaximizar.TabIndex = 5;
@@ -111,7 +112,7 @@
             btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnMinimize.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btnMinimize.Location = new System.Drawing.Point(1121, 0);
-            btnMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnMinimize.Margin = new System.Windows.Forms.Padding(4);
             btnMinimize.Name = "btnMinimize";
             btnMinimize.Size = new System.Drawing.Size(52, 48);
             btnMinimize.TabIndex = 4;
@@ -128,7 +129,7 @@
             btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnMaximize.ForeColor = System.Drawing.SystemColors.ButtonFace;
             btnMaximize.Location = new System.Drawing.Point(1223, 0);
-            btnMaximize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnMaximize.Margin = new System.Windows.Forms.Padding(4);
             btnMaximize.Name = "btnMaximize";
             btnMaximize.Size = new System.Drawing.Size(52, 48);
             btnMaximize.TabIndex = 3;
@@ -162,7 +163,7 @@
             this.pnlTopPanel.Controls.Add(btnMaximize);
             this.pnlTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopPanel.Location = new System.Drawing.Point(0, 0);
-            this.pnlTopPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTopPanel.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTopPanel.Name = "pnlTopPanel";
             this.pnlTopPanel.Size = new System.Drawing.Size(1275, 62);
             this.pnlTopPanel.TabIndex = 1;
@@ -193,7 +194,7 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(-1, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(69, 62);
             this.button4.TabIndex = 9;
@@ -211,7 +212,7 @@
             this.flpLeftPanel.Controls.Add(this.flowLayoutPanel3);
             this.flpLeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpLeftPanel.Location = new System.Drawing.Point(0, 62);
-            this.flpLeftPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flpLeftPanel.Margin = new System.Windows.Forms.Padding(4);
             this.flpLeftPanel.Name = "flpLeftPanel";
             this.flpLeftPanel.Size = new System.Drawing.Size(307, 573);
             this.flpLeftPanel.TabIndex = 8;
@@ -223,7 +224,7 @@
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 190);
             this.panel1.TabIndex = 10;
@@ -240,12 +241,35 @@
             this.flpInventario.Controls.Add(this.btnConsumos);
             this.flpInventario.Controls.Add(this.btnReporte1);
             this.flpInventario.Controls.Add(this.btnReporteConsumo);
+            this.flpInventario.Controls.Add(this.btnExistencia);
             this.flpInventario.Location = new System.Drawing.Point(0, 198);
             this.flpInventario.Margin = new System.Windows.Forms.Padding(0);
             this.flpInventario.Name = "flpInventario";
             this.flpInventario.Size = new System.Drawing.Size(303, 74);
             this.flpInventario.TabIndex = 9;
             this.flpInventario.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInventario.FlatAppearance.BorderSize = 0;
+            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.ForeColor = System.Drawing.Color.White;
+            this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
+            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventario.Location = new System.Drawing.Point(0, 0);
+            this.btnInventario.Margin = new System.Windows.Forms.Padding(0);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(303, 74);
+            this.btnInventario.TabIndex = 3;
+            this.btnInventario.Text = "        Inventario";
+            this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Visible = false;
+            this.btnInventario.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCierrePeriodo
             // 
@@ -728,27 +752,22 @@
             this.ajustesTransition.Interval = 10;
             this.ajustesTransition.Tick += new System.EventHandler(this.ajustesTransition_Tick);
             // 
-            // btnInventario
+            // btnExistencia
             // 
-            this.btnInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInventario.FlatAppearance.BorderSize = 0;
-            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventario.ForeColor = System.Drawing.Color.White;
-            this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
-            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventario.Location = new System.Drawing.Point(0, 0);
-            this.btnInventario.Margin = new System.Windows.Forms.Padding(0);
-            this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(303, 74);
-            this.btnInventario.TabIndex = 3;
-            this.btnInventario.Text = "        Inventario";
-            this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInventario.UseVisualStyleBackColor = true;
-            this.btnInventario.Visible = false;
-            this.btnInventario.Click += new System.EventHandler(this.button1_Click);
+            this.btnExistencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExistencia.FlatAppearance.BorderSize = 0;
+            this.btnExistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExistencia.ForeColor = System.Drawing.Color.White;
+            this.btnExistencia.Location = new System.Drawing.Point(0, 666);
+            this.btnExistencia.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExistencia.Name = "btnExistencia";
+            this.btnExistencia.Size = new System.Drawing.Size(303, 74);
+            this.btnExistencia.TabIndex = 12;
+            this.btnExistencia.Text = "Existencia";
+            this.btnExistencia.UseVisualStyleBackColor = true;
+            this.btnExistencia.Visible = false;
+            this.btnExistencia.Click += new System.EventHandler(this.btnExistencia_Click);
             // 
             // Form1
             // 
@@ -760,7 +779,7 @@
             this.Controls.Add(this.pnlTopPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -817,6 +836,7 @@
         private System.Windows.Forms.Button btnReporteConsumo;
         private System.Windows.Forms.Button btnRpVentasAnual;
         private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Button btnExistencia;
     }
 }
 
