@@ -60,9 +60,14 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
+<<<<<<< HEAD
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(651, 41);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+=======
+            this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(200, 9);
+>>>>>>> ab833bd28c2ce52311776b221ccd1d697b357280
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(212, 54);
             this.label1.TabIndex = 0;
@@ -187,8 +192,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(92, 498);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
+<<<<<<< HEAD
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1309, 450);
+=======
+            this.dataGridView1.Size = new System.Drawing.Size(585, 422);
+>>>>>>> ab833bd28c2ce52311776b221ccd1d697b357280
             this.dataGridView1.TabIndex = 21;
             // 
             // btnInsertar

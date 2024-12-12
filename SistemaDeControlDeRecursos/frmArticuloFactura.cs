@@ -25,6 +25,8 @@ namespace SistemaDeControlDeRecursos
 
         public static int existencia { get; set; }
 
+        public static string inventario { get; set; }
+
 
         SqlDataAdapter adpArticuloFac;
         DataTable dtArticuloFac;
@@ -79,7 +81,7 @@ namespace SistemaDeControlDeRecursos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count > 0)
+            if(dataGridView1.SelectedRows.Count == 1)
             {
                 DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
 
@@ -93,14 +95,21 @@ namespace SistemaDeControlDeRecursos
                 }
 
                 int EXISTENCIA = int.Parse(filaSeleccionada.Cells["Existencia"].Value.ToString());
+                string INVENTARIO = filaSeleccionada.Cells["Inventario"].Value.ToString();
                 
 
                 articuloid = id;
                 nombreArticulo = nombre;
                 precioArticulo = precio;
                 existencia = EXISTENCIA;
+                inventario = INVENTARIO;
 
                 this.Dispose();
+            }
+            else
+            {
+                    MessageBox.Show("Seleccione solo una fila, por favor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
             }
         }
 

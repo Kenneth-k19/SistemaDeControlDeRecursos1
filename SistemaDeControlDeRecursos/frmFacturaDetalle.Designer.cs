@@ -97,8 +97,12 @@
             this.groupBox2.Location = new System.Drawing.Point(27, 102);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
+<<<<<<< HEAD
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Size = new System.Drawing.Size(1266, 274);
+=======
+            this.groupBox2.Size = new System.Drawing.Size(776, 223);
+>>>>>>> ab833bd28c2ce52311776b221ccd1d697b357280
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Factura Detalle";
@@ -107,6 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+<<<<<<< HEAD
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(15, 171);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -114,15 +119,30 @@
             this.label3.Size = new System.Drawing.Size(243, 30);
             this.label3.TabIndex = 55;
             this.label3.Text = "Existencia de Artículo:";
+=======
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 21);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Existencia de Articulo:";
+>>>>>>> ab833bd28c2ce52311776b221ccd1d697b357280
             // 
             // txtExistencia
             // 
             this.txtExistencia.Enabled = false;
+<<<<<<< HEAD
             this.txtExistencia.Location = new System.Drawing.Point(284, 172);
             this.txtExistencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtExistencia.Multiline = true;
             this.txtExistencia.Name = "txtExistencia";
             this.txtExistencia.Size = new System.Drawing.Size(180, 27);
+=======
+            this.txtExistencia.Location = new System.Drawing.Point(185, 137);
+            this.txtExistencia.Multiline = true;
+            this.txtExistencia.Name = "txtExistencia";
+            this.txtExistencia.Size = new System.Drawing.Size(136, 23);
+>>>>>>> ab833bd28c2ce52311776b221ccd1d697b357280
             this.txtExistencia.TabIndex = 56;
             this.txtExistencia.Text = "0";
             this.txtExistencia.TextChanged += new System.EventHandler(this.txtExistencia_TextChanged);
@@ -138,8 +158,12 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.btnVolver.Location = new System.Drawing.Point(1130, 228);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+            this.btnVolver.Location = new System.Drawing.Point(705, 31);
+>>>>>>> ab833bd28c2ce52311776b221ccd1d697b357280
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(128, 36);
             this.btnVolver.TabIndex = 54;
@@ -332,8 +356,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(27, 547);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
+<<<<<<< HEAD
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1266, 409);
+=======
+            this.dataGridView1.Size = new System.Drawing.Size(776, 332);
+>>>>>>> ab833bd28c2ce52311776b221ccd1d697b357280
             this.dataGridView1.TabIndex = 40;
             // 
             // btnNuevo

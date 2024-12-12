@@ -226,6 +226,7 @@ namespace SistemaDeControlDeRecursos
                         btnEditar.Enabled = true;
                         btnEditar.Visible = true;
                         dataGridView1.Enabled = true;
+                        refrescarGrid();
                     }
                 }
                 else
@@ -251,6 +252,7 @@ namespace SistemaDeControlDeRecursos
 
                     MessageBox.Show("Artículo insertado correctamente con ID: " + articuloID, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    refrescarGrid();
                 }
 
             }
@@ -265,6 +267,18 @@ namespace SistemaDeControlDeRecursos
 
         }
 
+        private void refrescarGrid()
+        {
+            try
+            {
+                tabArticulo.Clear();
+                adpArticulo.Fill(tabArticulo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         
         public frmInventario(SqlConnection conn)
         {

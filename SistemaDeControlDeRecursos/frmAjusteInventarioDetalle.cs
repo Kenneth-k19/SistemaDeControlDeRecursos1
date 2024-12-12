@@ -46,6 +46,18 @@ namespace SistemaDeControlDeRecursos
                 return;
             }
 
+            //validar que la cantidad sea un número
+            if (!decimal.TryParse(txtCantidad.Text, out _))
+            {
+                MessageBox.Show("La cantidad debe ser un número", "Error en la cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //validar que la cantidad no sea mayor a 100
+            if (decimal.Parse(txtCantidad.Text) > 100)
+            {
+                MessageBox.Show("La cantidad no puede ser mayor a 100", "Error en la cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Agregar un nuevo detalle al DataTable
             DataRow newRow = tabAjusteDet.NewRow();
             newRow["ArticuloID"] = cmbArticulo.SelectedValue;
