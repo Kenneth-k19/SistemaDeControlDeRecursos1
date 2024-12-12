@@ -62,8 +62,9 @@ namespace SistemaDeControlDeRecursos
             //pnlTopRec.BackColor = Color.FromArgb(145, 19, 66);
 
             flpInventario.BackColor = Color.FromArgb(175, 50, 90);
-            //flowLayoutPanel1.BackColor = Color.FromArgb(175, 50, 90);
-            //flowLayoutPanel2.BackColor = Color.FromArgb(175, 50, 90);
+
+            flowLayoutPanel1.BackColor = Color.FromArgb(175, 50, 90);
+            flowLayoutPanel2.BackColor = Color.FromArgb(175, 50, 90);
             flowLayoutPanel3.BackColor = Color.FromArgb(175, 50, 90);
 
             btnInventario.BackColor = Color.FromArgb(145, 19, 66);
