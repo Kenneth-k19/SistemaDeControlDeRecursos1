@@ -77,6 +77,7 @@ namespace SistemaDeControlDeRecursos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
             if(NombreBoton == "Insertar")
             {
                 DataRow nuevaFila = dtUsuario.NewRow();

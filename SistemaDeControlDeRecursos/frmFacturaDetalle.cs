@@ -44,10 +44,14 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.MultiSelect = false;
+
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DefaultCellStyle.Font = new Font("Poppins", 10);
 
-            
             txtFacturaID.Enabled=false;
 
             try
@@ -179,10 +183,10 @@ namespace SistemaDeControlDeRecursos
                 txtObservacion.Enabled = true;
                 btnSeleccionarArticulo.Enabled = true;
 
-                btnNuevo.Text = "Insertar";
+                btnNuevo.Text = "Agregar";
                 btnEliminar.Enabled = false;
             }
-            else if(btnNuevo.Text == "Insertar")
+            else if(btnNuevo.Text == "Agregar")
             {
                 
 
@@ -208,12 +212,12 @@ namespace SistemaDeControlDeRecursos
                 }
                 else if (txtArticuloId.Text == "" || txtArtiNombre.Text == "")
                 {
-                    MessageBox.Show("Elija un articulo.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Elija un artículo.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if (Convert.ToInt32(txtCantidad.Text) < 0 || Convert.ToInt32(txtCantidad.Text) > 20)
                 {
-                    MessageBox.Show("Ha sobrepasado la cantidad limite de articulo por cada registro nuevo (20).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Ha sobrepasado la cantidad límite de artículo por cada registro nuevo (20).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -224,7 +228,7 @@ namespace SistemaDeControlDeRecursos
 
                 if (validarExistencia < 0)
                 {
-                    MessageBox.Show("No hay suficiente existencia del ariticulo seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No hay suficiente existencia del artículo seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 
@@ -249,7 +253,7 @@ namespace SistemaDeControlDeRecursos
                     adpFacturaDet.Fill(dtFacturaDet);
                     dataGridView1.Refresh();
 
-                    MessageBox.Show("El registro se insertó correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El registro se agregó correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     txtCantidad.Enabled = false;
                     txtDescuento.Enabled = false;

@@ -45,12 +45,23 @@ namespace SistemaDeControlDeRecursos
 
             dgvConsumo.Columns["ConsumoID"].Visible = false;
             dgvConsumo.Columns["ArticuloID"].Visible = false;
-            dgvConsumo.Columns["Articulo"].Width = 200;
+       //     dgvConsumo.Columns["Articulo"].Width = 200;
             dgvConsumo.Columns["Articulo"].HeaderText = "Plato";
-            dgvConsumo.Columns["Observacion"].Width = 200;
+            //     dgvConsumo.Columns["Observacion"].Width = 200;
+            dgvConsumo.RowHeadersVisible = false;
+            dgvConsumo.ReadOnly = true;
             dgvConsumo.AllowUserToAddRows = false;
             dgvConsumo.AllowUserToDeleteRows = false;
-            dgvConsumo.ReadOnly = true;
+            dgvConsumo.AllowUserToResizeRows = false;
+            dgvConsumo.MultiSelect = false;
+            //    dgvConsumo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvConsumo.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvConsumo.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvConsumo.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvConsumo.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvConsumo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dgvConsumo.DefaultCellStyle.Font = new Font("Poppins", 10);
 
         }
 

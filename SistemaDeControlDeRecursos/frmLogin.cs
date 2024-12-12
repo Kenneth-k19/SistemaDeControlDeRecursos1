@@ -85,6 +85,7 @@ namespace SistemaDeControlDeRecursos
             txtUsuario.Text = "Ingrese su usuario";
             txtUsuario.ForeColor = Color.FromArgb(165, 109, 77);
 
+
             btnIngresar.BackColor = Color.FromArgb(191, 73, 0);
             btnIngresar.ForeColor = Color.FromArgb(107, 44, 0);
 

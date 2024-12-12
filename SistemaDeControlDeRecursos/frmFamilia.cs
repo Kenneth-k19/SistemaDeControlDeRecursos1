@@ -35,11 +35,19 @@ namespace SistemaDeControlDeRecursos
             adpFamilia.Fill(dtFamilia);
             dataGridView1.DataSource = dtFamilia;
 
-            dataGridView1.Columns[0].Width = 70;
-            dataGridView1.Columns[0].HeaderText = "Código";
-            dataGridView1.Columns[1].Width = dataGridView1.Width -70;            
-            dataGridView1.Font = new Font("Segoe UI", 12);
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.MultiSelect = false;
+
+            //    dataGridView1.Columns[0].Width = 70;
+            dataGridView1.Columns[0].HeaderText = "Código";
+            //    dataGridView1.Columns[1].Width = dataGridView1.Width -70;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.DefaultCellStyle.Font = new Font("Poppins", 10);
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)

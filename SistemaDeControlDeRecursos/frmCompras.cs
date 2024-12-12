@@ -50,9 +50,15 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ReadOnly = true;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(220, 142, 168);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.RowHeadersVisible = false;
+
+            //    dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(220, 142, 168);
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DefaultCellStyle.Font = new Font("Poppins", 10);
+
 
             adpCompras = new SqlDataAdapter("spCompraTotaleSelect", this.con);
             adpCompras.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -192,7 +198,7 @@ namespace SistemaDeControlDeRecursos
             {
                 if (btnNuevo.Text == "Nuevo")
                 {
-                    btnNuevo.Text = "Insertar";
+                    btnNuevo.Text = "Agregar";
 
                     dtInsert    = new DataTable();
                     adpInsert = new SqlDataAdapter("select * from Compra", this.con);
@@ -209,7 +215,7 @@ namespace SistemaDeControlDeRecursos
 
                     btnVolver.Visible = true;
                 }
-                else if (btnNuevo.Text == "Insertar")
+                else if (btnNuevo.Text == "Agregar")
                 {
                     if (!validarBlancos())
                     {
@@ -242,7 +248,7 @@ namespace SistemaDeControlDeRecursos
 
                 }
             }catch (Exception ex){
-                MessageBox.Show("Error al insertar los datos. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al agregar los datos. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -251,13 +257,13 @@ namespace SistemaDeControlDeRecursos
         {
             if (btnModificar.Text == "Editar")
             {
-
+                
                 dtInsert = new DataTable();
                 adpInsert = new SqlDataAdapter("select * from Compra where Codigo = '" + txtCodigo.Text + "'", this.con);
                 adpInsert.Fill(dtInsert);
 
                 habilitarCamposCompras();
-                dtpFecha.Enabled = true;
+                dtpFecha.Enabled = false;
                 btnModificar.Text = "Guardar";
 
                 btnNuevo.Enabled = false;

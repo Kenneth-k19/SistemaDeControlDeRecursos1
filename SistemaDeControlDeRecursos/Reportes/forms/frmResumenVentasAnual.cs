@@ -36,29 +36,36 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 
         private void generarReporte_Click(object sender, EventArgs e)
         {
-            var adapter = new spReporteResumenDeVentasAnualTableAdapter();
-            var adpTotales = new spTotalVentasAnualTableAdapter();
-            DateTime anio = anioPicker.Value;
+            try {
+                var adapter = new spReporteResumenDeVentasAnualTableAdapter();
+                var adpTotales = new spTotalVentasAnualTableAdapter();
+                DateTime anio = anioPicker.Value;
 
-            DataTable dataTable = adapter.GetData(anio);
-            var totalVentasAnual = adpTotales.GetData(anio).FirstOrDefault()?.TotalVentasAnual;
+                DataTable dataTable = adapter.GetData(anio);
+                var totalVentasAnual = adpTotales.GetData(anio).FirstOrDefault()?.TotalVentasAnual;
 
-            DataTable totalVentasTable = new DataTable();
-            totalVentasTable.Columns.Add("TotalVentasAnual", typeof(float));
-            totalVentasTable.Rows.Add(totalVentasAnual);
-
-
-            var rds = new ReportDataSource("DataSet1", dataTable);
+                DataTable totalVentasTable = new DataTable();
+                totalVentasTable.Columns.Add("TotalVentasAnual", typeof(float));
+                totalVentasTable.Rows.Add(totalVentasAnual);
 
 
+                var rds = new ReportDataSource("DataSet1", dataTable);
 
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(rds);
-            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", totalVentasTable));
 
-            reportViewer1.RefreshReport();
 
-            this.reportViewer1.RefreshReport();
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(rds);
+                reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", totalVentasTable));
+
+                reportViewer1.RefreshReport();
+
+                this.reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al generar el reporte: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void anioPicker_ValueChanged(object sender, EventArgs e)

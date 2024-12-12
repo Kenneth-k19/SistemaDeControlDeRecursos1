@@ -302,12 +302,24 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.DataSource = tabArticulo;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].HeaderText = "Código"; dataGridView1.Columns[1].Width =60;
-            dataGridView1.Columns["codTipo"].Visible = false; dataGridView1.Columns["codFamilia"].Visible = false;
+
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.MultiSelect = false;
+
+            dataGridView1.DefaultCellStyle.Font = new Font("Poppins", 10);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridView1.Columns[1].HeaderText = "Código"; 
+        //    dataGridView1.Columns[1].Width =60;
+            dataGridView1.Columns["codTipo"].Visible = false; 
+            dataGridView1.Columns["codFamilia"].Visible = false;
             dataGridView1.Columns["codUnidad"].Visible = false;
-            dataGridView1.Columns["nomArticulo"].Width = 200;
-            dataGridView1.Columns["nomTipo"].HeaderText = "Tipo"; dataGridView1.Columns["nomArticulo"].HeaderText = "Articulo";
-            dataGridView1.Columns["nomFamilia"].HeaderText = "Familia"; dataGridView1.Columns["nomUnidad"].HeaderText = "Unidad";
+        //    dataGridView1.Columns["nomArticulo"].Width = 200;
+            dataGridView1.Columns["nomTipo"].HeaderText = "Tipo"; 
+            dataGridView1.Columns["nomArticulo"].HeaderText = "Articulo";
+            dataGridView1.Columns["nomFamilia"].HeaderText = "Familia"; 
+            dataGridView1.Columns["nomUnidad"].HeaderText = "Unidad";
 
 
             cmbFamilia.DataSource = tabFamilia;

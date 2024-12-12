@@ -37,6 +37,11 @@ namespace SistemaDeControlDeRecursos
             my = e.Y;
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (m == 1)

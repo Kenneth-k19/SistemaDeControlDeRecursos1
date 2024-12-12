@@ -38,8 +38,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.comboBoxTipo = new System.Windows.Forms.ComboBox();
-            this.comboBoxCatProd = new System.Windows.Forms.ComboBox();
             this.txtRtn = new System.Windows.Forms.TextBox();
             this.txtDir = new System.Windows.Forms.TextBox();
             this.txtTelf = new System.Windows.Forms.TextBox();
@@ -48,6 +46,8 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.comboBoxCatProd = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -148,46 +148,6 @@
             this.txtNombre.Size = new System.Drawing.Size(519, 36);
             this.txtNombre.TabIndex = 8;
             // 
-            // comboBoxTipo
-            // 
-            this.comboBoxTipo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTipo.Font = new System.Drawing.Font("Source Sans 3 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(1)))), ((int)(((byte)(57)))));
-            this.comboBoxTipo.FormattingEnabled = true;
-            this.comboBoxTipo.Items.AddRange(new object[] {
-            "Empresa",
-            "Individuo"});
-            this.comboBoxTipo.Location = new System.Drawing.Point(338, 116);
-            this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(345, 33);
-            this.comboBoxTipo.TabIndex = 9;
-            // 
-            // comboBoxCatProd
-            // 
-            this.comboBoxCatProd.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxCatProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCatProd.Font = new System.Drawing.Font("Source Sans 3 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCatProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(1)))), ((int)(((byte)(57)))));
-            this.comboBoxCatProd.FormattingEnabled = true;
-            this.comboBoxCatProd.Items.AddRange(new object[] {
-            "Bebidas",
-            "Carnes",
-            "Embutidos",
-            "Frutas",
-            "Lacteos",
-            "Limpieza",
-            "Utensilios",
-            "Verduras",
-            "MIXTOS",
-            "OTROS"});
-            this.comboBoxCatProd.Location = new System.Drawing.Point(338, 174);
-            this.comboBoxCatProd.Name = "comboBoxCatProd";
-            this.comboBoxCatProd.Size = new System.Drawing.Size(345, 33);
-            this.comboBoxCatProd.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.comboBoxCatProd, "La categoría MIXTOS se selecciona cuando se le compran productos de varias catego" +
-        "rias a un proveedor.");
-            // 
             // txtRtn
             // 
             this.txtRtn.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -238,8 +198,8 @@
             this.txtDes.Name = "txtDes";
             this.txtDes.Size = new System.Drawing.Size(519, 205);
             this.txtDes.TabIndex = 15;
-            this.toolTip1.SetToolTip(this.txtDes, "Escriba aquí la especificación del producto, ejemplo:  Categoría: Carne, Descripc" +
-        "ión: Pollo y Res");
+            this.toolTip1.SetToolTip(this.txtDes, "Escriba aquí la especificación del producto, ejemplo:  Categoría: Carne, y Descri" +
+        "pción: Pollo y Res");
             this.txtDes.Enter += new System.EventHandler(this.txtDes_Enter);
             this.txtDes.Leave += new System.EventHandler(this.txtDes_Leave);
             // 
@@ -271,12 +231,62 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.InitialDelay = 200;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            // 
+            // comboBoxCatProd
+            // 
+            this.comboBoxCatProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCatProd.Font = new System.Drawing.Font("Source Sans 3 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCatProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(1)))), ((int)(((byte)(57)))));
+            this.comboBoxCatProd.FormattingEnabled = true;
+            this.comboBoxCatProd.Items.AddRange(new object[] {
+            "Bebidas",
+            "Carnes",
+            "Embutidos",
+            "Frutas",
+            "Lacteos",
+            "Limpieza",
+            "Utensilios",
+            "Verduras",
+            "MIXTOS",
+            "OTROS"});
+            this.comboBoxCatProd.Location = new System.Drawing.Point(338, 172);
+            this.comboBoxCatProd.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxCatProd.Name = "comboBoxCatProd";
+            this.comboBoxCatProd.Size = new System.Drawing.Size(345, 33);
+            this.comboBoxCatProd.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.comboBoxCatProd, "La categoría \"MIXTOS\" aplica a los proveedores de quienes obtenemos productos de " +
+        "distintas categorías.");
+            // 
+            // comboBoxTipo
+            // 
+            this.comboBoxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipo.Font = new System.Drawing.Font("Source Sans 3 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(1)))), ((int)(((byte)(57)))));
+            this.comboBoxTipo.FormattingEnabled = true;
+            this.comboBoxTipo.Items.AddRange(new object[] {
+            "Empresa",
+            "Individuo"});
+            this.comboBoxTipo.Location = new System.Drawing.Point(338, 111);
+            this.comboBoxTipo.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxTipo.Name = "comboBoxTipo";
+            this.comboBoxTipo.Size = new System.Drawing.Size(345, 33);
+            this.comboBoxTipo.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.comboBoxTipo, "El tipo \"Individuo\" aplica a los negocios no legalizados como empresas.");
+            // 
             // frmProveedoresInsertarModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(140)))), ((int)(((byte)(69)))));
             this.ClientSize = new System.Drawing.Size(910, 801);
+            this.Controls.Add(this.comboBoxTipo);
+            this.Controls.Add(this.comboBoxCatProd);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtDes);
@@ -284,8 +294,6 @@
             this.Controls.Add(this.txtTelf);
             this.Controls.Add(this.txtDir);
             this.Controls.Add(this.txtRtn);
-            this.Controls.Add(this.comboBoxCatProd);
-            this.Controls.Add(this.comboBoxTipo);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -316,8 +324,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCancelar;
-        public System.Windows.Forms.ComboBox comboBoxTipo;
-        public System.Windows.Forms.ComboBox comboBoxCatProd;
         public System.Windows.Forms.TextBox txtRtn;
         public System.Windows.Forms.TextBox txtDir;
         public System.Windows.Forms.TextBox txtTelf;
@@ -326,5 +332,7 @@
         public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.ComboBox comboBoxCatProd;
+        public System.Windows.Forms.ComboBox comboBoxTipo;
     }
 }

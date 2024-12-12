@@ -173,13 +173,18 @@ namespace SistemaDeControlDeRecursos
 
             dgvConsumoDet.AllowUserToAddRows = false;
             dgvConsumoDet.ReadOnly = true;
-            
+            dgvConsumoDet.RowHeadersVisible = false;
+            dgvConsumoDet.AllowUserToDeleteRows = false;
+            dgvConsumoDet.AllowUserToResizeRows = false;
+            dgvConsumoDet.MultiSelect = false;
+
             dgvConsumoDet.SelectionMode =DataGridViewSelectionMode.FullRowSelect;
-            dgvConsumoDet.ReadOnly = true;
             dgvConsumoDet.Columns[0].Visible = false;
             dgvConsumoDet.Columns[1].Visible = false;
             dgvConsumoDet.Columns[2].Visible = false;
-            dgvConsumoDet.Columns["Articulo"].Width = 200;
+            //    dgvConsumoDet.Columns["Articulo"].Width = 200;
+            dgvConsumoDet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvConsumoDet.DefaultCellStyle.Font = new Font("Poppins", 10);
 
             adpArticuloConsumo = new SqlDataAdapter("select a.ArticuloID,a.Codigo,a.Nombre Articulo,f.Nombre Familia from (select *from Articulo where Tipo = 'C') a inner join Familia f on f.FamiliaID = a.FamiliaID ", connection);
             adpArticuloConsumo.SelectCommand.CommandType = CommandType.Text;

@@ -48,27 +48,34 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 
         private void generarReporte_Click(object sender, EventArgs e)
         {
-            try
+            if (fechaFinPicker.Value.Date < fechaInicioPicker.Value.Date)
             {
-                dtReportePedidos = DBAccess.getSelectCommandDT("spRpPedidosADomicilio", new Dictionary<string, (object valor, ParameterDirection? direccion)> {
+                MessageBox.Show("La fecha de final NO DEBE SER MENOR que la fecha inicial." + MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    dtReportePedidos = DBAccess.getSelectCommandDT("spRpPedidosADomicilio", new Dictionary<string, (object valor, ParameterDirection? direccion)> {
                 {"@fechaInicio", (fechaInicioPicker.Value.Date, null)},
                 {"@fechaFin", (fechaFinPicker.Value.Date, null)},
-                }
-            );
-                ReportDataSource rds = new ReportDataSource("rdlcDataSetPedidosDom", dtReportePedidos);
-                rvPedidosDom.LocalReport.DataSources.Clear();
-                ReportParameter[] param = { new ReportParameter("desde", fechaInicioPicker.Value.Date.ToShortDateString()),
+                });
+                    ReportDataSource rds = new ReportDataSource("rdlcDataSetPedidosDom", dtReportePedidos);
+                    rvPedidosDom.LocalReport.DataSources.Clear();
+                    ReportParameter[] param = { new ReportParameter("desde", fechaInicioPicker.Value.Date.ToShortDateString()),
                                         new ReportParameter("hasta", fechaFinPicker.Value.Date.ToShortDateString())
                                           };
-                rvPedidosDom.LocalReport.SetParameters(param);
-                rvPedidosDom.LocalReport.DataSources.Add(rds);
-                rvPedidosDom.LocalReport.Refresh();
-                rvPedidosDom.RefreshReport();
-                rvPedidosDom.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrió un error al generar el reporte: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    rvPedidosDom.LocalReport.SetParameters(param);
+                    rvPedidosDom.LocalReport.DataSources.Add(rds);
+                    rvPedidosDom.LocalReport.Refresh();
+                    rvPedidosDom.RefreshReport();
+                    rvPedidosDom.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al generar el reporte: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

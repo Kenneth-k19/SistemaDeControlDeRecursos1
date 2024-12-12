@@ -33,9 +33,13 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ReadOnly = true;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(220, 142, 168);
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.MultiSelect = false;
+            //    dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(220, 142, 168);
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DefaultCellStyle.Font = new Font("Poppins", 10);
 
             adpExistencia = new SqlDataAdapter("spExistenciaSelect", con);
             adpExistencia.SelectCommand.CommandType = CommandType.StoredProcedure;

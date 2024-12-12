@@ -29,7 +29,7 @@ namespace SistemaDeControlDeRecursos
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            
+            dataGridView1.DefaultCellStyle.Font = new Font("Poppins", 10);
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)

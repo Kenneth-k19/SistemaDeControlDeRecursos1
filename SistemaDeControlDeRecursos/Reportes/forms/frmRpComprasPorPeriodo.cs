@@ -49,27 +49,35 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
                
         private void generarReporte_Click(object sender, EventArgs e)
         {
-            try
+            if (fechaFinPicker.Value.Date < fechaInicioPicker.Value.Date)
             {
-                dtReporteCompras = DBAccess.getSelectCommandDT("spRpComprasPorPeriodo", new Dictionary<string, (object valor, ParameterDirection? direccion)> {
-                {"@fechaInicio", (fechaInicioPicker.Value.Date, null)},
-                {"@fechaFin", (fechaFinPicker.Value.Date, null)},
-                }
-            );
-                ReportDataSource rds = new ReportDataSource("rdlcDataSetCompras", dtReporteCompras);
-                rvCompras.LocalReport.DataSources.Clear();
-                ReportParameter[] param = { new ReportParameter("desde", fechaInicioPicker.Value.Date.ToShortDateString()),
+                MessageBox.Show("La fecha de final NO DEBE SER MENOR que la fecha inicial." + MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    dtReporteCompras = DBAccess.getSelectCommandDT("spRpComprasPorPeriodo", new Dictionary<string, (object valor, ParameterDirection? direccion)> {
+                    {"@fechaInicio", (fechaInicioPicker.Value.Date, null)},
+                    {"@fechaFin", (fechaFinPicker.Value.Date, null)},
+                    });
+
+                    ReportDataSource rds = new ReportDataSource("rdlcDataSetCompras", dtReporteCompras);
+                    rvCompras.LocalReport.DataSources.Clear();
+                    ReportParameter[] param = { new ReportParameter("desde", fechaInicioPicker.Value.Date.ToShortDateString()),
                                         new ReportParameter("hasta", fechaFinPicker.Value.Date.ToShortDateString())
                                           };
-                rvCompras.LocalReport.SetParameters(param);
-                rvCompras.LocalReport.DataSources.Add(rds);
-                rvCompras.LocalReport.Refresh();
-                rvCompras.RefreshReport();
-                rvCompras.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrió un error al generar el reporte: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    rvCompras.LocalReport.SetParameters(param);
+                    rvCompras.LocalReport.DataSources.Add(rds);
+                    rvCompras.LocalReport.Refresh();
+                    rvCompras.RefreshReport();
+                    rvCompras.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al generar el reporte: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

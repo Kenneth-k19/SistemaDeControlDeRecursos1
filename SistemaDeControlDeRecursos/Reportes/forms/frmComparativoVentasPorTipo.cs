@@ -51,30 +51,45 @@ namespace SistemaDeControlDeRecursos.Reportes.forms
 
         private void generarReporte_Click(object sender, EventArgs e)
         {
-            dtReporte = DBAccess.getSelectCommandDT("spRpComparativoDeVentasPorTipo", new Dictionary<string, (object valor, ParameterDirection? direccion)> {
+
+            if (fechaFinPicker.Value.Date < fechaInicioPicker.Value.Date)
+            {
+                MessageBox.Show("La fecha de final NO DEBE SER MENOR que la fecha inicial." + MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                try {
+                    dtReporte = DBAccess.getSelectCommandDT("spRpComparativoDeVentasPorTipo", new Dictionary<string, (object valor, ParameterDirection? direccion)> {
                 { "@fechaInicial", (fechaInicioPicker.Value.Date, null)},
                 {"@fechaFinal", (fechaFinPicker.Value.Date, null)},
                 }
             );
 
-            ReportDataSource rds = new ReportDataSource("dsComparativoDeVentasPorTipo", dtReporte);
+                    ReportDataSource rds = new ReportDataSource("dsComparativoDeVentasPorTipo", dtReporte);
 
 
 
 
-            reportViewerWnd1.LocalReport.DataSources.Clear();
+                    reportViewerWnd1.LocalReport.DataSources.Clear();
 
-            ReportParameter[] param = { new ReportParameter("fechaInicio", fechaInicioPicker.Value.Date.ToString()),
+                    ReportParameter[] param = { new ReportParameter("fechaInicio", fechaInicioPicker.Value.Date.ToString()),
                                         new ReportParameter("fechaFinal", fechaFinPicker.Value.Date.ToString())
                                                                                                                 };
-            reportViewerWnd1.LocalReport.SetParameters(param);
+                    reportViewerWnd1.LocalReport.SetParameters(param);
 
 
-            reportViewerWnd1.LocalReport.DataSources.Add(rds);
-            reportViewerWnd1.LocalReport.Refresh();
-            reportViewerWnd1.RefreshReport();
+                    reportViewerWnd1.LocalReport.DataSources.Add(rds);
+                    reportViewerWnd1.LocalReport.Refresh();
+                    reportViewerWnd1.RefreshReport();
 
-            reportViewerWnd1.Visible = true;
+                    reportViewerWnd1.Visible = true;
+                }//try
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al generar el reporte: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }//else
         }
     }
 }

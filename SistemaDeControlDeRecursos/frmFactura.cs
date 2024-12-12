@@ -105,8 +105,13 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.MultiSelect = false;
+
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DefaultCellStyle.Font = new Font("Poppins", 10);
 
             textBox2.Enabled = false;
 
@@ -280,13 +285,13 @@ namespace SistemaDeControlDeRecursos
         {
             if(btnNuevo.Text == "Nuevo")
             {
-                btnNuevo.Text = "Insertar";
+                btnNuevo.Text = "Agregar";
 
                 habilitarCamposFactura();
                 btnEditar.Enabled = false; //este es el boton de agregar detalle
                 btnModificar.Enabled = false; //este el boton para modificar en el form actual
             }
-            else if(btnNuevo.Text == "Insertar")
+            else if(btnNuevo.Text == "Agregar")
             {
                 DataRow nuevaFila = dtFacturas.NewRow();
 
@@ -314,7 +319,7 @@ namespace SistemaDeControlDeRecursos
                     btnEditar.Enabled = true; //este es el boton de agregar detalle
                     btnModificar.Enabled = true; //este el boton para modificar en el form actual
 
-                    MessageBox.Show("Los datos se insertaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Los datos se agregaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

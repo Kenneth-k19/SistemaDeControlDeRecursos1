@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewerWnd1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,15 +42,15 @@
             // reportViewerWnd1
             // 
             this.reportViewerWnd1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = null;
-            this.reportViewerWnd1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = null;
+            this.reportViewerWnd1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerWnd1.LocalReport.ReportEmbeddedResource = "SistemaDeControlDeRecursos.Reportes.rdlc.rpConsumoAnormalArticulos.rdlc";
-            this.reportViewerWnd1.Location = new System.Drawing.Point(214, 0);
-            this.reportViewerWnd1.Margin = new System.Windows.Forms.Padding(2);
+            this.reportViewerWnd1.Location = new System.Drawing.Point(285, 0);
+            this.reportViewerWnd1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reportViewerWnd1.Name = "reportViewerWnd1";
             this.reportViewerWnd1.ServerReport.BearerToken = null;
-            this.reportViewerWnd1.Size = new System.Drawing.Size(586, 515);
+            this.reportViewerWnd1.Size = new System.Drawing.Size(782, 634);
             this.reportViewerWnd1.TabIndex = 4;
             this.reportViewerWnd1.Visible = false;
             // 
@@ -64,9 +64,9 @@
             this.panel1.Controls.Add(this.fechaInicioPicker);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 515);
+            this.panel1.Size = new System.Drawing.Size(285, 634);
             this.panel1.TabIndex = 5;
             // 
             // label2
@@ -75,10 +75,9 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
-            this.label2.Location = new System.Drawing.Point(24, 245);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(32, 302);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 20);
+            this.label2.Size = new System.Drawing.Size(138, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fin de Periodo";
             // 
@@ -88,10 +87,9 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
-            this.label1.Location = new System.Drawing.Point(24, 167);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(32, 206);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 20);
+            this.label1.Size = new System.Drawing.Size(156, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Inicio de Periodo";
             // 
@@ -103,10 +101,10 @@
             this.generarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generarReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
-            this.generarReporte.Location = new System.Drawing.Point(34, 451);
-            this.generarReporte.Margin = new System.Windows.Forms.Padding(2);
+            this.generarReporte.Location = new System.Drawing.Point(45, 555);
+            this.generarReporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.generarReporte.Name = "generarReporte";
-            this.generarReporte.Size = new System.Drawing.Size(146, 35);
+            this.generarReporte.Size = new System.Drawing.Size(195, 43);
             this.generarReporte.TabIndex = 2;
             this.generarReporte.Text = "Generar Reporte";
             this.generarReporte.UseVisualStyleBackColor = true;
@@ -116,29 +114,31 @@
             // 
             this.fechaFinPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaFinPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaFinPicker.Location = new System.Drawing.Point(24, 271);
-            this.fechaFinPicker.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaFinPicker.Location = new System.Drawing.Point(32, 334);
+            this.fechaFinPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechaFinPicker.Name = "fechaFinPicker";
-            this.fechaFinPicker.Size = new System.Drawing.Size(108, 24);
+            this.fechaFinPicker.Size = new System.Drawing.Size(143, 28);
             this.fechaFinPicker.TabIndex = 1;
             // 
             // fechaInicioPicker
             // 
             this.fechaInicioPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaInicioPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaInicioPicker.Location = new System.Drawing.Point(24, 193);
-            this.fechaInicioPicker.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaInicioPicker.Location = new System.Drawing.Point(32, 238);
+            this.fechaInicioPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechaInicioPicker.Name = "fechaInicioPicker";
-            this.fechaInicioPicker.Size = new System.Drawing.Size(108, 24);
+            this.fechaInicioPicker.Size = new System.Drawing.Size(143, 28);
             this.fechaInicioPicker.TabIndex = 0;
             // 
             // frmRpConsumoAnormalArticulos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 515);
+            this.ClientSize = new System.Drawing.Size(1067, 634);
             this.Controls.Add(this.reportViewerWnd1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRpConsumoAnormalArticulos";
             this.Text = "Reporte de Diferencia de Consumo de artículos";
             this.Load += new System.EventHandler(this.frmRpConsumoAnormalArticulos_Load);

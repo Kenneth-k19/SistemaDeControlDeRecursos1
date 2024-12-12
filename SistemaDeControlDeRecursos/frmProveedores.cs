@@ -44,6 +44,8 @@ namespace SistemaDeControlDeRecursos
             grid1.AllowUserToAddRows = false;
             grid1.AllowUserToDeleteRows = false;
             grid1.AllowUserToResizeRows = false;
+            grid1.MultiSelect = false;
+
             this.grid1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -52,6 +54,7 @@ namespace SistemaDeControlDeRecursos
             this.grid1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.grid1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.grid1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.grid1.DefaultCellStyle.Font = new Font("Poppins", 10);
         }
 
@@ -150,6 +153,26 @@ namespace SistemaDeControlDeRecursos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBusqueda.Text != "")
+                {
+                    dt = DBAccess.getSelectCommandDT("spProveedorSelectBusqueda", new Dictionary<string, (object valor, ParameterDirection? direccion)>
+                    {
+                        {"@busqueda", (txtBusqueda.Text, null)}
+                    });
+
+                    grid1.DataSource = this.dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar los datos. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

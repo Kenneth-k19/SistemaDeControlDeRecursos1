@@ -63,15 +63,30 @@ namespace SistemaDeControlDeRecursos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //tomar la fila seleccionada usando DefaultView
-            int index = gridAjusteDet.CurrentRow.Index;
+            DialogResult opcion;
+            opcion = MessageBox.Show(this, "Esta seguro que desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo);
+            if (opcion == DialogResult.Yes)
+            {
+                //tomar la fila seleccionada usando DefaultView
+                int index = gridAjusteDet.CurrentRow.Index;
 
-            //borrar esa fila
-            tabAjusteDet.DefaultView.Table.Rows[index].Delete();
+                //borrar esa fila
+                tabAjusteDet.DefaultView.Table.Rows[index].Delete();
+            }
         }
 
         private void frmAjusteInventarioDetalle_Load(object sender, EventArgs e)
         {
+            dtpFecha.Format = DateTimePickerFormat.Short;
+            DateTime fechaActualPicker = DateTime.Now;
+
+            DateTime fechaMinimaPicker = new DateTime(fechaActualPicker.Year - 2, 1, 1);
+            DateTime fechaMaximaPicker = new DateTime(fechaActualPicker.Year, 12, 31);
+
+            dtpFecha.MinDate = fechaMinimaPicker;
+            dtpFecha.MaxDate = fechaMaximaPicker;
+            dtpFecha.Value = fechaActualPicker;
+
             panel1.BackColor = Color.FromArgb(145, 19, 66);
            
             // Cargar información del ajuste principal
@@ -127,12 +142,19 @@ namespace SistemaDeControlDeRecursos
             gridAjusteDet.ReadOnly = false;
             gridAjusteDet.AllowUserToAddRows = false;
             gridAjusteDet.AllowUserToDeleteRows = true;
+            gridAjusteDet.RowHeadersVisible = false;
+            gridAjusteDet.MultiSelect = false;
             gridAjusteDet.Columns["AjusteDetID"].Visible = false;
             gridAjusteDet.Columns["AjusteID"].Visible = false;
             gridAjusteDet.Columns["ArticuloID"].Visible = false;
             gridAjusteDet.Columns["Articulo"].Width = 200;
+
+            gridAjusteDet.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            gridAjusteDet.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            gridAjusteDet.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            gridAjusteDet.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             gridAjusteDet.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridAjusteDet.Columns["TipoAjuste"].Width = 150;
+            gridAjusteDet.DefaultCellStyle.Font = new Font("Poppins", 10);
 
             // Permitir solo la edición de la columna Cantidad
             foreach (DataGridViewColumn column in gridAjusteDet.Columns)

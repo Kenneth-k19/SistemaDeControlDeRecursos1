@@ -39,12 +39,6 @@ namespace SistemaDeControlDeRecursos
         {
             InitializeComponent();
 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ReadOnly = true;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
             adpArticuloFac = new SqlDataAdapter();
             dtArticuloFac = new DataTable();
             bsArticuloFac = new BindingSource();
@@ -120,6 +114,14 @@ namespace SistemaDeControlDeRecursos
         private void frmArticuloFactura_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(145, 19, 66);
+
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.MultiSelect = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DefaultCellStyle.Font = new Font("Poppins", 10);
         }
 
         private void button1_Click(object sender, EventArgs e)
