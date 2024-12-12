@@ -24,6 +24,7 @@ namespace SistemaDeControlDeRecursos
         int articuloID;
         string articuloNombre;
         float precioArticulo;
+        string inventario;
 
         public frmFacturaDetalle()
         {
@@ -46,6 +47,8 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.ReadOnly = true;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            inventario = "";
 
             
             txtFacturaID.Enabled=false;
@@ -167,7 +170,7 @@ namespace SistemaDeControlDeRecursos
             txtArtiNombre.Text = frmArticuloFactura.nombreArticulo;
             txtPrecio.Text = frmArticuloFactura.precioArticulo.ToString();
             txtExistencia.Text = frmArticuloFactura.existencia.ToString();
-            
+            inventario = frmArticuloFactura.inventario.ToString();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -222,7 +225,7 @@ namespace SistemaDeControlDeRecursos
                 int existencia = int.Parse(txtExistencia.Text);
                 int validarExistencia = existencia - cantidad;
 
-                if (validarExistencia < 0)
+                if (validarExistencia < 0 && inventario == "True")
                 {
                     MessageBox.Show("No hay suficiente existencia del ariticulo seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

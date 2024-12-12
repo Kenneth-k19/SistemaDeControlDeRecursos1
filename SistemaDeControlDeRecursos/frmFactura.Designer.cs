@@ -77,7 +77,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(303, 9);
+            this.label1.Location = new System.Drawing.Point(295, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 44);
             this.label1.TabIndex = 0;
@@ -91,7 +91,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 623);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(601, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(584, 291);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -104,7 +104,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(469, 439);
+            this.btnEditar.Location = new System.Drawing.Point(452, 439);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(144, 45);
             this.btnEditar.TabIndex = 44;
@@ -125,7 +125,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 511);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(601, 100);
+            this.groupBox1.Size = new System.Drawing.Size(584, 100);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
@@ -217,7 +217,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 70);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(601, 363);
+            this.groupBox2.Size = new System.Drawing.Size(584, 363);
             this.groupBox2.TabIndex = 47;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Factura";
@@ -330,7 +330,7 @@
             // 
             this.cmbEstado.Enabled = false;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(385, 108);
+            this.cmbEstado.Location = new System.Drawing.Point(385, 73);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(200, 26);
             this.cmbEstado.TabIndex = 24;
@@ -357,7 +357,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(291, 109);
+            this.label16.Location = new System.Drawing.Point(291, 74);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(59, 21);
             this.label16.TabIndex = 21;
@@ -403,12 +403,13 @@
             // txtValor
             // 
             this.txtValor.Enabled = false;
-            this.txtValor.Location = new System.Drawing.Point(385, 64);
+            this.txtValor.Location = new System.Drawing.Point(385, 123);
             this.txtValor.Multiline = true;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(200, 23);
             this.txtValor.TabIndex = 17;
             this.txtValor.Text = "0.00";
+            this.txtValor.Visible = false;
             // 
             // label6
             // 
@@ -424,11 +425,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(301, 64);
+            this.label7.Location = new System.Drawing.Point(301, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 21);
             this.label7.TabIndex = 16;
             this.label7.Text = "Valor:";
+            this.label7.Visible = false;
             // 
             // label8
             // 
@@ -514,7 +516,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(538, 94);
+            this.btnVolver.Location = new System.Drawing.Point(521, 94);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(65, 23);
             this.btnVolver.TabIndex = 53;

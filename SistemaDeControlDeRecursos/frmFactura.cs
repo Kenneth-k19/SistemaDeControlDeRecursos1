@@ -139,8 +139,10 @@ namespace SistemaDeControlDeRecursos
 
 
 
-            
-            
+            cmbConsumo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+
             con2 = con;
         }
 
@@ -216,12 +218,31 @@ namespace SistemaDeControlDeRecursos
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione solo una fila, por favor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             /* obtenemos los valores necesarios para enviar al constructor del form e instanciamos y llamamos al form */
             string codigo="";
             int id=0;
+            string estado = "";
 
             var a = dataGridView1.CurrentRow.Cells["FacturaID"].Value;
-            if(dataGridView1.CurrentRow != null)
+            estado = dataGridView1.CurrentRow.Cells["Estado"].Value.ToString();
+
+            if (estado == "F")
+            {
+                MessageBox.Show("La factura ya ha sido facturada, ya no puede editarla.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (dataGridView1.CurrentRow != null)
             {
                 codigo = dataGridView1.CurrentRow.Cells["Codigo"].Value.ToString();
                 id = (int) dataGridView1.CurrentRow.Cells["FacturaID"].Value;
@@ -285,6 +306,7 @@ namespace SistemaDeControlDeRecursos
                 habilitarCamposFactura();
                 btnEditar.Enabled = false; //este es el boton de agregar detalle
                 btnModificar.Enabled = false; //este el boton para modificar en el form actual
+                btnFacturar.Enabled = false;
             }
             else if(btnNuevo.Text == "Insertar")
             {
@@ -313,6 +335,7 @@ namespace SistemaDeControlDeRecursos
                     btnNuevo.Text = "Nuevo";
                     btnEditar.Enabled = true; //este es el boton de agregar detalle
                     btnModificar.Enabled = true; //este el boton para modificar en el form actual
+                    btnFacturar.Enabled = true;
 
                     MessageBox.Show("Los datos se insertaron correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -333,7 +356,22 @@ namespace SistemaDeControlDeRecursos
             {
                 if(dataGridView1.SelectedRows.Count == 1)
                 {
-                    if(cmbEstado.Text == "Facturada")
+
+
+
+
+                    DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+
+                    string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
+                    validarFacIDEnMod = codigo;
+                    DateTime fecha = Convert.ToDateTime(filaSeleccionada.Cells["Fecha"].Value.ToString());
+                    string tipo = filaSeleccionada.Cells["TipoID"].Value.ToString();
+                    string consumo = filaSeleccionada.Cells["ConsumoID"].Value.ToString();
+                    string estado = filaSeleccionada.Cells["Estado"].Value.ToString();
+                    string descuento = filaSeleccionada.Cells["Descuento"].Value.ToString();
+                    string subtotal = filaSeleccionada.Cells["Subtotal"].Value.ToString();
+
+                    if (estado == "F")
                     {
                         MessageBox.Show("La factura ya ha sido facturada, ya no puede editarla.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -348,17 +386,6 @@ namespace SistemaDeControlDeRecursos
                     btnEditar.Enabled = false;
                     btnFacturar.Enabled = false;
 
-                    DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
-
-                    string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
-                    validarFacIDEnMod = codigo;
-                    DateTime fecha = Convert.ToDateTime(filaSeleccionada.Cells["Fecha"].Value.ToString());
-                    string tipo = filaSeleccionada.Cells["TipoID"].Value.ToString();
-                    string consumo = filaSeleccionada.Cells["ConsumoID"].Value.ToString();
-                    string estado = filaSeleccionada.Cells["Estado"].Value.ToString();
-                    string descuento = filaSeleccionada.Cells["Descuento"].Value.ToString();
-                    string subtotal = filaSeleccionada.Cells["Subtotal"].Value.ToString();
-
                     textBox2.Text = codigo;
                     dateTimePicker1.Value = fecha;
                     cmbTipo.SelectedValue = tipo;
@@ -366,6 +393,8 @@ namespace SistemaDeControlDeRecursos
                     cmbEstado.SelectedValue = estado;
                     textBox1.Text = descuento;
                     txtsubtotal.Text = subtotal;
+
+                    
                 }
                 else
                 {
@@ -489,7 +518,17 @@ namespace SistemaDeControlDeRecursos
 
         private void txtFacturar_Click(object sender, EventArgs e)
         {
-            if(btnFacturar.Text == "Facturar")
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione solo una fila, por favor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+                if (btnFacturar.Text == "Facturar")
             {
                 
 
@@ -500,7 +539,7 @@ namespace SistemaDeControlDeRecursos
                 btnNuevo.Enabled = false;
                 btnModificar.Enabled = false;
 
-                if (dataGridView1.SelectedRows.Count > 0)
+                if (dataGridView1.SelectedRows.Count == 1)
                 {
                     DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
 
@@ -514,6 +553,12 @@ namespace SistemaDeControlDeRecursos
                     string descuento = filaSeleccionada.Cells["Descuento"].Value.ToString();
                     string subtotal = filaSeleccionada.Cells["Subtotal"].Value.ToString();
 
+                    if(float.Parse(subtotal) == 0)
+                    {
+                        MessageBox.Show("La factura no tiene detalle.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     textBox2.Text = codigo;
                     dateTimePicker1.Value = fecha;
                     cmbTipo.SelectedValue = tipo;
@@ -521,6 +566,9 @@ namespace SistemaDeControlDeRecursos
                     cmbEstado.SelectedValue = estado;
                     textBox1.Text = descuento;
                     txtsubtotal.Text = subtotal;
+
+
+
 
                     calcularDescuento();
                 }

@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtExistencia = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnSeleccionarArticulo = new System.Windows.Forms.Button();
             this.txtArtiNombre = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtExistencia = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -94,11 +94,33 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 83);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(793, 223);
+            this.groupBox2.Size = new System.Drawing.Size(776, 223);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Factura Detalle";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 21);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Existencia de Articulo:";
+            // 
+            // txtExistencia
+            // 
+            this.txtExistencia.Enabled = false;
+            this.txtExistencia.Location = new System.Drawing.Point(185, 137);
+            this.txtExistencia.Multiline = true;
+            this.txtExistencia.Name = "txtExistencia";
+            this.txtExistencia.Size = new System.Drawing.Size(136, 23);
+            this.txtExistencia.TabIndex = 56;
+            this.txtExistencia.Text = "0";
+            this.txtExistencia.TextChanged += new System.EventHandler(this.txtExistencia_TextChanged);
+            this.txtExistencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExistencia_KeyPress);
             // 
             // btnVolver
             // 
@@ -110,7 +132,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(722, 31);
+            this.btnVolver.Location = new System.Drawing.Point(705, 31);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(65, 23);
             this.btnVolver.TabIndex = 54;
@@ -278,7 +300,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 389);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(793, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 332);
             this.dataGridView1.TabIndex = 40;
             // 
             // btnNuevo
@@ -338,28 +360,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 139);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 21);
-            this.label3.TabIndex = 55;
-            this.label3.Text = "Existencia de Articulo:";
-            // 
-            // txtExistencia
-            // 
-            this.txtExistencia.Enabled = false;
-            this.txtExistencia.Location = new System.Drawing.Point(185, 137);
-            this.txtExistencia.Multiline = true;
-            this.txtExistencia.Name = "txtExistencia";
-            this.txtExistencia.Size = new System.Drawing.Size(136, 23);
-            this.txtExistencia.TabIndex = 56;
-            this.txtExistencia.Text = "0";
-            this.txtExistencia.TextChanged += new System.EventHandler(this.txtExistencia_TextChanged);
-            this.txtExistencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExistencia_KeyPress);
             // 
             // frmFacturaDetalle
             // 
