@@ -53,12 +53,9 @@ namespace SistemaDeControlDeRecursos
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.DefaultCellStyle.Font = new Font("Poppins", 10);
 
-<<<<<<< HEAD
-=======
             inventario = "";
 
             
->>>>>>> ab833bd28c2ce52311776b221ccd1d697b357280
             txtFacturaID.Enabled=false;
 
             try
